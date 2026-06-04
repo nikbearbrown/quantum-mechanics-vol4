@@ -11,7 +11,11 @@
   </g>
   <g id="accent-elements"><polygon points="330,1210 1320,1082 1376,1154 386,1284" fill="#F5C518"/></g>
   <g id="title-letterforms">
-    <text x="120" y="1810" font-family="Arial Black, Arial, sans-serif" font-size="250" font-weight="900" letter-spacing="0" fill="#F5F0E8">QUANTUM</text>
-    <text x="120" y="2070" font-family="Arial Black, Arial, sans-serif" font-size="250" font-weight="900" letter-spacing="0" fill="#F5C518" textLength="1360" lengthAdjust="spacingAndGlyphs">MECHANICS</text>
+    <text x="120" y="1510" font-family="Arial Black, Arial, sans-serif" font-size="164" font-weight="900" letter-spacing="0" fill="#F5F0E8">QUANTUM</text>
+    <text x="120" y="1688" font-family="Arial Black, Arial, sans-serif" font-size="164" font-weight="900" letter-spacing="0" fill="#F5F0E8">MECHANICS</text>
+    <text x="120" y="1900" font-family="Arial Black, Arial, sans-serif" font-size="176" font-weight="900" letter-spacing="0" fill="#F5C518">V4</text>
+    <text x="120" y="2070" font-family="Arial Black, Arial, sans-serif" font-size="82" font-weight="900" letter-spacing="0" fill="#F5F0E8">INFORMATION,</text>
+    <text x="120" y="2178" font-family="Arial Black, Arial, sans-serif" font-size="82" font-weight="900" letter-spacing="0" fill="#F5F0E8">MEASUREMENT, AND</text>
+    <text x="120" y="2286" font-family="Arial Black, Arial, sans-serif" font-size="82" font-weight="900" letter-spacing="0" fill="#F5F0E8">OPEN SYSTEMS</text>
   </g>
 </svg>
