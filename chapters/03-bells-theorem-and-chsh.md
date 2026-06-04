@@ -64,6 +64,9 @@ No choices were made about $\lambda$, about $\rho(\lambda)$, or about the form o
 
 <!-- → [DIAGRAM: four-quadrant table of B₁, B₂ values with the key observation annotated: in every row one column is ±2 and the other is 0, so |S(λ)|=2 exactly — visualizing why the bound is tight rather than loose] -->
 
+![four-quadrant table of B₁, B₂ values with the key observation annotated: in every row one column is ±2 and the other is 0, so |S(λ)|=2…](../images/03-bells-theorem-and-chsh-fig-01.png)
+*Figure 3.1 — four-quadrant table of B₁, B₂ values with the key observation annotated: in every row one column is ±2 and the other is 0, so |S(λ)|=2…*
+
 ---
 
 ## What Quantum Mechanics Predicts
@@ -92,6 +95,9 @@ $$S = \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{2}} - \!\left(-\f
 The local-realistic bound is 2. The quantum prediction is $2\sqrt{2}$. The gap, $2\sqrt{2} - 2 \approx 0.828$, is 41% of the classical bound — large enough to measure in any decent optics lab.
 
 <!-- → [CHART: "polar wheel" showing Alice's two measurement directions (0°, 90°) and Bob's two (45°, -45°) around a circle, with the four correlations annotated on the connecting arcs, and S = 2√2 displayed; classical bound at 2 shown as a gray ring] -->
+
+!["polar wheel" showing Alice's two measurement directions (0°, 90°) and Bob's two (45°, -45°) around a circle, with the four correlations…](../images/03-bells-theorem-and-chsh-fig-02.png)
+*Figure 3.2 — "polar wheel" showing Alice's two measurement directions (0°, 90°) and Bob's two (45°, -45°) around a circle, with the four correlations…*
 
 ---
 
@@ -130,6 +136,9 @@ The experimental history spans fifty years:
 Three platforms. Three independent loophole-closing strategies. The same result.
 
 <!-- → [FIGURE: horizontal timeline 1935–2022 with labeled events: EPR (1935), Bell's theorem (1964), Freedman-Clauser (1972), Aspect (1982), triple 2015 experiments (three overlapping points), Nobel Prize (2022, gold star); each event annotated with one-line description] -->
+
+![horizontal timeline 1935–2022 with labeled events: EPR (1935), Bell's theorem (1964), Freedman-Clauser (1972), Aspect (1982), triple 2015…](../images/03-bells-theorem-and-chsh-fig-03.png)
+*Figure 3.3 — horizontal timeline 1935–2022 with labeled events: EPR (1935), Bell's theorem (1964), Freedman-Clauser (1972), Aspect (1982), triple 2015…*
 
 In October 2022, the Nobel Committee awarded the Physics Prize to **Alain Aspect, John Clauser, and Anton Zeilinger** "for experiments with entangled photons, establishing the violation of Bell's inequalities and pioneering quantum information science." The citation acknowledged a 60-year arc: from Einstein's 1935 objection, through Bell's 1964 theorem, through Clauser's 1972 experiment, Aspect's 1982 locality-closing refinement, and the 2015 loophole-free confirmation.
 
@@ -402,3 +411,114 @@ Nadlinger, D. P. et al. (2022). Experimental quantum key distribution certified 
 Larsson, J.-Å. (2014). Loopholes in Bell inequality tests of local realism. *Journal of Physics A*, 47, 424003.
 
 Nobel Committee for Physics (2022). Scientific Background: Entangled States — from Theory to Technology. nobelprize.org/prizes/physics/2022.
+
+---
+
+## Running Project — Reconstruct a Real Research Result
+
+**This chapter adds:** the **central reconstruction tool for the Bell-test doorway** — computing the CHSH parameter $S$ from first principles for the four measurement angles, comparing your $S$ to the paper's reported value, and reading the gap to $2\sqrt2$ as the signature of real-world imperfection. If your paper is a loophole-free Bell test, this chapter computes its central number. If it is a QEC or sensing paper, this is still the cleanest worked example of "reconstruct means check."
+
+### Exercise R1 — When to Use AI
+**The judgment:** In this chapter's project work, AI assistance is appropriate for:
+- Evaluating the four correlators $E(A_i,B_j)$ and summing them into $S$ for given angles — *Why AI works here:* trigonometry you check against the analytic optimum $S = 2\sqrt2 \approx 2.828$.
+- Generating a small sweep of $S$ vs. one angle to locate the maximum — *Why AI works here:* a plotting/scaffolding task validated by the known optimal angles $(0°,90°,45°,-45°)$.
+**The tell:** You are using AI well when you have the Tsirelson bound and the classical bound as guardrails — any $|S| > 2\sqrt2$ from a quantum state is a bug, and any $|S| \le 2$ is no violation.
+
+### Exercise R2 — When NOT to Use AI
+**The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
+- Deciding whether your reconstructed $S$ "agrees with" the paper — *Why AI fails here:* agreement is a statistical judgment involving the paper's error bars and the gap between the ideal $2\sqrt2$ and the experimental value; an LLM will call a $2.828$-vs-$2.42$ comparison "consistent" or "inconsistent" with equal confidence and no statistical basis.
+- Judging whether the paper's $S$ actually closes the loopholes it claims — *Why AI fails here:* it requires reading the detector efficiency and spacelike-separation details, which the model cannot verify and is prone to overstate.
+- Assessing whether a marginal violation ($p = 0.039$, $n = 245$, as in Hensen 2015) is "strong evidence" — *Why AI fails here:* statistical-strength calls (triage Step 6) need the physics literacy this volume builds; the AI cannot be trusted to flag an overstated claim.
+**The tell:** If you could not state why your $S$ does or does not match the paper — with reference to error bars and the ideal-vs-real gap — without the AI, it did the judgment that should have been yours.
+**Physics-judgment connection:** This trains checking a computed correlation against two hard theoretical bounds (classical $|S|\le2$, Tsirelson $|S|\le2\sqrt2$) and against the paper's *measured* value with its uncertainty — the core "reconstruct means check" discipline.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** your first-principles CHSH value $S$ for your paper's (or the canonical) measurement angles, placed next to the paper's reported $S$ — the first row of your reconstruction dossier.
+**Tool:** Claude chat.
+**The Prompt:**
+```
+I am reconstructing the central claim of a loophole-free Bell test. My resource
+state is [PASTE from Chapter 2: the Bell state and its correlation function,
+e.g. "|Phi+>, E(theta_a,theta_b) = cos(theta_a - theta_b)"].
+
+1. Using S = E(A1,B1) + E(A1,B2) + E(A2,B1) - E(A2,B2), compute S for the
+   measurement angles theta_A1=0, theta_A2=90, theta_B1=45, theta_B2=-45 degrees.
+   Show each of the four correlators, then the sum. Convert degrees to radians
+   explicitly.
+2. Confirm S = 2*sqrt(2) ~ 2.828 and state the classical bound (2) and the
+   Tsirelson bound (2*sqrt(2)) for comparison.
+3. Now compute S for these specific angles instead: [PASTE your paper's reported
+   measurement settings if it gives them; otherwise keep the canonical ones].
+4. The paper reports S_exp = [PASTE the paper's value with its error bar, e.g.
+   2.42 +/- 0.20]. State the gap between my ideal S and S_exp, and list the
+   physical effects (detection inefficiency, decoherence, photon loss) that push
+   the experimental value below the ideal 2*sqrt(2). DO NOT judge whether the
+   numbers "agree" statistically — just report both numbers and the gap.
+Show all trig. Flag if any correlator falls outside [-1, 1] (that would be a bug).
+```
+**What this produces:** your reconstructed $S$, the canonical $2\sqrt2$ check, and a side-by-side of ideal $S$ vs. reported $S_\text{exp}$ with the imperfection sources named — the dossier's headline comparison.
+**How to adapt:** *Your system:* substitute the singlet's $-\cos$ form and the singlet-optimal angles if your paper uses spins. *ChatGPT/Gemini:* run the same prompt; any disagreement in $S$ traces to a degrees/radians or sign slip. *Claude Project:* append to your dossier file as the "core calculation" entry.
+**Builds on:** Chapter 2's identified Bell state and signed correlation function.  **Next:** Chapter 4 builds the circuit that actually prepares and measures this state; Chapter 6 derives the decoherence that produces the ideal-vs-real gap you just observed.
+
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** a tested `chsh.py` in your dossier that computes $S$ for arbitrary angles and states, and reproduces the canonical $2\sqrt2$.
+**Tool:** Claude Code.
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `reconstruction-dossier/` with `entanglement.py` (Chapter 2) present.
+- [ ] Claude Code installed.
+- [ ] Add to `CLAUDE.md`: "Every correlator E(a,b) must lie in [-1,1]; every S from a quantum state must satisfy |S| <= 2*sqrt(2). Assert both. The classical bound is |S| <= 2."
+**The Task:**
+```
+In reconstruction-dossier/:
+
+1. Add chsh.py with:
+   - correlator(state, theta_a, theta_b): build sigma_a = sin(theta_a)*X +
+     cos(theta_a)*Z and sigma_b likewise (angles in radians, from z-axis), form
+     M = kron(sigma_a, sigma_b), and return Re(<state| M |state>) for a length-4
+     state vector. Assert the result is in [-1, 1].
+   - chsh_S(state, a1, a2, b1, b2): return E(a1,b1)+E(a1,b2)+E(a2,b1)-E(a2,b2).
+     Assert |S| <= 2*sqrt(2) + 1e-9.
+2. __main__: for |Phi+> at angles (0,90,45,-45) deg, print S and assert it equals
+   2*sqrt(2) within 1e-6. Then print S for the |00> product state at the same
+   angles and assert |S| <= 2.
+3. Add a function fit_eps(S_exp): solve (1-eps)*2*sqrt(2) = S_exp for eps and
+   return it (this links to Chapter 1's rho(eps)). Print eps for S_exp =
+   [PASTE your paper's reported S].
+4. Run it, paste output. Do not modify earlier files.
+
+Stop once the canonical S = 2.828 assertion passes.
+```
+**Expected output:** `chsh.py`, console lines showing $S = 2.828$ for $|\Phi^+\rangle$, $|S|\le2$ for the product state, and the fitted $\epsilon$ corresponding to your paper's $S_\text{exp}$.
+**What to inspect:** the canonical assertion passes to $10^{-6}$; the product-state $S$ never exceeds 2; the fitted $\epsilon = 1 - S_\text{exp}/2\sqrt2$ is in $[0,1]$ and reasonable for a high-quality source.
+**If it goes wrong:** the most common failure is angles passed in degrees to `sin`/`cos` (expecting radians), yielding nonsense $S$ — confirm an explicit `radians()` conversion before the trig.
+**CLAUDE.md / AGENTS.md note:** keep "assert $|S|\le2\sqrt2$ for any quantum state — a violation of Tsirelson is always a code bug, never physics."
+
+### Exercise R5 — AI Validation Exercise
+**What you're validating:** the R3/R4 reconstructed CHSH value and the ideal-vs-reported comparison.
+**Validation type:** Numerical result + reasoning chain.
+**Risk level:** High — this is the dossier's headline number, and the dangerous failure mode is a fluent "the numbers agree" judgment that skips the statistics.
+**Setup:** use your R3 output (or R4 console). If you want to force the failure mode, paste this pre-generated (deliberately flawed) snippet for critique: *"With angles 0, 90, 45, -45 degrees the CHSH parameter is S = 3.06, comfortably above the Tsirelson bound, confirming the paper's reported S = 2.42 within error."* — it contains a Tsirelson violation and an unjustified agreement claim.
+**The Validation Task:** Evaluate against this checklist; mark Pass / Fail / Cannot determine with reasoning.
+```
+Validation Checklist — Bell's Theorem and CHSH
+□ Correctness: do the four correlators each lie in [-1,1] and sum to the stated S?
+□ Completeness: did it report BOTH the ideal S and the paper's S_exp, not just one?
+□ Scope: did it avoid asserting statistical "agreement" without the error bars?
+□ Tsirelson check: is |S| <= 2*sqrt(2) = 2.828? (Any value above is a bug.)
+□ Classical-bound check: is the violation real (|S| > 2) for the entangled state,
+  and |S| <= 2 for the product/classical-mixture state?
+□ Gap reasoning: are the imperfection sources (detection efficiency, decoherence)
+  named as the reason S_exp < 2*sqrt(2)?
+□ Failure-mode check: any of —
+  - fluent but wrong (S quoted above Tsirelson, or a degrees/radians error)
+  - unjustified "agrees within error" with no use of the reported uncertainty
+  - sign error from using the wrong Bell-state correlation function
+```
+**What to do with findings:** pass → this is the core 30% of your dossier rubric — record it with both numbers and the gap; one fail → fix and re-run; multiple fails or a Tsirelson violation → recompute $S$ by hand from the four cosines, it is four terms.
+**AI Use Disclosure (mandatory, two sentences):**
+> *1:* The AI computed the four correlators and summed them to $S$ for the measurement angles.
+> *2:* The AI could not determine whether my $S$ statistically agrees with the paper's reported value — that required me to weigh the reported error bar and the ideal-vs-real gap myself.
+**Physics-judgment connection:** This validation trains the central reconstruction habit — recomputing a paper's headline number from first principles and checking it against two theoretical bounds *and* the paper's measured value with its uncertainty, rather than accepting a fluent agreement claim.
+
+---

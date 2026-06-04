@@ -331,4 +331,105 @@ Console sanity checks:
 
 ---
 
+## Running Project — Reconstruct a Real Research Result
+
+**This chapter adds:** the *measurement apparatus model* — the $H$–CNOT circuit that prepares the entangled resource state and the reversed circuit (Bell measurement) that reads it. A CHSH experiment is not just a state; it is a state plus a basis-rotation-and-measure procedure, and this chapter gives you the unitary that implements "Alice measures at angle $\theta_a$." It connects the abstract correlation $E(\hat a,\hat b)$ to an actual gate sequence on actual qubits.
+
+### Exercise R1 — When to Use AI
+**The judgment:** In this chapter's project work, AI assistance is appropriate for:
+- Multiplying out a gate sequence ($H\otimes I$ then CNOT, or a basis rotation $R_y(2\theta)$ before a $Z$-measurement) on a state vector — *Why AI works here:* deterministic matrix algebra you check against the Bell-state preparation table.
+- Drafting a circuit-diagram description or a small state-tracing routine — *Why AI works here:* boilerplate validated by unitarity ($U^\dagger U = I$) and the known output $|\Phi^+\rangle$.
+**The tell:** You are using AI well when you can verify the output by unitarity and by the known Bell-prep result — the circuit on $|00\rangle$ must give $(|00\rangle+|11\rangle)/\sqrt2$.
+
+### Exercise R2 — When NOT to Use AI
+**The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
+- Deciding whether the paper's *physical* measurement (a polarizer at angle $\phi$, a microwave pulse of a given phase) corresponds to your modeled basis rotation — *Why AI fails here:* it is a mapping from hardware to formalism that the AI cannot verify and tends to assert glibly.
+- Judging whether a gate-level model is faithful enough to reproduce the paper's correlations — *Why AI fails here:* a physical-validity call requiring the experimental detail the model lacks.
+**The tell:** If you could not connect "the paper rotates a polarizer to $22.5°$" to "I apply $R_y(45°)$ then measure $Z$" without the AI, the AI did physics that should have been yours.
+**Physics-judgment connection:** This trains checking a claimed unitary against $U^\dagger U = I$ and against the known fixed point (Bell-prep output), before trusting any circuit-derived correlation.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** a gate-level model of how your paper's measurement at angle $\theta$ is implemented — a basis rotation followed by a computational-basis measurement — verified against the CHSH correlators of Chapter 3.
+**Tool:** Claude chat.
+**The Prompt:**
+```
+I am modeling the measurement apparatus of a Bell-test experiment as a quantum
+circuit. My resource state is [PASTE the Bell state from Chapter 2].
+
+1. Show the H–CNOT preparation circuit that produces this Bell state from a
+   computational-basis input, tracing the state after each gate.
+2. A measurement of the observable cos(theta)*Z + sin(theta)*X is equivalent to
+   rotating the qubit by R_y(-2*theta) (or the appropriate sign) and then measuring
+   Z. Write the single-qubit rotation that implements "measure at angle theta" for
+   Alice and for Bob, and confirm by computing <psi| (rotation^dagger Z rotation) |psi>
+   reproduces E = cos(theta_a - theta_b) for |Phi+>.
+3. Describe the Bell-measurement circuit (CNOT then H then measure both) that a
+   dense-coding/teleportation-style readout uses, and confirm it maps the four
+   Bell states to the four computational basis states.
+Show every matrix. Verify each rotation is unitary (R^dagger R = I).
+```
+**What this produces:** the prep circuit, the explicit basis-rotation that realizes "measure at angle $\theta$," a check that it reproduces Chapter 3's $E(\theta_a,\theta_b)$, and the Bell-measurement readout — the apparatus half of the reconstruction.
+**How to adapt:** *Your system:* if your paper uses polarizers, note the factor-of-2 between polarizer angle and Bloch-sphere angle. *ChatGPT/Gemini:* same prompt; rotation sign conventions differ between tools — reconcile against the $E = \cos$ check. *Claude Project:* save as `apparatus.md`.
+**Builds on:** Chapter 3's correlators $E(\hat a,\hat b)$ — now realized as concrete gates.  **Next:** Chapter 5 uses this same Bell-measurement circuit inside teleportation and ties resource quality back to $S$.
+
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** a `circuit.py` in your dossier that prepares the Bell state and implements angle measurements via rotations, reproducing `chsh.py`'s $S$.
+**Tool:** Claude Code.
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `reconstruction-dossier/` with `chsh.py` (Chapter 3) present.
+- [ ] Claude Code installed.
+- [ ] Add to `CLAUDE.md`: "Every gate matrix must be unitary (U_dag @ U == I within 1e-9). Assert before use. Index order: q0 is the outer (left) tensor factor."
+**The Task:**
+```
+In reconstruction-dossier/:
+
+1. Add circuit.py with H, X, Z, CNOT (ctrl q0), and Ry(angle) gate matrices, each
+   asserted unitary. Provide kron(U_q0, U_q1) helpers.
+2. bell_prep(): apply (H kron I) then CNOT to |00>, assert the result equals
+   |Phi+> = [1,0,0,1]/sqrt(2) within 1e-9.
+3. measure_angle_correlator(theta_a, theta_b): prepare |Phi+>, apply Ry rotations
+   on each qubit that implement a measurement at theta_a, theta_b, and return the
+   ZZ expectation. Assert it equals chsh.correlator(|Phi+>, theta_a, theta_b)
+   from Chapter 3 within 1e-9 (cross-check the two routes to E).
+4. __main__: print the four canonical correlators and the resulting S via this
+   circuit route; assert S = 2*sqrt(2).
+5. Run, paste output. Leave chsh.py and earlier files unchanged.
+
+Stop when the circuit-route S matches the operator-route S to 1e-9.
+```
+**Expected output:** `circuit.py`, a console confirmation that the gate-circuit correlators equal the operator-expectation correlators and yield $S = 2.828$.
+**What to inspect:** the two independent routes to $E(\theta_a,\theta_b)$ agree to $10^{-9}$ — this cross-check is the point; a Bell-prep output exactly $[1,0,0,1]/\sqrt2$.
+**If it goes wrong:** if the two routes disagree by a sign or a factor, the rotation angle convention (polarizer-angle vs Bloch-angle, factor of 2) is almost always the culprit — fix the `Ry` argument, not the operator route.
+**CLAUDE.md / AGENTS.md note:** keep "assert unitarity on every gate; cross-check any new correlation route against the established one."
+
+### Exercise R5 — AI Validation Exercise
+**What you're validating:** the R3/R4 claim that your gate-level apparatus reproduces the Chapter 3 correlators.
+**Validation type:** Code + numerical result.
+**Risk level:** Medium — the rotation-angle convention is an easy silent factor-of-2 that still "looks right" at the canonical angles.
+**Setup:** use the R4 cross-check output.
+**The Validation Task:** Evaluate against this checklist; mark Pass / Fail / Cannot determine with reasoning.
+```
+Validation Checklist — Quantum Gates and Circuits
+□ Correctness: is every gate matrix unitary (U_dag U = I)?
+□ Completeness: does bell_prep output exactly [1,0,0,1]/sqrt(2)?
+□ Scope: did the circuit route compute the SAME E(a,b) as the operator route,
+  not a coincidentally-close one?
+□ Cross-check: do the two routes agree to 1e-9 at NON-canonical angles too
+  (test theta_a=17 deg, theta_b=63 deg), not just at 0/90/45/-45?
+□ S check: does the circuit route give S = 2*sqrt(2) for |Phi+>?
+□ Failure-mode check: any of —
+  - fluent but wrong (agreement only at the canonical angles, divergence elsewhere
+    — the tell of a factor-of-2 angle bug)
+  - non-unitary gate accepted
+  - q0/q1 tensor-order swap in kron
+```
+**What to do with findings:** pass → your apparatus model is faithful; record it; one fail → fix the convention and re-test at off-canonical angles; multiple fails → derive the basis-rotation unitary by hand and compare.
+**AI Use Disclosure (mandatory, two sentences):**
+> *1:* The AI generated the gate matrices and the basis-rotation that implements an angle measurement.
+> *2:* The AI could not determine the correct angle convention for my paper's physical measurement (polarizer vs spin axis) — I fixed the factor-of-2 by checking against the operator-route correlator.
+**Physics-judgment connection:** This validation trains the discipline of cross-checking a result by two independent routes and testing at non-special inputs — the way real bugs (like a factor-of-2 that hides at the symmetric angles) are caught.
+
+---
+
 *Chapter 5 follows: quantum error correction. The no-cloning theorem prevents copying qubits; errors accumulate during computation. Error correction must hide logical information in entangled states, detecting and correcting errors without ever measuring the logical qubit directly. The three-qubit bit-flip code and the Shor nine-qubit code are the entry points.*

@@ -37,6 +37,9 @@ The off-diagonal terms are suppressed by the overlap $\langle e_0(t)|e_1(t)\rang
 
 <!-- → [FIGURE: branching-world diagram showing the total state splitting — the qubit's |0⟩ branch entangled with one environment trajectory and |1⟩ with another, the overlap ⟨e₀|e₁⟩ labeled on a bracket connecting the two branches, showing it approaches zero as the branches diverge] -->
 
+![branching-world diagram showing the total state splitting — the qubit's |0⟩ branch entangled with one environment trajectory and |1⟩ with…](../images/06-open-systems-and-lindblad-fig-01.png)
+*Figure 6.1 — branching-world diagram showing the total state splitting — the qubit's |0⟩ branch entangled with one environment trajectory and |1⟩ with…*
+
 ---
 
 ## The Bloch Representation
@@ -114,6 +117,9 @@ $$\boxed{\frac{1}{T_2} = \frac{1}{2T_1} + \frac{1}{T_\phi}.}$$
 These are the **Bloch equations**. They are the chapter's central result: the density-matrix analog of Newton's law for a decohering qubit.
 
 <!-- → [DIAGRAM: annotated Bloch sphere showing three processes simultaneously — precession around z at ω₀ (orange circular arrow), transverse shrinkage at rate 1/T₂ (inward arrow toward z-axis), and longitudinal decay toward south pole at rate 1/T₁ (arrow along z toward |0⟩)] -->
+
+![annotated Bloch sphere showing three processes simultaneously — precession around z at ω₀ (orange circular arrow), transverse shrinkage at…](../images/06-open-systems-and-lindblad-fig-02.png)
+*Figure 6.2 — annotated Bloch sphere showing three processes simultaneously — precession around z at ω₀ (orange circular arrow), transverse shrinkage at…*
 
 **The constraint $T_2 \leq 2T_1$.** Since $1/T_\phi \geq 0$, we have $1/T_2 = 1/(2T_1) + 1/T_\phi \geq 1/(2T_1)$, hence $T_2 \leq 2T_1$. Equality $T_2 = 2T_1$ — the **natural linewidth limit** — is achieved when $T_\phi \to \infty$: no pure dephasing, only energy relaxation. Real hardware always has some pure dephasing. Coherence is always at least as fragile as population.
 
@@ -433,3 +439,109 @@ Schlosshauer, M. (2019). Quantum decoherence. *Physics Reports*, 831, 1–57.
 Bloch, F. (1946). Nuclear induction. *Physical Review*, 70, 460–474.
 
 Nielsen, M. A., & Chuang, I. L. (2000). *Quantum Computation and Quantum Information*. Cambridge University Press. §§8.1–8.4.
+
+---
+
+## Running Project — Reconstruct a Real Research Result
+
+**This chapter adds:** the *decoherence-to-error-rate model that explains the ideal-vs-real gap* — the dephasing channel that shrinks $|\rho_{01}|$ as $e^{-t/T_2}$, and the bridge from a measured $T_2$ (and gate time) to the imperfection $\epsilon$ in Chapter 1's $\hat\rho(\epsilon)$ and the physical error rate $p$ that feeds Chapter 9's threshold formula. This is *why* your reconstructed $S$ fell short of $2\sqrt2$ and *where* the physical error rate in a QEC paper comes from. It is the error-rate-reasoning tool the dossier needs.
+
+### Exercise R1 — When to Use AI
+**The judgment:** In this chapter's project work, AI assistance is appropriate for:
+- Solving the Bloch equations for given $T_1$, $T_2$, $\omega_0$ and producing $|\rho_{01}(t)| = \tfrac12 e^{-t/T_2}$ — *Why AI works here:* a linear ODE with a known closed form you check against the analytic envelope.
+- Computing $T_\phi$ from $T_1$ and $T_2$ via $1/T_2 = 1/2T_1 + 1/T_\phi$, or a coherence-loss-per-gate estimate — *Why AI works here:* algebra guarded by the constraint $T_2 \le 2T_1$.
+**The tell:** You are using AI well when the $T_2 \le 2T_1$ ceiling and the $e^{-t/T_2}$ envelope are available as checks on every number.
+
+### Exercise R2 — When NOT to Use AI
+**The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
+- Deciding the right *mapping* from your paper's coherence numbers to the abstract $\epsilon$ or $p$ — *Why AI fails here:* the conversion (e.g. error-per-gate $\approx t_\text{gate}/T_2$, or $\epsilon \approx$ coherence loss over the experiment) depends on the experiment's actual protocol and timescales, which the AI cannot read off.
+- Judging whether the Markovian Lindblad model even applies to your paper's noise (a $^{13}$C spin bath is non-Markovian) — *Why AI fails here:* a physical-validity call; the AI will apply the exponential-decay model uncritically.
+**The tell:** If you could not justify the $T_2 \to \epsilon$ or $T_2 \to p$ conversion you used without the AI, it did the modeling that should have been yours.
+**Physics-judgment connection:** This trains checking a decay/error model against its validity regime (Markovian? $T_2 \le 2T_1$?) and against the analytic envelope before trusting the error rate you extract.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** the quantitative link between your paper's reported coherence (or gate error) numbers and the imperfection parameter your reconstruction uses — closing the loop on why ideal ≠ measured.
+**Tool:** Claude chat.
+**The Prompt:**
+```
+I am modeling the decoherence behind an experimental imperfection. My paper reports
+[PASTE: e.g. "T1 = 300 us, T2 = 180 us, two-qubit gate time 200 ns" for a QEC/hardware
+paper, OR a Bell-pair visibility/fidelity for a Bell test].
+
+1. From 1/T2 = 1/(2 T1) + 1/T_phi, compute T_phi. Confirm T2 <= 2 T1 (flag if violated).
+2. For a pure-dephasing qubit, |rho_01(t)| = 0.5 * exp(-t/T2). Compute the fraction
+   of coherence remaining after one gate time and after the full experiment duration
+   [PASTE duration if known].
+3. Bridge to my reconstruction: (a) for a Bell test, estimate the Werner eps such that
+   the resulting CHSH S = (1-eps)*2*sqrt(2) matches the reported S_exp — i.e.
+   eps = 1 - S_exp/(2*sqrt(2)) — and discuss whether this eps is consistent with the
+   coherence loss from step 2. (b) for a QEC paper, estimate the per-gate physical
+   error rate as roughly t_gate/T2 (order of magnitude) and compare to the reported
+   physical error rate.
+4. State whether the Markovian (Lindblad) model is appropriate for this paper's noise,
+   or whether the bath (e.g. nuclear spins) is non-Markovian. Justify briefly.
+Show the algebra. Do NOT assert the model applies — argue it.
+```
+**What this produces:** $T_\phi$, the coherence-loss fraction, an estimated $\epsilon$ or $p$ tied back to the paper, and a Markovianity judgment — the causal explanation for the ideal-vs-real gap.
+**How to adapt:** *Your system:* use whichever coherence numbers your paper actually reports. *ChatGPT/Gemini:* same prompt; compare the extracted $\epsilon$/$p$ across tools. *Claude Project:* append as the dossier's "error model" note.
+**Builds on:** Chapter 1's $\hat\rho(\epsilon)$ and Chapter 3's $S_\text{exp}$ — now explained by decoherence.  **Next:** Chapter 8 identifies the specific hardware Hamiltonian whose $T_1,T_2$ these are; Chapter 9 uses the physical error rate $p$ in the threshold formula.
+
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** an `errormodel.py` in your dossier that derives $T_\phi$, coherence loss, and the $\epsilon$/$p$ bridge from reported coherence numbers.
+**Tool:** Claude Code.
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `reconstruction-dossier/` with `chsh.py`, `capability.py`, and `rho_tools.py` present.
+- [ ] Claude Code installed.
+- [ ] Add to `CLAUDE.md`: "Enforce T2 <= 2 T1 in any coherence calculation; assert it. The dephasing envelope is 0.5*exp(-t/T2). Flag non-Markovian baths rather than applying exponential decay blindly."
+**The Task:**
+```
+In reconstruction-dossier/:
+
+1. Add errormodel.py with:
+   - t_phi(T1, T2): return T_phi from 1/T2 = 1/(2T1)+1/T_phi; assert T2 <= 2*T1+1e-12.
+   - coherence_remaining(T2, t): return exp(-t/T2).
+   - eps_from_S(S_exp): return 1 - S_exp/(2*sqrt(2))  (Werner eps for a Bell test).
+   - p_from_gate(t_gate, T2): return t_gate / T2  (order-of-magnitude per-gate error).
+2. __main__: for my paper's [PASTE T1, T2, t_gate, S_exp/duration as available], print
+   T_phi, coherence remaining after one gate and after the experiment, and the bridged
+   eps and/or p.
+3. Cross-check: feed eps_from_S(S_exp) into rho_tools.werner(eps) and into chsh via
+   (1-eps)*2*sqrt(2); confirm it reproduces S_exp within 1e-9.
+4. Run, paste output. Leave earlier files untouched.
+
+Stop once the eps round-trips back to S_exp.
+```
+**Expected output:** `errormodel.py`, console values for $T_\phi$, coherence fractions, $\epsilon$/$p$, and a confirmation that $\epsilon$ round-trips to $S_\text{exp}$.
+**What to inspect:** $T_2 \le 2T_1$ holds; the round-trip $\epsilon \to S$ is exact; the per-gate $p$ estimate is the right order of magnitude vs. the paper's reported error rate.
+**If it goes wrong:** if `t_phi` raises the $T_2 \le 2T_1$ assertion, you likely swapped $T_1$ and $T_2$ in the call — they are easy to transpose; check the argument order against the paper.
+**CLAUDE.md / AGENTS.md note:** keep "assert $T_2 \le 2T_1$; never apply Markovian exponential decay to a flagged non-Markovian bath without saying so."
+
+### Exercise R5 — AI Validation Exercise
+**What you're validating:** the R3/R4 bridge from coherence numbers to the reconstruction's $\epsilon$/$p$, and the Markovianity judgment.
+**Validation type:** Numerical result + reasoning chain.
+**Risk level:** Medium — an unflagged $T_2 > 2T_1$ or an inappropriate exponential-decay model on a spin bath are subtle but real failure modes.
+**Setup:** use the R4 output.
+**The Validation Task:** Evaluate against this checklist; mark Pass / Fail / Cannot determine with reasoning.
+```
+Validation Checklist — Open Systems and the Lindblad Equation
+□ Correctness: does 1/T2 = 1/(2T1) + 1/T_phi hold for the reported numbers?
+□ Constraint: is T2 <= 2 T1 (flagged if not)?
+□ Completeness: did it report BOTH the coherence-loss fraction and the bridged eps/p,
+  not just one?
+□ Round-trip: does eps_from_S(S_exp) fed back through (1-eps)*2sqrt(2) recover S_exp?
+□ Envelope: does |rho_01(t)| follow 0.5*exp(-t/T2)?
+□ Markovianity: did it correctly judge whether the paper's bath is Markovian, and
+  refrain from applying single-exponential decay to a non-Markovian (e.g. 13C) bath?
+□ Failure-mode check: any of —
+  - fluent but wrong (a clean T_phi from T1/T2 that secretly violates T2 <= 2T1)
+  - applying exponential decoherence to a non-Markovian bath without comment
+  - transposed T1/T2
+```
+**What to do with findings:** pass → record the error model as the explanation for the ideal-vs-real gap; one fail → fix and re-run; multiple fails or a $T_2 > 2T_1$ → recompute $T_\phi$ by hand and re-read the paper's noise description.
+**AI Use Disclosure (mandatory, two sentences):**
+> *1:* The AI computed $T_\phi$, the coherence-loss fraction, and the bridged $\epsilon$/$p$ from my paper's reported coherence numbers.
+> *2:* The AI could not determine whether the Markovian model genuinely applies to my paper's bath — that physical-validity call required me to read the noise source.
+**Physics-judgment connection:** This validation trains checking an extracted error rate against the $T_2 \le 2T_1$ constraint and the model's Markovian validity regime — refusing to apply a clean exponential where the physics forbids it.
+
+---

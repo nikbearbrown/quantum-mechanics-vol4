@@ -111,6 +111,9 @@ Every stabilizer involves only nearest-neighbor qubits — the feature that make
 
 <!-- → [FIGURE: surface code geometry — d=3 example showing 9 data qubits (circles) on a square lattice with 4 plaquette X-stabilizers (squares in faces) and 4 star Z-stabilizers (stars at vertices); label the logical X̄ chain running left-to-right and the logical Z̄ chain running top-to-bottom, both of length d=3] -->
 
+![surface code geometry — d=3 example showing 9 data qubits (circles) on a square lattice with 4 plaquette X-stabilizers (squares in faces)…](../images/09-error-and-the-threshold-theorem-fig-01.png)
+*Figure 9.1 — surface code geometry — d=3 example showing 9 data qubits (circles) on a square lattice with 4 plaquette X-stabilizers (squares in faces)…*
+
 An error becomes undetectable only if it forms a chain connecting opposite boundaries — a chain of length $d$. Below threshold, the probability of $d$ simultaneous errors drops faster than the gain from increasing $d$, so larger codes perform better. Above threshold, it does not.
 
 The surface code threshold is approximately $p_\text{th} \approx 1\%$ — high enough that current hardware can approach it. Concatenated codes achieve thresholds around $10^{-4}$ to $10^{-5}$, which is why the surface code displaced them as the practical target.
@@ -122,6 +125,9 @@ $$\boxed{p_L \approx A\left(\frac{p}{p_\text{th}}\right)^{\lceil(d+1)/2\rceil},}
 with $A \approx 0.1$. For $p < p_\text{th}$, each increase in $d$ by 2 suppresses $p_L$ by another factor of $(p/p_\text{th}) < 1$. The code gets better as it gets bigger.
 
 <!-- → [CHART: log-log plot of p_L vs p for d=3, 5, 7 — three lines converging at p=p_th where all equal A=0.1, fanning apart below (d=7 lowest) and above (d=7 highest); threshold marked by dashed vertical line; Willow data point marked] -->
+
+![log-log plot of p_L vs p for d=3, 5, 7 — three lines converging at p=p_th where all equal A=0.1, fanning apart below (d=7 lowest) and above…](../images/09-error-and-the-threshold-theorem-fig-02.png)
+*Figure 9.2 — log-log plot of p_L vs p for d=3, 5, 7 — three lines converging at p=p_th where all equal A=0.1, fanning apart below (d=7 lowest) and above…*
 
 ---
 
@@ -433,3 +439,111 @@ Bluvstein, D. et al. (QuEra/Harvard/MIT). (2024). Logical quantum processor base
 Sivak, V. V. et al. (Yale). (2023). Real-time quantum error correction beyond break-even. *Nature*, 616, 50–55.
 
 Nielsen, M. A., & Chuang, I. L. (2000). *Quantum Computation and Quantum Information*. Cambridge University Press. Chapter 10.
+
+---
+
+## Running Project — Reconstruct a Real Research Result
+
+**This chapter adds:** the **central reconstruction tool for the QEC doorway** — the threshold scaling formula $p_L \approx A(p/p_\text{th})^{\lceil(d+1)/2\rceil}$ and the suppression factor $\Lambda \approx p_\text{th}/p$, used to recompute a milestone's logical error rate from first principles and compare it to the reported value. For a Willow-style paper, this chapter computes its central number. Combined with Chapter 6's physical error rate and Chapter 8's hardware, it completes the QEC reconstruction.
+
+### Exercise R1 — When to Use AI
+**The judgment:** In this chapter's project work, AI assistance is appropriate for:
+- Evaluating $p_L(d,p) = A(p/p_\text{th})^{\lceil(d+1)/2\rceil}$ across distances, or inverting $\Lambda = p_\text{th}/p$ to extract the effective $p$ — *Why AI works here:* a power-law you check against the fixed point ($p_L = A = 0.1$ at $p = p_\text{th}$).
+- Scaffolding a log-log plot of $p_L$ vs $p$ for $d=3,5,7$ with the Willow point marked — *Why AI works here:* plotting boilerplate validated by the curves crossing at $p_\text{th}$.
+**The tell:** You are using AI well when the threshold crossover (all curves meet at $p=p_\text{th}$, $p_L=A$) is available as a check on every computed rate.
+
+### Exercise R2 — When NOT to Use AI
+**The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
+- Deciding whether a factor-of-3 gap between your computed $p_L$ and the paper's (the simple formula is not exact at small $d$) counts as "agreement" — *Why AI fails here:* it requires understanding that the scaling formula is an approximation and that landing within $3$–$5\times$ is success; an LLM will call any mismatch a failure or any match a vindication without that context.
+- Judging whether the paper's below-threshold claim is the settled-physics kind (threshold theorem confirmed) versus a fragile advantage claim — *Why AI fails here:* the same arms-race distinction from Chapter 7, which the AI cannot be trusted to draw.
+**The tell:** If you could not say why a $0.49\%$-vs-$0.143\%$ result counts as a successful reconstruction without the AI, it did the calibration judgment that should have been yours.
+**Physics-judgment connection:** This trains checking a recomputed error rate against the reported value *with the right tolerance* — knowing that an order-of-magnitude scaling formula succeeds at factor-of-few agreement, not exact match — and against the threshold fixed point.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** your first-principles logical error rate for the paper's code distance, next to the reported value — the QEC dossier's headline comparison.
+**Tool:** Claude chat.
+**The Prompt:**
+```
+I am reconstructing the central claim of a quantum-error-correction milestone.
+The paper reports [PASTE: e.g. "suppression factor Lambda = 2.14 +/- 0.02, and a
+distance-7 logical error rate p_L = 0.143% per cycle"].
+
+1. From Lambda ~ p_th/p with p_th = 0.01, estimate the effective physical error
+   rate p. Show the inversion.
+2. Using p_L(d) = A*(p/p_th)^ceil((d+1)/2) with A = 0.1 and your estimated p,
+   compute the predicted p_L for d = 3, 5, 7. Show each exponent
+   (ceil(4/2)=2, ceil(6/2)=3, ceil(8/2)=4).
+3. Compare your predicted p_L(d=7) to the paper's reported p_L. State the ratio.
+   IMPORTANT context: the simple scaling formula is NOT exact at small d; a
+   reconstruction landing within a factor of 3-5 of the reported value counts as a
+   correct understanding of the scaling. Frame the comparison this way — do NOT
+   declare a factor-of-3 gap a "failure."
+4. State explicitly: is this result a demonstration of a physical principle (the
+   threshold theorem, NOT subject to classical-simulation arms race), a hardware
+   benchmark, or a sampling-advantage claim? Justify.
+Show all arithmetic.
+```
+**What this produces:** the inverted effective $p$, predicted $p_L$ for each distance, the reported-vs-computed ratio framed with the right tolerance, and the principle-vs-advantage classification — the core calculation plus honesty layer for a QEC reconstruction.
+**How to adapt:** *Your system:* paste your paper's $\Lambda$ and $p_L$. *ChatGPT/Gemini:* same prompt; cross-check the exponents. *Claude Project:* append to the dossier's core-calculation section.
+**Builds on:** Chapter 6's physical error rate $p$ and Chapter 8's hardware identification.  **Next:** Chapter 10 assembles the full dossier and validates the recomputed number against the reported one.
+
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** a `threshold.py` in your dossier that computes $p_L(d,p)$, inverts $\Lambda$, and reproduces the threshold fixed point.
+**Tool:** Claude Code.
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `reconstruction-dossier/` with prior chapters' files present.
+- [ ] Claude Code installed.
+- [ ] Add to `CLAUDE.md`: "Threshold formula: p_L = 0.1*(p/0.01)^ceil((d+1)/2). At p=p_th all distances give p_L=0.1. The scaling is approximate at small d: factor-of-3-5 agreement with a reported value is a success, not a failure."
+**The Task:**
+```
+In reconstruction-dossier/:
+
+1. Add threshold.py with:
+   - p_L(d, p, p_th=0.01, A=0.1): return A*(p/p_th)**ceil((d+1)/2).
+   - p_from_lambda(Lam, p_th=0.01): return p_th/Lam.
+   - Assert p_L(d, 0.01) == 0.1 for d in {3,5,7} (the fixed point), within 1e-9.
+2. __main__: for my paper's [PASTE Lambda, reported p_L, distance d], compute the
+   effective p, the predicted p_L at d=3,5,7, and the ratio of predicted-to-reported
+   p_L at the paper's distance. Print whether the ratio is within a factor of 5.
+3. Append to PROJECT.md: "QEC core calc: effective p = [..], predicted p_L(d) = [..],
+   reported p_L = [..], ratio = [..] (within factor 5: yes/no)."
+4. Run, paste output. Leave earlier files untouched.
+
+Stop after the fixed-point assertion passes.
+```
+**Expected output:** `threshold.py`, a console table of predicted $p_L$ vs reported, the ratio, and a within-factor-5 verdict; an updated `PROJECT.md` line.
+**What to inspect:** all distances give $p_L=0.1$ at $p=p_\text{th}$; the predicted $p_L(d{=}7) \approx 0.49\%$ against a reported $0.143\%$ gives a ratio near 3 — a *successful* reconstruction; below threshold the $d=7$ curve is lowest.
+**If it goes wrong:** if the ratio is wildly off (orders of magnitude), check the exponent uses `ceil((d+1)/2)` not `(d+1)/2` (integer-vs-float) and that $p$ came from inverting $\Lambda$, not a guessed value.
+**CLAUDE.md / AGENTS.md note:** keep "the threshold scaling is approximate at small $d$; judge agreement at factor-of-few, not exact."
+
+### Exercise R5 — AI Validation Exercise
+**What you're validating:** the R3/R4 recomputed logical error rate and its comparison to the reported value.
+**Validation type:** Numerical result + reasoning chain.
+**Risk level:** High — the dangerous failure is mis-calibrated agreement: either calling a correct factor-of-3 reconstruction a "failure," or calling an orders-of-magnitude miss "close enough."
+**Setup:** use the R4 output. To force the failure mode, validate this pre-generated snippet: *"With Lambda = 2.14 the effective p is 0.0047, giving p_L(d=7) = 0.49%. Since this does not exactly equal the reported 0.143%, the reconstruction fails and the paper's claim is unverified."* — the conclusion is wrong; factor-of-3 is success for this approximate formula.
+**The Validation Task:** Evaluate against this checklist; mark Pass / Fail / Cannot determine with reasoning.
+```
+Validation Checklist — Error and the Threshold Theorem
+□ Correctness: does p_L = 0.1 at p = p_th for every distance (fixed point)?
+□ Completeness: did it report the effective p, the predicted p_L at the paper's d,
+  AND the reported p_L?
+□ Scope: did it use the suppression factor to get p, not an invented physical rate?
+□ Tolerance calibration: does it correctly treat factor-of-3-5 agreement as SUCCESS
+  for this approximate scaling formula (not a failure)?
+□ Below-threshold check: is p < p_th, and is the d=7 curve lowest there?
+□ Arms-race classification: is the threshold-theorem confirmation correctly marked
+  a physical-principle demonstration (NOT a fragile advantage claim)?
+□ Failure-mode check: any of —
+  - fluent but wrong (declaring a factor-of-3 result a failure, or an order-of-
+    magnitude miss a success)
+  - exponent computed as (d+1)/2 instead of ceil((d+1)/2)
+  - confusing logical-memory below-threshold with fault-tolerant computation
+```
+**What to do with findings:** pass → this is the QEC dossier's core 30% — record both numbers, the ratio, and the tolerance reasoning; one fail → fix and re-run; multiple fails → recompute $p_L$ by hand for $d=7$, it is one power.
+**AI Use Disclosure (mandatory, two sentences):**
+> *1:* The AI inverted $\Lambda$ to get the effective $p$ and computed the predicted $p_L$ at each distance.
+> *2:* The AI could not determine whether the factor-of-3 gap to the reported value counts as agreement — that required my understanding that the scaling formula is approximate at small $d$.
+**Physics-judgment connection:** This validation trains the calibrated-tolerance form of "reconstruct means check" — recomputing a milestone's headline number and judging agreement against the *right* precision for an approximate formula, neither over- nor under-crediting the match.
+
+---

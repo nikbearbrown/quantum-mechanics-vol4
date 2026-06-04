@@ -334,3 +334,123 @@ Tab 3: at B=30 mT, theta=0: dips at 3.71 and 2.03 GHz.
 - Preskill, J. "Quantum computing in the NISQ era and beyond." *Quantum* 2, 79 (2018). [verify]
 - NIST FIPS 203, 204, 205. National Institute of Standards and Technology, August 2024. [verify]
 - Gottesman, D. "Stabilizer codes and quantum error correction." PhD thesis, Caltech (1997). arXiv:quant-ph/9705052. [verify]
+
+---
+
+## Running Project — Reconstruct a Real Research Result (Integration)
+
+This is the capstone. Across Chapters 1–9 you built the pieces: the imperfect-state model ($\hat\rho(\epsilon)$, Ch 1), the entangled-resource identification (Ch 2), the CHSH calculation (Ch 3), the measurement-circuit model (Ch 4), the capability bridge ($F_\text{tel}$, Ch 5), the decoherence/error-rate model (Ch 6), the honesty-layer assessment (Ch 7), the hardware Hamiltonian and ODMR reconstruction (Ch 8), and the threshold scaling formula (Ch 9). Here you **assemble the full reconstruction dossier**: the recomputed central number beside the paper's reported number, and the written assessment of what the paper does and does not claim.
+
+**This chapter integrates:** R3 and R4 assemble the complete dossier — recomputing your paper's central quantitative claim from first principles and writing it next to the reported value. R5 validates the recomputed number against the paper's reported value *and* adjudicates the honesty layer: what the paper does not claim, and whether the result is a settled physical principle or a fragile advantage claim.
+
+### Exercise R1 — When to Use AI
+**The judgment:** In assembling the dossier, AI assistance is appropriate for:
+- Stitching the per-chapter scripts (`rho_tools.py`, `chsh.py`, `threshold.py`, `nv.py`, …) into one `reconstruct.py` that prints the dossier table — *Why AI works here:* integration boilerplate, each piece already validated in its own chapter.
+- Formatting the dossier (the recomputed-vs-reported table, the rubric scoring sheet) — *Why AI works here:* presentation, not judgment.
+**The tell:** You are using AI well when every number in the assembled dossier is one you already validated in an earlier chapter against an analytic limit or the paper's data.
+
+### Exercise R2 — When NOT to Use AI
+**The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
+- The final verdict on whether your recomputed number *confirms* the paper's claim — *Why AI fails here:* it requires weighing error bars (Bell test), the approximate-formula tolerance (QEC), or spectral dip alignment (NV), all of which need the physics literacy this volume built; an LLM cannot be trusted to call the agreement.
+- The honesty-layer verdict: what the paper does NOT claim, milestone vs. marketing, demonstration-of-principle vs. classical-simulation-arms-race claim — *Why AI fails here:* this is the single judgment the whole volume exists to make you capable of; the AI mirrors the paper's framing and will not catch what it omits.
+**The tell:** If the AI is supplying your verdict rather than assembling your evidence, it has done the irreducibly human part of the capstone.
+**Physics-judgment connection:** This is the culmination of *reconstruct means check* — recomputing the paper's number from first principles, comparing it at the right tolerance, and reading what the paper does not claim. No automated tool can be trusted with either half.
+
+### Exercise R3 — LLM Exercise
+**What you're building:** the assembled reconstruction dossier — the recomputed central number, the comparison to the reported value, the connections-to-chapters trail, and the honesty-layer assessment, scored against the chapter rubric.
+**Tool:** Claude Project — persistent context across all your per-chapter notes (`resource-state.md`, `apparatus.md`, `system.md`, `HONESTY.md`) makes the assembly coherent.
+**The Prompt:**
+```
+You have access to my reconstruction-dossier project files from Chapters 1-9. Assemble
+the final dossier for my chosen paper: [PASTE title, authors, arXiv/journal ID, and the
+ONE central claim, e.g. "Acharya et al. 2025, p_L(d=7) = 0.143%/cycle"].
+
+Produce a single dossier.md with these sections, drawing each from the named chapter:
+1. System identification (Ch 8): the physical qubit, Hamiltonian, encoding of |0>,|1>.
+2. Observable and measurement (Ch 3 or 4 or 8): what is measured and what theory predicts.
+3. Core calculation (Ch 3 for CHSH / Ch 9 for QEC / Ch 8 for ODMR): the recomputed central
+   number, shown next to the paper's reported number, with the comparison framed at the
+   correct tolerance (error bars for CHSH; factor-of-3-5 for the QEC scaling formula; dip
+   alignment for ODMR).
+4. Connections to prior chapters: cite each tool by chapter (rho(eps) Ch1, Bell state Ch2,
+   CHSH Ch3, circuit Ch4, F_tel Ch5, error model Ch6, hardware Ch8, threshold Ch9).
+5. Honest assessment: pull the "establishes / does NOT establish" table from HONESTY.md
+   and the principle/benchmark/advantage classification.
+6. Rubric self-score against: system ID (20%), observable (20%), core calc (30%),
+   connections (15%), honest assessment (15%).
+
+For section 3, report BOTH numbers and the gap, but DO NOT render the final
+confirm/not-confirm verdict — leave that line marked "[AUTHOR VERDICT]". For section 5,
+present the honesty table as drafted but flag each "does NOT establish" bullet
+"[AUTHOR-CONFIRMED?]" for me to sign off.
+```
+**What this produces:** a complete `dossier.md` with the recomputed-vs-reported number, the chapter-tool trail, the rubric self-score, and explicit `[AUTHOR VERDICT]` / `[AUTHOR-CONFIRMED?]` placeholders where *your* judgment must land — the finished deliverable minus the two human calls.
+**How to adapt:** *Your system:* point the project at whichever per-chapter files you built. *ChatGPT/Gemini:* paste the per-chapter notes inline if no project memory. *Claude Project:* this is the intended path — persistent files make the assembly faithful.
+**Builds on:** all of Chapters 1–9.  **Next:** R4 generates the recomputed number programmatically; R5 fills the author verdict and adjudicates the honesty layer.
+
+### Exercise R4 — CLI Exercise
+**What you're building:** a single `reconstruct.py` that runs every validated per-chapter routine and emits the dossier's quantitative core — the recomputed number beside the reported one.
+**Tool:** Claude Code — file automation across the whole dossier directory.
+**Skill level:** Advanced
+**Setup — confirm:**
+- [ ] `reconstruction-dossier/` contains all validated scripts: `rho_tools.py`, `entanglement.py`, `chsh.py`, `circuit.py`, `capability.py`, `errormodel.py`, `nv.py`/`hamiltonian.py`, `threshold.py`, and `HONESTY.md`.
+- [ ] Claude Code installed.
+- [ ] `CLAUDE.md` carries the standing rules from every chapter (validity asserts, $|S|\le2\sqrt2$, $T_2\le2T_1$, threshold fixed point, honesty column is author-written).
+**The Task:**
+```
+In reconstruction-dossier/:
+
+1. Create reconstruct.py that imports the relevant per-chapter modules for MY paper
+   type and prints a single dossier table:
+   - For a Bell test: reconstructed S (chsh), reported S_exp, gap, eps (errormodel),
+     F_tel (capability).
+   - For a QEC paper: effective p (threshold.p_from_lambda), predicted p_L(d=3,5,7),
+     reported p_L, ratio, within-factor-5 verdict.
+   - For an NV paper: computed ODMR f_+/f_- (nv), reported dip positions, agreement.
+   The table must show RECOMPUTED and REPORTED side by side with the gap.
+2. Re-run every per-chapter module's self-assertions first (validity, fixed points,
+   Tsirelson, T2<=2T1) and abort with a clear message if any fails — the dossier is
+   only trustworthy if all upstream checks pass.
+3. Write the table to dossier_core.txt and print it. Append a line to PROJECT.md:
+   "Reconstruction complete: recomputed [X] vs reported [Y], gap [Z]."
+4. Do NOT write any confirm/not-confirm verdict and do NOT touch HONESTY.md.
+
+Run reconstruct.py and paste the full output. Stop after the table is written and
+all upstream assertions pass.
+```
+**Expected output:** `reconstruct.py`, `dossier_core.txt` with the recomputed-vs-reported table, a `PROJECT.md` completion line, and confirmation that every upstream assertion passed.
+**What to inspect:** the recomputed central number is in the expected relationship to the reported one (within error bars / factor-of-few / dip-aligned); every upstream self-check passed before the table was emitted; no verdict was auto-written.
+**If it goes wrong:** if `reconstruct.py` aborts on an upstream assertion, that is the system working — the failing check (e.g. a $T_2>2T_1$ or a Tsirelson violation) means an earlier number is wrong; fix it in its own module before trusting the dossier. If the table prints but the gap is implausible, recompute that one number by hand from its chapter's formula.
+**CLAUDE.md / AGENTS.md note:** keep "the dossier is only as trustworthy as its upstream assertions; abort assembly if any fails; never auto-write the confirm/not-confirm verdict."
+
+### Exercise R5 — AI Validation Exercise
+**What you're validating:** (a) the recomputed central number against the paper's reported value, and (b) the honesty layer — what the paper does and does not claim.
+**Validation type:** Numerical result + reasoning chain + structured assessment.
+**Risk level:** High — this is the whole project's verdict; both the number-agreement call and the honesty-layer call are exactly the judgments the volume exists to make you capable of and the AI cannot be trusted with.
+**Setup:** use the `dossier.md` (R3) and `dossier_core.txt` (R4).
+**The Validation Task:** Evaluate against this checklist; mark Pass / Fail / Cannot determine with reasoning. The final two items are author-only — the AI may not fill them.
+```
+Validation Checklist — Capstone Reconstruction Dossier
+□ Correctness: is the recomputed central number produced by the validated chapter
+  routine, not a fresh (unchecked) computation?
+□ Upstream integrity: did every per-chapter self-assertion pass (validity, Tsirelson,
+  T2<=2T1, threshold fixed point)?
+□ Comparison tolerance: is the recomputed-vs-reported gap judged at the RIGHT precision
+  (error bars for CHSH; factor-of-3-5 for QEC scaling; dip alignment for ODMR)?
+□ Connections: is every tool cited by chapter, so the reconstruction is traceable?
+□ Rubric coverage: are all five rubric categories present and self-scored?
+□ Honesty completeness: does the "does NOT establish" column include the interpretation/
+  arms-race/overreach points specific to this result type?
+□ [AUTHOR VERDICT] Number agreement: does the recomputed number confirm the paper's
+  central claim, at the correct tolerance? (Author writes this; AI must not.)
+□ [AUTHOR VERDICT] Claim security: is this a settled physical principle, a hardware
+  benchmark, or a fragile sampling-advantage claim — and what does the paper NOT claim?
+  (Author writes this; AI must not.)
+```
+**What to do with findings:** all upstream items pass and you have written both author verdicts → the dossier is complete; submit it. Any upstream fail → trace it to the offending module and fix before rendering a verdict. If the AI tried to fill an `[AUTHOR VERDICT]` line → strike it and write your own; that line existing is the entire point of the project.
+**AI Use Disclosure (mandatory, two sentences):**
+> *1:* The AI assembled the per-chapter routines into a single dossier and produced the recomputed-vs-reported table.
+> *2:* The AI could not be trusted to render the two verdicts — whether the recomputed number confirms the claim at the right tolerance, and what the paper does and does not establish — both of which I wrote myself from the physics this volume taught.
+**Physics-judgment connection:** This validation is the project's terminal lesson: a recomputed number means nothing until *you* check it against the reported value at the correct precision, and a reported result means nothing until *you* state what it does and does not establish. Reconstruct means check; the check is yours.
+
+---

@@ -191,6 +191,9 @@ A microwave field oscillating at $\nu_{0,-1}$ applies the same Rabi Hamiltonian 
 
 <!-- → [FIGURE: side-by-side comparison of the NV center and transmon energy level diagrams — showing the full spin-1 NV spectrum (D splitting and Zeeman splitting) and the full transmon harmonic plus anharmonic spectrum; in both cases, arrows highlight the two-level subspace {|0⟩, |1⟩}; the visual goal is to show that despite completely different physical origins, both reduce to the same two-level structure with the same notation] -->
 
+![side-by-side comparison of the NV center and transmon energy level diagrams — showing the full spin-1 NV spectrum (D splitting and Zeeman…](../images/08-quantum-hardware-fig-01.png)
+*Figure 8.1 — side-by-side comparison of the NV center and transmon energy level diagrams — showing the full spin-1 NV spectrum (D splitting and Zeeman…*
+
 ---
 
 ## Exercises
@@ -278,3 +281,114 @@ Krantz, P. et al. (2019). A quantum engineer's guide to superconducting qubits. 
 Bruzewicz, C. D. et al. (2019). Trapped-ion quantum computing: Progress and challenges. *Applied Physics Reviews*, 6, 021314.
 
 Knill, E., Laflamme, R., & Milburn, G. J. (2001). A scheme for efficient quantum computation with linear optics. *Nature*, 409, 46.
+
+---
+
+## Running Project — Reconstruct a Real Research Result
+
+**This chapter adds:** the *system-identification tool* — reading a paper's physical qubit, writing its Hamiltonian, and computing an observable from it. For an NV-sensing paper this is the central reconstruction: the spin-1 Hamiltonian $\hat H_\text{NV} = D\hat S_z^2 + g\mu_B B\hat S_z$ gives ODMR transition frequencies $f_\pm = D \pm 28B$ MHz/mT that you match to the dips in the paper's spectrum. For a QEC or Bell paper, this is triage Step 3 — naming what physically encodes $|0\rangle$ and $|1\rangle$ and where the $T_1,T_2$ of Chapter 6 come from.
+
+### Exercise R1 — When to Use AI
+**The judgment:** In this chapter's project work, AI assistance is appropriate for:
+- Computing ODMR transition frequencies $f_\pm = 2.87\ \text{GHz} \pm 28B$ from a given field, or diagonalizing the $3\times3$ NV Hamiltonian — *Why AI works here:* eigenvalue arithmetic checked against the worked example ($B=30$ mT $\to 3.71$ and $2.03$ GHz).
+- Reducing a full transmon or NV Hamiltonian to its two-level form — *Why AI works here:* a standard projection you verify against the chapter's $\hat H_\text{eff} = (\hbar\omega_{01}/2)\hat\sigma_z$.
+**The tell:** You are using AI well when you have a closed-form check — the zero-field dip at exactly $D = 2.87$ GHz, the linear splitting $\Delta f = 56B$ MHz/mT — for every computed frequency.
+
+### Exercise R2 — When NOT to Use AI
+**The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
+- Reading the *actual field, axis, and isotope* off your paper's Methods section — *Why AI fails here:* it is buried experimental detail; an LLM will guess a plausible $B$ or assume axial alignment when the paper's field is off-axis, changing the spectrum.
+- Judging whether the two-level approximation is even valid at the paper's field (does the drive couple to $m_s=+1$? is the $^{14}$N hyperfine resolved?) — *Why AI fails here:* a physical-validity call requiring the drive power and field the AI does not have.
+**The tell:** If you could not state your paper's qubit Hamiltonian and its parameters without the AI, it did the system identification that should have been yours.
+**Physics-judgment connection:** This trains checking computed transition frequencies against the cited measured dip positions in the paper's own spectrum — a direct first-principles-vs-data comparison, and against the limiting cases ($B\to0$, axial field).
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** the system-identification block of your dossier — your paper's qubit Hamiltonian and, for an NV paper, the ODMR frequencies computed from first principles and matched to the paper's spectrum.
+**Tool:** Claude chat.
+**The Prompt:**
+```
+I am identifying the physical system of a quantum paper for a reconstruction dossier.
+The paper's qubit is [PASTE: e.g. "an NV center in diamond at axial field B = 30 mT"
+or "a superconducting transmon at omega_01/2pi = 5.1 GHz"].
+
+For an NV center:
+1. Write the spin-1 Hamiltonian H_NV = D*Sz^2 + g*muB*B*Sz with D = 2.87 GHz and
+   gamma = 28 MHz/mT. Give the 3x3 matrix in the {m=+1,0,-1} basis.
+2. Compute the eigenvalues and the two ODMR transition frequencies f_+ and f_-
+   from m_s=0, for the paper's stated field. Confirm the zero-field limit gives a
+   single dip at 2.87 GHz and the splitting is 56*B MHz/mT.
+3. Match f_+ and f_- to the dip positions the paper reports in its ODMR spectrum
+   [PASTE the paper's dip frequencies if given]. State the agreement.
+
+For a transmon / spin qubit:
+1. State the two-level Hamiltonian (hbar*omega_01/2)*sigma_z and the parameters.
+2. Note the T1, T2 the paper reports and connect them to Chapter 6's error model.
+
+In all cases: state explicitly the condition under which the two-level approximation
+holds for this paper, and whether it is satisfied at the paper's operating point.
+Show all matrix algebra.
+```
+**What this produces:** the explicit Hamiltonian, computed ODMR frequencies (or transition frequency), a match to the paper's spectrum, and a two-level-validity check — the system-identification and (for NV) core-calculation pieces of the dossier.
+**How to adapt:** *Your system:* paste your paper's exact qubit and field. *ChatGPT/Gemini:* same prompt; cross-check the eigenvalues. *Claude Project:* save as `system.md`.
+**Builds on:** Chapter 6's $T_1,T_2$ — now attached to a named physical Hamiltonian.  **Next:** Chapter 9 supplies the threshold formula for QEC papers; Chapter 10 assembles all pieces into the dossier and validates the recomputed number.
+
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** an `nv.py` (or `hamiltonian.py`) in your dossier that builds the qubit Hamiltonian and computes its observable (ODMR frequencies / transition frequency).
+**Tool:** Claude Code.
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `reconstruction-dossier/` with prior chapters' files present.
+- [ ] Claude Code installed.
+- [ ] Add to `CLAUDE.md`: "NV: D = 2.87 GHz, gamma = 28.025 MHz/mT, ODMR splitting = 56*B MHz/mT for axial field. Assert the zero-field dip is at 2.87 GHz. State the two-level-validity condition with any transition frequency."
+**The Task:**
+```
+In reconstruction-dossier/:
+
+1. Add nv.py with:
+   - h_nv(B, theta=0): return the 3x3 NV Hamiltonian (in GHz) for field magnitude B
+     (mT) at polar angle theta, using D=2.87, gamma=0.028 GHz/mT.
+   - odmr_frequencies(B, theta=0): diagonalize and return the two m=0 -> m=±1
+     transition frequencies.
+   - Assert odmr_frequencies(0) gives a single value 2.87 (within 1e-6), and
+     odmr_frequencies(30, 0) gives 3.71 and 2.03 GHz (within 1e-3).
+2. (If your paper is NOT NV: instead add hamiltonian.py returning the two-level
+   (omega_01/2)*sigma_z and printing omega_01 with the T1/T2 from Chapter 6.)
+3. __main__: print the frequencies for my paper's field [PASTE B, theta] and compare
+   to the paper's reported dip positions [PASTE].
+4. Run, paste output. Leave earlier files untouched.
+
+Stop after the B=30 mT axial check gives 3.71 and 2.03 GHz.
+```
+**Expected output:** `nv.py` (or `hamiltonian.py`), a console print of computed transition frequencies next to the paper's reported dips.
+**What to inspect:** the $B=0$ single dip at 2.87 GHz; the $B=30$ mT axial dips at 3.71 and 2.03 GHz; for off-axis fields the dips do *not* fully merge as $\theta\to90°$ (transverse field mixes sublevels).
+**If it goes wrong:** if the off-axis case gives the same answer as axial, the $\theta$ dependence was dropped — the field must enter as $B\cos\theta$ on $S_z$ plus a transverse $B\sin\theta$ term in the $3\times3$ matrix, not just $B\cos\theta$.
+**CLAUDE.md / AGENTS.md note:** keep "assert the NV zero-field dip at 2.87 GHz; include the transverse field term for off-axis $\theta$."
+
+### Exercise R5 — AI Validation Exercise
+**What you're validating:** the R3/R4 system identification and (for NV) the computed-vs-reported ODMR comparison.
+**Validation type:** Numerical result + reasoning chain.
+**Risk level:** Medium — the off-axis transverse term and the two-level-validity condition are the easy omissions.
+**Setup:** use the R4 output.
+**The Validation Task:** Evaluate against this checklist; mark Pass / Fail / Cannot determine with reasoning.
+```
+Validation Checklist — Quantum Hardware
+□ Correctness: does odmr_frequencies(0) give a single dip at 2.87 GHz, and
+  (30 mT, axial) give 3.71 and 2.03 GHz?
+□ Completeness: did it state which physical states encode |0> and |1>?
+□ Scope: for off-axis fields, did it include the transverse term (dips do NOT fully
+  merge at theta = 90 deg)?
+□ Data match: do the computed f_+ / f_- match the paper's reported dip positions,
+  and is the discrepancy stated honestly?
+□ Two-level validity: did it state and check the condition (drive not coupling to
+  m=+1; hyperfine resolved) at the paper's operating point?
+□ Failure-mode check: any of —
+  - fluent but wrong (axial formula applied to an off-axis field)
+  - hallucinated field/parameters not in the paper
+  - factor-of-2 in the splitting (28 vs 56 MHz/mT confusion)
+```
+**What to do with findings:** pass → record the Hamiltonian and the ODMR match as system-ID + core-calculation; one fail → fix and re-run; multiple fails → diagonalize the $3\times3$ by hand for the axial case and re-read the paper's field geometry.
+**AI Use Disclosure (mandatory, two sentences):**
+> *1:* The AI built the NV Hamiltonian and computed the ODMR transition frequencies for the paper's field.
+> *2:* The AI could not determine the paper's actual field magnitude and axis — I read those from the Methods and supplied them, and judged the two-level-validity condition.
+**Physics-judgment connection:** This validation trains the most direct form of "reconstruct means check" — computing transition frequencies from a Hamiltonian and matching them against the measured dip positions printed in the paper's own figure.
+
+---

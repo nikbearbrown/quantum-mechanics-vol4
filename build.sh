@@ -22,6 +22,7 @@ pandoc "$OUTPUT_DIR/combined.md" \
   --from markdown \
   --to html5 \
   --standalone \
+  --mathjax=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js \
   --css=styles/kindle.css \
   --css=styles/kindle-book.css \
   --toc \

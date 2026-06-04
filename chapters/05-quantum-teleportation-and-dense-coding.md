@@ -78,6 +78,9 @@ The state has been teleported. Alice no longer has it. Bob does. No copy was mad
 
 <!-- → [FIGURE: circuit diagram for teleportation — three horizontal wires labeled S (Alice), A (Alice), B (Bob); CNOT gate with S control and A target, then H gate on S, then measurement boxes on both S and A; dashed vertical lines (classical channel) from S and A down to correction gates on B; the correction gate label shows I/X/Z/ZX; the initial Bell pair |Φ+⟩ on wires A and B is shown with a wavy line; the unknown state |ψ⟩ enters on wire S] -->
 
+![circuit diagram for teleportation — three horizontal wires labeled S (Alice), A (Alice), B (Bob)](../images/05-quantum-teleportation-and-dense-coding-fig-01.png)
+*Figure 5.1 — circuit diagram for teleportation — three horizontal wires labeled S (Alice), A (Alice), B (Bob)*
+
 ---
 
 ## Why It Does Not Violate No-Cloning or Causality
@@ -127,6 +130,9 @@ $$\text{Dense coding: } 1\text{ ebit} + 1\text{ qubit channel} \;\longrightarrow
 The entanglement resource is identical. The direction of the resource expenditure is reversed. Without pre-shared entanglement, one qubit can carry at most one classical bit (Holevo's theorem). Entanglement doubles the classical capacity. It does not create something from nothing — the Bell pair is the resource being spent.
 
 <!-- → [FIGURE: side-by-side comparison of teleportation and dense coding — left panel shows teleportation circuit with resource accounting (1 ebit + 2 cbits → 1 qubit transmitted); right panel shows dense coding circuit with resource accounting (1 ebit + 1 qubit channel → 2 cbits transmitted); shared feature: the Bell pair |Φ+⟩ appears in both, emphasizing the same resource used in opposite directions] -->
+
+![side-by-side comparison of teleportation and dense coding — left panel shows teleportation circuit with resource accounting (1 ebit + 2…](../images/05-quantum-teleportation-and-dense-coding-fig-02.png)
+*Figure 5.2 — side-by-side comparison of teleportation and dense coding — left panel shows teleportation circuit with resource accounting (1 ebit + 2…*
 
 ---
 
@@ -233,3 +239,106 @@ Hensen, B. et al. (2015). Loophole-free Bell inequality violation using electron
 Nielsen, M. A., & Chuang, I. L. (2000). *Quantum Computation and Quantum Information*. Cambridge University Press. §1.3.7, §2.3, §12.1.
 
 Holevo, A. S. (1973). Bounds for the quantity of information transmitted by a quantum communication channel. *Problems of Information Transmission*, 9, 177–183.
+
+---
+
+## Running Project — Reconstruct a Real Research Result
+
+**This chapter adds:** the *resource-quality bridge* — the map from a Bell pair's CHSH value $S$ to the teleportation fidelity $F_\text{tel} = (1 + S/2\sqrt2)/2$ it can deliver, and the classical threshold $F = 2/3$ a quantum resource must beat. This is the first piece of the **honesty layer**: a paper that reports $S$ is implicitly bounding what its entanglement can *do*, and you can compute that bound. It turns a raw correlation number into a statement about capability — exactly the kind of "what does this actually claim" reasoning Chapter 10 demands.
+
+### Exercise R1 — When to Use AI
+**The judgment:** In this chapter's project work, AI assistance is appropriate for:
+- Evaluating $F_\text{tel}(S) = (1 + S/2\sqrt2)/2$ and the classical thresholds at given $S$ — *Why AI works here:* one-line arithmetic checked against the endpoints ($S=2\sqrt2\to F=1$, $S=2\to F=3/4$).
+- Tracing the four teleportation correction cases on a specific input state — *Why AI works here:* deterministic Pauli algebra you verify by recovering $|\psi\rangle$ in every branch.
+**The tell:** You are using AI well when the fidelity formula's endpoints and the $F=2/3$ classical line are available as independent checks.
+
+### Exercise R2 — When NOT to Use AI
+**The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
+- Deciding whether your paper's resource *clears the classical threshold* — *Why AI fails here:* it requires propagating the paper's $S$ (with its error bar) through $F_\text{tel}$ and comparing to $2/3$; an LLM will declare "beats classical" without carrying the uncertainty.
+- Judging whether teleportation fidelity is even the right capability metric for your paper's claim — *Why AI fails here:* a paper may claim sensing sensitivity or a logical error rate, not fidelity; mapping the claim to the right figure of merit is your call.
+**The tell:** If you could not state whether your resource beats $F=2/3$ — and with what margin — without the AI, it did the assessment that should have been yours.
+**Physics-judgment connection:** This trains checking a derived capability against a hard classical benchmark ($F=2/3$) and against the formula's limiting cases — turning a correlation into a falsifiable claim about what the hardware can do.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** the capability assessment for your resource — the teleportation fidelity implied by your paper's $S$, with the classical-threshold comparison.
+**Tool:** Claude chat.
+**The Prompt:**
+```
+I am assessing what a Bell-test resource can DO, as part of reconstructing a
+paper's claim. The paper reports a CHSH parameter S_exp = [PASTE value with error
+bar, e.g. 2.42 +/- 0.20].
+
+1. Using F_tel(S) = (1 + S/(2*sqrt(2)))/2, compute the teleportation fidelity for
+   S = 2*sqrt(2) and for S = 2, confirming F=1 and F=3/4 respectively.
+2. Compute F_tel for S_exp, and also for S_exp + and - its error bar, giving a
+   fidelity range.
+3. The best classical (no-entanglement) teleportation fidelity is F = 2/3. State
+   whether the fidelity range from step 2 lies entirely above 2/3, straddles it,
+   or lies below it. Report the margin numerically. Do NOT editorialize about
+   whether this "proves" anything — just give the numbers and where they sit
+   relative to 2/3.
+4. State in one sentence what this resource can and cannot be claimed to do, based
+   only on these numbers.
+Show the arithmetic, including the error-bar propagation.
+```
+**What this produces:** $F_\text{tel}$ for your $S_\text{exp}$ with an uncertainty range, the comparison to the classical $2/3$ line, and a tight capability statement — a honesty-layer entry for the dossier.
+**How to adapt:** *Your system:* if your paper is QEC or sensing, swap this for the relevant capability metric (logical error rate, sensitivity) — the *structure* (compute capability, compare to classical/physical benchmark, carry the error bar) is identical. *ChatGPT/Gemini:* same prompt. *Claude Project:* append to the dossier's honesty-layer section.
+**Builds on:** Chapter 3's $S_\text{exp}$ and Chapter 4's Bell-measurement circuit (used inside teleportation).  **Next:** Chapter 6 derives the decoherence that drives $S$ (and thus $F_\text{tel}$) below the ideal — the *cause* of the resource degradation you just quantified.
+
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** a `capability.py` in your dossier that maps $S$ (with uncertainty) to $F_\text{tel}$ and flags the classical threshold.
+**Tool:** Claude Code.
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `reconstruction-dossier/` with `chsh.py` and `circuit.py` present.
+- [ ] Claude Code installed.
+- [ ] Add to `CLAUDE.md`: "Capability claims must carry the resource's uncertainty: propagate the error bar through any derived figure of merit and compare to the named classical benchmark (F=2/3 for teleportation)."
+**The Task:**
+```
+In reconstruction-dossier/:
+
+1. Add capability.py with:
+   - f_tel(S): return (1 + S/(2*sqrt(2)))/2. Assert f_tel(2*sqrt(2)) == 1 and
+     f_tel(2) == 0.75 within 1e-9.
+   - assess(S, dS): return f_tel(S) and the interval [f_tel(S-dS), f_tel(S+dS)],
+     plus a string "above" / "straddles" / "below" relative to 2/3.
+2. __main__: run assess(S_exp, dS_exp) for my paper's reported [PASTE S_exp, dS_exp]
+   and print the fidelity, the interval, and the classical-threshold verdict.
+3. Append to PROJECT.md a line: "Capability: F_tel = [value] ([interval]),
+   classical 2/3 threshold = [above/straddles/below]."
+4. Run, paste output. Leave earlier files untouched.
+
+Stop after the endpoints assertion passes and PROJECT.md is updated.
+```
+**Expected output:** `capability.py`, a console fidelity-with-interval, and a `PROJECT.md` capability line with the classical-threshold verdict.
+**What to inspect:** the $F(2\sqrt2)=1$ and $F(2)=0.75$ endpoints hold; the verdict string correctly reflects whether the whole interval clears $2/3$.
+**If it goes wrong:** if `f_tel(2)` does not return exactly 0.75, the $2\sqrt2$ normalization in the denominator is wrong (a common $\sqrt2$-vs-$2\sqrt2$ slip) — fix the constant.
+**CLAUDE.md / AGENTS.md note:** keep "always propagate the error bar into derived figures of merit; never report a capability as a bare central value."
+
+### Exercise R5 — AI Validation Exercise
+**What you're validating:** the R3/R4 capability assessment ($F_\text{tel}$ and its position relative to $2/3$).
+**Validation type:** Numerical result + reasoning chain.
+**Risk level:** Medium — the temptation is an unhedged "beats classical" claim that ignores an interval straddling $2/3$.
+**Setup:** use the R4 output.
+**The Validation Task:** Evaluate against this checklist; mark Pass / Fail / Cannot determine with reasoning.
+```
+Validation Checklist — Quantum Teleportation and Dense Coding
+□ Correctness: does F_tel(2*sqrt(2)) = 1 and F_tel(2) = 0.75 exactly?
+□ Completeness: did it report an INTERVAL from the error bar, not just a point?
+□ Scope: did it compare to the correct classical threshold (2/3), not 3/4?
+□ Threshold logic: is the "above/straddles/below 2/3" verdict consistent with the
+  reported interval?
+□ Honesty: does the one-sentence capability claim avoid overstating (no "proves
+  quantum advantage" from a fidelity that merely beats 2/3)?
+□ Failure-mode check: any of —
+  - fluent but wrong (clean F value, but classical threshold quoted as 3/4)
+  - dropped error bar (point estimate above 2/3 while the interval straddles it)
+  - confusing the 3/4 entanglement-floor with the 2/3 classical bound
+```
+**What to do with findings:** pass → record the capability statement in the honesty layer; one fail → fix and re-run; multiple fails → recompute $F_\text{tel}$ by hand at the three $S$ values, it is one formula.
+**AI Use Disclosure (mandatory, two sentences):**
+> *1:* The AI computed $F_\text{tel}$ from the reported $S$ and its error bar and compared the interval to the classical $2/3$ threshold.
+> *2:* The AI could not determine whether teleportation fidelity is the *right* capability metric for my paper's actual claim — that judgment was mine.
+**Physics-judgment connection:** This validation trains comparing a derived capability against a hard classical benchmark while carrying the uncertainty — the discipline that separates "the resource is good" from "the resource beats classical by margin X."
+
+---

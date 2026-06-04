@@ -31,6 +31,9 @@ The dimension $4 = 2\times2$, not $2+2$, is the first thing to internalize. For 
 
 <!-- → [FIGURE: diagram contrasting direct sum vs. tensor product for two qubits — showing ℂ² ⊕ ℂ² as two separate planes (4 real dimensions, no cross-terms) vs. ℂ² ⊗ ℂ² as a four-dimensional space with the four basis states |00⟩, |01⟩, |10⟩, |11⟩; the visual goal is to make viscerally clear that ⊗ is larger and allows correlations that ⊕ forbids] -->
 
+![diagram contrasting direct sum vs. tensor product for two qubits — showing ℂ² ⊕ ℂ² as two separate planes (4 real dimensions, no…](../images/02-composite-systems-and-entanglement-fig-01.png)
+*Figure 2.1 — diagram contrasting direct sum vs. tensor product for two qubits — showing ℂ² ⊕ ℂ² as two separate planes (4 real dimensions, no…*
+
 ---
 
 ## Product States and the Rank-1 Test
@@ -88,6 +91,9 @@ The singlet $|\Psi^-\rangle = \tfrac{1}{\sqrt{2}}(|01\rangle - |10\rangle)$ is r
 
 <!-- → [FIGURE: circuit diagram for Bell state preparation — qubit A on top wire, qubit B on bottom; gates H on qubit A, then CNOT with control A and target B; intermediate state label after H, final state label after CNOT; below the circuit, show the coefficient matrix C at each stage: diagonal-in-top-row product state after H, full-rank matrix after CNOT] -->
 
+![circuit diagram for Bell state preparation — qubit A on top wire, qubit B on bottom](../images/02-composite-systems-and-entanglement-fig-02.png)
+*Figure 2.2 — circuit diagram for Bell state preparation — qubit A on top wire, qubit B on bottom*
+
 ---
 
 ## The Schmidt Decomposition
@@ -112,6 +118,9 @@ For any pure bipartite state, you do not need to try all possible factorizations
 Local unitaries — operations of the form $U_A\otimes U_B$ — change the Schmidt vectors $|u_k\rangle_A$ and $|v_k\rangle_B$ but leave the Schmidt coefficients $\{\lambda_k\}$ unchanged. This is why entanglement cannot be created by local operations alone: no product $U_A\otimes U_B$ can change the singular values of $C$, and therefore cannot change the Schmidt rank from 1 to anything higher.
 
 <!-- → [FIGURE: visual of the SVD of C — showing C as a 2×2 complex matrix, then decomposed as U·Σ·V†; Σ is diagonal with the two Schmidt coefficients √λ₁ and √λ₂; the two columns of U label the Schmidt states |u₁⟩ and |u₂⟩ for qubit A; the two columns of V label |v₁⟩ and |v₂⟩ for qubit B; the visual goal is to make the connection between SVD and Schmidt decomposition explicit] -->
+
+![visual of the SVD of C — showing C as a 2×2 complex matrix, then decomposed as U·Σ·V†](../images/02-composite-systems-and-entanglement-fig-03.png)
+*Figure 2.3 — visual of the SVD of C — showing C as a 2×2 complex matrix, then decomposed as U·Σ·V†*
 
 ---
 
@@ -260,3 +269,109 @@ Bennett, C. H., Bernstein, H. J., Popescu, S., & Schumacher, B. (1996). Concentr
 Hensen, B. et al. (2015). Loophole-free Bell inequality violation using electron spins separated by 1.3 kilometres. *Nature*, 526, 682–686. doi:10.1038/nature15759
 
 Preskill, J. Lecture Notes for Physics 219/CS 219. Chapter 4. http://www.theory.caltech.edu/~preskill/ph219/
+
+---
+
+## Running Project — Reconstruct a Real Research Result
+
+**This chapter adds:** the *identification and verification of the entangled resource state* — which of the four Bell states your paper produces, the $\det(C)$ / Schmidt-rank test confirming it is maximally entangled, and the entanglement entropy that quantifies it. This is the system-identification step (Chapter 10's triage Step 3) for any Bell-test or entanglement-based reconstruction.
+
+### Exercise R1 — When to Use AI
+**The judgment:** In this chapter's project work, AI assistance is appropriate for:
+- Computing $\det(C)$, the SVD of a coefficient matrix, or an entanglement entropy from given amplitudes — *Why AI works here:* mechanical linear algebra you can check against the chapter's worked values ($S_E = 1$ ebit for a Bell state, $\det(C) = \tfrac12$).
+- Reformatting your paper's stated state into the $\{|00\rangle,|01\rangle,|10\rangle,|11\rangle\}$ amplitude vector — *Why AI works here:* notation translation, verified by the normalization $\sum|c_{ij}|^2 = 1$.
+**The tell:** You are using AI well when you have an independent check — the Schmidt coefficients must sum to 1, $S_E$ must lie in $[0,1]$ ebit for two qubits, and a maximally entangled state must give $S_E = 1$.
+
+### Exercise R2 — When NOT to Use AI
+**The judgment:** These tasks require your judgment; AI output here can't be trusted without redoing the work:
+- Deciding *which Bell state* the paper actually uses from its prose — *Why AI fails here:* papers describe states in lab-specific language (polarization $H/V$, spin $\uparrow/\downarrow$, "singlet"); mapping that to $|\Phi^+\rangle$ vs $|\Psi^-\rangle$ is a physical-reading call, and the sign convention changes the CHSH correlation formula downstream.
+- Judging whether a reported "fidelity to the Bell state" justifies treating the state as maximally entangled for your calculation — *Why AI fails here:* there is no ground truth in the prompt; the AI will assert maximal entanglement without checking the number.
+**The tell:** If you could not name your paper's Bell state and justify the sign of its correlation function without the AI, the AI is doing physics that should be yours.
+**Physics-judgment connection:** This trains checking an entanglement claim against a computable invariant — Schmidt rank, $\det(C)$, or $S_E$ — rather than taking "entangled" on faith.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** a one-paragraph identification of your paper's entangled state, with $\det(C)$, Schmidt decomposition, and $S_E$ computed and the correlation-function sign fixed.
+**Tool:** Claude chat — self-contained, no persistent context required.
+**The Prompt:**
+```
+I am identifying the entangled resource state in a quantum experiment.
+Here is how the paper describes its state: [PASTE the paper's own words,
+e.g. "polarization-entangled photon pairs in the state (|HH> + |VV>)/sqrt(2)"
+or "the spin singlet of two NV electron spins"].
+
+1. Map this to one of the four Bell states |Phi+>, |Phi->, |Psi+>, |Psi->
+   in the {|00>,|01>,|10>,|11>} basis, stating the encoding you used
+   (e.g. H=|0>, V=|1>). Write the amplitude vector [c00,c01,c10,c11].
+2. Form the 2x2 coefficient matrix C and compute det(C). State whether the
+   state is entangled and why (rank-1 test).
+3. Give the Schmidt decomposition and the entanglement entropy S_E in ebits.
+   Confirm S_E = 1 for a Bell state.
+4. State the two-qubit correlation function E(theta_a, theta_b) for THIS Bell
+   state, being explicit about the sign: |Phi+> gives +cos(theta_a - theta_b),
+   the singlet |Psi-> gives -cos(theta_a - theta_b). This sign carries into the
+   CHSH calculation later, so justify it.
+Show all algebra. Flag any place where the encoding choice (which physical state
+is |0>) would change the answer.
+```
+**What this produces:** the identified Bell state, its amplitude vector, $\det(C) = \tfrac12$, $S_E = 1$ ebit, and the correct-signed correlation function — exactly what Chapter 3's CHSH reconstruction needs as input.
+**How to adapt:** *Your system:* paste your paper's verbatim state description. *ChatGPT/Gemini:* same prompt; if the tools disagree on the sign of $E$, that disagreement is the lesson — resolve it by hand. *Claude Project:* save the result as `resource-state.md` next to Chapter 1's $\hat\rho(\epsilon)$.
+**Builds on:** Chapter 1's $\hat\rho(\epsilon)$ — you now know which pure state sits inside that mixture.  **Next:** Chapter 3 plugs this state and its correlation function into the CHSH parameter $S$.
+
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** an `entanglement.py` added to your dossier that identifies the Bell state and computes $\det(C)$ and $S_E$ from an amplitude vector.
+**Tool:** Claude Code.
+**Skill level:** Beginner
+**Setup — confirm:**
+- [ ] `reconstruction-dossier/` exists with `PROJECT.md` and `rho_tools.py` from Chapter 1.
+- [ ] Claude Code installed.
+- [ ] Add to `CLAUDE.md`: "Entanglement claims must be backed by a computed invariant: det(C) for two qubits, or Schmidt rank / S_E. Never label a state 'entangled' without one."
+**The Task:**
+```
+In the existing reconstruction-dossier/ directory:
+
+1. Add entanglement.py with:
+   - coeff_matrix(psi): take a length-4 complex amplitude vector
+     [c00,c01,c10,c11] and return the 2x2 matrix C.
+   - is_entangled(psi): return (det(C), bool) using |det| > 1e-9.
+   - schmidt(psi): return the Schmidt coefficients (singular values squared)
+     and entanglement entropy S_E in ebits (log base 2, with 0*log0 = 0).
+2. Add a __main__ block that runs all three on the four Bell states and on the
+   product state |00>, printing for each: name, det(C), entangled?, S_E.
+3. Append to PROJECT.md a line: "Resource state: [the Bell state you identified],
+   S_E = 1 ebit, correlation sign = [+ or -]."
+4. Run it, paste the output. Leave rho_tools.py and the rest untouched.
+
+Stop after the script prints a clean table for all five states.
+```
+**Expected output:** `entanglement.py`, an updated `PROJECT.md` resource-state line, and a table showing $S_E = 1$ for all four Bell states and $S_E = 0$ for $|00\rangle$.
+**What to inspect:** all four Bell states give $|\det(C)| = \tfrac12$ and $S_E = 1$; the product state gives $\det(C) = 0$, $S_E = 0$.
+**If it goes wrong:** if a Bell state reports $S_E \neq 1$, the usual cause is the $0\log 0$ term evaluated as `NaN` — confirm the entropy routine guards against zero Schmidt coefficients.
+**CLAUDE.md / AGENTS.md note:** keep the rule "back every entanglement claim with a computed invariant."
+
+### Exercise R5 — AI Validation Exercise
+**What you're validating:** the R3/R4 identification of the Bell state and its correlation-function sign.
+**Validation type:** Reasoning chain + numerical result.
+**Risk level:** Medium — the *sign* of the correlation function is a classic silent error that propagates into the CHSH number and can flip the apparent violation.
+**Setup:** use your R3 paragraph or the R4 table.
+**The Validation Task:** Evaluate against this checklist; mark Pass / Fail / Cannot determine with reasoning.
+```
+Validation Checklist — Composite Systems and Entanglement
+□ Correctness: is the amplitude vector normalized (sum |c_ij|^2 = 1)?
+□ Completeness: did it state the encoding (which physical state = |0>)?
+□ Scope: did it identify exactly ONE Bell state, not hedge among several?
+□ Invariant check: det(C) = 1/2 and Schmidt rank 2 for the claimed Bell state?
+□ Entropy check: S_E = 1 ebit (within 1e-6)?
+□ Sign check: is E(theta_a,theta_b) = +cos for |Phi+/-> and -cos for |Psi+/->,
+  and does it match the Bell state actually identified?
+□ Failure-mode check: any of —
+  - fluent but wrong (correct S_E but the WRONG sign on E — the dangerous case)
+  - encoding mismatch (H=|0> in step 1 but H=|1> implied later)
+  - calling a separable state entangled
+```
+**What to do with findings:** pass → lock the resource state into your dossier; one fail (especially the sign) → fix it now, because Chapter 3 inherits it; multiple fails → re-identify the state by hand from the paper's own words.
+**AI Use Disclosure (mandatory, two sentences):**
+> *1:* The AI mapped my paper's state description to a Bell state and computed $\det(C)$ and $S_E$.
+> *2:* The AI could not determine the correct correlation-function sign for my encoding without me checking which physical state the paper calls $|0\rangle$.
+**Physics-judgment connection:** This validation trains catching a sign/convention error before it propagates — the single most consequential check in a CHSH reconstruction.
+
+---
