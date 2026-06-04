@@ -1,347 +1,262 @@
 # Chapter 2 — Composite Systems and Entanglement
+*Why two qubits live in a four-dimensional space where most states cannot be written as products — and what that means.*
 
-## TL;DR
+You have two spin-$\frac{1}{2}$ particles. Each lives in a two-dimensional Hilbert space. A reasonable person might expect the joint system to be described by two independent two-dimensional state vectors — four numbers in total, two per particle. That sounds right. It is wrong.
 
-Two qubits together live in a four-dimensional space, not two two-dimensional spaces. Most states in that four-dimensional space cannot be written as a product of single-qubit states — those are the entangled ones. The algebraic test for entanglement is the Schmidt decomposition: express the state as a sum $\sum_k \sqrt{\lambda_k}\,|u_k\rangle_A|v_k\rangle_B$ and count the terms. One term means separable. More than one means entangled. The Bell states are the four canonical examples of two-qubit entanglement, each with exactly two Schmidt terms of equal weight. The entanglement entropy — $-\sum_k \lambda_k \log_2 \lambda_k$ — quantifies how much entanglement there is, from zero for product states to one ebit for the Bell states.
+The joint Hilbert space is not two two-dimensional spaces placed side by side (a direct sum, six dimensions if the particles were different sizes). It is the tensor product — a four-dimensional space in which most vectors do not correspond to any product of single-particle states. The extra structure that tensor product gives you, compared to the direct sum, is precisely where entanglement lives. And entangled states are, in a precise sense, more typical than product states: if you choose a random unit vector in $\mathbb{C}^4$, it is almost certainly entangled.
 
----
-
-## Learning objectives
-
-By the end of this chapter you will be able to:
-
-1. **Construct** the Hilbert space of a composite two-qubit system as a tensor product and identify its basis states. *(Remember/Understand)*
-2. **Distinguish** separable from entangled pure states using the factorization test and the Schmidt rank. *(Understand)*
-3. **Write** the four Bell states and verify each is maximally entangled by computing the reduced density matrix of either qubit. *(Apply)*
-4. **Perform** the Schmidt decomposition of a two-qubit pure state by expressing it as an SVD of the coefficient matrix. *(Apply)*
-5. **Compute** the entanglement entropy of a bipartite pure state and interpret it in ebits. *(Analyze)*
+This chapter is about the geometry of that space. How do you tell a product state from an entangled one? How much entanglement does a state carry? And what does the answer look like in practice?
 
 ---
 
-## Opening: the failure of a reasonable assumption
+## The Tensor Product
 
-You have two spin-$\frac{1}{2}$ particles, each described by a two-dimensional Hilbert space. A physicist friend tells you that the joint state of the two particles should be described by a four-component object — two components per particle. That sounds right. Two particles, each with two degrees of freedom; surely the joint system just takes two independent state vectors and stacks them.
-
-It does not.
-
-The joint Hilbert space is not a direct sum of two two-dimensional spaces. It is a tensor product: a four-dimensional space in which most states are not the product of any two single-particle states. The extra room in that four-dimensional space is where entanglement lives. And the states that fill that extra room — the entangled states — are, in a precise sense, more typical than the product states. If you pick a random unit vector in $\mathbb{C}^4$, almost surely it is entangled.
-
-This chapter is about the geometry of that space. What does the tensor product give you? Which states are entangled and which are not? How do you compute the answer? And how much entanglement does a state carry?
-
----
-
-## Core development
-
-### The tensor product and the composite Hilbert space
-
-Let system $A$ have Hilbert space $\mathcal{H}_A = \text{span}\{|0\rangle_A, |1\rangle_A\}$ (a qubit) and system $B$ have $\mathcal{H}_B = \text{span}\{|0\rangle_B, |1\rangle_B\}$ (another qubit). The joint system lives in the **tensor product** space:
+Let system $A$ have Hilbert space $\mathcal{H}_A = \text{span}\{|0\rangle_A, |1\rangle_A\}$ and system $B$ have $\mathcal{H}_B = \text{span}\{|0\rangle_B, |1\rangle_B\}$. The joint system lives in the **tensor product**:
 
 $$\mathcal{H}_A \otimes \mathcal{H}_B = \text{span}\{|00\rangle, |01\rangle, |10\rangle, |11\rangle\},$$
 
-where $|ij\rangle$ is shorthand for $|i\rangle_A \otimes |j\rangle_B$. The dimension is $2 \times 2 = 4$.
+where $|ij\rangle$ abbreviates $|i\rangle_A \otimes |j\rangle_B$. The dimension is $2 \times 2 = 4$.
 
 A general state is:
 
-$$|\psi_{AB}\rangle = \sum_{i,j \in \{0,1\}} c_{ij}\,|ij\rangle = c_{00}|00\rangle + c_{01}|01\rangle + c_{10}|10\rangle + c_{11}|11\rangle,$$
+$$|\psi_{AB}\rangle = c_{00}|00\rangle + c_{01}|01\rangle + c_{10}|10\rangle + c_{11}|11\rangle,$$
 
-with the normalization $\sum_{i,j}|c_{ij}|^2 = 1$.
+with $\sum_{i,j}|c_{ij}|^2 = 1$. The four coefficients can be arranged into the **coefficient matrix**:
 
-The **coefficient matrix** $C = \begin{pmatrix}c_{00} & c_{01} \\ c_{10} & c_{11}\end{pmatrix}$ encodes everything. It is a $2 \times 2$ complex matrix of unit Frobenius norm. Almost everything interesting about the state — including whether it is entangled and how much — is determined by the singular values of $C$.
+$$C = \begin{pmatrix}c_{00} & c_{01} \\ c_{10} & c_{11}\end{pmatrix}.$$
 
-> **Dimension clarification.** The dimension of $\mathcal{H}_A \otimes \mathcal{H}_B$ is the *product* $d_A \times d_B$, not the sum $d_A + d_B$. For two qubits: $2 \times 2 = 4$, not $2 + 2 = 4$ (though the numbers happen to coincide here). For a qubit and a qutrit: $2 \times 3 = 6$, not $2 + 3 = 5$. The difference matters physically: a $d_A + d_B$-dimensional description would be a direct sum, describing two particles that do not interact and share no correlations whatsoever. Tensor product gives them the ability to be correlated.
+This $2\times2$ complex matrix of unit Frobenius norm encodes everything about the state. Whether the state is entangled, how much it is entangled, and what the local reduced state of each qubit looks like — all of it is determined by $C$.
 
-### Product states and separable states
+The dimension $4 = 2\times2$, not $2+2$, is the first thing to internalize. For a qubit and a qutrit, the joint space is $2\times3 = 6$-dimensional, not 5. The product rule reflects the physical fact that two independent systems can be in any combination of their individual states, and the number of independent combinations is the product of the individual dimensions. A direct sum would give you two independent quantum systems that cannot correlate at all. The tensor product gives them the ability to correlate — and, in particular, to be entangled.
 
-A state $|\psi_{AB}\rangle$ is called a **product state** (or **separable pure state**) if it factors as:
+<!-- → [FIGURE: diagram contrasting direct sum vs. tensor product for two qubits — showing ℂ² ⊕ ℂ² as two separate planes (4 real dimensions, no cross-terms) vs. ℂ² ⊗ ℂ² as a four-dimensional space with the four basis states |00⟩, |01⟩, |10⟩, |11⟩; the visual goal is to make viscerally clear that ⊗ is larger and allows correlations that ⊕ forbids] -->
 
-$$|\psi_{AB}\rangle = |a\rangle_A \otimes |b\rangle_B \qquad \text{for some } |a\rangle \in \mathcal{H}_A, \; |b\rangle \in \mathcal{H}_B.$$
+---
 
-If $|a\rangle = \alpha|0\rangle + \beta|1\rangle$ and $|b\rangle = \gamma|0\rangle + \delta|1\rangle$, then:
+## Product States and the Rank-1 Test
 
-$$|a\rangle \otimes |b\rangle = \alpha\gamma|00\rangle + \alpha\delta|01\rangle + \beta\gamma|10\rangle + \beta\delta|11\rangle.$$
+A state $|\psi_{AB}\rangle$ is a **product state** if it factors:
 
-The coefficient matrix of a product state is:
+$$|\psi_{AB}\rangle = |a\rangle_A \otimes |b\rangle_B \quad \text{for some } |a\rangle \in \mathcal{H}_A,\; |b\rangle \in \mathcal{H}_B.$$
 
-$$C_{\text{sep}} = \begin{pmatrix}\alpha\gamma & \alpha\delta \\ \beta\gamma & \beta\delta\end{pmatrix} = \begin{pmatrix}\alpha \\ \beta\end{pmatrix}\begin{pmatrix}\gamma & \delta\end{pmatrix}.$$
+Write $|a\rangle = \alpha|0\rangle + \beta|1\rangle$ and $|b\rangle = \gamma|0\rangle + \delta|1\rangle$. Then:
 
-This is a **rank-1 matrix**: it equals the outer product of two vectors. Conversely, the coefficient matrix of any product state is rank 1.
+$$|a\rangle\otimes|b\rangle = \alpha\gamma|00\rangle + \alpha\delta|01\rangle + \beta\gamma|10\rangle + \beta\delta|11\rangle.$$
 
-Therefore: $|\psi_{AB}\rangle$ is a product state if and only if $\text{rank}(C) = 1$.
+The coefficient matrix of this product state is:
 
-### Entangled states: the factorization test
+$$C_\text{sep} = \begin{pmatrix}\alpha\gamma & \alpha\delta \\ \beta\gamma & \beta\delta\end{pmatrix} = \begin{pmatrix}\alpha \\ \beta\end{pmatrix}\begin{pmatrix}\gamma & \delta\end{pmatrix}.$$
 
-If $\text{rank}(C) > 1$, the state is **entangled** — it cannot be written as a product of single-qubit states. The algebraic test is immediate: compute $\det(C)$ (or more generally, the rank of $C$). For two qubits:
+This is a **rank-1 matrix** — the outer product of two vectors. The determinant of a rank-1 matrix is zero: $\det(C_\text{sep}) = \alpha\gamma\cdot\beta\delta - \alpha\delta\cdot\beta\gamma = \alpha\beta\gamma\delta - \alpha\beta\delta\gamma = 0$.
+
+Conversely, if $C$ has rank 1, then $C = \vec{u}\vec{v}^T$ for some vectors $\vec{u}$ and $\vec{v}$, and the state factors as $|a\rangle = u_0|0\rangle + u_1|1\rangle$ tensored with $|b\rangle = v_0|0\rangle + v_1|1\rangle$. The conclusion: **for two qubits, $|\psi_{AB}\rangle$ is a product state if and only if $\text{rank}(C) = 1$, equivalently $\det(C) = 0$.**
+
+This gives the fastest computational test for entanglement:
 
 $$\det(C) = c_{00}c_{11} - c_{01}c_{10}.$$
 
-If $\det(C) \neq 0$, then $C$ has rank 2, and the state is entangled. This is the fastest computational test.
+If $\det(C) \neq 0$, the state is entangled.
 
-**Example.** Let $|\psi\rangle = \tfrac{1}{\sqrt{2}}(|00\rangle + |11\rangle)$. Then $C = \tfrac{1}{\sqrt{2}}\begin{pmatrix}1 & 0 \\ 0 & 1\end{pmatrix}$, and $\det(C) = \tfrac{1}{2} \neq 0$. Entangled.
+Two examples. For $|\psi\rangle = \tfrac{1}{\sqrt{2}}(|00\rangle + |11\rangle)$: $C = \tfrac{1}{\sqrt{2}}\bigl(\begin{smallmatrix}1&0\\0&1\end{smallmatrix}\bigr)$, $\det(C) = \tfrac{1}{2} \neq 0$ — entangled. For $|\phi\rangle = \tfrac{1}{\sqrt{2}}(|00\rangle + |10\rangle) = |{+}\rangle_A\otimes|0\rangle_B$: $C = \tfrac{1}{\sqrt{2}}\bigl(\begin{smallmatrix}1&0\\1&0\end{smallmatrix}\bigr)$, $\det(C) = 0$ — separable. The factored form $|{+}\rangle\otimes|0\rangle$ confirms it.
 
-**Example.** Let $|\phi\rangle = \tfrac{1}{\sqrt{2}}(|00\rangle + |10\rangle) = |{+}\rangle_A \otimes |0\rangle_B$. Then $C = \tfrac{1}{\sqrt{2}}\begin{pmatrix}1 & 0 \\ 1 & 0\end{pmatrix}$, and $\det(C) = 0$. Separable — and indeed, $|{+}\rangle \otimes |0\rangle$ is a product state.
+---
 
-### The Bell states
+## The Bell States
 
-The four **Bell states** are the canonical orthonormal basis of maximally entangled two-qubit states:
+The four **Bell states** are an orthonormal basis of maximally entangled two-qubit states:
 
 $$|\Phi^\pm\rangle = \frac{1}{\sqrt{2}}\bigl(|00\rangle \pm |11\rangle\bigr), \qquad |\Psi^\pm\rangle = \frac{1}{\sqrt{2}}\bigl(|01\rangle \pm |10\rangle\bigr).$$
 
-Their coefficient matrices are proportional to the identity or Pauli matrices, all with rank 2 — all maximally entangled.
+Each has a coefficient matrix proportional to a Pauli matrix or the identity, all with rank 2. For $|\Phi^+\rangle$: $C = \tfrac{1}{\sqrt{2}}\bigl(\begin{smallmatrix}1&0\\0&1\end{smallmatrix}\bigr)$, $\det(C) = \tfrac{1}{2}$. For $|\Psi^-\rangle$: $C = \tfrac{1}{\sqrt{2}}\bigl(\begin{smallmatrix}0&1\\-1&0\end{smallmatrix}\bigr)$, $\det(C) = \tfrac{1}{2}$.
 
-For each Bell state, the reduced density matrix of either qubit is $\hat\rho_{A} = \tfrac{1}{2}\hat I$ (the maximally mixed state). This was derived in Chapter 1 for $|\Phi^+\rangle$; the same calculation applies to all four Bell states. The consequence: no single-qubit measurement distinguishes between the Bell states. All the information is in the joint correlations.
+The reduced density matrix of qubit $A$ in any Bell state is $\hat\rho_A = \text{Tr}_B(|\psi\rangle\langle\psi|) = \tfrac{1}{2}\hat{I}$ — the maximally mixed state. No single-qubit measurement distinguishes among the Bell states. All the information is in the joint correlations. This is the defining feature of maximal entanglement: learning the local state of one party tells you nothing; all the information is shared.
 
-The singlet state $|\Psi^-\rangle = \tfrac{1}{\sqrt{2}}(|01\rangle - |10\rangle)$ is rotationally invariant: $(U \otimes U)|\Psi^-\rangle = (\det U)|\Psi^-\rangle$ for any $U \in SU(2)$. Its correlations depend only on the angle between measurement axes: $E(\hat a, \hat b) = -\hat a \cdot \hat b$.
+**Preparing $|\Phi^+\rangle$ from $|00\rangle$** uses two gates:
 
-**Preparing a Bell state.** Starting from $|00\rangle$, the recipe for $|\Phi^+\rangle$ uses two gates:
+$$|00\rangle \xrightarrow{H\otimes I} \frac{|00\rangle + |10\rangle}{\sqrt{2}} = |{+}\rangle_A\otimes|0\rangle_B \xrightarrow{\text{CNOT}} \frac{|00\rangle + |11\rangle}{\sqrt{2}} = |\Phi^+\rangle.$$
 
-$$|00\rangle \xrightarrow{H \otimes I} \frac{1}{\sqrt{2}}(|00\rangle + |10\rangle) = |{+}\rangle_A \otimes |0\rangle_B \xrightarrow{\text{CNOT}} \frac{1}{\sqrt{2}}(|00\rangle + |11\rangle) = |\Phi^+\rangle.$$
+After the Hadamard the state is still a product — $|{+}\rangle\otimes|0\rangle$ factors. The CNOT creates the entanglement. All four Bell states are reachable from the four computational basis states by this same circuit:
 
-After the Hadamard, the state is still separable — a product. The CNOT creates the entanglement. The Bloch vectors of $A$ and $B$, which point to the north pole before the circuit, collapse to the center (the origin, $\vec r = 0$) after the CNOT, reflecting that each qubit alone is maximally mixed.
+| Initial | After $H\otimes I$ | After CNOT | Bell state |
+|:-------:|:-----------------:|:----------:|:----------:|
+| $|00\rangle$ | $|{+}\rangle|0\rangle$ | $|\Phi^+\rangle$ | $(|00\rangle+|11\rangle)/\sqrt{2}$ |
+| $|01\rangle$ | $|{+}\rangle|1\rangle$ | $|\Psi^+\rangle$ | $(|01\rangle+|10\rangle)/\sqrt{2}$ |
+| $|10\rangle$ | $|{-}\rangle|0\rangle$ | $|\Phi^-\rangle$ | $(|00\rangle-|11\rangle)/\sqrt{2}$ |
+| $|11\rangle$ | $|{-}\rangle|1\rangle$ | $|\Psi^-\rangle$ | $(|01\rangle-|10\rangle)/\sqrt{2}$ |
 
-Starting from $|01\rangle$, $|10\rangle$, $|11\rangle$ and applying the same circuit gives $|\Psi^+\rangle$, $|\Psi^-\rangle$, $|\Phi^-\rangle$ respectively. The full table:
+The singlet $|\Psi^-\rangle = \tfrac{1}{\sqrt{2}}(|01\rangle - |10\rangle)$ is rotationally invariant: $(U\otimes U)|\Psi^-\rangle = |\Psi^-\rangle$ for any $U\in SU(2)$ (up to a global phase). Its correlations satisfy $E(\hat{a},\hat{b}) = -\hat{a}\cdot\hat{b}$ — the measurement outcomes are perfectly anticorrelated when both parties measure in the same direction, and the correlation varies with the angle between axes in exactly the way quantum mechanics (and not any local hidden-variable theory) predicts.
 
-| Initial state | After $H \otimes I$ | After CNOT | Bell state |
-|:---:|:---:|:---:|:---:|
-| $|00\rangle$ | $|{+}\rangle|0\rangle$ | $|\Phi^+\rangle$ | $(|00\rangle + |11\rangle)/\sqrt{2}$ |
-| $|01\rangle$ | $|{+}\rangle|1\rangle$ | $|\Psi^+\rangle$ | $(|01\rangle + |10\rangle)/\sqrt{2}$ |
-| $|10\rangle$ | $|{-}\rangle|0\rangle$ | $|\Phi^-\rangle$ | $(|00\rangle - |11\rangle)/\sqrt{2}$ |
-| $|11\rangle$ | $|{-}\rangle|1\rangle$ | $|\Psi^-\rangle$ | $(|01\rangle - |10\rangle)/\sqrt{2}$ |
+<!-- → [FIGURE: circuit diagram for Bell state preparation — qubit A on top wire, qubit B on bottom; gates H on qubit A, then CNOT with control A and target B; intermediate state label after H, final state label after CNOT; below the circuit, show the coefficient matrix C at each stage: diagonal-in-top-row product state after H, full-rank matrix after CNOT] -->
 
-### The Schmidt decomposition
+---
 
-The factorization-rank test works for two qubits but does not generalize gracefully to higher dimensions. The tool that generalizes is the **Schmidt decomposition**, which rests on the singular value decomposition (SVD) of the coefficient matrix.
+## The Schmidt Decomposition
 
-**Theorem (Schmidt).** Any pure bipartite state $|\psi_{AB}\rangle \in \mathcal{H}_A \otimes \mathcal{H}_B$ can be written as:
+The rank-1 test works for two qubits but does not generalize gracefully to higher dimensions or to the question of *how much* entanglement a state carries. The tool that handles both is the **Schmidt decomposition**, which follows from the singular value decomposition (SVD) of the coefficient matrix.
 
-$$|\psi_{AB}\rangle = \sum_{k=1}^{r} \sqrt{\lambda_k}\,|u_k\rangle_A \otimes |v_k\rangle_B,$$
+**Theorem.** Any pure bipartite state $|\psi_{AB}\rangle\in\mathcal{H}_A\otimes\mathcal{H}_B$ can be written as:
 
-where $\{|u_k\rangle\}$ is an orthonormal set in $\mathcal{H}_A$, $\{|v_k\rangle\}$ is an orthonormal set in $\mathcal{H}_B$, $\lambda_k > 0$, $\sum_k \lambda_k = 1$, and $r \leq \min(\dim \mathcal{H}_A, \dim \mathcal{H}_B)$ is the **Schmidt rank**.
+$$|\psi_{AB}\rangle = \sum_{k=1}^r \sqrt{\lambda_k}\,|u_k\rangle_A\otimes|v_k\rangle_B,$$
 
-**Derivation.** The coefficient matrix $C$ has a singular value decomposition: $C = U\Sigma V^\dagger$, where $U$ is unitary on $\mathcal{H}_A$, $V$ is unitary on $\mathcal{H}_B$, and $\Sigma = \text{diag}(\sqrt{\lambda_1}, \sqrt{\lambda_2}, \ldots)$ contains the singular values. Define new orthonormal bases by $|u_k\rangle_A = \sum_i U_{ik}|i\rangle_A$ and $|v_k\rangle_B = \sum_j V_{jk}|j\rangle_B$. Substituting gives the Schmidt form. The Schmidt coefficients $\sqrt{\lambda_k}$ are the singular values of $C$; the Schmidt vectors are the corresponding singular vectors. The coefficients $\{\lambda_k\}$ are the eigenvalues of the reduced density matrix $\hat\rho_A = \text{Tr}_B(|\psi\rangle\langle\psi|)$ — and also of $\hat\rho_B$.
+where $\{|u_k\rangle\}$ is orthonormal in $\mathcal{H}_A$, $\{|v_k\rangle\}$ is orthonormal in $\mathcal{H}_B$, $\lambda_k > 0$, $\sum_k\lambda_k = 1$, and $r \leq \min(\dim\mathcal{H}_A, \dim\mathcal{H}_B)$ is the **Schmidt rank**.
 
-**Entanglement criterion from Schmidt rank:**
-- Schmidt rank $= 1$: product state. Exactly one term; $|u_1\rangle_A|v_1\rangle_B$ is the factored form.
+The derivation is direct. Write $C = U\Sigma V^\dagger$ (SVD), where $U$ is unitary on $\mathcal{H}_A$, $V$ on $\mathcal{H}_B$, and $\Sigma = \text{diag}(\sqrt{\lambda_1}, \sqrt{\lambda_2}, \ldots)$. Define $|u_k\rangle_A = \sum_i U_{ik}|i\rangle_A$ and $|v_k\rangle_B = \sum_j V_{jk}|j\rangle_B$. The original state expressed in these new bases takes the Schmidt form. The Schmidt coefficients $\sqrt{\lambda_k}$ are the singular values of $C$; the coefficients $\{\lambda_k\}$ are the eigenvalues of the reduced density matrix $\hat\rho_A = \text{Tr}_B(|\psi\rangle\langle\psi|)$ — and also of $\hat\rho_B$.
+
+The entanglement criterion follows immediately:
+
+- Schmidt rank 1: product state (a single term, $C$ has rank 1, $\hat\rho_A$ is pure).
 - Schmidt rank $\geq 2$: entangled.
 
-This is the most powerful single diagnostic. For any pure bipartite state, you do not need to try all possible factorizations; you compute one SVD.
+For any pure bipartite state, you do not need to try all possible factorizations. You compute one SVD. The Schmidt rank is the answer.
 
-### Entanglement entropy
+Local unitaries — operations of the form $U_A\otimes U_B$ — change the Schmidt vectors $|u_k\rangle_A$ and $|v_k\rangle_B$ but leave the Schmidt coefficients $\{\lambda_k\}$ unchanged. This is why entanglement cannot be created by local operations alone: no product $U_A\otimes U_B$ can change the singular values of $C$, and therefore cannot change the Schmidt rank from 1 to anything higher.
 
-The **Schmidt coefficients** $\{\lambda_k\}$ quantify *how much* entanglement a state carries. The canonical scalar measure is the **entanglement entropy** (von Neumann entropy of the reduced state):
+<!-- → [FIGURE: visual of the SVD of C — showing C as a 2×2 complex matrix, then decomposed as U·Σ·V†; Σ is diagonal with the two Schmidt coefficients √λ₁ and √λ₂; the two columns of U label the Schmidt states |u₁⟩ and |u₂⟩ for qubit A; the two columns of V label |v₁⟩ and |v₂⟩ for qubit B; the visual goal is to make the connection between SVD and Schmidt decomposition explicit] -->
 
-$$S_E = -\sum_k \lambda_k \log_2 \lambda_k = -\text{Tr}(\hat\rho_A \log_2 \hat\rho_A).$$
+---
+
+## Entanglement Entropy
+
+The Schmidt coefficients $\{\lambda_k\}$ quantify *how much* entanglement a state carries. The canonical scalar measure is the **entanglement entropy** — the von Neumann entropy of either reduced state:
+
+$$S_E = -\sum_k \lambda_k\log_2\lambda_k = -\text{Tr}(\hat\rho_A\log_2\hat\rho_A).$$
 
 Properties:
-- $S_E = 0$ for product states (one $\lambda_k = 1$, all others $0$; $0 \log 0 \equiv 0$).
-- $S_E = \log_2 r$ at maximum, achieved when all $r$ Schmidt coefficients are equal: $\lambda_k = 1/r$.
-- For a two-qubit state ($r \leq 2$), the maximum is $\log_2 2 = 1$ **ebit**, achieved by the four Bell states.
-- Partially entangled states have $0 < S_E < 1$ ebit.
 
-The entanglement entropy is the unique measure of entanglement for pure bipartite states under the axioms of LOCC (local operations and classical communication) monotonicity. If you can distill or dilute entanglement using only local operations and classical communication, $S_E$ is the rate at which Bell pairs convert into the state or vice versa.
+$S_E = 0$ for product states (one $\lambda_k = 1$, all others zero; by convention $0\log_2 0 = 0$).
 
----
+$S_E = \log_2 r$ at maximum, achieved when all $r$ Schmidt coefficients are equal: $\lambda_k = 1/r$. For two qubits ($r \leq 2$), the maximum is $\log_2 2 = 1$ **ebit**, achieved by the Bell states.
 
-## Worked example: Schmidt-decompose a two-qubit state and read off entanglement
+$0 < S_E < 1$ ebit for partially entangled two-qubit states.
 
-**The state.** Consider:
+The entanglement entropy is the unique measure of entanglement for pure bipartite states under the axioms of LOCC (local operations and classical communication). If you distill or dilute entanglement using only local operations and classical communication, $S_E$ is the rate at which Bell pairs convert: one ebit of $S_E$ in the state corresponds, asymptotically in the number of copies, to exactly one Bell pair.
 
-$$|\psi\rangle = \frac{1}{2}|00\rangle + \frac{1}{2}|01\rangle + \frac{1}{2}|10\rangle - \frac{1}{2}|11\rangle.$$
+For a state $|\psi\rangle = \cos\theta|00\rangle + \sin\theta|11\rangle$ with $\theta\in[0,\pi/4]$:
 
-**Step 1: Write the coefficient matrix.**
+$$S_E(\theta) = -\cos^2\theta\,\log_2(\cos^2\theta) - \sin^2\theta\,\log_2(\sin^2\theta).$$
 
-$$C = \begin{pmatrix}c_{00} & c_{01} \\ c_{10} & c_{11}\end{pmatrix} = \frac{1}{2}\begin{pmatrix}1 & 1 \\ 1 & -1\end{pmatrix}.$$
-
-Verify normalization: $\|C\|_F^2 = \sum_{ij}|c_{ij}|^2 = 4 \cdot \tfrac{1}{4} = 1$. Good.
-
-**Step 2: Compute $C^\dagger C$.**
-
-$$C^\dagger C = \frac{1}{4}\begin{pmatrix}1 & 1 \\ 1 & -1\end{pmatrix}^\dagger \begin{pmatrix}1 & 1 \\ 1 & -1\end{pmatrix} = \frac{1}{4}\begin{pmatrix}1 & 1 \\ 1 & -1\end{pmatrix}\begin{pmatrix}1 & 1 \\ 1 & -1\end{pmatrix} = \frac{1}{4}\begin{pmatrix}2 & 0 \\ 0 & 2\end{pmatrix} = \frac{1}{2}\hat I.$$
-
-**Step 3: Find the eigenvalues $\lambda_k$.**
-
-$C^\dagger C = \tfrac{1}{2}\hat I$ has eigenvalues $\lambda_1 = \lambda_2 = \tfrac{1}{2}$.
-
-**Step 4: Find the singular vectors.**
-
-Since $C^\dagger C = \tfrac{1}{2}\hat I$, every vector is an eigenvector. We can choose any orthonormal pair. Take $V = \hat I$ (the identity), so $|v_1\rangle_B = |0\rangle$, $|v_2\rangle_B = |1\rangle$.
-
-The left singular vectors come from $C|v_k\rangle = \sqrt{\lambda_k}|u_k\rangle$:
-
-$$C|0\rangle = \frac{1}{2}\begin{pmatrix}1 \\ 1\end{pmatrix} = \frac{1}{\sqrt{2}} \cdot \frac{1}{\sqrt{2}}\begin{pmatrix}1 \\ 1\end{pmatrix} \implies |u_1\rangle_A = \frac{1}{\sqrt{2}}\begin{pmatrix}1 \\ 1\end{pmatrix} = |{+}\rangle.$$
-
-$$C|1\rangle = \frac{1}{2}\begin{pmatrix}1 \\ -1\end{pmatrix} = \frac{1}{\sqrt{2}} \cdot \frac{1}{\sqrt{2}}\begin{pmatrix}1 \\ -1\end{pmatrix} \implies |u_2\rangle_A = \frac{1}{\sqrt{2}}\begin{pmatrix}1 \\ -1\end{pmatrix} = |{-}\rangle.$$
-
-**Step 5: Write the Schmidt decomposition.**
-
-$$|\psi\rangle = \frac{1}{\sqrt{2}}\,|{+}\rangle_A|0\rangle_B + \frac{1}{\sqrt{2}}\,|{-}\rangle_A|1\rangle_B.$$
-
-Verify by expanding: $\tfrac{1}{\sqrt{2}}\cdot\tfrac{1}{\sqrt{2}}|00\rangle + \tfrac{1}{\sqrt{2}}\cdot\tfrac{1}{\sqrt{2}}|10\rangle + \tfrac{1}{\sqrt{2}}\cdot\tfrac{1}{\sqrt{2}}|01\rangle - \tfrac{1}{\sqrt{2}}\cdot\tfrac{1}{\sqrt{2}}|11\rangle = \tfrac{1}{2}|00\rangle + \tfrac{1}{2}|01\rangle + \tfrac{1}{2}|10\rangle - \tfrac{1}{2}|11\rangle$. Confirmed.
-
-**The lesson.** Schmidt rank $= 2$, so the state is **entangled**. The Schmidt coefficients are $\lambda_1 = \lambda_2 = \tfrac{1}{2}$, equal — so the entanglement entropy is:
-
-$$S_E = -\frac{1}{2}\log_2\frac{1}{2} - \frac{1}{2}\log_2\frac{1}{2} = 1 \text{ ebit.}$$
-
-This state is **maximally entangled** for two qubits — it carries the same amount of entanglement as a Bell state (and in fact is equivalent to a Bell state up to local unitaries: the Schmidt decomposition $|{+}\rangle|0\rangle + |{-}\rangle|1\rangle$ relates to the Bell basis by a local rotation on qubit $A$).
-
-**The limit.** Now consider the partially entangled state $|\chi\rangle = \tfrac{\sqrt{3}}{2}|00\rangle + \tfrac{1}{2}|11\rangle$. The coefficient matrix is $C = \begin{pmatrix}\sqrt{3}/2 & 0 \\ 0 & 1/2\end{pmatrix}$, already diagonal. Schmidt rank $= 2$ (both diagonal entries nonzero), so entangled. Schmidt coefficients: $\lambda_1 = 3/4$, $\lambda_2 = 1/4$.
-
-$$S_E = -\frac{3}{4}\log_2\frac{3}{4} - \frac{1}{4}\log_2\frac{1}{4} \approx 0.311 + 0.500 = 0.811 \text{ ebits.}$$
-
-Less than 1 ebit — not maximally entangled. The asymmetric Schmidt coefficients tell you that qubit $A$ leans toward the $|0\rangle$ outcome: more information is available locally, so there is less to gain from the correlations. Entanglement entropy captures exactly this tradeoff.
+At $\theta = 0$: $S_E = 0$ (pure product state $|00\rangle$). At $\theta = \pi/4$: $\lambda_1 = \lambda_2 = \tfrac{1}{2}$ and $S_E = 1$ ebit (Bell state $|\Phi^+\rangle$). The maximum is achieved when neither Schmidt coefficient dominates — when the state is as spread as possible across the two terms. That uniformity of the Schmidt coefficients is the mathematical expression of maximal entanglement.
 
 ---
 
-## Common misconceptions
+## Worked Example: Schmidt Decomposition and Entanglement Entropy
 
-**"Any strongly correlated state is entangled."**
-No. The state $\hat\rho = \tfrac{1}{2}|00\rangle\langle 00| + \tfrac{1}{2}|11\rangle\langle 11|$ (a mixed state) is perfectly correlated — measuring $A$ in the $z$-basis tells you the outcome for $B$ with certainty. But it is separable: it is a classical mixture $\tfrac{1}{2}\hat\rho_0 \otimes \hat\rho_0 + \tfrac{1}{2}\hat\rho_1 \otimes \hat\rho_1$, which factors as a convex combination of product states. No Schmidt decomposition of a pure state is involved. The separability of mixed states requires a different criterion (the Peres–Horodecki PPT criterion, which is necessary and sufficient for $2 \times 2$ and $2 \times 3$ systems).
+**The state:**
 
-**"The Schmidt decomposition depends on which party is $A$ and which is $B$."**
-The Schmidt *coefficients* $\{\lambda_k\}$ are fixed by the state and the bipartition. If you swap the roles of $A$ and $B$, the same singular values appear (now of $C^T$ instead of $C$, but $C$ and $C^T$ have the same singular values). What changes is the labeling of which Schmidt vectors belong to $A$ and which to $B$. The entanglement entropy — which depends only on $\{\lambda_k\}$ — is the same regardless.
+$$|\psi\rangle = \tfrac{1}{2}|00\rangle + \tfrac{1}{2}|01\rangle + \tfrac{1}{2}|10\rangle - \tfrac{1}{2}|11\rangle.$$
 
-**"Schmidt rank 2 tells you how entangled the state is."**
-Schmidt rank is binary for the *type* of entanglement (product vs. entangled), but it does not measure the *amount*. Both $|\Phi^+\rangle$ (maximally entangled, $S_E = 1$ ebit) and $|\chi\rangle = \tfrac{\sqrt{3}}{2}|00\rangle + \tfrac{1}{2}|11\rangle$ (partially entangled, $S_E \approx 0.811$ ebits) have Schmidt rank 2. The quantitative measure is the entanglement entropy, not just the rank.
+**Coefficient matrix:**
 
-**"You can prepare any entangled state by applying a unitary to a product state."**
-True — any state in $\mathcal{H}_A \otimes \mathcal{H}_B$ is reachable from any other by a global unitary. But the important constraint is that entanglement cannot be increased by *local* unitaries (unitaries of the form $U_A \otimes U_B$). Local unitaries change the Schmidt vectors but not the Schmidt coefficients, so they leave $S_E$ unchanged. Creating entanglement requires a genuinely two-body gate — like the CNOT.
+$$C = \frac{1}{2}\begin{pmatrix}1 & 1 \\ 1 & -1\end{pmatrix}.$$
 
-**"The four Bell states are the only maximally entangled two-qubit states."**
-No. Any state of the form $(U_A \otimes U_B)|\Phi^+\rangle$ is maximally entangled, for any single-qubit unitaries $U_A$, $U_B$. There is a whole two-qubit-parameter family of maximally entangled states, all related by local rotations. The four Bell states are a convenient orthonormal basis for this family, but not its entirety.
+Normalization check: $\|C\|_F^2 = 4\times\tfrac{1}{4} = 1$. Good.
+
+**Compute $C^\dagger C$:**
+
+$$C^\dagger C = \frac{1}{4}\begin{pmatrix}1 & 1 \\ 1 & -1\end{pmatrix}\begin{pmatrix}1 & 1 \\ 1 & -1\end{pmatrix} = \frac{1}{4}\begin{pmatrix}2 & 0 \\ 0 & 2\end{pmatrix} = \frac{1}{2}\hat{I}.$$
+
+**Eigenvalues:** $C^\dagger C = \tfrac{1}{2}\hat{I}$ has eigenvalues $\lambda_1 = \lambda_2 = \tfrac{1}{2}$.
+
+**Schmidt vectors:** Choose $|v_1\rangle_B = |0\rangle$ and $|v_2\rangle_B = |1\rangle$ (any orthonormal pair works since $C^\dagger C$ is proportional to the identity). The left singular vectors come from $C|v_k\rangle = \sqrt{\lambda_k}|u_k\rangle$:
+
+$$C|0\rangle = \frac{1}{2}\begin{pmatrix}1\\1\end{pmatrix} = \frac{1}{\sqrt{2}}\cdot\frac{1}{\sqrt{2}}\begin{pmatrix}1\\1\end{pmatrix} \implies |u_1\rangle_A = \frac{1}{\sqrt{2}}\begin{pmatrix}1\\1\end{pmatrix} = |{+}\rangle.$$
+
+$$C|1\rangle = \frac{1}{2}\begin{pmatrix}1\\-1\end{pmatrix} = \frac{1}{\sqrt{2}}\cdot\frac{1}{\sqrt{2}}\begin{pmatrix}1\\-1\end{pmatrix} \implies |u_2\rangle_A = \frac{1}{\sqrt{2}}\begin{pmatrix}1\\-1\end{pmatrix} = |{-}\rangle.$$
+
+**Schmidt decomposition:**
+
+$$|\psi\rangle = \frac{1}{\sqrt{2}}|{+}\rangle_A|0\rangle_B + \frac{1}{\sqrt{2}}|{-}\rangle_A|1\rangle_B.$$
+
+Verify: expanding gives $\tfrac{1}{2}|00\rangle + \tfrac{1}{2}|01\rangle + \tfrac{1}{2}|10\rangle - \tfrac{1}{2}|11\rangle$. Confirmed.
+
+**Entanglement entropy:**
+
+$$S_E = -\tfrac{1}{2}\log_2\tfrac{1}{2} - \tfrac{1}{2}\log_2\tfrac{1}{2} = 1\text{ ebit.}$$
+
+**The lesson.** Schmidt rank 2, equal coefficients: the state is maximally entangled. The Schmidt decomposition makes this explicit — the state is $|{+}\rangle|0\rangle + |{-}\rangle|1\rangle$ (up to the $1/\sqrt{2}$ normalization), which is related to $|\Phi^+\rangle = (|00\rangle + |11\rangle)/\sqrt{2}$ by a local rotation $H\otimes I$ on qubit $A$. It is a Bell state in disguise.
+
+**The partially entangled case.** For $|\chi\rangle = \tfrac{\sqrt{3}}{2}|00\rangle + \tfrac{1}{2}|11\rangle$: the coefficient matrix $C = \bigl(\begin{smallmatrix}\sqrt{3}/2 & 0 \\ 0 & 1/2\end{smallmatrix}\bigr)$ is already diagonal, so the SVD is immediate. Schmidt coefficients: $\lambda_1 = 3/4$, $\lambda_2 = 1/4$.
+
+$$S_E = -\tfrac{3}{4}\log_2\tfrac{3}{4} - \tfrac{1}{4}\log_2\tfrac{1}{4} \approx 0.811\text{ ebits.}$$
+
+Less than 1 ebit. The asymmetric Schmidt coefficients tell you that qubit $A$ leans toward the $|0\rangle$ outcome: more information is available locally, so less is locked in the correlations. Entanglement entropy captures exactly this trade-off between local information and joint correlations.
 
 ---
 
 ## Exercises
 
-### Warm-up
+**Warm-up**
 
-1. *[Tests: tensor product dimension, basis states]* System $A$ is a qutrit (three levels: $|0\rangle_A, |1\rangle_A, |2\rangle_A$) and system $B$ is a qubit ($|0\rangle_B, |1\rangle_B$). (a) Write all basis states of $\mathcal{H}_A \otimes \mathcal{H}_B$. (b) What is the dimension of the joint Hilbert space? (c) Is the state $|\psi\rangle = \tfrac{1}{\sqrt{3}}(|00\rangle + |10\rangle + |21\rangle)$ normalized? (d) Write the $3 \times 2$ coefficient matrix $C$ for $|\psi\rangle$. *Difficulty: warm-up.*
+1. *Difficulty: Warm-up — tests tensor product dimension and coefficient matrix.*
+   System $A$ is a qutrit ($|0\rangle_A, |1\rangle_A, |2\rangle_A$) and $B$ is a qubit ($|0\rangle_B, |1\rangle_B$). (a) Write all basis states of $\mathcal{H}_A\otimes\mathcal{H}_B$. (b) What is the dimension? (c) Is $|\psi\rangle = \tfrac{1}{\sqrt{3}}(|00\rangle + |10\rangle + |21\rangle)$ normalized? (d) Write the $3\times2$ coefficient matrix $C$ for $|\psi\rangle$.
+   *Tests: tensor product as a product (not sum) of dimensions; construction of the coefficient matrix for a non-square case.*
 
-2. *[Tests: separability via factorization test, determinant]* For each of the following two-qubit states, determine whether the state is entangled by computing the determinant of the coefficient matrix. Show all work. (a) $|\psi_1\rangle = \tfrac{1}{\sqrt{2}}|00\rangle + \tfrac{1}{\sqrt{2}}|01\rangle$. (b) $|\psi_2\rangle = \tfrac{1}{\sqrt{2}}|00\rangle + \tfrac{1}{\sqrt{2}}|11\rangle$. (c) $|\psi_3\rangle = \tfrac{1}{2}|00\rangle + \tfrac{i}{2}|01\rangle + \tfrac{i}{2}|10\rangle - \tfrac{1}{2}|11\rangle$. *Difficulty: warm-up.*
+2. *Difficulty: Warm-up — tests the determinant entanglement test.*
+   For each two-qubit state, determine whether it is entangled by computing $\det(C)$. Show all work. (a) $|\psi_1\rangle = \tfrac{1}{\sqrt{2}}|00\rangle + \tfrac{1}{\sqrt{2}}|01\rangle$. (b) $|\psi_2\rangle = \tfrac{1}{\sqrt{2}}|00\rangle + \tfrac{1}{\sqrt{2}}|11\rangle$. (c) $|\psi_3\rangle = \tfrac{1}{2}|00\rangle + \tfrac{i}{2}|01\rangle + \tfrac{i}{2}|10\rangle - \tfrac{1}{2}|11\rangle$.
+   *Tests: the rank-1 / determinant criterion; handling complex coefficients.*
 
-3. *[Tests: Bell state preparation, CNOT action]* Starting from the computational basis state $|11\rangle$, apply $H \otimes I$ followed by CNOT (control = qubit 0, target = qubit 1). (a) Write the state after each gate. (b) Identify the resulting Bell state. (c) Compute the coefficient matrix and verify its determinant is nonzero. *Difficulty: warm-up.*
+3. *Difficulty: Warm-up — tests Bell state preparation by circuit.*
+   Starting from $|11\rangle$, apply $H\otimes I$ then CNOT (control = qubit $A$, target = qubit $B$). (a) Write the state after each gate. (b) Identify the resulting Bell state. (c) Compute $\det(C)$ and verify it is nonzero.
+   *Tests: step-by-step circuit evolution; identifying which gate creates entanglement.*
 
-### Application
+**Application**
 
-4. *[Tests: Schmidt decomposition, SVD procedure]* Find the Schmidt decomposition of $|\psi\rangle = \tfrac{1}{\sqrt{2}}|00\rangle + \tfrac{i}{\sqrt{2}}|11\rangle$. (a) Write the coefficient matrix $C$. (b) Compute $C^\dagger C$ and find its eigenvalues $\lambda_k$. (c) Find the Schmidt vectors $|u_k\rangle_A$ and $|v_k\rangle_B$. (d) Write the Schmidt form. (e) Compute the entanglement entropy. *Difficulty: application.*
+4. *Difficulty: Application — full Schmidt decomposition.*
+   Find the Schmidt decomposition of $|\psi\rangle = \tfrac{1}{\sqrt{2}}|00\rangle + \tfrac{i}{\sqrt{2}}|11\rangle$. (a) Write $C$. (b) Compute $C^\dagger C$ and find its eigenvalues $\lambda_k$. (c) Find the Schmidt vectors $|u_k\rangle_A$ and $|v_k\rangle_B$. (d) Write the Schmidt form. (e) Compute $S_E$.
+   *Tests: SVD-based Schmidt decomposition with a complex coefficient; verifying the decomposition by re-expansion.*
 
-5. *[Tests: entanglement entropy, partial entanglement]* A two-qubit state has Schmidt decomposition $|\psi\rangle = \cos\theta\,|00\rangle + \sin\theta\,|11\rangle$ for $\theta \in [0, \pi/4]$. (a) Compute the entanglement entropy $S_E(\theta) = -\cos^2\theta\,\log_2(\cos^2\theta) - \sin^2\theta\,\log_2(\sin^2\theta)$. (b) At what value of $\theta$ is $S_E$ maximized? What is the maximum? (c) Evaluate $S_E$ at $\theta = 0$, $\theta = \pi/6$, and $\theta = \pi/4$. (d) Explain in one sentence why $\theta = \pi/4$ gives the most entanglement. *Difficulty: application.*
+5. *Difficulty: Application — entanglement entropy as a function of angle.*
+   A two-qubit state is $|\psi\rangle = \cos\theta|00\rangle + \sin\theta|11\rangle$ for $\theta\in[0,\pi/4]$. (a) Compute $S_E(\theta) = -\cos^2\theta\log_2(\cos^2\theta) - \sin^2\theta\log_2(\sin^2\theta)$. (b) At what $\theta$ is $S_E$ maximized, and what is the maximum? (c) Evaluate $S_E$ at $\theta = 0$, $\pi/6$, $\pi/4$. (d) Explain in one sentence why $\theta = \pi/4$ gives the most entanglement in terms of the Schmidt coefficients.
+   *Tests: computing entropy as a function of a continuous parameter; identifying the maximum; connecting the answer to coefficient uniformity.*
 
-6. *[Tests: reduced density matrix from Schmidt decomposition, purity]* For the state $|\psi\rangle = \tfrac{\sqrt{3}}{2}|00\rangle + \tfrac{1}{2}|11\rangle$, (a) compute the reduced density matrix $\hat\rho_A = \text{Tr}_B(|\psi\rangle\langle\psi|)$ directly from the partial trace, (b) verify that its eigenvalues match the Schmidt coefficients $\lambda_1 = 3/4, \lambda_2 = 1/4$, (c) compute the purity $\text{Tr}(\hat\rho_A^2)$, and (d) compute $S_E$ using the eigenvalues. *Difficulty: application.*
+6. *Difficulty: Application — reduced density matrix and purity.*
+   For $|\psi\rangle = \tfrac{\sqrt{3}}{2}|00\rangle + \tfrac{1}{2}|11\rangle$: (a) compute $\hat\rho_A = \text{Tr}_B(|\psi\rangle\langle\psi|)$ by direct partial trace; (b) verify its eigenvalues are $\lambda_1 = 3/4$ and $\lambda_2 = 1/4$; (c) compute the purity $\text{Tr}(\hat\rho_A^2)$; (d) compute $S_E$ from the eigenvalues.
+   *Tests: partial trace computation; connecting the reduced density matrix to the Schmidt coefficients; purity as a measure of mixedness.*
 
-### Synthesis and beyond
+**Synthesis**
 
-7. *[Tests: LOCC invariance of entanglement entropy, local unitaries]* (a) Show that applying a local unitary $U_A \otimes I_B$ to a pure state $|\psi\rangle$ does not change the Schmidt coefficients $\{\lambda_k\}$ or the entanglement entropy $S_E$. (b) Argue from this that entanglement cannot be created by local operations alone — not local unitaries, and not local measurements with classical communication (LOCC). (c) Identify which gate in the Bell preparation circuit $H \to \text{CNOT}$ is not a local operation, and explain why it can create entanglement. *Difficulty: synthesis.*
+7. *Difficulty: Synthesis — LOCC invariance and why CNOT creates entanglement.*
+   (a) Show that applying a local unitary $U_A\otimes I_B$ to a pure state $|\psi\rangle$ does not change the Schmidt coefficients $\{\lambda_k\}$ or the entanglement entropy $S_E$. (b) Argue from this that entanglement cannot be created by local operations — neither local unitaries nor local measurements with classical communication (LOCC). (c) In the Bell preparation circuit $H \to \text{CNOT}$, identify which gate is not a local operation and explain why it can create entanglement while $H\otimes I$ cannot.
+   *Tests: the invariance of Schmidt coefficients under local unitaries; connecting this to the impossibility of creating entanglement locally; identifying the non-local gate.*
 
-8. *[Tests: multipartite entanglement, beyond two parties; produce]* The **GHZ state** of three qubits is $|\text{GHZ}\rangle = \tfrac{1}{\sqrt{2}}(|000\rangle + |111\rangle)$. (a) Choose the bipartition $A = \{\text{qubit 1}\}$ and $BC = \{\text{qubits 2, 3}\}$. Write the coefficient matrix (this is a $2 \times 4$ matrix). (b) Perform the Schmidt decomposition across this bipartition and compute the entanglement entropy $S_E(A : BC)$. (c) Now choose the bipartition $AB = \{\text{qubits 1, 2}\}$ and $C = \{\text{qubit 3}\}$. Compute $S_E(AB : C)$. (d) The three results $S_E(A:BC)$, $S_E(B:AC)$, $S_E(AB:C)$ together characterize the tripartite entanglement structure of the GHZ state. Report all three and comment on the pattern. *Difficulty: synthesis.*
+8. *Difficulty: Synthesis — GHZ state and bipartite entanglement across different cuts.*
+   The three-qubit GHZ state is $|\text{GHZ}\rangle = \tfrac{1}{\sqrt{2}}(|000\rangle + |111\rangle)$. (a) Choose bipartition $A = \{\text{qubit 1}\}$, $BC = \{\text{qubits 2,3}\}$. Write the $2\times4$ coefficient matrix. Perform the Schmidt decomposition and compute $S_E(A:BC)$. (b) Choose bipartition $AB = \{\text{qubits 1,2}\}$, $C = \{\text{qubit 3}\}$. Compute $S_E(AB:C)$. (c) The three results $S_E(A:BC)$, $S_E(B:AC)$, $S_E(AB:C)$ characterize the tripartite entanglement structure. Report all three and describe the pattern.
+   *Tests: Schmidt decomposition for non-square coefficient matrices; bipartition-dependence of entanglement entropy; characterizing multipartite entanglement.*
+
+**Challenge**
+
+9. *Difficulty: Challenge — the singlet and Bell inequality violation.*
+   The singlet state $|\Psi^-\rangle = \tfrac{1}{\sqrt{2}}(|01\rangle - |10\rangle)$ satisfies the CHSH inequality with equality for the optimal measurement settings. (a) Compute the CHSH parameter $\mathcal{S} = E(\hat{a},\hat{b}) - E(\hat{a},\hat{b}') + E(\hat{a}',\hat{b}) + E(\hat{a}',\hat{b}')$ for the settings $\hat{a} = \hat{z}$, $\hat{a}' = \hat{x}$, $\hat{b} = (\hat{z}+\hat{x})/\sqrt{2}$, $\hat{b}' = (\hat{z}-\hat{x})/\sqrt{2}$. Use $E(\hat{a},\hat{b}) = \langle\Psi^-|(\hat{a}\cdot\vec{\sigma})\otimes(\hat{b}\cdot\vec{\sigma})|\Psi^-\rangle = -\hat{a}\cdot\hat{b}$. (b) Show $|\mathcal{S}| = 2\sqrt{2}$, the Tsirelson bound. (c) The classical local-hidden-variable bound is $|\mathcal{S}| \leq 2$. By how much does the singlet exceed it? (d) The Hensen et al. (2015) loophole-free Bell experiment measured $\mathcal{S} = 2.42 \pm 0.20$, consistent with quantum mechanics. Explain in one sentence what "loophole-free" means and why earlier Bell tests needed that qualifier.
+   *Tests: CHSH computation with the singlet; connecting entanglement to Bell inequality violation; the Tsirelson bound; experimental context.*
 
 ---
 
-## Still puzzling
+## LLM Exercises
 
-Entanglement entropy is the right measure of entanglement for pure bipartite states. For mixed states, no single measure does the same job. The **entanglement of formation** asks how many Bell pairs it takes to prepare a given mixed state on average; the **distillable entanglement** asks how many Bell pairs you can extract from many copies of the state. These two quantities are not equal in general — there is a gap between what entanglement costs to create and what it yields when you try to distill it. For pure states, both measures equal $S_E$. For mixed states, the gap represents entanglement that is locked in the state and cannot be concentrated into Bell pairs by any LOCC procedure. The existence of this bound entanglement — entanglement that cannot be distilled — was proven by the Horodecki family in 1998 and remains one of the stranger features of quantum information theory. It means that entanglement is not a simple resource like energy; you can have it without being able to spend it.
+The following exercises are designed to be worked with a large language model as a thinking partner — not to obtain derivations, but to probe reasoning, check algebra, and explore the limits of what the chapter established.
 
-The even harder problem: what is the right definition of entanglement for three or more parties? Three qubits have at least two inequivalent classes of entanglement — the GHZ class $\tfrac{1}{\sqrt{2}}(|000\rangle + |111\rangle)$ and the W class $\tfrac{1}{\sqrt{3}}(|001\rangle + |010\rangle + |100\rangle)$ — which cannot be interconverted by LOCC. For four parties and above, the classification is not complete. The bipartite story is closed; the multipartite story is still being written.
+1. Ask an LLM to explain the difference between a direct sum $\mathcal{H}_A\oplus\mathcal{H}_B$ and a tensor product $\mathcal{H}_A\otimes\mathcal{H}_B$ for two qubits. The answer should note that both give four-dimensional spaces for two qubits (since $2+2 = 2\times2 = 4$), but for a qubit and a qutrit they differ ($2+3 = 5$ vs. $2\times3 = 6$). Ask it to identify which structure allows entanglement and why.
 
----
+2. Ask an LLM to carry out the Schmidt decomposition of the state $|\psi\rangle = \tfrac{1}{2}|00\rangle + \tfrac{1}{2}|01\rangle + \tfrac{1}{2}|10\rangle - \tfrac{1}{2}|11\rangle$ step by step, matching the worked example in the chapter. Check every matrix multiplication. If it obtains different Schmidt vectors, verify whether they are related to the chapter's answer by a phase or by a different choice of degenerate subspace, and whether the Schmidt coefficients agree.
 
-## The +1 — Simulation Exercise
+3. Ask an LLM to prove that the entanglement entropy $S_E$ is invariant under local unitaries $U_A\otimes U_B$. The proof should go through: (a) the singular values of $C$ are unchanged when $C$ is replaced by $U_A C U_B^\dagger$; (b) $S_E$ depends only on the singular values; therefore $S_E$ is unchanged. Ask it to identify where in the argument the unitarity of $U_A$ and $U_B$ is used.
 
-### The prompt (paste directly into Claude Code or your preferred LLM coding assistant)
+4. Ask an LLM to explain what "bound entanglement" means and why it matters. The answer should distinguish between entanglement of formation (cost to prepare a mixed state) and distillable entanglement (yield when you try to extract Bell pairs), and explain that bound entanglement is the gap where cost exceeds yield. Ask whether a pure state can have bound entanglement, and why or why not.
 
-```
-Build me a single self-contained HTML file called 03-entanglement-explorer.html using
-D3 v7 from a CDN, no other dependencies.
-
-The simulation has three panels stacked vertically in one page (total width 700 px):
-
-PANEL A — State constructor (700 x 200).
-Four complex amplitude inputs for c_00, c_01, c_10, c_11.
-Each has two text fields: Re and Im parts.
-A "Normalize" button rescales so sum |c_ij|^2 = 1.
-A state preset dropdown with options:
-  |00> (product),  |+>|0> (product),  |Phi+> (Bell), |Phi-> (Bell),
-  |Psi+> (Bell), |Psi-> (Bell),
-  "Partially entangled (sqrt(3)/2 |00> + 1/2 |11>)",
-  "Maximally entangled (not Bell)  (1/2|00> + 1/2|01> + 1/2|10> - 1/2|11>)"
-Update all inputs when a preset is selected.
-
-PANEL B — Coefficient matrix visualization (700 x 200).
-Draw the 2x2 coefficient matrix C as a grid of four cells.
-Each cell shows:
-  - A filled square whose area is proportional to |c_ij|^2
-    (max area = 50x50 px for |c_ij| = 1).
-  - The complex value written as "a + bi" below.
-  - An arc showing the phase angle (0 to 2pi, displayed in degrees).
-Below the matrix show:
-  det(C) = c00*c11 - c01*c10 (real and imaginary parts, 4 decimal places).
-  |det(C)| displayed as a number.
-  Label in green "SEPARABLE" if |det(C)| < 0.001, else in red "ENTANGLED".
-
-PANEL C — Schmidt decomposition and entanglement entropy (700 x 300).
-Compute the SVD of C: C = U * Sigma * V_dagger.
-  Sigma diagonal entries are the Schmidt coefficients sqrt(lambda_1), sqrt(lambda_2).
-  Display lambda_1 and lambda_2 as bar charts (horizontal bars, 0 to 1 range).
-  Below each bar: the numerical value to 4 decimal places.
-
-Display the Schmidt rank: count of lambda_k > 0.001.
-
-Compute and display:
-  Entanglement entropy S_E = -sum_k lambda_k * log2(lambda_k) in bits.
-    Use the convention 0 * log2(0) = 0.
-  Display to 4 decimal places.
-  Color code: 0.000 = dark green ("product state"), 1.000 = deep blue
-    ("maximally entangled"), intermediate = interpolated color.
-
-Display the Schmidt decomposition in text form:
-  |psi> = sqrt(lambda_1) |u_1>_A |v_1>_B + sqrt(lambda_2) |u_2>_A |v_2>_B
-  where |u_k> and |v_k> are displayed as 2-component complex vectors
-  [Re(u_k[0]) + i Im(u_k[0]), Re(u_k[1]) + i Im(u_k[1])] to 3 decimal places.
-
-Below the Schmidt decomposition show the reduced density matrix rho_A:
-  rho_A = sum_k lambda_k |u_k><u_k|
-  Display as a 2x2 matrix with entries to 3 decimal places (real and imaginary parts).
-  Display Tr(rho_A^2) as the purity.
-  Verify Tr(rho_A) = 1.000 to 3 decimal places and display a warning if not.
-
-Physics rules:
-1. Normalization: sum |c_ij|^2 must equal 1 within 1e-4 after every computation.
-   Display a red warning "NOT NORMALIZED" if violated.
-2. SVD must produce non-negative singular values in descending order.
-   Verify sqrt(lambda_1) >= sqrt(lambda_2) >= 0.
-3. Entanglement entropy must satisfy 0 <= S_E <= log2(2) = 1 for two qubits.
-   Display a warning if violated.
-4. Purity of rho_A must satisfy 0.5 <= Tr(rho_A^2) <= 1.
-   (0.5 for maximally entangled, 1 for product state.)
-5. Schmidt rank is 1 if and only if |det(C)| < 1e-3.
-   Display a mismatch warning if these two criteria disagree.
-
-Implement the SVD using the Jacobi one-sided SVD algorithm for 2x2 complex matrices,
-or use the closed-form formulas for 2x2 SVD. Do NOT import any math library.
-For a 2x2 matrix C, the singular values are sqrt of the eigenvalues of C_dagger C.
-The eigenvalues of a 2x2 Hermitian matrix [[a,b],[b*,d]] are
-  ((a+d) +/- sqrt((a-d)^2 + 4|b|^2)) / 2.
-Use these to compute lambda_1, lambda_2 without external SVD routines.
-```
-
-### Exploration tasks
-
-1. Select preset $|{\Phi^+}\rangle = \tfrac{1}{\sqrt{2}}(|00\rangle + |11\rangle)$. Read off $|\det(C)|$, the Schmidt coefficients $(\lambda_1, \lambda_2)$, and $S_E$. Confirm that $S_E = 1.000$ ebit. What does the reduced density matrix $\hat\rho_A$ look like?
-
-2. Select preset $|{+}\rangle|{0}\rangle = \tfrac{1}{\sqrt{2}}(|00\rangle + |10\rangle)$ (a product state). Verify that $|\det(C)| = 0$, Schmidt rank $= 1$, and $S_E = 0$. The panel should read "SEPARABLE." Check that $\hat\rho_A$ is a pure state (purity $= 1$).
-
-3. Select "Partially entangled ($\tfrac{\sqrt{3}}{2}|00\rangle + \tfrac{1}{2}|11\rangle$)". Read off $\lambda_1$, $\lambda_2$, and $S_E$. Confirm $S_E \approx 0.811$ ebits. Can you manually adjust the amplitudes to push $S_E$ from this value toward 1 ebit? Which $c_{ij}$ do you need to change?
-
-4. Select preset "Maximally entangled (not Bell) ($\tfrac{1}{2}|00\rangle + \tfrac{1}{2}|01\rangle + \tfrac{1}{2}|10\rangle - \tfrac{1}{2}|11\rangle$)". Verify $S_E = 1.000$ ebit. Read off the Schmidt vectors $|u_1\rangle_A, |u_2\rangle_A$. Identify them as known single-qubit states. Conclude: this state is locally equivalent to a Bell state.
+5. Ask an LLM to explain the GHZ state $\tfrac{1}{\sqrt{2}}(|000\rangle + |111\rangle)$ versus the W state $\tfrac{1}{\sqrt{3}}(|001\rangle + |010\rangle + |100\rangle)$, and why these two states represent inequivalent classes of three-qubit entanglement. The answer should invoke the fact that neither can be converted to the other by LOCC, even with many copies. Ask it to compute the bipartite entanglement entropy $S_E(A:BC)$ for both states and compare.
 
 ---
 
 ## References
 
-- Nielsen, M. A., & Chuang, I. L. (2000). *Quantum Computation and Quantum Information*. Cambridge University Press. §2.5 (Schmidt decomposition), §2.4 (entanglement), §11.3.1 (entanglement entropy). [verify]
-- Preskill, J. Lecture Notes for Physics 219/CS 219: Quantum Information and Computation. Chapter 4 (superposition and entanglement). http://www.theory.caltech.edu/~preskill/ph219/ [verify]
-- Horodecki, R., Horodecki, P., Horodecki, M., & Horodecki, K. (2009). Quantum entanglement. *Reviews of Modern Physics*, 81(2), 865–942. https://doi.org/10.1103/RevModPhys.81.865 [verify]
-- Bennett, C. H., Bernstein, H. J., Popescu, S., & Schumacher, B. (1996). Concentrating partial entanglement by local operations. *Physical Review A*, 53(4), 2046–2052. https://doi.org/10.1103/PhysRevA.53.2046 [verify]
-- Wootters, W. K. (1998). Entanglement of formation of an arbitrary state of two qubits. *Physical Review Letters*, 80(10), 2245–2248. https://doi.org/10.1103/PhysRevLett.80.2245 [verify]
-- Wootters, W. K., & Zurek, W. H. (1982). A single quantum cannot be cloned. *Nature*, 299, 802–803. https://doi.org/10.1038/299802a0 [verify]
-- Hensen, B., Bernien, H., Dréau, A. E., Reiserer, A., Kalb, N., et al. (2015). Loophole-free Bell inequality violation using electron spins separated by 1.3 kilometres. *Nature*, 526, 682–686. https://doi.org/10.1038/nature15759 [verify]
-- Horodecki, M., Horodecki, P., & Horodecki, R. (1998). Mixed-state entanglement and distillation: is there a "bound" entanglement in nature? *Physical Review Letters*, 80(24), 5239–5242. https://doi.org/10.1103/PhysRevLett.80.5239 [verify]
+Nielsen, M. A., & Chuang, I. L. (2000). *Quantum Computation and Quantum Information*. Cambridge University Press. §2.4–2.5.
+
+Horodecki, R., Horodecki, P., Horodecki, M., & Horodecki, K. (2009). Quantum entanglement. *Reviews of Modern Physics*, 81(2), 865–942. doi:10.1103/RevModPhys.81.865
+
+Horodecki, M., Horodecki, P., & Horodecki, R. (1998). Mixed-state entanglement and distillation: is there a "bound" entanglement in nature? *Physical Review Letters*, 80(24), 5239–5242. doi:10.1103/PhysRevLett.80.5239
+
+Bennett, C. H., Bernstein, H. J., Popescu, S., & Schumacher, B. (1996). Concentrating partial entanglement by local operations. *Physical Review A*, 53(4), 2046–2052. doi:10.1103/PhysRevA.53.2046
+
+Hensen, B. et al. (2015). Loophole-free Bell inequality violation using electron spins separated by 1.3 kilometres. *Nature*, 526, 682–686. doi:10.1038/nature15759
+
+Preskill, J. Lecture Notes for Physics 219/CS 219. Chapter 4. http://www.theory.caltech.edu/~preskill/ph219/
