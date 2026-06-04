@@ -1,0 +1,11 @@
+date,book,chapter_slug,word_count,verify_flag_count,contested_claims_flagged,pantry_notes_found
+2026-06-03,quantum-mechanics-vol4,02-mixed-states-and-the-density-matrix,3683,7,0,yes
+2026-06-03,quantum-mechanics-vol4,03-composite-systems-and-entanglement,4190,8,0,yes
+2026-06-03,quantum-mechanics-vol4,04-bells-theorem-and-chsh,4968,12,0,yes
+2026-06-03,quantum-mechanics-vol4,05-quantum-gates-and-circuits,6285,2,0,yes
+2026-06-03,quantum-mechanics-vol4,06-quantum-teleportation-and-dense-coding,4588,9,0,yes
+2026-06-03,quantum-mechanics-vol4,07-open-systems-and-lindblad,5800,13,0,yes
+2026-06-03,quantum-mechanics-vol4,08-measurement-and-interpretations,6998,8,6,yes
+2026-06-03,quantum-mechanics-vol4,09-quantum-hardware,7053,18,4,yes
+2026-06-03,quantum-mechanics-vol4,10-error-and-the-threshold-theorem,6181,16,1,yes
+2026-06-03,quantum-mechanics-vol4,11-capstone-quantum-mechanics-in-research,7065,22,2,yes
