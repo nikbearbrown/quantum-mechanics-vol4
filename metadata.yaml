@@ -1,10 +1,10 @@
 ---
 title: "Quantum Mechanics"
 subtitle: "Information, Measurement, and Open Systems"
-author: "Nik Bear Brown"
+author: "Humanitarians AI Incorporated"
 language: en-US
-rights: "Copyright © 2026 Nik Bear Brown"
-publisher: "Humanitarians AI Incorporated"
+rights: "Copyright © 2026 Humanitarians AI Incorporated. All rights reserved."
+publisher: "Humanitarians AI Incorporated, a 501(c)(3) nonprofit organization"
 date: "2026-06-03"
 cover-image: cover.jpg
 stylesheet: styles/kindle.css
@@ -12,7 +12,7 @@ toc: true
 toc-depth: 2
 
 # Series
-belongs-to-collection: "Quantum Mechanics"
+belongs-to-collection: "AI+1"
 group-position: 4
 subject_domain: ""
 tone: ""
@@ -21,6 +21,6 @@ chapter_titles: []
 keywords: []
 avoid: []
 palette_preference: ""
-series_name: ""
+series_name: "AI+1"
 thumbnail_priority: "title and central icon"
 ---

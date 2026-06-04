@@ -1,4 +1,4 @@
-# Chapter 11 — Capstone: Quantum Mechanics in Research
+# Chapter 10 — Capstone: Quantum Mechanics in Research
 
 ## TL;DR
 
@@ -95,9 +95,9 @@ The structural issue: **sampling-based quantum advantage claims are inherently f
 **Problem class:** Bell test. Determines whether correlations between distant measurements exceed the local hidden-variable bound.
 
 **Series tools required:**
-- Vol. 2 / Chapter 3 (this volume): entanglement and Bell states; the state $|\Phi^+\rangle = (|00\rangle + |11\rangle)/\sqrt{2}$
-- Vol. 2 / Chapter 4 (this volume): CHSH inequality; the local-hidden-variable bound $|S| \leq 2$; the quantum maximum $S = 2\sqrt{2}$
-- Vol. 1 / Chapter 6 (Vol. 1): measurement in rotated bases; spin projection operators
+- Chapter 2 (this volume): entanglement and Bell states; the state $|\Phi^+\rangle = (|00\rangle + |11\rangle)/\sqrt{2}$
+- Chapter 3 (this volume): CHSH inequality; the local-hidden-variable bound $|S| \leq 2$; the quantum maximum $S = 2\sqrt{2}$
+- Vol. 1 / Chapter 10 (Vol. 1): measurement in rotated bases; spin projection operators
 
 **The central claim:** The CHSH parameter $S$ measured on entangled photon pairs exceeds the local-realistic bound $S \leq 2$ by more than $10^7$ standard deviations. Both the locality loophole (settings chosen after photons separate) and the detection loophole (high-efficiency detectors avoid the fair-sampling assumption) are simultaneously closed.
 
@@ -123,7 +123,7 @@ The experimental result falls below $2\sqrt{2}$ (decoherence and imperfect entan
 
 **Series tools required:**
 - Chapter 9 (this volume): surface code; code distance; threshold theorem; scaling formula $p_L \approx A(p/p_{\text{th}})^{\lceil(d+1)/2\rceil}$
-- Chapter 7 (this volume): Lindblad equation; $T_1$, $T_2$; amplitude-damping and dephasing channels as the error model
+- Chapter 6 (this volume): Lindblad equation; $T_1$, $T_2$; amplitude-damping and dephasing channels as the error model
 - Chapter 8 (this volume): superconducting transmon qubits; $T_1$ and $T_2$ on Willow
 
 **The central claim:** On the 105-qubit Willow chip, logical error rates for distance-3, -5, and -7 surface codes satisfy the below-threshold scaling. The suppression factor is $\Lambda = 2.14 \pm 0.02$ per unit increase in code distance by 2. The distance-7 logical memory beats the best physical qubit lifetime by $2.4\pm 0.3\times$.
@@ -155,7 +155,7 @@ The paper reports $p_L^{(7)} = 0.143\%$, roughly $3\times$ smaller. The discrepa
 **Series tools required:**
 - Vol. 3 / Chapter 9 (perturbation theory): Zeeman perturbation to a known spin Hamiltonian; first-order eigenvalue shifts linear in the field
 - Chapter 8 (this volume): NV Hamiltonian, ODMR readout; $D = 2.87$ GHz zero-field splitting; $g\mu_B/h = 28.025$ MHz/mT
-- Chapter 7 (this volume): $T_2$ as the coherence time linking to linewidth; longer $T_2$ gives narrower ODMR dips and higher field sensitivity
+- Chapter 6 (this volume): $T_2$ as the coherence time linking to linewidth; longer $T_2$ gives narrower ODMR dips and higher field sensitivity
 
 **The NV Hamiltonian and transition frequencies.** The spin-1 NV$^-$ ground-state Hamiltonian in an axial field $B$ is
 
@@ -190,7 +190,7 @@ where $\gamma_e/2\pi = 28$ MHz/mT is the electron gyromagnetic ratio, $T_2$ is t
 **Series tools required:**
 - Chapter 9 (this volume): stabilizer codes, $[\![n,k,d]\!]$ notation, fault-tolerant gates
 - Chapter 8 (this volume): neutral-atom qubits, Rydberg blockade, optical tweezers
-- Chapter 3 (this volume): entanglement structure of multi-qubit states; tensor products
+- Chapter 2 (this volume): entanglement structure of multi-qubit states; tensor products
 
 **The core code: $[\![4,2,2]\!]$.** The simplest detectable code in the Bluvstein 2024 paper encodes 2 logical qubits in 4 physical qubits with code distance 2. The four logical basis states are
 
@@ -223,7 +223,7 @@ We reconstruct the core result of a loophole-free Bell test, using the Giustina/
 
 $$E(\hat a, \hat b) = \langle \Phi^+|(\hat a \cdot \vec\sigma) \otimes (\hat b \cdot \vec\sigma)|\Phi^+\rangle = \cos(\theta_a - \theta_b).$$
 
-This is the quantum prediction: the correlation depends only on the relative angle. (Derivation: Chapter 4 of this volume, CHSH section.)
+This is the quantum prediction: the correlation depends only on the relative angle. (Derivation: Chapter 3 of this volume, CHSH section.)
 
 **Step 2: Choose angles and compute the four correlators.** Use the angles that maximize $S$:
 
@@ -238,15 +238,15 @@ $$E(A_2, B_2) = \cos(90° - (-45°)) = \cos(135°) = -\tfrac{1}{\sqrt{2}}.$$
 
 $$S = \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{2}} - \left(-\frac{1}{\sqrt{2}}\right) = \frac{4}{\sqrt{2}} = 2\sqrt{2} \approx 2.828.$$
 
-**Step 4: Compare to the local-realistic bound.** Any local hidden-variable model satisfies $|S| \leq 2$ (derived in Chapter 4). The quantum prediction $S = 2\sqrt{2} \approx 2.828$ exceeds this by $0.828$ — the gap that experiments are designed to resolve.
+**Step 4: Compare to the local-realistic bound.** Any local hidden-variable model satisfies $|S| \leq 2$ (derived in Chapter 3). The quantum prediction $S = 2\sqrt{2} \approx 2.828$ exceeds this by $0.828$ — the gap that experiments are designed to resolve.
 
 **Step 5: Compare to the experimental result.** Giustina et al. 2015 report $S > 2$ with statistical significance $p < 3.74 \times 10^{-31}$. The experimental $S$ falls slightly below $2\sqrt{2}$ because of photon loss, detection inefficiency, and residual decoherence in the entangled state — all of which slightly mix the Bell state toward a classical state with lower $S$. The quantum theory predicts a mixed-state correction; the paper's supplementary material derives it. Your ideal calculation $S = 2\sqrt{2}$ is the upper bound; the experimental value is below it but above 2 by an unambiguous margin.
 
 **Step 6: Note the loophole-closing.** The locality loophole is closed because Alice's and Bob's settings are chosen by a random-number generator within the light-travel time between the two stations — no signal traveling at or below $c$ can carry information from one setting choice to the other measurement. The detection loophole is closed by high-efficiency superconducting single-photon detectors that detect a large enough fraction of the photon pairs to make the "fair-sampling" assumption unnecessary.
 
-**The lesson.** The entire reconstruction uses only the CHSH machinery from Chapter 4, the Bell-state definition from Chapter 3, and first-year linear algebra. You have verified the central quantitative claim of a Nobel-adjacent experiment using tools you learned in this volume.
+**The lesson.** The entire reconstruction uses only the CHSH machinery from Chapter 3, the Bell-state definition from Chapter 2, and first-year linear algebra. You have verified the central quantitative claim of a Nobel-adjacent experiment using tools you learned in this volume.
 
-**The limit.** Your reconstruction assumed a perfect Bell state and zero decoherence, giving $S = 2\sqrt{2}$. The experiment achieves $S < 2\sqrt{2}$ because the entangled state is slightly mixed. A more complete reconstruction would model the mixed-state density matrix $\hat\rho = (1-\epsilon)|\Phi^+\rangle\langle\Phi^+| + \epsilon \hat I/4$, compute $S(\epsilon)$, and fit $\epsilon$ from the experimental $S$ value. This connects Chapters 2 (density matrix) and 4 (CHSH) and is a natural extension exercise.
+**The limit.** Your reconstruction assumed a perfect Bell state and zero decoherence, giving $S = 2\sqrt{2}$. The experiment achieves $S < 2\sqrt{2}$ because the entangled state is slightly mixed. A more complete reconstruction would model the mixed-state density matrix $\hat\rho = (1-\epsilon)|\Phi^+\rangle\langle\Phi^+| + \epsilon \hat I/4$, compute $S(\epsilon)$, and fit $\epsilon$ from the experimental $S$ value. This connects Chapters 1 (density matrix) and 3 (CHSH) and is a natural extension exercise.
 
 ---
 
@@ -259,7 +259,7 @@ A reconstruction note should demonstrate the following, weighted as indicated:
 | System identification | 20% | Correctly identify the physical qubit(s), the Hamiltonian or state, and the encoding of $\|0\rangle$ and $\|1\rangle$. |
 | Observable and measurement | 20% | State which observable is measured, in what basis, and what the quantum theory predicts. |
 | Core calculation | 30% | Reproduce the central quantitative result from the series' formalism. Numbers must match the paper to within stated error bars or within a factor of 2–3 for formula-based estimates. |
-| Connections to prior chapters | 15% | Explicitly identify which volume and chapter each key tool comes from. E.g., "the CHSH bound of 2 derives from Vol. 2 / Chapter 4." |
+| Connections to prior chapters | 15% | Explicitly identify which volume and chapter each key tool comes from. E.g., "the CHSH bound of 2 derives from Chapter 3 (this volume)." |
 | Honest assessment | 15% | State one thing the paper explicitly does not claim. Identify whether the result is a demonstration of a physical principle, a hardware benchmark, or a computational-advantage claim, and state the implications. |
 
 The rubric is designed so that a student who understands the formalism but has not read the paper carefully can pass the calculation portion (30%) but will lose points on the honest assessment (15%) — which is the harder thing to fake.
@@ -334,7 +334,7 @@ You will build a "paper-reading assistant" simulation in D3.js — not a simulat
 ```
 Append a new entry to PROJECT.md:
 
-Chapter 11 — Capstone: Quantum Mechanics in Research
+Chapter 10 — Capstone: Quantum Mechanics in Research
 Deliverable: 11-paper-reading-assistant.html
 Status: in progress
 
@@ -398,7 +398,7 @@ and PROJECT.md. Read all three first.
 Build 11-paper-reading-assistant.html: a single self-contained HTML
 file using D3 v7 from a CDN, no other dependencies.
 
-The page has a header ("Chapter 11 — Paper Reading Assistant") and a
+The page has a header ("Chapter 10 — Paper Reading Assistant") and a
 horizontal tab strip with three tabs:
   [ Bell Test (CHSH) ]  [ QEC Threshold ]  [ NV Magnetometry ]
 

@@ -1,4 +1,4 @@
-# Chapter 10 — Error and the Threshold Theorem
+# Chapter 9 — Error and the Threshold Theorem
 
 ## TL;DR
 
@@ -26,7 +26,7 @@ By the end of this chapter you should be able to:
 
 It is 1994. Peter Shor has just published an algorithm that, run on a large enough quantum computer, would factor a 2,000-bit RSA key in hours. The cryptographic community is paying attention. The physics community has a different problem: qubits decay in microseconds.
 
-The obvious fix — copy the qubit and take a majority vote, as classical engineers do with every RAID disk and every satellite — is illegal. The no-cloning theorem from Chapter 9 (Volume 3, proved by Wootters and Zurek in 1982 and Dieks independently the same year) is not an engineering inconvenience. It is a theorem: no unitary operation maps $|\psi\rangle|0\rangle \to |\psi\rangle|\psi\rangle$ for all $|\psi\rangle$. The proof is one paragraph of linear algebra and returns a contradiction. There is no workaround.
+The obvious fix — copy the qubit and take a majority vote, as classical engineers do with every RAID disk and every satellite — is illegal. The no-cloning theorem from Chapter 4 (this volume, proved by Wootters and Zurek in 1982 and Dieks independently the same year) is not an engineering inconvenience. It is a theorem: no unitary operation maps $|\psi\rangle|0\rangle \to |\psi\rangle|\psi\rangle$ for all $|\psi\rangle$. The proof is one paragraph of linear algebra and returns a contradiction. There is no workaround.
 
 In 1995, Shor found one anyway — not by copying qubits, but by hiding their information inside entanglement. The trick is subtle enough that it takes the rest of this chapter to unpack. But the punchline is immediate: quantum error correction is possible, it does not require reading the encoded state, and there is a threshold — a critical physical error rate below which a logical qubit can be made as reliable as you like.
 
@@ -309,7 +309,7 @@ You will build an interactive surface-code threshold simulator in D3.js that mak
 ```
 Append a new entry to PROJECT.md:
 
-Chapter 10 — Error and the Threshold Theorem
+Chapter 9 — Error and the Threshold Theorem
 Deliverable: 10-surface-code-threshold.html
 Status: in progress
 
