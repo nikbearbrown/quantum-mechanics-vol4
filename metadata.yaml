@@ -1,0 +1,17 @@
+---
+title: "Quantum Mechanics"
+subtitle: "Information, Measurement, and Open Systems"
+author: "Nik Bear Brown"
+language: en-US
+rights: "Copyright © 2026 Nik Bear Brown"
+publisher: "Humanitarians AI Incorporated"
+date: "2026-06-03"
+cover-image: cover.jpg
+stylesheet: styles/kindle.css
+toc: true
+toc-depth: 2
+
+# Series
+belongs-to-collection: "Quantum Mechanics"
+group-position: 4
+---

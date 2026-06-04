@@ -1,0 +1,13 @@
+{
+  "name": "quantum-mechanics-vol4",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Quantum Mechanics",
+  "scripts": {
+    "svg-to-png": "node SCRIPTS/svg-to-png.mjs"
+  },
+  "dependencies": {
+    "sharp": "^0.33.0",
+    "glob": "^10.0.0"
+  }
+}
