@@ -199,7 +199,7 @@ $$X_2(\alpha|010\rangle + \beta|101\rangle) = \alpha|000\rangle + \beta|111\rang
 
 The logical state is restored. The values $\alpha$ and $\beta$ were never measured, never read, never disturbed. The syndrome told us *where* the error was, not *what* the qubit is.
 
-**The limit.** If two qubits are simultaneously flipped (say qubits 1 and 3), the syndrome is $(+1, -1)$, pointing to a single $X$ error on qubit 3. Applying $X_3$ makes things worse. A $[\![3,1,1]\!]$ code that sees two errors fails. That is why code distance matters, and why the surface code uses large $d$.
+**The limit.** If two qubits are simultaneously flipped (say qubits 1 and 3), the syndrome is $(-1, -1)$ — the same syndrome as a single $X$ error on qubit 2. The decoder applies $X_2$, and the net operation $X_1X_2X_3 = \bar{X}$ is a logical bit-flip. A $[\![3,1,1]\!]$ code that sees two errors fails. That is why code distance matters, and why the surface code uses large $d$.
 
 ---
 

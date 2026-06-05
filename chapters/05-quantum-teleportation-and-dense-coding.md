@@ -154,7 +154,7 @@ $$Z(\alpha|0\rangle-\beta|1\rangle) = \alpha|0\rangle+\beta|1\rangle = |\psi\ran
 
 In every case, Bob recovers $|\psi\rangle$ exactly. The correction is deterministic — it depends only on Alice's two classical bits, not on $\alpha$ or $\beta$. Neither party ever learns the values of $\alpha$ and $\beta$. The state information is transferred intact without being read.
 
-The limit of the protocol: it assumes a perfect Bell pair. Real experiments use Bell pairs with fidelity $F < 1$ due to decoherence. If the pair degrades before Alice completes her measurement, Bob receives a mixed state with teleportation fidelity below 1. The connection to the CHSH parameter from Chapter 4 is direct: a Bell pair achieving $S = 2\sqrt{2}$ gives perfect teleportation fidelity; one degraded to $S \leq 2$ (satisfying the classical bound) gives fidelity no better than the best classical protocol, which is $F = 2/3$. Your CHSH test on the hardware tells you how good your teleportation resource is.
+The limit of the protocol: it assumes a perfect Bell pair. Real experiments use Bell pairs with fidelity $F < 1$ due to decoherence. If the pair degrades before Alice completes her measurement, Bob receives a mixed state with teleportation fidelity below 1. The connection to the CHSH parameter from Chapter 4 is direct: a Bell pair achieving $S = 2\sqrt{2}$ gives perfect teleportation fidelity; one degraded to $S = 2$ (the CHSH classical bound) still teleports well — $F_\text{tel}(2) = (1 + 1/\sqrt2)/2 \approx 0.85$, comfortably above the best classical protocol's $F = 2/3$. Teleportation stops beating the classical protocol only below $S = 2\sqrt2/3 \approx 0.94$, so a state can be CHSH-local ($S \leq 2$) yet still a useful teleportation resource. Your CHSH test on the hardware tells you how good your teleportation resource is.
 
 ---
 
@@ -195,7 +195,7 @@ The limit of the protocol: it assumes a perfect Bell pair. Real experiments use 
    *Tests: producing the protocol from first principles; the causality and no-cloning arguments as constraints.*
 
 8. *Difficulty: Synthesis — teleportation fidelity and the CHSH connection.*
-   A Bell pair $|\rho_{AB}\rangle$ with CHSH parameter $S$ can teleport a qubit with fidelity $F_\text{tel} = (1 + S/2\sqrt{2})/2$. (a) Verify that $S = 2\sqrt{2}$ gives $F_\text{tel} = 1$ and $S = 2$ (classical bound) gives $F_\text{tel} = 3/4$. (b) The best classical protocol (no entanglement) achieves $F = 2/3$. At what $S$ does teleportation fail to beat the classical protocol? (c) In the Hensen et al. (2015) loophole-free Bell experiment, $S = 2.42\pm0.20$. What teleportation fidelity does this correspond to, and does it beat the classical threshold?
+   A Bell pair $|\rho_{AB}\rangle$ with CHSH parameter $S$ can teleport a qubit with fidelity $F_\text{tel} = (1 + S/2\sqrt{2})/2$. (a) Verify that $S = 2\sqrt{2}$ gives $F_\text{tel} = 1$ and $S = 2$ (CHSH classical bound) gives $F_\text{tel} = (1+1/\sqrt2)/2 \approx 0.854$. (b) The best classical protocol (no entanglement) achieves $F = 2/3$. At what $S$ does teleportation fail to beat the classical protocol? (Answer: $S = 2\sqrt2/3 \approx 0.943$ — note this is *below* the CHSH bound, so a CHSH-local state can still beat classical teleportation.) (c) In the Hensen et al. (2015) loophole-free Bell experiment, $S = 2.42\pm0.20$. What teleportation fidelity does this correspond to, and does it beat the classical threshold?
    *Tests: connecting CHSH violation to teleportation fidelity; identifying the classical threshold; applying to real experimental numbers.*
 
 **Challenge**
@@ -248,7 +248,7 @@ Holevo, A. S. (1973). Bounds for the quantity of information transmitted by a qu
 
 ### Exercise R1 — When to Use AI
 **The judgment:** In this chapter's project work, AI assistance is appropriate for:
-- Evaluating $F_\text{tel}(S) = (1 + S/2\sqrt2)/2$ and the classical thresholds at given $S$ — *Why AI works here:* one-line arithmetic checked against the endpoints ($S=2\sqrt2\to F=1$, $S=2\to F=3/4$).
+- Evaluating $F_\text{tel}(S) = (1 + S/2\sqrt2)/2$ and the classical thresholds at given $S$ — *Why AI works here:* one-line arithmetic checked against the endpoints ($S=2\sqrt2\to F=1$, $S=2\to F\approx0.854$).
 - Tracing the four teleportation correction cases on a specific input state — *Why AI works here:* deterministic Pauli algebra you verify by recovering $|\psi\rangle$ in every branch.
 **The tell:** You are using AI well when the fidelity formula's endpoints and the $F=2/3$ classical line are available as independent checks.
 
@@ -269,7 +269,7 @@ paper's claim. The paper reports a CHSH parameter S_exp = [PASTE value with erro
 bar, e.g. 2.42 +/- 0.20].
 
 1. Using F_tel(S) = (1 + S/(2*sqrt(2)))/2, compute the teleportation fidelity for
-   S = 2*sqrt(2) and for S = 2, confirming F=1 and F=3/4 respectively.
+   S = 2*sqrt(2) and for S = 2, confirming F=1 and F≈0.854 respectively.
 2. Compute F_tel for S_exp, and also for S_exp + and - its error bar, giving a
    fidelity range.
 3. The best classical (no-entanglement) teleportation fidelity is F = 2/3. State
@@ -299,7 +299,7 @@ In reconstruction-dossier/:
 
 1. Add capability.py with:
    - f_tel(S): return (1 + S/(2*sqrt(2)))/2. Assert f_tel(2*sqrt(2)) == 1 and
-     f_tel(2) == 0.75 within 1e-9.
+     f_tel(2) == (1 + 1/sqrt(2))/2 ≈ 0.8536 within 1e-9.
    - assess(S, dS): return f_tel(S) and the interval [f_tel(S-dS), f_tel(S+dS)],
      plus a string "above" / "straddles" / "below" relative to 2/3.
 2. __main__: run assess(S_exp, dS_exp) for my paper's reported [PASTE S_exp, dS_exp]
@@ -311,8 +311,8 @@ In reconstruction-dossier/:
 Stop after the endpoints assertion passes and PROJECT.md is updated.
 ```
 **Expected output:** `capability.py`, a console fidelity-with-interval, and a `PROJECT.md` capability line with the classical-threshold verdict.
-**What to inspect:** the $F(2\sqrt2)=1$ and $F(2)=0.75$ endpoints hold; the verdict string correctly reflects whether the whole interval clears $2/3$.
-**If it goes wrong:** if `f_tel(2)` does not return exactly 0.75, the $2\sqrt2$ normalization in the denominator is wrong (a common $\sqrt2$-vs-$2\sqrt2$ slip) — fix the constant.
+**What to inspect:** the $F(2\sqrt2)=1$ and $F(2)\approx0.854$ endpoints hold; the verdict string correctly reflects whether the whole interval clears $2/3$.
+**If it goes wrong:** if `f_tel(2)` does not return $\approx0.8536$, the $2\sqrt2$ normalization in the denominator is wrong (a common $\sqrt2$-vs-$2\sqrt2$ slip) — fix the constant.
 **CLAUDE.md / AGENTS.md note:** keep "always propagate the error bar into derived figures of merit; never report a capability as a bare central value."
 
 ### Exercise R5 — AI Validation Exercise
@@ -323,17 +323,17 @@ Stop after the endpoints assertion passes and PROJECT.md is updated.
 **The Validation Task:** Evaluate against this checklist; mark Pass / Fail / Cannot determine with reasoning.
 ```
 Validation Checklist — Quantum Teleportation and Dense Coding
-□ Correctness: does F_tel(2*sqrt(2)) = 1 and F_tel(2) = 0.75 exactly?
+□ Correctness: does F_tel(2*sqrt(2)) = 1 and F_tel(2) ≈ 0.8536?
 □ Completeness: did it report an INTERVAL from the error bar, not just a point?
-□ Scope: did it compare to the correct classical threshold (2/3), not 3/4?
+□ Scope: did it compare to the correct classical threshold (2/3), not the F(2)≈0.85 endpoint?
 □ Threshold logic: is the "above/straddles/below 2/3" verdict consistent with the
   reported interval?
 □ Honesty: does the one-sentence capability claim avoid overstating (no "proves
   quantum advantage" from a fidelity that merely beats 2/3)?
 □ Failure-mode check: any of —
-  - fluent but wrong (clean F value, but classical threshold quoted as 3/4)
+  - fluent but wrong (clean F value, but classical threshold quoted as the F(2)≈0.85 endpoint instead of 2/3)
   - dropped error bar (point estimate above 2/3 while the interval straddles it)
-  - confusing the 3/4 entanglement-floor with the 2/3 classical bound
+  - confusing the F_tel(S=2)≈0.85 endpoint with the 2/3 classical bound
 ```
 **What to do with findings:** pass → record the capability statement in the honesty layer; one fail → fix and re-run; multiple fails → recompute $F_\text{tel}$ by hand at the three $S$ values, it is one formula.
 **AI Use Disclosure (mandatory, two sentences):**
