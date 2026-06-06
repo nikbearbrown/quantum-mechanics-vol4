@@ -1,9 +1,11 @@
 # Chapter 2 — Composite Systems and Entanglement
 *Why two qubits live in a four-dimensional space where most states cannot be written as products — and what that means.*
 
-When we combine two spin-$\frac{1}{2}$ particles into a single system, the joint Hilbert space is not simply two copies of a two-dimensional space placed side by side. It is the tensor product — a four-dimensional space in which most vectors do not correspond to any product of single-particle states. The structure that the tensor product adds, compared to a direct sum, is precisely where entanglement lives. Entangled states are, in a precise sense, more typical than product states: a random unit vector in $\mathbb{C}^4$ is almost certainly entangled.
+You have two spin-$\frac{1}{2}$ particles. Each lives in a two-dimensional Hilbert space. A reasonable person might expect the joint system to be described by two independent two-dimensional state vectors — four numbers in total, two per particle. That sounds right. It is wrong.
 
-This chapter develops the geometry of that space. We will see how to distinguish product states from entangled ones, how to quantify the amount of entanglement a state carries, and what these tools look like in practice.
+The joint Hilbert space is not two two-dimensional spaces placed side by side (a direct sum, six dimensions if the particles were different sizes). It is the tensor product — a four-dimensional space in which most vectors do not correspond to any product of single-particle states. The extra structure that tensor product gives you, compared to the direct sum, is precisely where entanglement lives. And entangled states are, in a precise sense, more typical than product states: if you choose a random unit vector in $\mathbb{C}^4$, it is almost certainly entangled.
+
+This chapter is about the geometry of that space. How do you tell a product state from an entangled one? How much entanglement does a state carry? And what does the answer look like in practice?
 
 ---
 
@@ -23,9 +25,9 @@ with $\sum_{i,j}|c_{ij}|^2 = 1$. The four coefficients can be arranged into the 
 
 $$C = \begin{pmatrix}c_{00} & c_{01} \\ c_{10} & c_{11}\end{pmatrix}.$$
 
-This $2\times2$ complex matrix of unit Frobenius norm encodes everything about the state. Whether the state is entangled, how much it is entangled, and what the local reduced state of each qubit looks like — all of this is determined by $C$.
+This $2\times2$ complex matrix of unit Frobenius norm encodes everything about the state. Whether the state is entangled, how much it is entangled, and what the local reduced state of each qubit looks like — all of it is determined by $C$.
 
-The dimension $4 = 2\times2$, not $2+2$, is the first thing to internalize. For a qubit and a qutrit, the joint space is $2\times3 = 6$-dimensional, not 5. The product rule reflects the physical fact that two independent systems can be in any combination of their individual states, and the number of independent combinations is the product of the individual dimensions. A direct sum would give two independent quantum systems that cannot correlate at all. The tensor product gives them the ability to correlate — and, in particular, to be entangled.
+The dimension $4 = 2\times2$, not $2+2$, is the first thing to internalize. For a qubit and a qutrit, the joint space is $2\times3 = 6$-dimensional, not 5. The product rule reflects the physical fact that two independent systems can be in any combination of their individual states, and the number of independent combinations is the product of the individual dimensions. A direct sum would give you two independent quantum systems that cannot correlate at all. The tensor product gives them the ability to correlate — and, in particular, to be entangled.
 
 <!-- → [FIGURE: diagram contrasting direct sum vs. tensor product for two qubits — showing ℂ² ⊕ ℂ² as two separate planes (4 real dimensions, no cross-terms) vs. ℂ² ⊗ ℂ² as a four-dimensional space with the four basis states |00⟩, |01⟩, |10⟩, |11⟩; the visual goal is to make viscerally clear that ⊗ is larger and allows correlations that ⊕ forbids] -->
 
@@ -52,7 +54,7 @@ This is a **rank-1 matrix** — the outer product of two vectors. The determinan
 
 Conversely, if $C$ has rank 1, then $C = \vec{u}\vec{v}^T$ for some vectors $\vec{u}$ and $\vec{v}$, and the state factors as $|a\rangle = u_0|0\rangle + u_1|1\rangle$ tensored with $|b\rangle = v_0|0\rangle + v_1|1\rangle$. The conclusion: **for two qubits, $|\psi_{AB}\rangle$ is a product state if and only if $\text{rank}(C) = 1$, equivalently $\det(C) = 0$.**
 
-This gives a quick computational test for entanglement:
+This gives the fastest computational test for entanglement:
 
 $$\det(C) = c_{00}c_{11} - c_{01}c_{10}.$$
 
@@ -74,7 +76,7 @@ The reduced density matrix of qubit $A$ in any Bell state is $\hat\rho_A = \text
 
 **Preparing $|\Phi^+\rangle$ from $|00\rangle$** uses two gates:
 
-$$|00\rangle \overset{H\otimes I}{\longrightarrow} \frac{|00\rangle + |10\rangle}{\sqrt{2}} = |{+}\rangle_A\otimes|0\rangle_B \overset{\text{CNOT}}{\longrightarrow} \frac{|00\rangle + |11\rangle}{\sqrt{2}} = |\Phi^+\rangle.$$
+$$|00\rangle \xrightarrow{H\otimes I} \frac{|00\rangle + |10\rangle}{\sqrt{2}} = |{+}\rangle_A\otimes|0\rangle_B \xrightarrow{\text{CNOT}} \frac{|00\rangle + |11\rangle}{\sqrt{2}} = |\Phi^+\rangle.$$
 
 After the Hadamard the state is still a product — $|{+}\rangle\otimes|0\rangle$ factors. The CNOT creates the entanglement. All four Bell states are reachable from the four computational basis states by this same circuit:
 
@@ -111,7 +113,7 @@ The entanglement criterion follows immediately:
 - Schmidt rank 1: product state (a single term, $C$ has rank 1, $\hat\rho_A$ is pure).
 - Schmidt rank $\geq 2$: entangled.
 
-For any pure bipartite state, we do not need to try all possible factorizations. We compute one SVD. The Schmidt rank is the answer.
+For any pure bipartite state, you do not need to try all possible factorizations. You compute one SVD. The Schmidt rank is the answer.
 
 Local unitaries — operations of the form $U_A\otimes U_B$ — change the Schmidt vectors $|u_k\rangle_A$ and $|v_k\rangle_B$ but leave the Schmidt coefficients $\{\lambda_k\}$ unchanged. This is why entanglement cannot be created by local operations alone: no product $U_A\otimes U_B$ can change the singular values of $C$, and therefore cannot change the Schmidt rank from 1 to anything higher.
 
@@ -136,7 +138,7 @@ $S_E = \log_2 r$ at maximum, achieved when all $r$ Schmidt coefficients are equa
 
 $0 < S_E < 1$ ebit for partially entangled two-qubit states.
 
-The entanglement entropy is the unique measure of entanglement for pure bipartite states under the axioms of LOCC (local operations and classical communication). If we distill or dilute entanglement using only local operations and classical communication, $S_E$ is the rate at which Bell pairs convert: one ebit of $S_E$ in the state corresponds, asymptotically in the number of copies, to exactly one Bell pair.
+The entanglement entropy is the unique measure of entanglement for pure bipartite states under the axioms of LOCC (local operations and classical communication). If you distill or dilute entanglement using only local operations and classical communication, $S_E$ is the rate at which Bell pairs convert: one ebit of $S_E$ in the state corresponds, asymptotically in the number of copies, to exactly one Bell pair.
 
 For a state $|\psi\rangle = \cos\theta|00\rangle + \sin\theta|11\rangle$ with $\theta\in[0,\pi/4]$:
 
@@ -186,7 +188,7 @@ $$S_E = -\tfrac{1}{2}\log_2\tfrac{1}{2} - \tfrac{1}{2}\log_2\tfrac{1}{2} = 1\tex
 
 $$S_E = -\tfrac{3}{4}\log_2\tfrac{3}{4} - \tfrac{1}{4}\log_2\tfrac{1}{4} \approx 0.811\text{ ebits.}$$
 
-Less than 1 ebit. The asymmetric Schmidt coefficients indicate that qubit $A$ leans toward the $|0\rangle$ outcome: more information is available locally, so less is locked in the correlations. Entanglement entropy captures exactly this trade-off between local information and joint correlations.
+Less than 1 ebit. The asymmetric Schmidt coefficients tell you that qubit $A$ leans toward the $|0\rangle$ outcome: more information is available locally, so less is locked in the correlations. Entanglement entropy captures exactly this trade-off between local information and joint correlations.
 
 ---
 

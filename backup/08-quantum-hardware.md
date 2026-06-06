@@ -1,12 +1,13 @@
 # Chapter 8 — Quantum Hardware: From Formalism to Physical Qubits
+*What is actually hiding behind the abstract notation $|0\rangle$, $|1\rangle$, and $\hat\sigma_z$.*
 
 In 1994, Peter Shor published a polynomial-time algorithm for factoring large integers on a quantum computer. The algorithm existed. The computers did not.
 
-The experimentalists faced a concrete question: what is a qubit, physically? Not in the formalism — a two-dimensional complex Hilbert space with Pauli operators — but as an object you can trap, cool, drive, read, and run a circuit on before it decoheres. For two decades after Shor, the central challenge of quantum computing was not the algorithms but the hardware: coaxial cables at millikelvin temperatures, laser beams aimed at individual ions, diamond crystals with engineered atomic defects, silicon transistors smaller than a virus.
+The experimentalists had a different question: what is a qubit, physically? Not in the formalism — a two-dimensional complex Hilbert space with Pauli operators — but as an object you can trap, cool, drive, read, and run a circuit on before it decoheres. For two decades after Shor, the central challenge of quantum computing was not the algorithms but the hardware: coaxial cables at millikelvin temperatures, laser beams aimed at individual ions, diamond crystals with engineered atomic defects, silicon transistors smaller than a virus.
 
-Each research group found a different physical answer. Each answer has a different signature: different coherence times, different gate speeds, different connectivity, different infrastructure requirements. As of mid-2026, no single platform has won the competition.
+Each research group found a different physical answer. Each answer has a different signature: different coherence times, different gate speeds, different connectivity, different infrastructure requirements. As of mid-2026, no single platform has won the competition. The outcome is not clear.
 
-This chapter maps the landscape. It takes the two-level formalism used throughout this volume — the Pauli Hamiltonians, Rabi oscillations, Bloch equations, and Lindblad dissipators — and shows what physical object each platform places behind the abstract notation.
+This chapter maps the landscape. It takes the two-level formalism you have been using since Volume 1 — the Pauli Hamiltonians, Rabi oscillations, Bloch equations, and Lindblad dissipators — and shows what physical object each platform is hiding behind the abstract notation.
 
 ---
 
@@ -14,21 +15,21 @@ This chapter maps the landscape. It takes the two-level formalism used throughou
 
 David DiVincenzo (2000) distilled the requirements for a functional qubit into five conditions: [verify: DiVincenzo, Fortschritte der Physik 48:771 (2000)]
 
-**1. A scalable physical system with well-characterized qubits.** The system must be extendable to many qubits without the control infrastructure growing unmanageably. "Well-characterized" means the Hamiltonian, transition frequency, coherence times, and coupling to neighbors are known well enough to model and correct errors.
+**1. A scalable physical system with well-characterized qubits.** You need a physical system that can be extended to many qubits without the control infrastructure growing impossibly. "Well-characterized" means you know the Hamiltonian, the transition frequency, the coherence times, and the coupling to neighbors well enough to model and correct errors.
 
-**2. The ability to initialize qubits to a fiducial state.** Every quantum algorithm begins in a known state, typically $|0\rangle^{\otimes n}$. Reliable preparation of the input state is required for the computation to start correctly.
+**2. The ability to initialize qubits to a fiducial state.** Every quantum algorithm begins in a known state, typically $|0\rangle^{\otimes n}$. If you cannot reliably prepare the input, the computation starts wrong.
 
 **3. Long coherence times relative to gate operation times.** The figure of merit is the number of gate operations performable within one coherence time:
 
 $$N_\text{gates} = \frac{T_2}{t_\text{gate}}.$$
 
-For quantum error correction, we need $N_\text{gates} \gg 10^4$ per logical qubit. Current best platforms approach or exceed this, but not uniformly across large arrays.
+For quantum error correction, you need $N_\text{gates} \gg 10^4$ per logical qubit. Current best platforms approach or exceed this, but not uniformly across large arrays.
 
 **4. A universal set of quantum gates.** A single-qubit rotation and one entangling two-qubit gate (CNOT, CZ) together generate any unitary to arbitrary precision (the Solovay-Kitaev theorem). Each platform implements these through different physical mechanisms.
 
-**5. Qubit-specific measurement capability.** Reading out one qubit without disturbing its neighbors requires either spatial separation or spectral distinguishability of the readout signal.
+**5. Qubit-specific measurement capability.** Reading out one qubit without disturbing its neighbors — requiring either spatial separation or spectral distinguishability of the readout signal.
 
-The criteria are a rubric, not a checklist. Every current platform satisfies them imperfectly at scale. The relevant question is not "does this platform satisfy the criteria?" but "at what qubit count and fidelity does each criterion begin to fail?"
+The criteria are a rubric, not a checklist. Every current platform satisfies them imperfectly at scale. The question is not "does this platform satisfy the criteria?" but "at what qubit count and fidelity does each criterion begin to fail?"
 
 ---
 
@@ -54,7 +55,7 @@ The gate-operation figure of merit $N_\text{gates} = T_2/t_\text{gate}$ is what 
 
 John Preskill coined "Noisy Intermediate-Scale Quantum" (NISQ) in his 2018 essay. The defining characteristics: approximately 50–1000 physical qubits; gate fidelities high enough to run circuits of modest depth; gate fidelities not high enough to support full quantum error correction.
 
-NISQ machines can run circuits that are hard to simulate classically within certain assumptions, demonstrate quantum error detection, and probe quantum many-body physics. The limitation is that they cannot sustain enough error correction for the class of problems — Shor's algorithm on large integers, full quantum chemistry — that originally motivated the field. Whether NISQ devices offer practical advantage over classical computers for any useful problem remains contested. [contested]
+NISQ machines are not broken. They can run circuits that are hard to simulate classically within certain assumptions, demonstrate quantum error detection, and probe quantum many-body physics. The limitation is that they cannot sustain enough error correction for the class of problems — Shor's algorithm on large integers, full quantum chemistry — that originally motivated the field. Whether NISQ devices offer practical advantage over classical computers for any useful problem remains contested. [contested]
 
 As of 2026, the community speaks of "utility-scale" quantum computing and the "megaquop" milestone — $10^6$ high-fidelity gate operations — as the next phase beyond NISQ. Fault-tolerant quantum computing requires per-gate error rates well below $\sim10^{-3}$ (the threshold theorem, Chapter 9) sustained across thousands of physical qubits. Current best devices approach this per-gate threshold but cannot sustain it at scale.
 
@@ -100,7 +101,7 @@ Infrastructure: ultra-high vacuum ($\sim10^{-11}$ torr); laser systems; room-tem
 
 Neutral atoms — $^{87}$Rb, $^{133}$Cs, $^{171}$Yb, or $^{87}$Sr — trapped in tightly focused laser beams (tweezers, $\sim1\,\mu$m waist). Arrays generated by spatial light modulators or acousto-optic deflectors give arbitrary programmable geometries with hundreds to thousands of atoms. Qubits encoded in two hyperfine ground states.
 
-Entangling gates via Rydberg blockade: two atoms are excited to high principal quantum number states ($n \sim 50$–100) that have large electric dipole moments. If one atom is in the Rydberg state, a second nearby atom cannot also be excited (the interaction energy shifts the double-excitation off resonance). This conditional excitation implements a CZ gate in $\sim0.1$–$1\,\mu$s. Atoms can be physically moved between gate operations, giving reconfigurable connectivity.
+Entangling gates via Rydberg blockade: two atoms are excited to high principal quantum number states ($n \sim 50$–100) that have huge electric dipole moments. If one atom is in the Rydberg state, a second nearby atom cannot also be excited (the interaction energy shifts the double-excitation off resonance). This conditional excitation implements a CZ gate in $\sim0.1$–$1\,\mu$s. Crucially, atoms can be physically moved between gate operations, giving reconfigurable connectivity.
 
 **Current state (mid-2026).** QuEra/Harvard (*Nature* 626:58, 2024, Bluvstein et al.): 48 logical qubits from a 280-atom array — the first demonstration of fault-tolerant gates on many logical qubits simultaneously. [verify] QuEra (January 2026, *Nature*): 96 logical qubits from a 448-atom array using high-rate codes — the current logical-qubit count record. [verify] Atom Computing Phoenix: 1,180 physical-qubit array in production. Two-qubit Rydberg gate fidelity $\sim99.5\%$ in best demonstrations.
 
@@ -110,7 +111,7 @@ Infrastructure: ultra-high vacuum; laser cooling (atoms at µK via lasers alone,
 
 ## Platform 4: Photonic Qubits
 
-Photonic qubits encode information in photons: polarization ($|H\rangle$/$|V\rangle$), path, time-bin, or photon number. Two-qubit entangling gates in linear optics are probabilistic — a CZ gate succeeds with some probability and fails with a heralded signal (KLM scheme, Knill-Laflamme-Milburn 2001). Practical scalable photonic quantum computing therefore requires substantial resource overhead to drive failure probability to negligible levels. Fusion-based approaches (PsiQuantum) build fault-tolerant computation from probabilistic Bell measurements and photonic cluster states.
+Photonic qubits encode information in photons: polarization ($|H\rangle$/$|V\rangle$), path, time-bin, or photon number. Two-qubit entangling gates in linear optics are probabilistic — a CZ gate succeeds with some probability and fails with a heralded signal (KLM scheme, Knill-Laflamme-Milburn 2001). Practical scalable photonic quantum computing therefore requires massive resource overhead to drive failure probability to negligible levels. Fusion-based approaches (PsiQuantum) build fault-tolerant computation from probabilistic Bell measurements and photonic cluster states.
 
 Advantages: room-temperature operation; long coherence (photons interact weakly with environment); natural for quantum networking. Disadvantages: deterministic two-qubit gates require large resource overhead; photon loss is irreversible; photon-number-resolving detectors are demanding.
 
@@ -138,7 +139,7 @@ Gates via microwave pulses at $\nu_{0,-1}$; Rabi oscillations identical in form 
 
 ## Platform 6: Semiconductor Spin Qubits
 
-Single electron spins confined in gate-defined quantum dots in silicon (Si) or silicon-germanium (Si/SiGe) heterostructures. In an applied magnetic field, spin-up $|\uparrow\rangle$ and spin-down $|\downarrow\rangle$ become $|0\rangle$ and $|1\rangle$, split by the Zeeman energy. The effective Hamiltonian is $\hat{H} = (\hbar\omega_0/2)\hat\sigma_z$ — the standard two-level form.
+Single electron spins confined in gate-defined quantum dots in silicon (Si) or silicon-germanium (Si/SiGe) heterostructures. In an applied magnetic field, spin-up $|\uparrow\rangle$ and spin-down $|\downarrow\rangle$ become $|0\rangle$ and $|1\rangle$, split by the Zeeman energy. The effective Hamiltonian is $\hat{H} = (\hbar\omega_0/2)\hat\sigma_z$ — the standard two-level form, again.
 
 Single-qubit gates via AC electric field pulses through the dot gates, exploiting spin-orbit coupling. Two-qubit gates via exchange interaction: placing two dots close enough that electrons can tunnel between them creates a Heisenberg coupling $J\hat{\mathbf{S}}_1\cdot\hat{\mathbf{S}}_2$ proportional to the tunneling rate. Gate time: 1–100 ns — comparable to superconducting and much faster than ions.
 
@@ -156,7 +157,7 @@ Infrastructure: dilution refrigerators at $\sim50$–100 mK; device fabrication 
 
 The full transmon Hamiltonian looks nothing like a two-level system. We show that in the $E_J/E_C \gg 1$ regime, the two-level approximation is self-consistent.
 
-We expand $\cos\hat\phi \approx 1 - \hat\phi^2/2 + \hat\phi^4/24$: the leading terms give a harmonic oscillator at plasma frequency $\omega_p = \sqrt{8E_JE_C}/\hbar$. The $\hat\phi^4$ term shifts the levels from the harmonic ladder by the anharmonicity:
+Expand $\cos\hat\phi \approx 1 - \hat\phi^2/2 + \hat\phi^4/24$: the leading terms give a harmonic oscillator at plasma frequency $\omega_p = \sqrt{8E_JE_C}/\hbar$. The $\hat\phi^4$ term shifts the levels from the harmonic ladder by the anharmonicity:
 
 $$\alpha/2\pi \approx -E_C/h \approx -300\,\text{MHz.}$$
 
@@ -186,7 +187,7 @@ A microwave field oscillating at $\nu_{0,-1}$ applies the same Rabi Hamiltonian 
 
 **The limit of the NV two-level picture.** It breaks down when the drive frequency approaches $2g_e\mu_B B/h$ (coupling to $m_s = +1$), or when the hyperfine coupling to the $^{14}$N nuclear spin ($A \approx -2.16$ MHz) is not resolved by the measurement. At high microwave power ($\Omega_R \gtrsim A$), the three-level structure must be treated explicitly.
 
-**The central point.** Six physically different systems — superconducting circuits, trapped atomic ions, neutral atoms, photons, diamond defects, silicon quantum dots — all reduce to the same Hamiltonian $(\hbar\omega_0/2)\hat\sigma_z$ in their two-level operating subspace. Every gate operation in every platform is an SU(2) rotation on the Bloch sphere. The physics is different; the formalism is identical. The two-level model is not an approximation imposed by the formalism — it is a physical fact about the structure of matter that each platform exploits.
+**The lesson.** Six radically different physical systems — superconducting circuits, trapped atomic ions, neutral atoms, photons, diamond defects, silicon quantum dots — all reduce to the same Hamiltonian $(\hbar\omega_0/2)\hat\sigma_z$ in their two-level operating subspace. Every gate operation in every platform is an SU(2) rotation on the Bloch sphere. The physics is different; the formalism is identical. The two-level model is not an approximation imposed by the formalism — it is a physical fact about the structure of matter that each platform exploits.
 
 <!-- → [FIGURE: side-by-side comparison of the NV center and transmon energy level diagrams — showing the full spin-1 NV spectrum (D splitting and Zeeman splitting) and the full transmon harmonic plus anharmonic spectrum; in both cases, arrows highlight the two-level subspace {|0⟩, |1⟩}; the visual goal is to show that despite completely different physical origins, both reduce to the same two-level structure with the same notation] -->
 

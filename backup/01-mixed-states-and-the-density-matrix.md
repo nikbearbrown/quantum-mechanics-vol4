@@ -1,10 +1,12 @@
 # Chapter 1 — Mixed States and the Density Matrix
 
-In many experiments, a system is not prepared in a single, definite quantum state. Instead, a source might produce a qubit in one of several possible states, with some probability assigned to each. A laboratory, for example, might prepare qubits by one of two methods, chosen at random with equal probability: Method 1 prepares $|0\rangle$, and Method 2 prepares $|{+}\rangle = (|0\rangle + |1\rangle)/\sqrt{2}$. If the lab hands you a qubit without telling you which method was used, you need a way to describe your uncertainty about its state.
+A laboratory produces qubits by one of two methods, chosen at random with equal probability. Method 1 prepares $|0\rangle$. Method 2 prepares $|{+}\rangle = (|0\rangle + |1\rangle)/\sqrt{2}$. The lab hands you a qubit and tells you nothing.
 
-A state vector alone is not sufficient here. A quantum state is a vector in Hilbert space, and neither $|0\rangle$ nor $|{+}\rangle$ individually represents the situation — nor does any superposition of them, because a superposition $(|0\rangle + |{+}\rangle)/\sqrt{2}$ represents coherent quantum interference between the two, which has different measurement statistics than a classical probabilistic mixture.
+What is the state of your qubit?
 
-The **density operator** is the mathematical object that handles this situation. It describes both classical probability mixtures over quantum states and — as we will see — the state of a subsystem that is entangled with the rest of the world. This chapter introduces the density operator and develops the tools needed to work with it.
+The tempting answer: "It is either $|0\rangle$ or $|{+}\rangle$ — I just do not know which." That correctly describes your classical ignorance. But it is not a quantum state. A quantum state is a vector in Hilbert space. Neither $|0\rangle$ nor $|{+}\rangle$ is the right state, and their superposition $(|0\rangle + |{+}\rangle)/\sqrt{2}$ is wrong too — that would mean you are *coherently* in both, which is an entirely different physical situation with different interference properties and different measurement statistics.
+
+You need a new object. The density operator is that object. It handles classical probability mixtures over quantum states, and it turns out to handle something stranger still: the state of a subsystem that is entangled with the rest of the world. Both cases arrive at the same formalism through different doors. This chapter opens both.
 
 ---
 
@@ -50,13 +52,13 @@ For any observable $\hat A$:
 
 $$\langle\hat A\rangle = \text{Tr}(\hat\rho\,\hat A).$$
 
-For a pure state $\hat\rho = |\psi\rangle\langle\psi|$, this reduces to the familiar $\langle\psi|\hat A|\psi\rangle$, since $\text{Tr}(|\psi\rangle\langle\psi|\hat A) = \langle\psi|\hat A|\psi\rangle$. The trace is basis-independent — we can compute in whatever basis makes the arithmetic easiest.
+For a pure state $\hat\rho = |\psi\rangle\langle\psi|$, this reduces to the familiar $\langle\psi|\hat A|\psi\rangle$, since $\text{Tr}(|\psi\rangle\langle\psi|\hat A) = \langle\psi|\hat A|\psi\rangle$. The trace is basis-independent — compute in whatever basis makes the arithmetic easiest.
 
 For a mixed state:
 
 $$\langle\hat A\rangle = \text{Tr}(\hat\rho\,\hat A) = \sum_i p_i\langle\psi_i|\hat A|\psi_i\rangle,$$
 
-which is the classical weighted average of quantum expectation values. This is exactly what we would write down from first principles for a probabilistic mixture.
+the classical weighted average of quantum expectation values. This is exactly what you would write down from first principles for a probabilistic mixture.
 
 ---
 
@@ -72,13 +74,13 @@ Pure states sit on the surface of the unit sphere ($|\vec r| = 1$). For example,
 
 Purity in terms of the Bloch vector: $\text{Tr}(\hat\rho^2) = \tfrac{1}{2}(1 + |\vec r|^2)$, which equals 1 only when $|\vec r| = 1$ and equals $1/2$ (the minimum for a qubit) when $|\vec r| = 0$.
 
-This picture is not merely geometric illustration. The Bloch vector components are directly measurable: $r_x = \langle\hat\sigma_x\rangle$, $r_y = \langle\hat\sigma_y\rangle$, $r_z = \langle\hat\sigma_z\rangle$. Quantum state tomography — the experimental reconstruction of $\hat\rho$ from measurements — is precisely the measurement of all three components. Single-qubit gates are rotations of the Bloch sphere. Decoherence is the process that shrinks $|\vec r|$ from the surface inward, turning a pure state into a mixed one. All the dynamics of an open qubit are visible in the geometry of this ball.
+This picture is not merely decorative. The Bloch vector components are directly measurable: $r_x = \langle\hat\sigma_x\rangle$, $r_y = \langle\hat\sigma_y\rangle$, $r_z = \langle\hat\sigma_z\rangle$. Quantum state tomography — the experimental reconstruction of $\hat\rho$ from measurements — is precisely the measurement of all three components. Single-qubit gates are rotations of the Bloch sphere. Decoherence is the process that shrinks $|\vec r|$ from the surface inward, turning a pure state into a mixed one. All the dynamics of an open qubit are visible in the geometry of this ball.
 
 ---
 
 ## The Partial Trace and Reduced Density Matrices
 
-We now turn to the second situation that requires a density operator. Two systems $A$ and $B$ have a joint state $\hat\rho_{AB}$ on $\mathcal{H}_A\otimes\mathcal{H}_B$. We want to describe subsystem $A$ alone — making predictions only about measurements on $A$.
+Here is the stranger case. Two systems $A$ and $B$ have a joint state $\hat\rho_{AB}$ on $\mathcal{H}_A\otimes\mathcal{H}_B$. You want to describe subsystem $A$ alone — making predictions only about measurements on $A$.
 
 The **partial trace** over $B$ gives the **reduced density matrix** of $A$:
 
@@ -86,7 +88,7 @@ $$\hat\rho_A = \text{Tr}_B(\hat\rho_{AB}) \equiv \sum_j\langle j|_B\,\hat\rho_{A
 
 where $\{|j\rangle_B\}$ is any orthonormal basis of $\mathcal{H}_B$. This is the unique state of $A$ that correctly predicts the statistics of every observable $\hat A\otimes\hat I_B$. The partial trace is not a measurement; it is a mathematical operation that discards $B$ by averaging over all its states.
 
-An important result follows: even when $\hat\rho_{AB}$ is pure, the reduced state $\hat\rho_A$ can be mixed — maximally mixed, even. This happens when $A$ and $B$ are entangled. Entanglement is the precise condition under which a pure joint state cannot be described by any pure state of its parts.
+The result that matters: even when $\hat\rho_{AB}$ is pure, the reduced state $\hat\rho_A$ can be mixed — maximally mixed, even. This happens when $A$ and $B$ are entangled. Entanglement is not a vague notion of correlation; it is the precise condition under which a pure joint state cannot be described by any pure state of its parts.
 
 ---
 
@@ -114,19 +116,19 @@ The off-diagonal terms $|00\rangle\langle11|$ and $|11\rangle\langle00|$ each co
 
 **The result.** $\hat\rho_A = \tfrac{1}{2}\hat I$. Bloch vector: $\vec r = (0,0,0)$. Purity: $\text{Tr}(\hat\rho_A^2) = \tfrac{1}{2}$.
 
-Qubit $A$ is in the maximally mixed state. Every measurement on $A$ alone, in any basis, gives outcomes with equal probability $1/2$. A perfectly pure joint state has yielded the most mixed possible subsystem. All the information about the correlations between $A$ and $B$ is in the joint state — discarding $B$ discards that information entirely.
+Qubit $A$ is in the maximally mixed state. Every measurement on $A$ alone, in any basis, gives outcomes with equal probability $1/2$. There is nothing to learn from measuring $A$ in isolation — all the information is in the correlations between $A$ and $B$, and those correlations vanish the moment $B$ is discarded. A perfectly pure joint state has yielded the most mixed possible subsystem.
 
-For comparison: if the joint state is a product state $|00\rangle\langle00|$, then $\hat\rho_A = |0\rangle\langle0|$, purity $= 1$, and the subsystem is pure. For pure joint states, the subsystem is mixed if and only if the joint state is entangled. This is the precise content of the partial trace.
+For comparison: if the joint state is a product state $|00\rangle\langle00|$, then $\hat\rho_A = |0\rangle\langle0|$, purity $= 1$, the subsystem is pure. The subsystem is mixed if and only if the joint state is entangled (for pure joint states). This is the precise content of the partial trace.
 
 ---
 
-## Interpretation and Open Questions
+## Still Puzzling
 
-The density matrix provides a well-defined procedure for handling incomplete information. It does not, however, resolve the deeper question of why information becomes incomplete.
+The density matrix resolves the question of *how* to describe incomplete information. It does not resolve the question of *why* information becomes incomplete.
 
-When the joint state of a qubit plus its environment is pure and we trace out the environment, we obtain $\hat\rho$ for the qubit — a mathematically precise and physically useful operation. The qubit is entangled with environmental degrees of freedom such as stray phonons and nuclear spins. The joint system remains pure, and unitary evolution continues. Decoherence explains why the qubit's density matrix becomes diagonal in the pointer basis, so that measurements appear classical. It does not explain why any particular outcome occurs.
+When the joint state of qubit plus environment is pure and you trace out the environment, you get $\hat\rho$ for the qubit — a mathematically precise and physically useful operation. But you have discarded the environment. The qubit is entangled with those stray phonons and nuclear spins. The joint system is still pure. Decoherence explains why the qubit's density matrix becomes diagonal in the pointer basis, so that measurements *look* classical. It does not explain why any particular outcome occurs. The trace operation that gives you $\hat\rho_A$ is irreversible only in practice; in principle, if you could gather all environmental degrees of freedom, the full joint state remains pure and unitary evolution continues.
 
-Whether the qubit has a definite pure state that the formalism merely fails to track — whether the mixedness is epistemic (a matter of ignorance) or ontic (a matter of fact) — is a question about the interpretation of quantum mechanics. The formalism is settled. The meaning continues to be debated.
+Whether the qubit has a definite pure state that the formalism merely fails to track — whether the mixedness is epistemic (a matter of ignorance) or ontic (a matter of fact) — is a question about the interpretation of quantum mechanics. The formalism is settled. The meaning is not.
 
 ---
 
@@ -310,4 +312,4 @@ Validation Checklist — Mixed States and the Density Matrix
 
 ---
 
-Chapter 2 covers composite systems and entanglement in detail. Once the joint state of a system plus environment is entangled, the system alone evolves under a quantum channel — a completely positive, trace-preserving map — rather than unitary evolution. The Lindblad master equation is the differential form of this evolution, and it describes why the Bloch vector shrinks inward over time.
+*Chapter 2 follows: the time evolution of open quantum systems. Once the joint state of system plus environment is entangled, the system alone evolves under a quantum channel — a completely positive, trace-preserving map — rather than unitary evolution. The Lindblad master equation is the differential form of this evolution, and it explains why the Bloch vector shrinks inward.*

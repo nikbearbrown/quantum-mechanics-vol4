@@ -1,15 +1,15 @@
 # Chapter 5 — Quantum Teleportation and Dense Coding
 *How the same entanglement that forbids copying makes movement possible.*
 
-We established in Chapter 4 that quantum states cannot be copied. This is not a limitation of present technology — it is a theorem, and the proof uses only the mathematics of unitarity. The same entanglement resource that enforces this impossibility turns out to be exactly what is needed to move an unknown quantum state from one place to another. The impossibility and the protocol are not in conflict. They are two consequences of the same underlying structure.
+You cannot photocopy a quantum state. This is not a limitation of present technology — it is structural, a theorem, and the proof fits in three lines of algebra. And yet, the same entanglement that forbids copying turns out to be exactly what you need to move an unknown quantum state from one place to another. The impossibility and the protocol are not in conflict. They are two faces of the same resource.
 
-In 1993, Charles Bennett and five collaborators — Brassard, Crépeau, Jozsa, Peres, and Wootters — published a protocol that achieves this: given one shared Bell pair and a classical phone call, Alice can deliver Bob an exact copy of any qubit state she holds, without Alice ever learning anything about the state, and without the original surviving in Alice's hands. [verify: Bennett et al., Phys. Rev. Lett. 70, 1895 (1993)] They called it teleportation. The physics is straightforward to follow: the state crosses no spatial gap. The entanglement was already there. What travels at the speed of light is two classical bits.
+In 1993, Charles Bennett and five collaborators — Brassard, Crépeau, Jozsa, Peres, and Wootters — published a protocol that achieves this: given one shared Bell pair and a classical phone call, Alice can deliver Bob an exact copy of any qubit state she holds, without Alice ever learning anything about the state, and without the original surviving in Alice's hands. [verify: Bennett et al., Phys. Rev. Lett. 70, 1895 (1993)] They called it teleportation. The name was chosen for its resonance, not for any suggestion of science fiction. The physics is stranger than fiction: the state crosses no spatial gap. The entanglement was already there. What travels at the speed of light is two bits.
 
 ---
 
 ## Why You Cannot Copy
 
-Before describing the protocol, we review the constraint it operates within. If copying were possible, teleportation would be unnecessary and faster-than-light signaling would be straightforward. So we first ask: why can't we copy?
+Before the protocol, the constraint. If copying were possible, teleportation would be unnecessary and faster-than-light signaling would be easy. So the first question is: why can't we copy?
 
 Suppose a universal quantum cloner exists — a unitary $\hat{U}$ such that, for any normalized qubit state $|\psi\rangle$ and a fixed blank state $|s\rangle$:
 
@@ -25,7 +25,9 @@ $$\langle\psi|\phi\rangle\underbrace{\langle s|s\rangle}_{=1} = \langle\psi|\phi
 
 Unitarity demands these equal: $\langle\psi|\phi\rangle = \langle\psi|\phi\rangle^2$. A complex number equal to its own square must be 0 or 1. So $|\psi\rangle$ and $|\phi\rangle$ are either orthogonal or identical. Since most pairs of states are neither, no universal cloner exists.
 
-This is the **no-cloning theorem** (Wootters and Zurek, 1982; Dieks, 1982, independently). [verify] The proof used only that $\hat{U}$ is unitary and linear — nothing else about physics. Orthogonal states *can* be copied — a CNOT fan-out copies $|0\rangle$ and $|1\rangle$ exactly — but an unknown superposition cannot. Quantum key distribution is secure because an eavesdropper who intercepts a qubit cannot make a silent copy and pass the original along undisturbed. And, as we will see below, if Bob could clone his received qubit after teleportation, he could statistically distinguish Alice's measurement bases without waiting for her classical phone call, which would allow superluminal signaling.
+This is the **no-cloning theorem** (Wootters and Zurek, 1982; Dieks, 1982, independently). [verify] The proof used only that $\hat{U}$ is unitary and linear — nothing else about physics. Just algebra.
+
+The consequences matter. Orthogonal states *can* be copied — a CNOT fan-out copies $|0\rangle$ and $|1\rangle$ exactly — but an unknown superposition cannot. Quantum key distribution is secure because an eavesdropper who intercepts a qubit cannot make a silent copy and pass the original along undisturbed. And, crucially for what follows, if Bob could clone his received qubit after teleportation, he could statistically distinguish Alice's measurement bases without waiting for her classical phone call, which would allow superluminal signaling. The impossibility of copying is the impossibility of faster-than-light communication.
 
 ---
 
@@ -93,7 +95,7 @@ The maximally mixed state. Whatever Alice measured, whatever $\alpha$ and $\beta
 
 The two classical bits are not a formality. They are the protocol. Without them, the entanglement resource is consumed and Bob has nothing.
 
-It is worth understanding why the reduced density matrix is $\hat{I}/2$ regardless of $|\psi\rangle$. Look at $|\Psi_2\rangle$: it is a sum of four terms, each with weight $1/4$, containing Bob's states $|\psi\rangle$, $X|\psi\rangle$, $Z|\psi\rangle$, and $ZX|\psi\rangle$. The mixed state formed by averaging over these four states — which is what the partial trace computes — equals $\hat{I}/2$ for any $|\psi\rangle$, because $\{I, X, Z, XZ\}$ forms a 1-design on the Bloch sphere: averaging over these four transformations maps any state to the center. The symmetry of the protocol over all outcomes is what prevents information from flowing faster than light.
+This is the place to pause and understand why the reduced density matrix is $\hat{I}/2$ regardless of $|\psi\rangle$. Look at $|\Psi_2\rangle$: it is a sum of four terms, each with weight $1/4$, containing Bob's states $|\psi\rangle$, $X|\psi\rangle$, $Z|\psi\rangle$, and $ZX|\psi\rangle$. The mixed state formed by averaging over these four states — which is what the partial trace computes — equals $\hat{I}/2$ for any $|\psi\rangle$, because $\{I, X, Z, XZ\}$ forms a 1-design on the Bloch sphere: averaging over these four transformations maps any state to the center. That is why the no-signaling theorem holds here: the symmetry of the protocol over all outcomes is what prevents information from flowing faster than light.
 
 ---
 
@@ -152,7 +154,7 @@ $$Z(\alpha|0\rangle-\beta|1\rangle) = \alpha|0\rangle+\beta|1\rangle = |\psi\ran
 
 In every case, Bob recovers $|\psi\rangle$ exactly. The correction is deterministic — it depends only on Alice's two classical bits, not on $\alpha$ or $\beta$. Neither party ever learns the values of $\alpha$ and $\beta$. The state information is transferred intact without being read.
 
-The limit of the protocol: it assumes a perfect Bell pair. Real experiments use Bell pairs with fidelity $F < 1$ due to decoherence. If the pair degrades before Alice completes her measurement, Bob receives a mixed state with teleportation fidelity below 1. The connection to the CHSH parameter from Chapter 4 is direct: a Bell pair achieving $S = 2\sqrt{2}$ gives perfect teleportation fidelity; one degraded to $S = 2$ (the CHSH classical bound) still teleports well — $F_\text{tel}(2) = (1 + 1/\sqrt2)/2 \approx 0.85$, comfortably above the best classical protocol's $F = 2/3$. Teleportation stops beating the classical protocol only below $S = 2\sqrt2/3 \approx 0.94$, so a state can be CHSH-local ($S \leq 2$) yet still a useful teleportation resource. The CHSH test on the hardware tells you how good your teleportation resource is.
+The limit of the protocol: it assumes a perfect Bell pair. Real experiments use Bell pairs with fidelity $F < 1$ due to decoherence. If the pair degrades before Alice completes her measurement, Bob receives a mixed state with teleportation fidelity below 1. The connection to the CHSH parameter from Chapter 4 is direct: a Bell pair achieving $S = 2\sqrt{2}$ gives perfect teleportation fidelity; one degraded to $S = 2$ (the CHSH classical bound) still teleports well — $F_\text{tel}(2) = (1 + 1/\sqrt2)/2 \approx 0.85$, comfortably above the best classical protocol's $F = 2/3$. Teleportation stops beating the classical protocol only below $S = 2\sqrt2/3 \approx 0.94$, so a state can be CHSH-local ($S \leq 2$) yet still a useful teleportation resource. Your CHSH test on the hardware tells you how good your teleportation resource is.
 
 ---
 
@@ -242,7 +244,7 @@ Holevo, A. S. (1973). Bounds for the quantity of information transmitted by a qu
 
 ## Running Project — Reconstruct a Real Research Result
 
-**This chapter adds:** the *resource-quality bridge* — the map from a Bell pair's CHSH value $S$ to the teleportation fidelity $F_\text{tel} = (1 + S/2\sqrt2)/2$ it can deliver, and the classical threshold $F = 2/3$ a quantum resource must beat. This is the first piece of the **honesty layer**: a paper that reports $S$ is implicitly bounding what its entanglement can *do*, and we can compute that bound. It turns a raw correlation number into a statement about capability — exactly the kind of "what does this actually claim" reasoning Chapter 10 demands.
+**This chapter adds:** the *resource-quality bridge* — the map from a Bell pair's CHSH value $S$ to the teleportation fidelity $F_\text{tel} = (1 + S/2\sqrt2)/2$ it can deliver, and the classical threshold $F = 2/3$ a quantum resource must beat. This is the first piece of the **honesty layer**: a paper that reports $S$ is implicitly bounding what its entanglement can *do*, and you can compute that bound. It turns a raw correlation number into a statement about capability — exactly the kind of "what does this actually claim" reasoning Chapter 10 demands.
 
 ### Exercise R1 — When to Use AI
 **The judgment:** In this chapter's project work, AI assistance is appropriate for:

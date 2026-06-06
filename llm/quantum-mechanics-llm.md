@@ -9,7 +9,7 @@
 ## Chapter 00: Quantum Mechanics
 *Source: `chapters/00-frontmatter.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
+> **Section not yet authored.** No `## LLM Exercises` / `### Exercise R3 — LLM Exercise` block found in this chapter file.
 > To add this section, edit the source chapter file directly.
 
 ---
@@ -17,87 +17,871 @@
 ## Chapter 01: Chapter 1 — Mixed States and the Density Matrix
 *Source: `chapters/01-mixed-states-and-the-density-matrix.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** a worked derivation and a parametrized $\hat\rho(\epsilon)$ for the entangled resource state your paper actually produced, with purity and reduced state computed and checked.
+**Tool:** Claude chat — a single self-contained derivation, no persistent project context needed yet.
+**The Prompt:**
+```
+I am reconstructing the core result of a quantum experiment and need to model
+its imperfect entangled state. Work in the two-qubit computational basis
+{|00>, |01>, |10>, |11>}.
+
+1. Write out the 4x4 density matrix rho(eps) = (1-eps)|Phi+><Phi+| + eps * I4/4,
+   where |Phi+> = (|00> + |11>)/sqrt(2), as an explicit matrix with entries in
+   terms of eps. Show the |Phi+><Phi+| matrix first, then the sum.
+2. Compute Tr(rho), Tr(rho^2) (the purity), and the four eigenvalues of rho(eps),
+   all as functions of eps.
+3. Compute the reduced density matrix rho_A = Tr_B(rho(eps)) and state what it is
+   for every eps.
+4. State the value of eps at which rho(eps) stops being entangled (lose entanglement
+   when the largest eigenvalue / the structure crosses the separability point), and
+   show the reasoning.
+Show every matrix step. Do NOT skip to a final formula — I will check each line.
+At the end, list the validity conditions a valid two-qubit density matrix must
+satisfy and confirm rho(eps) meets them for eps in [0,1].
+```
+**What this produces:** an explicit $\hat\rho(\epsilon)$, its purity $\text{Tr}(\hat\rho^2) = \tfrac14(1 + 3(1-\epsilon)^2)$, eigenvalues $\{1-\tfrac{3\epsilon}{4},\ \tfrac{\epsilon}{4},\ \tfrac{\epsilon}{4},\ \tfrac{\epsilon}{4}\}$, and $\hat\rho_A = \hat I/2$ for all $\epsilon$ — the building blocks for the imperfect-resource model.
+**How to adapt:** *Your system:* swap in your paper's actual Bell state ($|\Psi^-\rangle$ for spin singlets, etc.). *ChatGPT/Gemini:* identical prompt; cross-check the eigenvalue formula across tools. *Claude Project:* drop the result into a project knowledge file as `resource-state.md` for later chapters.
+**Builds on:** the chapter's worked partial trace of $|\Phi^+\rangle$ giving $\hat\rho_A = \tfrac12\hat I$.  **Next:** Chapter 2 confirms this state is maximally entangled and pins down which Bell state your paper uses.
 
 ---
 
 ## Chapter 02: Chapter 2 — Composite Systems and Entanglement
 *Source: `chapters/02-composite-systems-and-entanglement.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+## LLM Exercises
+
+The following exercises are designed to be worked with a large language model as a thinking partner — not to obtain derivations, but to probe reasoning, check algebra, and explore the limits of what the chapter established.
+
+1. Ask an LLM to explain the difference between a direct sum $\mathcal{H}_A\oplus\mathcal{H}_B$ and a tensor product $\mathcal{H}_A\otimes\mathcal{H}_B$ for two qubits. The answer should note that both give four-dimensional spaces for two qubits (since $2+2 = 2\times2 = 4$), but for a qubit and a qutrit they differ ($2+3 = 5$ vs. $2\times3 = 6$). Ask it to identify which structure allows entanglement and why.
+
+2. Ask an LLM to carry out the Schmidt decomposition of the state $|\psi\rangle = \tfrac{1}{2}|00\rangle + \tfrac{1}{2}|01\rangle + \tfrac{1}{2}|10\rangle - \tfrac{1}{2}|11\rangle$ step by step, matching the worked example in the chapter. Check every matrix multiplication. If it obtains different Schmidt vectors, verify whether they are related to the chapter's answer by a phase or by a different choice of degenerate subspace, and whether the Schmidt coefficients agree.
+
+3. Ask an LLM to prove that the entanglement entropy $S_E$ is invariant under local unitaries $U_A\otimes U_B$. The proof should go through: (a) the singular values of $C$ are unchanged when $C$ is replaced by $U_A C U_B^\dagger$; (b) $S_E$ depends only on the singular values; therefore $S_E$ is unchanged. Ask it to identify where in the argument the unitarity of $U_A$ and $U_B$ is used.
+
+4. Ask an LLM to explain what "bound entanglement" means and why it matters. The answer should distinguish between entanglement of formation (cost to prepare a mixed state) and distillable entanglement (yield when you try to extract Bell pairs), and explain that bound entanglement is the gap where cost exceeds yield. Ask whether a pure state can have bound entanglement, and why or why not.
+
+5. Ask an LLM to explain the GHZ state $\tfrac{1}{\sqrt{2}}(|000\rangle + |111\rangle)$ versus the W state $\tfrac{1}{\sqrt{3}}(|001\rangle + |010\rangle + |100\rangle)$, and why these two states represent inequivalent classes of three-qubit entanglement. The answer should invoke the fact that neither can be converted to the other by LOCC, even with many copies. Ask it to compute the bipartite entanglement entropy $S_E(A:BC)$ for both states and compare.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** a one-paragraph identification of your paper's entangled state, with $\det(C)$, Schmidt decomposition, and $S_E$ computed and the correlation-function sign fixed.
+**Tool:** Claude chat — self-contained, no persistent context required.
+**The Prompt:**
+```
+I am identifying the entangled resource state in a quantum experiment.
+Here is how the paper describes its state: [PASTE the paper's own words,
+e.g. "polarization-entangled photon pairs in the state (|HH> + |VV>)/sqrt(2)"
+or "the spin singlet of two NV electron spins"].
+
+1. Map this to one of the four Bell states |Phi+>, |Phi->, |Psi+>, |Psi->
+   in the {|00>,|01>,|10>,|11>} basis, stating the encoding you used
+   (e.g. H=|0>, V=|1>). Write the amplitude vector [c00,c01,c10,c11].
+2. Form the 2x2 coefficient matrix C and compute det(C). State whether the
+   state is entangled and why (rank-1 test).
+3. Give the Schmidt decomposition and the entanglement entropy S_E in ebits.
+   Confirm S_E = 1 for a Bell state.
+4. State the two-qubit correlation function E(theta_a, theta_b) for THIS Bell
+   state, being explicit about the sign: |Phi+> gives +cos(theta_a - theta_b),
+   the singlet |Psi-> gives -cos(theta_a - theta_b). This sign carries into the
+   CHSH calculation later, so justify it.
+Show all algebra. Flag any place where the encoding choice (which physical state
+is |0>) would change the answer.
+```
+**What this produces:** the identified Bell state, its amplitude vector, $\det(C) = \tfrac12$, $S_E = 1$ ebit, and the correct-signed correlation function — exactly what Chapter 3's CHSH reconstruction needs as input.
+**How to adapt:** *Your system:* paste your paper's verbatim state description. *ChatGPT/Gemini:* same prompt; if the tools disagree on the sign of $E$, that disagreement is the lesson — resolve it by hand. *Claude Project:* save the result as `resource-state.md` next to Chapter 1's $\hat\rho(\epsilon)$.
+**Builds on:** Chapter 1's $\hat\rho(\epsilon)$ — you now know which pure state sits inside that mixture.  **Next:** Chapter 3 plugs this state and its correlation function into the CHSH parameter $S$.
 
 ---
 
 ## Chapter 03: Chapter 3 — Bell's Theorem and the CHSH Inequality
 *Source: `chapters/03-bells-theorem-and-chsh.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+## LLM Exercises
+
+### Part 1 — Update PROJECT.md
+
+```
+Append a new entry to PROJECT.md:
+
+Chapter 3 — Bell's Theorem and the CHSH Inequality
+Deliverable: 03-bell-chsh.html
+Status: in progress
+
+The simulation has two panels in one HTML file.
+
+Panel A — CHSH Bell-inequality simulator (700 x 600 SVG).
+- State selector: radio buttons for |Phi+>, |Phi->, |Psi+>, |Psi->,
+  |00> (product), and "classical mixture (1/2|00><00| + 1/2|11><11|)".
+- Four angle sliders: theta_A1, theta_A2, theta_B1, theta_B2,
+  range 0 to 360 degrees, step 0.5.
+- 2x2 correlation display: E(A1,B1), E(A1,B2), E(A2,B1), E(A2,B2),
+  each shown numerically and as a color-coded cell.
+- Large S display (~48 pt font). Background flips to amber (#FFC107)
+  when |S| > 2. Display also shows |S| > 2sqrt(2) warning in red
+  (should never trigger for quantum states — if it does, flag a bug).
+- Sub-panel (700 x 200): S vs (theta_A1 - theta_B1) with the other
+  three angles held fixed. Red line at y = 2 (CHSH bound). Gold
+  dashed line at y = 2*sqrt(2) (Tsirelson bound).
+- Snap-to-canonical button: sets angles to 0, 90, 45, -45 with one click.
+
+Panel B — Experimental timeline (700 x 300).
+- A horizontal timeline from 1935 (EPR) to 2025.
+- Labeled events: EPR 1935, Bell 1964, Freedman-Clauser 1972,
+  Aspect 1982, Hensen/Giustina/Shalm 2015, Nobel 2022.
+- Clicking each event pops up a tooltip with one-sentence description.
+- Nobel Prize glows gold.
+```
+
+### Part 2 — Physics rules for CLAUDE.md
+
+```
+Append to CLAUDE.md:
+
+BELL/CHSH PHYSICS RULES
+
+1. Two-qubit states are 4-vectors [c_00, c_01, c_10, c_11] (complex).
+   Normalize after every operation; warn if |norm-1| > 1e-4.
+
+2. For Bell states, use exact values:
+   |Phi+>: [1, 0, 0, 1] / sqrt(2)
+   |Phi->: [1, 0, 0,-1] / sqrt(2)
+   |Psi+>: [0, 1, 1, 0] / sqrt(2)
+   |Psi->: [0, 1,-1, 0] / sqrt(2)
+
+3. Correlation for state |psi> with Alice at theta_A and Bob at theta_B
+   (angles in radians, measured from z-axis in the xz-plane):
+     sigma_A = sin(theta_A)*sigma_x + cos(theta_A)*sigma_z  (2x2)
+     sigma_B = sin(theta_B)*sigma_x + cos(theta_B)*sigma_z  (2x2)
+     M = kron(sigma_A, sigma_B)  (4x4)
+     E(A, B) = Re(psi_dag * M * psi)
+   Pauli matrices: sigma_x = [[0,1],[1,0]], sigma_z = [[1,0],[0,-1]].
+
+4. CHSH parameter: S = E(A1,B1) + E(A1,B2) + E(A2,B1) - E(A2,B2).
+
+5. For "classical mixture" state rho = 0.5|00><00| + 0.5|11><11|:
+   E(A,B) = 0.5*Tr(M * |00><00|) + 0.5*Tr(M * |11><11|).
+   This state cannot violate |S| > 2. Flag if it appears to.
+
+6. Display S to three decimal places. The Tsirelson bound 2*sqrt(2) = 2.8284...
+   Draw a gold dashed line at this value in the sub-panel.
+
+KNOWN FAILURE MODES:
+(a) Phase conventions differ between Alice/Bob axes. Use sin*sigma_x + cos*sigma_z
+    everywhere, no exceptions.
+(b) Classical mixture misimplemented as pure state. Use density-matrix
+    expectation value Tr(rho * M), not psi-dag * M * psi.
+(c) Angle in degrees sent to trig functions expecting radians.
+    Always convert: theta_rad = theta_deg * Math.PI / 180.
+```
+
+### Part 3 — The simulation prompt
+
+```
+You are working in my directory which contains CLAUDE.md and PROJECT.md.
+Read both files first.
+
+Build 03-bell-chsh.html: a single self-contained HTML file using D3 v7
+from CDN, no other dependencies, implementing the Chapter 3 Bell/CHSH
+simulation as specified in PROJECT.md, following the physics rules in
+CLAUDE.md.
+
+Two stacked SVG panels.
+
+PANEL A — CHSH simulator (700 x 600):
+- State selector (radio buttons, top row).
+- Four angle sliders (theta_A1, theta_A2, theta_B1, theta_B2), each 0-360 deg.
+- A 2x2 grid of small labeled correlation readouts, each showing the
+  numerical value of E(Ai, Bj) and a color bar from blue (-1) to red (+1).
+- A large central S display. Background: white when |S| <= 2, amber
+  (#FFC107) when |S| > 2.
+- "Snap to optimal (|Phi+>)" button that sets angles to 0/90/45/-45.
+- Sub-panel below (700 x 200): line chart of S vs delta_theta =
+  (theta_A1 - theta_B1) from -180 to +180 deg, with the other three
+  angles held at their current slider values. Horizontal lines: red
+  at y=2 (labeled "CHSH bound"), gold dashed at y=2.828 (labeled "Tsirelson").
+
+PANEL B — Timeline (700 x 300):
+- Horizontal axis 1935 to 2030. Scale with D3 linear.
+- Labeled points: EPR (1935), Bell's theorem (1964), Freedman-Clauser (1972),
+  Aspect locality test (1982), 2015 loophole-free (three overlapping dots),
+  Nobel Prize (2022, gold star).
+- Click events show tooltip with one-sentence description.
+
+Default state on load: |Phi+> selected, angles at 0/90/45/-45.
+S should display 2.828 and background should be amber.
+
+Runtime checks (console.log):
+- For |Phi+> at optimal angles, S must be within 0.001 of 2.828.
+- For |00> at any angles, S must remain in [-2, 2].
+- For classical mixture at any angles, S must remain in [-2, 2].
+```
+
+### Part 4 — Exploration tasks
+
+**Task 1: The violation.** Load with $|\Phi^+\rangle$ and snap-to-optimal angles $(0°, 90°, 45°, -45°)$. Read $S$. Background turns amber; $S = 2.828$.
+
+**Task 2: Product states cannot violate.** Switch to $|00\rangle$. Try every angle combination. Can you push $|S|$ above 2? Write one sentence connecting your answer to the CHSH derivation.
+
+**Task 3: Classical correlation vs. quantum entanglement.** Switch to "classical mixture." The measured outcomes are perfectly correlated in the $z$-basis: whenever Alice gets $+1$, so does Bob. Try to violate the bound. What does this demonstrate about the difference between classical correlation and quantum entanglement?
+
+**Task 4: Sweeping angles.** Return to $|\Phi^+\rangle$. Fix $\theta_{A_2} = 90°$, $\theta_{B_1} = 45°$, $\theta_{B_2} = -45°$ and sweep $\theta_{A_1}$ from $0°$ to $360°$. Watch the sub-panel. Where does $S$ reach its maximum? Where does it cross zero?
+
+**Task 5: The singlet.** Try $|\Psi^-\rangle$. What angles maximize $|S|$ for this state? Is the maximum value still $2\sqrt{2}$?
+
+**Extension prompt:**
+
+```
+Modify 03-bell-chsh.html to add a third panel: a "local hidden variable
+machine" that runs trials.
+
+- The user sets the number of trials (slider: 10 to 10,000).
+- For each trial, the machine samples a hidden variable lambda uniformly
+  from [0, 2*pi), then computes A1 = sign(cos(lambda)), A2 = sign(cos(lambda + phi_A)),
+  B1 = sign(cos(lambda + phi_B)), B2 = sign(cos(lambda + phi_A + phi_B))
+  where phi_A and phi_B are user-adjustable.
+- It accumulates the empirical S from these trials.
+- Display: histogram of single-trial S(lambda) values (always ±2);
+  running average of S (converging to some value in [-2, 2]);
+  side-by-side comparison of the LHV-model S against the quantum S
+  for the same angles.
+- Demonstrate: no choice of phi_A, phi_B can make the LHV machine
+  produce |S| > 2.
+```
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** your first-principles CHSH value $S$ for your paper's (or the canonical) measurement angles, placed next to the paper's reported $S$ — the first row of your reconstruction dossier.
+**Tool:** Claude chat.
+**The Prompt:**
+```
+I am reconstructing the central claim of a loophole-free Bell test. My resource
+state is [PASTE from Chapter 2: the Bell state and its correlation function,
+e.g. "|Phi+>, E(theta_a,theta_b) = cos(theta_a - theta_b)"].
+
+1. Using S = E(A1,B1) + E(A1,B2) + E(A2,B1) - E(A2,B2), compute S for the
+   measurement angles theta_A1=0, theta_A2=90, theta_B1=45, theta_B2=-45 degrees.
+   Show each of the four correlators, then the sum. Convert degrees to radians
+   explicitly.
+2. Confirm S = 2*sqrt(2) ~ 2.828 and state the classical bound (2) and the
+   Tsirelson bound (2*sqrt(2)) for comparison.
+3. Now compute S for these specific angles instead: [PASTE your paper's reported
+   measurement settings if it gives them; otherwise keep the canonical ones].
+4. The paper reports S_exp = [PASTE the paper's value with its error bar, e.g.
+   2.42 +/- 0.20]. State the gap between my ideal S and S_exp, and list the
+   physical effects (detection inefficiency, decoherence, photon loss) that push
+   the experimental value below the ideal 2*sqrt(2). DO NOT judge whether the
+   numbers "agree" statistically — just report both numbers and the gap.
+Show all trig. Flag if any correlator falls outside [-1, 1] (that would be a bug).
+```
+**What this produces:** your reconstructed $S$, the canonical $2\sqrt2$ check, and a side-by-side of ideal $S$ vs. reported $S_\text{exp}$ with the imperfection sources named — the dossier's headline comparison.
+**How to adapt:** *Your system:* substitute the singlet's $-\cos$ form and the singlet-optimal angles if your paper uses spins. *ChatGPT/Gemini:* run the same prompt; any disagreement in $S$ traces to a degrees/radians or sign slip. *Claude Project:* append to your dossier file as the "core calculation" entry.
+**Builds on:** Chapter 2's identified Bell state and signed correlation function.  **Next:** Chapter 4 builds the circuit that actually prepares and measures this state; Chapter 6 derives the decoherence that produces the ideal-vs-real gap you just observed.
 
 ---
 
 ## Chapter 04: Chapter 4 — Quantum Gates and Circuits
 *Source: `chapters/04-quantum-gates-and-circuits.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** a gate-level model of how your paper's measurement at angle $\theta$ is implemented — a basis rotation followed by a computational-basis measurement — verified against the CHSH correlators of Chapter 3.
+**Tool:** Claude chat.
+**The Prompt:**
+```
+I am modeling the measurement apparatus of a Bell-test experiment as a quantum
+circuit. My resource state is [PASTE the Bell state from Chapter 2].
+
+1. Show the H–CNOT preparation circuit that produces this Bell state from a
+   computational-basis input, tracing the state after each gate.
+2. A measurement of the observable cos(theta)*Z + sin(theta)*X is equivalent to
+   rotating the qubit by R_y(-2*theta) (or the appropriate sign) and then measuring
+   Z. Write the single-qubit rotation that implements "measure at angle theta" for
+   Alice and for Bob, and confirm by computing <psi| (rotation^dagger Z rotation) |psi>
+   reproduces E = cos(theta_a - theta_b) for |Phi+>.
+3. Describe the Bell-measurement circuit (CNOT then H then measure both) that a
+   dense-coding/teleportation-style readout uses, and confirm it maps the four
+   Bell states to the four computational basis states.
+Show every matrix. Verify each rotation is unitary (R^dagger R = I).
+```
+**What this produces:** the prep circuit, the explicit basis-rotation that realizes "measure at angle $\theta$," a check that it reproduces Chapter 3's $E(\theta_a,\theta_b)$, and the Bell-measurement readout — the apparatus half of the reconstruction.
+**How to adapt:** *Your system:* if your paper uses polarizers, note the factor-of-2 between polarizer angle and Bloch-sphere angle. *ChatGPT/Gemini:* same prompt; rotation sign conventions differ between tools — reconcile against the $E = \cos$ check. *Claude Project:* save as `apparatus.md`.
+**Builds on:** Chapter 3's correlators $E(\hat a,\hat b)$ — now realized as concrete gates.  **Next:** Chapter 5 uses this same Bell-measurement circuit inside teleportation and ties resource quality back to $S$.
 
 ---
 
 ## Chapter 05: Chapter 5 — Quantum Teleportation and Dense Coding
 *Source: `chapters/05-quantum-teleportation-and-dense-coding.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+## LLM Exercises
+
+The following exercises are designed to be worked with a large language model as a thinking partner — not to generate the protocol, but to probe reasoning, check algebra, and explore the edges of what the chapter established.
+
+1. Ask an LLM to trace the teleportation protocol for $|\psi\rangle = |1\rangle$, showing the full three-qubit state after each of the five steps and all four correction cases. Check: does the derivation of $|\Psi_2\rangle$ match the general formula with $\alpha = 0$, $\beta = 1$? Do all four correction cases yield $|1\rangle$?
+
+2. Ask an LLM to explain why the four states $\{|\psi\rangle, X|\psi\rangle, Z|\psi\rangle, ZX|\psi\rangle\}$ average to $\hat{I}/2$ for any $|\psi\rangle$. The explanation should connect this to the Pauli group and the fact that $\{I, X, Z, XZ\}$ forms a 1-design on the Bloch sphere. Ask it whether this property is special to the Pauli gates or whether other gate sets would also work.
+
+3. Ask an LLM to explain why superdense coding does not violate the Holevo bound. The explanation should distinguish between the Holevo bound with and without pre-shared entanglement, and state the entanglement-assisted bound explicitly. Ask it to confirm that dense coding saturates the entanglement-assisted bound.
+
+4. Ask an LLM to describe the first experimental demonstration of quantum teleportation (Bouwmeester et al., 1997). Ask it to identify what the experimentalists actually teleported (the polarization state of a photon), how they created their Bell pair, what their measured fidelity was, and what technical limitations prevented perfect fidelity. Evaluate whether the experimental description is physically accurate.
+
+5. Ask an LLM to explain the connection between teleportation and quantum error correction. Specifically: error-correcting codes use entanglement to detect and correct errors on qubits; teleportation uses entanglement to move qubits. Ask it to explain whether a quantum error-correcting code can be seen as a kind of "teleportation through a noisy channel," and what the analogy breaks down on.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** the capability assessment for your resource — the teleportation fidelity implied by your paper's $S$, with the classical-threshold comparison.
+**Tool:** Claude chat.
+**The Prompt:**
+```
+I am assessing what a Bell-test resource can DO, as part of reconstructing a
+paper's claim. The paper reports a CHSH parameter S_exp = [PASTE value with error
+bar, e.g. 2.42 +/- 0.20].
+
+1. Using F_tel(S) = (1 + S/(2*sqrt(2)))/2, compute the teleportation fidelity for
+   S = 2*sqrt(2) and for S = 2, confirming F=1 and F≈0.854 respectively.
+2. Compute F_tel for S_exp, and also for S_exp + and - its error bar, giving a
+   fidelity range.
+3. The best classical (no-entanglement) teleportation fidelity is F = 2/3. State
+   whether the fidelity range from step 2 lies entirely above 2/3, straddles it,
+   or lies below it. Report the margin numerically. Do NOT editorialize about
+   whether this "proves" anything — just give the numbers and where they sit
+   relative to 2/3.
+4. State in one sentence what this resource can and cannot be claimed to do, based
+   only on these numbers.
+Show the arithmetic, including the error-bar propagation.
+```
+**What this produces:** $F_\text{tel}$ for your $S_\text{exp}$ with an uncertainty range, the comparison to the classical $2/3$ line, and a tight capability statement — a honesty-layer entry for the dossier.
+**How to adapt:** *Your system:* if your paper is QEC or sensing, swap this for the relevant capability metric (logical error rate, sensitivity) — the *structure* (compute capability, compare to classical/physical benchmark, carry the error bar) is identical. *ChatGPT/Gemini:* same prompt. *Claude Project:* append to the dossier's honesty-layer section.
+**Builds on:** Chapter 3's $S_\text{exp}$ and Chapter 4's Bell-measurement circuit (used inside teleportation).  **Next:** Chapter 6 derives the decoherence that drives $S$ (and thus $F_\text{tel}$) below the ideal — the *cause* of the resource degradation you just quantified.
 
 ---
 
 ## Chapter 06: Chapter 6 — Open Systems: Decoherence and the Lindblad Equation
 *Source: `chapters/06-open-systems-and-lindblad.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+## LLM Exercises
+
+### Part 1 — Update PROJECT.md
+
+```
+Append a new entry to PROJECT.md describing this chapter's simulation:
+
+Chapter 6 — Open Systems: Decoherence and the Lindblad Equation
+Deliverable: 06-decoherence.html
+Status: in progress
+
+The simulation has two panels side by side in one HTML file:
+
+Panel A — Bloch sphere visualizer (500 x 500 SVG, left).
+- 2D orthographic projection of the unit Bloch sphere:
+  equator (grey circle), two meridians (light grey arcs), z-axis
+  (thin grey vertical line), south pole labeled |0> and north pole |1>.
+- Orange arrow from origin to Bloch vector position (r_x, r_y, r_z).
+- Trail: last 300 Bloch vector positions as a fading dotted orange curve
+  (opacity proportional to age).
+- Small labels for the current (r_x, r_y, r_z) and the purity Tr(rho^2).
+
+Sliders below Panel A:
+  T_1: 1 to 5000 natural time units, log scale.
+  T_2: 0 to 2*T_1, linear scale (clamped at 2*T_1 — refuse values above).
+       Display the inferred T_phi = 1 / (1/T_2 - 1/(2T_1)) next to the slider.
+  omega_0: 0 to 5 natural units, linear.
+  theta_0: initial polar angle, 0 to pi (default pi/2 = equator).
+  phi_0: initial azimuth, 0 to 2 pi (default 0).
+  time scrubber: 0 to 10 * max(T_1, 1/omega_0).
+
+Play / Pause button. Reset Trail button.
+
+Panel B — Density matrix bar chart (400 x 400 SVG, right).
+- 2x2 grid of bars. Bar heights are |rho_ij| (0 to 0.5 for off-diagonals,
+  0 to 1 for diagonals). Bars colored:
+    rho_00 (top-left): blue; rho_11 (bottom-right): red.
+    rho_01 and rho_10 (off-diagonals): amber, height shrinking in real time.
+- Phase of the off-diagonal shown as a small colored arc (HSL hue = phase angle).
+- Below the bar chart: time series of |rho_01(t)| for the last 5 T_2 periods,
+  plotted as an orange curve against a background exponential e^{-t/T_2}.
+  The data and the theoretical envelope should match.
+```
+
+### Part 2 — CLAUDE.md amendment
+
+```
+Append to CLAUDE.md the following physics rules for Chapter 6 simulations:
+
+OPEN QUANTUM SYSTEMS (BLOCH EQUATIONS) PHYSICS RULES
+
+1. The Bloch vector (r_x, r_y, r_z) must satisfy |r| <= 1 at all times.
+   Clamp to 1 and log a warning if rounding pushes above 1.001.
+
+2. Bloch equations (the chapter's central result):
+     dot r_x = -omega_0 * r_y - r_x / T_2
+     dot r_y = +omega_0 * r_x - r_y / T_2
+     dot r_z = -(r_z - r_z_eq) / T_1
+   with r_z_eq = -1 (south pole / ground state).
+
+3. The pure dephasing time is DERIVED, not set directly:
+     1/T_phi = 1/T_2 - 1/(2*T_1)
+   Clamp: T_2 <= 2*T_1 always. If user sets T_2 > 2*T_1, snap to 2*T_1.
+
+4. Integration method: 4th-order Runge–Kutta (RK4).
+   Step size: dt = 0.01 * min(T_1, T_2, 1/omega_0 if omega_0 > 0 else T_1).
+   Animate at 60 fps with requestAnimationFrame.
+
+5. Density matrix from Bloch vector:
+     rho[0][0] = (1 + r_z) / 2
+     rho[1][1] = (1 - r_z) / 2
+     rho[0][1] = (r_x - i*r_y) / 2   (complex)
+     rho[1][0] = conj(rho[0][1])
+
+6. Purity: Tr(rho^2) = (1 + |r|^2) / 2. Should equal 1 for |r| = 1
+   and 0.5 for |r| = 0 (maximally mixed).
+
+7. Bloch sphere rendering: orthographic projection onto the page.
+   Project 3D point (x, y, z) to 2D screen as (cx + scale*x, cy - scale*z)
+   (dropping the y depth dimension for simplicity, or use a slight
+   isometric tilt). Orange arrow from (cx, cy) to the projected point.
+
+8. Off-diagonal time series: compute |rho[0][1]| = |r_x - i*r_y| / 2
+   at each time step. Store the last 5*T_2 worth of samples. The
+   theoretical envelope is 0.5 * exp(-t/T_2). If the simulated curve
+   deviates from the envelope by more than 5%, flag a numerical bug.
+
+KNOWN FAILURE MODES:
+(a) T_2 > 2*T_1 accepted without clamping. Check on every slider event.
+(b) r_z equilibrium set to +1 (north pole) instead of -1 (south pole).
+    The ground state is |0>, which is at the SOUTH pole in the
+    convention where |0> = (1 0)^T and sigma_z eigenvalue +1 is the
+    north pole. Double-check: at t -> infinity with T_1 finite, r_z -> -1.
+(c) Trail not cleared on reset. Clear the trail array on every "Reset"
+    button click.
+(d) Phase of off-diagonal drawn incorrectly: phase of rho[0][1] is
+    arg(r_x - i*r_y) = atan2(-r_y, r_x), not atan2(r_y, r_x).
+(e) RK4 step too large: if omega_0 is large (fast precession), the
+    step must resolve the oscillation. Use dt < 0.1 / omega_0.
+```
+
+### Part 3 — The simulation prompt
+
+```
+You are working in my directory which contains CLAUDE.md, DESIGN.md,
+and PROJECT.md. Read all three first.
+
+Build 06-decoherence.html: a single self-contained HTML file using
+D3 v7 from a CDN, no other dependencies, implementing the Chapter 6
+simulation as specified in PROJECT.md, following the physics rules in
+CLAUDE.md and the visual constitution in DESIGN.md.
+
+The page has a header ("Chapter 6 — Qubit Decoherence Visualizer") and
+two panels side by side in a flex row: Panel A (Bloch sphere) on the
+left, Panel B (density matrix bar chart) on the right.
+
+PANEL A — Bloch sphere (500 x 500 SVG).
+
+Render:
+- Grey wireframe sphere: equator (full circle), two meridians (half
+  circles for x-z and y-z planes). Use thin strokes, opacity 0.4.
+- Z-axis vertical line: label |0> at south pole (bottom), |1> at
+  north pole (top).
+- Bloch vector: thick orange arrow from SVG center to projected position.
+- Trail: last 300 vector tips as small orange dots fading from 0.8 to
+  0.05 opacity by age.
+- Text overlay (top-right of panel): "rx = ..., ry = ..., rz = ..."
+  and "Purity = ..." updating at each animation frame.
+
+Below Panel A, six sliders with live numeric labels:
+  T_1 (log scale, 1 to 5000), T_2 (linear, 0 to 2*T_1 clamped),
+  omega_0 (0 to 5), theta_0 (0 to pi), phi_0 (0 to 2 pi), time scrubber.
+
+Below sliders: small text showing inferred T_phi = ... and the current
+time t = ... in natural units.
+
+Play / Pause button. Reset button (resets to initial position, clears trail,
+resets time to 0 but keeps slider values).
+
+PANEL B — Density matrix (400 x 400 SVG).
+
+2x2 bar chart. Four bars labeled rho_00 (blue), rho_01 (amber), rho_10
+(amber), rho_11 (red). Heights proportional to |rho_ij|, scaled so
+max height = 200 px at |value| = 0.5 for off-diagonals and |value| = 1
+for diagonals.
+
+A small colored arc (radius 18 px) below each off-diagonal bar shows
+the phase of rho_01 as a clockface indicator — the arc sweeps from 0 to
+the current phase angle arg(rho_01), colored by HSL hue = 180 * phase/pi.
+
+Below the 2x2 grid: a time series plot (380 x 150 SVG inline) showing:
+- Orange line: |rho_01(t)| from the simulation.
+- Grey dashed line: 0.5 * exp(-t/T_2) (theoretical envelope).
+- X-axis: time from 0 to 5*T_2. Y-axis: 0 to 0.5.
+- Update as the simulation runs; scroll the window left as time advances.
+
+Runtime sanity checks (write to console every 10 frames):
+- |r|^2 <= 1 + 1e-4.
+- Purity = (1 + |r|^2) / 2 within 1e-5 of computed Tr(rho^2).
+- At t = T_2, |rho_01| should be 0.5/e ~ 0.184 within 3%.
+- At t >> 3*T_1, r_z should be within 0.01 of r_z_eq = -1.
+- If omega_0 = 0 and T_1 = infinity, r_z should be constant;
+  if this drifts by more than 1e-4, flag a numerical bug.
+
+Do NOT use any 3D library. Orthographic projection only.
+Do NOT use math.js. RK4 in vanilla JS. Comments at every physics step.
+```
+
+### Part 4 — Exploration tasks
+
+**Task 1: Pure dephasing.** Set $T_1$ to maximum, $T_2 = 100$ (natural units), $\omega_0 = 2$, start on the equator. Play. The Bloch vector should trace a spiral that flattens onto the $z$-axis. Watch the off-diagonal bars in Panel B decay. At $t = T_2$, what fraction of the initial off-diagonal remains? Expected: $e^{-1} \approx 0.37$.
+
+**Task 2: Combined decoherence.** Set $T_1 = T_2 = 100$, $\omega_0 = 2$. The spiral should now converge to the south pole, not the $z$-axis. Observe that the diagonal bars in Panel B evolve (population decays) and the off-diagonals decay simultaneously. Compare the timescale of diagonal evolution ($T_1$) to the off-diagonal decay ($T_2$).
+
+**Task 3: The constraint.** Try to set $T_2 = 300$ with $T_1 = 100$. The slider should refuse, snapping to $T_2 = 200$. Verify: $T_2 = 200 = 2T_1$. Read the displayed $T_\phi$ — it should be $\infty$ (no pure dephasing): this is the natural linewidth limit.
+
+**Task 4: Pole vs. equator.** Set $T_2 = T_1 = 200$, $\omega_0 = 0$, start at the north pole ($\theta_0 = 0$). Only $r_z$ evolves — decaying exponentially to $-1$ at rate $1/T_1$. Off-diagonals are always zero (polar state has no coherence). Move to the equator ($\theta_0 = \pi/2$): off-diagonals become nonzero and decay at rate $1/T_2$.
+
+**Task 5: Numerical verification.** At $t = T_2$, record $|\rho_{01}|$ from Panel B and compare to the theoretical value $|\rho_{01}(T_2)| = e^{-1}/2 \approx 0.184$. If the simulation deviates by more than 5%, there is a numerical bug.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** the quantitative link between your paper's reported coherence (or gate error) numbers and the imperfection parameter your reconstruction uses — closing the loop on why ideal ≠ measured.
+**Tool:** Claude chat.
+**The Prompt:**
+```
+I am modeling the decoherence behind an experimental imperfection. My paper reports
+[PASTE: e.g. "T1 = 300 us, T2 = 180 us, two-qubit gate time 200 ns" for a QEC/hardware
+paper, OR a Bell-pair visibility/fidelity for a Bell test].
+
+1. From 1/T2 = 1/(2 T1) + 1/T_phi, compute T_phi. Confirm T2 <= 2 T1 (flag if violated).
+2. For a pure-dephasing qubit, |rho_01(t)| = 0.5 * exp(-t/T2). Compute the fraction
+   of coherence remaining after one gate time and after the full experiment duration
+   [PASTE duration if known].
+3. Bridge to my reconstruction: (a) for a Bell test, estimate the Werner eps such that
+   the resulting CHSH S = (1-eps)*2*sqrt(2) matches the reported S_exp — i.e.
+   eps = 1 - S_exp/(2*sqrt(2)) — and discuss whether this eps is consistent with the
+   coherence loss from step 2. (b) for a QEC paper, estimate the per-gate physical
+   error rate as roughly t_gate/T2 (order of magnitude) and compare to the reported
+   physical error rate.
+4. State whether the Markovian (Lindblad) model is appropriate for this paper's noise,
+   or whether the bath (e.g. nuclear spins) is non-Markovian. Justify briefly.
+Show the algebra. Do NOT assert the model applies — argue it.
+```
+**What this produces:** $T_\phi$, the coherence-loss fraction, an estimated $\epsilon$ or $p$ tied back to the paper, and a Markovianity judgment — the causal explanation for the ideal-vs-real gap.
+**How to adapt:** *Your system:* use whichever coherence numbers your paper actually reports. *ChatGPT/Gemini:* same prompt; compare the extracted $\epsilon$/$p$ across tools. *Claude Project:* append as the dossier's "error model" note.
+**Builds on:** Chapter 1's $\hat\rho(\epsilon)$ and Chapter 3's $S_\text{exp}$ — now explained by decoherence.  **Next:** Chapter 8 identifies the specific hardware Hamiltonian whose $T_1,T_2$ these are; Chapter 9 uses the physical error rate $p$ in the threshold formula.
 
 ---
 
 ## Chapter 07: Chapter 7 — Measurement, Interpretations, and the Quantum–Classical Boundary
 *Source: `chapters/07-measurement-and-interpretations.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** the "claims vs. does-not-claim" assessment for your paper — the honesty-layer column of the dossier — drafted with AI but *adjudicated by you*.
+**Tool:** Claude chat — used adversarially, to surface candidate overreaches you then judge.
+**The Prompt:**
+```
+I am writing the honesty-layer assessment of a quantum paper. Here is the paper's
+central claim in its own words: [PASTE the abstract's key sentence].
+
+1. List, as a two-column table, (A) what this result genuinely establishes and
+   (B) what it explicitly does NOT establish. Be specific to the result type
+   (Bell violation: rules out local realism, does NOT select an interpretation
+   or prove FTL signaling; below-threshold QEC: confirms the threshold theorem in
+   hardware, does NOT demonstrate a fault-tolerant computer; NV sensing: a
+   settled-physics measurement, does NOT claim chip-scale room-temperature
+   performance).
+2. Classify the result as one of: (i) demonstration of a physical principle
+   (NOT subject to the classical-simulation arms race), (ii) hardware benchmark,
+   (iii) sampling-based advantage claim (fragile to better classical algorithms).
+   Justify the classification.
+3. Point me to any phrase in the pasted claim that, to a skeptical expert, might
+   read as an overstatement — but present these as CANDIDATES for me to judge, with
+   the reasoning, NOT as conclusions.
+Do not soften the analysis to match the paper's framing.
+```
+**What this produces:** a candidate claims/does-not-claim table, a principle-vs-benchmark-vs-advantage classification, and flagged candidate overreaches — raw material you then accept, reject, or sharpen using your own reading.
+**How to adapt:** *Your system:* paste your paper's actual abstract sentence. *ChatGPT/Gemini:* run the same prompt and compare — divergence in what each flags is informative. *Claude Project:* keep this as the dossier's honesty-layer draft, clearly marked "AI-drafted, author-adjudicated."
+**Builds on:** Chapter 5's capability assessment (what the resource can *do*) — now extended to what the paper can *claim*.  **Next:** Chapter 8 grounds the claim in the specific hardware, the last input the integration needs.
 
 ---
 
 ## Chapter 08: Chapter 8 — Quantum Hardware: From Formalism to Physical Qubits
 *Source: `chapters/08-quantum-hardware.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+## LLM Exercises
+
+The following exercises are designed to be worked with a large language model as a thinking partner — not to generate hardware data (which changes rapidly), but to probe reasoning and physical understanding.
+
+1. Ask an LLM to derive the transmon two-level Hamiltonian from the full Josephson junction Hamiltonian, following the steps in the worked example. Check: does it correctly identify the plasma frequency $\omega_p = \sqrt{8E_JE_C}/\hbar$, the anharmonicity $\alpha \approx -E_C/\hbar$, and the two-level projection? Ask it to state the condition under which the two-level approximation breaks down.
+
+2. Ask an LLM to compare the Mølmer-Sørensen gate (trapped ions) and the Rydberg blockade gate (neutral atoms) as implementations of the two-qubit entangling gate. Both should produce a maximally entangled state from two product qubits. Ask it to identify the physical interaction responsible in each case, the typical gate time and fidelity, and what would be required to run 100 such gates in sequence.
+
+3. Ask an LLM what "loophole-free Bell test" means in the context of the Hensen et al. 2015 experiment, and why earlier Bell tests had loopholes that allowed local hidden-variable theories to be compatible with the data. Ask it to identify the two main loopholes (locality and detection efficiency) and how each was closed in the Hensen experiment.
+
+4. Ask an LLM to explain what the threshold theorem says about quantum error correction, and why the NISQ concept is defined in terms of not being above the error-correction threshold rather than in terms of a qubit count. Ask it to estimate the per-gate error rate of a current superconducting platform and assess how far it is from the fault-tolerance threshold for the surface code.
+
+5. Ask an LLM to describe Microsoft's topological qubit approach using Majorana zero modes, including what physical system hosts them, what theoretical advantage they would provide, and what the current experimental status is as of 2026. Ask it to flag any claims as "demonstrated" vs. "theoretical" vs. "disputed." Evaluate whether it correctly identifies the current state of the field.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** the system-identification block of your dossier — your paper's qubit Hamiltonian and, for an NV paper, the ODMR frequencies computed from first principles and matched to the paper's spectrum.
+**Tool:** Claude chat.
+**The Prompt:**
+```
+I am identifying the physical system of a quantum paper for a reconstruction dossier.
+The paper's qubit is [PASTE: e.g. "an NV center in diamond at axial field B = 30 mT"
+or "a superconducting transmon at omega_01/2pi = 5.1 GHz"].
+
+For an NV center:
+1. Write the spin-1 Hamiltonian H_NV = D*Sz^2 + g*muB*B*Sz with D = 2.87 GHz and
+   gamma = 28 MHz/mT. Give the 3x3 matrix in the {m=+1,0,-1} basis.
+2. Compute the eigenvalues and the two ODMR transition frequencies f_+ and f_-
+   from m_s=0, for the paper's stated field. Confirm the zero-field limit gives a
+   single dip at 2.87 GHz and the splitting is 56*B MHz/mT.
+3. Match f_+ and f_- to the dip positions the paper reports in its ODMR spectrum
+   [PASTE the paper's dip frequencies if given]. State the agreement.
+
+For a transmon / spin qubit:
+1. State the two-level Hamiltonian (hbar*omega_01/2)*sigma_z and the parameters.
+2. Note the T1, T2 the paper reports and connect them to Chapter 6's error model.
+
+In all cases: state explicitly the condition under which the two-level approximation
+holds for this paper, and whether it is satisfied at the paper's operating point.
+Show all matrix algebra.
+```
+**What this produces:** the explicit Hamiltonian, computed ODMR frequencies (or transition frequency), a match to the paper's spectrum, and a two-level-validity check — the system-identification and (for NV) core-calculation pieces of the dossier.
+**How to adapt:** *Your system:* paste your paper's exact qubit and field. *ChatGPT/Gemini:* same prompt; cross-check the eigenvalues. *Claude Project:* save as `system.md`.
+**Builds on:** Chapter 6's $T_1,T_2$ — now attached to a named physical Hamiltonian.  **Next:** Chapter 9 supplies the threshold formula for QEC papers; Chapter 10 assembles all pieces into the dossier and validates the recomputed number.
 
 ---
 
 ## Chapter 09: Chapter 9 — Error and the Threshold Theorem
 *Source: `chapters/09-error-and-the-threshold-theorem.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+## LLM Exercises
+
+### Part 1 — Update PROJECT.md
+
+```
+Append a new entry to PROJECT.md:
+
+Chapter 9 — Error and the Threshold Theorem
+Deliverable: 10-surface-code-threshold.html
+Status: in progress
+
+The simulation has two panels:
+
+Panel A — Surface-code threshold plot (700 × 500 SVG).
+- x-axis: physical error rate p in [0.0001, 0.05], log scale.
+- y-axis: logical error rate p_L, log scale.
+- Three curves: d = 3, d = 5, d = 7. Each uses
+    p_L = A * (p / p_th)^( ceil((d+1)/2) )
+  with p_th = 0.01 and A = 0.1.
+- Vertical dashed red line at p = p_th.
+- A draggable vertical cursor that shows the current p value
+  and reads out p_L(d=3), p_L(d=5), p_L(d=7) in a sidebar.
+- When the cursor is to the left of p_th, the d=7 curve is lowest
+  (below threshold: bigger is better).
+- When the cursor is to the right, the d=7 curve is highest
+  (above threshold: bigger is worse).
+- Horizontal reference lines at p_L = 10^-3, 10^-6, 10^-9, 10^-12.
+
+Panel B — 3-qubit bit-flip code visualizer (700 × 350 SVG).
+- Displays three qubits as circles. Each qubit can be in state
+  |0>, |1>, or superposition (shown as a Bloch sphere projection
+  on the qubit circle, with North = |0>, South = |1>).
+- Syndrome qubits M1 (between q1 and q2) and M2 (between q2 and q3)
+  shown as diamond shapes.
+- Error injection: radio buttons to inject X error on qubit 1, 2, 3,
+  or no error.
+- Step-by-step button sequence:
+  1. "Encode": starts from |psi> = alpha|0> + beta|1> (sliders for alpha,
+     beta angles), shows the encoded state alpha|000> + beta|111>.
+  2. "Apply error": the selected qubit's display changes to show the
+     flipped state.
+  3. "Measure syndrome": M1 and M2 diamonds light up with their +1/-1
+     eigenvalues, shown as colored (green = +1, red = -1).
+  4. "Correct": the correct qubit is X-flipped back, its display
+     reverts to the encoded-state visualization.
+  5. "Verify": a checkmark confirms the state alpha|000> + beta|111>
+     is restored.
+- Text narration below each step: one sentence explaining what just
+  happened physically.
+```
+
+### Part 2 — CLAUDE.md amendment
+
+```
+Append to CLAUDE.md:
+
+ERROR CORRECTION PHYSICS RULES
+
+1. The logical error rate formula:
+     p_L(d, p) = A * (p / p_th)^( ceil((d+1) / 2) )
+   with p_th = 0.01 and A = 0.1.
+   Use Math.ceil((d+1)/2) for the exponent.
+   Display p_L to three significant figures.
+
+2. The threshold p_th = 0.01 is the approximate surface code threshold
+   for a standard depolarizing noise model. In the Acharya et al. 2024
+   experiment, the measured suppression factor Lambda = 2.14 implies an
+   effective p/p_th ≈ 1/2.14 ≈ 0.47, meaning p ≈ 0.0047 — below the
+   threshold. Mark this point on the plot.
+
+3. The three-qubit bit-flip code has syndromes:
+     No error:  M1 = +1, M2 = +1
+     X on q1:   M1 = -1, M2 = +1
+     X on q2:   M1 = -1, M2 = -1
+     X on q3:   M1 = +1, M2 = -1
+   Store this as a lookup table; do not derive on the fly.
+
+4. The encoded state is alpha|000> + beta|111>. Never display or compute
+   alpha or beta from syndrome measurements — the syndromes are
+   independent of them. If your simulator needs to display alpha and beta,
+   use only the sliders (the input), not the syndrome output.
+
+KNOWN FAILURE MODES:
+(a) p_L curve rendered in linear scale instead of log-log.
+    Use d3.scaleLog() for both axes.
+(b) Threshold line drawn at the wrong position. p_th = 0.01 corresponds
+    to x = 0.01 in the log scale. Verify visually.
+(c) Syndrome lookup table indexed wrong (off-by-one in qubit numbering).
+    Test: inject X on q2, confirm syndrome (-1, -1).
+(d) Bloch sphere projection on the qubit circle needs a 2D orthographic
+    projection, not a 3D library.
+```
+
+### Part 3 — The simulation prompt
+
+```
+You are working in my directory which contains CLAUDE.md, DESIGN.md,
+and PROJECT.md. Read all three files first.
+
+Build 10-surface-code-threshold.html: a single self-contained HTML file
+using D3 v7 from a CDN, no other dependencies.
+
+The page has two panels stacked vertically.
+
+PANEL A — Threshold plot.
+SVG 700 x 500. Log-log plot of logical error rate vs. physical error rate.
+x-axis: p in [0.0001, 0.05]. y-axis: p_L in [1e-20, 1].
+Three curves: d = 3, 5, 7. Formula: p_L = 0.1 * (p/0.01)^ceil((d+1)/2).
+Curves labeled at the right margin.
+Vertical dashed red line at p = 0.01 (threshold). Label "p_th".
+A filled circle on the plot at (p_eff = 0.0047, p_L_meas = 0.00143)
+labeled "Willow d=7 (Acharya et al. 2024)".
+A draggable cursor (vertical line) initialized at p = 0.005.
+Sidebar to the right (200 px wide): shows the current p value and reads
+p_L for d = 3, 5, 7 at that p. Highlights the smallest value in green
+(below threshold: d=7 is best) or the largest in red (above threshold).
+
+PANEL B — 3-qubit code visualizer.
+SVG 700 x 350. Horizontal layout with qubit circles and syndrome diamonds.
+Three data qubit circles (q1, q2, q3) labeled. Between q1-q2: syndrome
+diamond M1; between q2-q3: syndrome diamond M2.
+Control panel below:
+- Alpha/beta sliders: theta in [0, pi/2] where
+    alpha = cos(theta), beta = sin(theta).
+  Show alpha and beta as decimal numbers next to the sliders.
+- Error selector: radio buttons for "No error", "X on q1",
+  "X on q2", "X on q3".
+- Five step buttons in order: Encode, Apply Error, Measure Syndrome,
+  Correct, Verify.
+- Text narration field below: one sentence updated per step.
+
+Step behavior:
+1. Encode: color qubits blue, display "α|000⟩ + β|111⟩".
+2. Apply Error: if error selected, flip the chosen qubit's color to red.
+   Narration: "Qubit N was bit-flipped by an X error."
+3. Measure Syndrome: compute M1, M2 from the lookup table.
+   Color M1 and M2 green (+1) or red (-1).
+   Narration: "Syndrome (M1, M2) = (val1, val2) → error on qubit N."
+4. Correct: apply X to the identified qubit; return its color to blue.
+   Narration: "Applied X correction to qubit N."
+5. Verify: display "✓ State restored: α|000⟩ + β|111⟩".
+   Narration: "The encoded state is recovered. α and β were never read."
+
+Sanity checks (console):
+- At p = p_th, all three p_L curves should pass through 0.1 (= A).
+- At p = 0.001, confirm p_L(d=7) < p_L(d=5) < p_L(d=3).
+- At p = 0.05, confirm the ordering reverses.
+- Syndrome table: inject each error type and verify the correct syndrome.
+```
+
+### Part 4 — Exploration tasks
+
+**Task 1: Below and above threshold.** Set the cursor to $p = 0.001$. Read $p_L$ for $d = 3, 5, 7$ and confirm $d = 7$ gives the smallest logical error rate. Move the cursor to $p = 0.05$. Confirm the order reverses. What does the reversal mean physically?
+
+**Task 2: Crossing point.** Drag the cursor to the crossing point of the $d = 5$ and $d = 7$ curves. What physical error rate does this correspond to? Compare it to the theoretical threshold $p_\text{th} = 0.01$.
+
+**Task 3: Willow data point.** Find the Willow data point on the plot. Read the plot's predicted $p_L$ for the $d = 7$ curve at the Willow effective error rate $p \approx 0.0047$. Does the formula match the measured $p_L = 0.143\%$?
+
+**Task 4: Syndrome independence.** In Panel B, set $\theta = \pi/4$ (so $\alpha = \beta = 1/\sqrt{2}$). Inject an $X$ error on qubit 2. Step through all five buttons. The "Verify" narration says $\alpha$ and $\beta$ were never read. Explain from the syndrome table why this is true: which entries in the table depend on $\alpha$ or $\beta$?
+
+**Task 5: Two-qubit error failure.** The simulation handles only single-qubit errors. Think through: if qubits 1 and 3 are both flipped, what syndrome does the code report? What correction does it apply? Is the logical state restored? Explain why this fails.
+
+### Exercise R3 — LLM Exercise
+**What you're building this chapter:** your first-principles logical error rate for the paper's code distance, next to the reported value — the QEC dossier's headline comparison.
+**Tool:** Claude chat.
+**The Prompt:**
+```
+I am reconstructing the central claim of a quantum-error-correction milestone.
+The paper reports [PASTE: e.g. "suppression factor Lambda = 2.14 +/- 0.02, and a
+distance-7 logical error rate p_L = 0.143% per cycle"].
+
+1. From Lambda ~ p_th/p with p_th = 0.01, estimate the effective physical error
+   rate p. Show the inversion.
+2. Using p_L(d) = A*(p/p_th)^ceil((d+1)/2) with A = 0.1 and your estimated p,
+   compute the predicted p_L for d = 3, 5, 7. Show each exponent
+   (ceil(4/2)=2, ceil(6/2)=3, ceil(8/2)=4).
+3. Compare your predicted p_L(d=7) to the paper's reported p_L. State the ratio.
+   IMPORTANT context: the simple scaling formula is NOT exact at small d; a
+   reconstruction landing within a factor of 3-5 of the reported value counts as a
+   correct understanding of the scaling. Frame the comparison this way — do NOT
+   declare a factor-of-3 gap a "failure."
+4. State explicitly: is this result a demonstration of a physical principle (the
+   threshold theorem, NOT subject to classical-simulation arms race), a hardware
+   benchmark, or a sampling-advantage claim? Justify.
+Show all arithmetic.
+```
+**What this produces:** the inverted effective $p$, predicted $p_L$ for each distance, the reported-vs-computed ratio framed with the right tolerance, and the principle-vs-advantage classification — the core calculation plus honesty layer for a QEC reconstruction.
+**How to adapt:** *Your system:* paste your paper's $\Lambda$ and $p_L$. *ChatGPT/Gemini:* same prompt; cross-check the exponents. *Claude Project:* append to the dossier's core-calculation section.
+**Builds on:** Chapter 6's physical error rate $p$ and Chapter 8's hardware identification.  **Next:** Chapter 10 assembles the full dossier and validates the recomputed number against the reported one.
 
 ---
 
 ## Chapter 10: Chapter 10 — Capstone: Quantum Mechanics in Research
 *Source: `chapters/10-capstone-quantum-mechanics-in-research.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R3 — LLM Exercise
+**What you're building:** the assembled reconstruction dossier — the recomputed central number, the comparison to the reported value, the connections-to-chapters trail, and the honesty-layer assessment, scored against the chapter rubric.
+**Tool:** Claude Project — persistent context across all your per-chapter notes (`resource-state.md`, `apparatus.md`, `system.md`, `HONESTY.md`) makes the assembly coherent.
+**The Prompt:**
+```
+You have access to my reconstruction-dossier project files from Chapters 1-9. Assemble
+the final dossier for my chosen paper: [PASTE title, authors, arXiv/journal ID, and the
+ONE central claim, e.g. "Acharya et al. 2025, p_L(d=7) = 0.143%/cycle"].
+
+Produce a single dossier.md with these sections, drawing each from the named chapter:
+1. System identification (Ch 8): the physical qubit, Hamiltonian, encoding of |0>,|1>.
+2. Observable and measurement (Ch 3 or 4 or 8): what is measured and what theory predicts.
+3. Core calculation (Ch 3 for CHSH / Ch 9 for QEC / Ch 8 for ODMR): the recomputed central
+   number, shown next to the paper's reported number, with the comparison framed at the
+   correct tolerance (error bars for CHSH; factor-of-3-5 for the QEC scaling formula; dip
+   alignment for ODMR).
+4. Connections to prior chapters: cite each tool by chapter (rho(eps) Ch1, Bell state Ch2,
+   CHSH Ch3, circuit Ch4, F_tel Ch5, error model Ch6, hardware Ch8, threshold Ch9).
+5. Honest assessment: pull the "establishes / does NOT establish" table from HONESTY.md
+   and the principle/benchmark/advantage classification.
+6. Rubric self-score against: system ID (20%), observable (20%), core calc (30%),
+   connections (15%), honest assessment (15%).
+
+For section 3, report BOTH numbers and the gap, but DO NOT render the final
+confirm/not-confirm verdict — leave that line marked "[AUTHOR VERDICT]". For section 5,
+present the honesty table as drafted but flag each "does NOT establish" bullet
+"[AUTHOR-CONFIRMED?]" for me to sign off.
+```
+**What this produces:** a complete `dossier.md` with the recomputed-vs-reported number, the chapter-tool trail, the rubric self-score, and explicit `[AUTHOR VERDICT]` / `[AUTHOR-CONFIRMED?]` placeholders where *your* judgment must land — the finished deliverable minus the two human calls.
+**How to adapt:** *Your system:* point the project at whichever per-chapter files you built. *ChatGPT/Gemini:* paste the per-chapter notes inline if no project memory. *Claude Project:* this is the intended path — persistent files make the assembly faithful.
+**Builds on:** all of Chapters 1–9.  **Next:** R4 generates the recomputed number programmatically; R5 fills the author verdict and adjudicates the honesty layer.
 
 ---
 
-## Chapter 99: 99 Back Matter
+## Chapter 99: 99-back-matter.md
 *Source: `chapters/99-back-matter.md`*
 
-> **Section not yet authored.** No `### Exercise 3 — LLM Exercise` block found in this chapter file.
+> **Section not yet authored.** No `## LLM Exercises` / `### Exercise R3 — LLM Exercise` block found in this chapter file.
 > To add this section, edit the source chapter file directly.
 
 ---

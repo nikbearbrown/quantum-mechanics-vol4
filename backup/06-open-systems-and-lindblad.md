@@ -1,38 +1,39 @@
 # Chapter 6 — Open Systems: Decoherence and the Lindblad Equation
+*The quantum-to-classical transition is not a philosophical event. It is a number in microseconds.*
 
-The symbol $T_2$ appears in nearly every paper on superconducting qubits. It sits in the abstract, next to the processor schematic. By the end of this chapter, we will understand exactly what it means — and be able to derive where the $T_2$ value comes from in the mathematics, what it measures in the density matrix, and why it determines whether a computation succeeds or fails.
+There is a sentence that appears in nearly every paper on superconducting qubits: "$T_2 = 200\,\mu$s." It sits in the abstract, next to the processor schematic, treated as if the reader knows immediately what it means. By the end of this chapter, you will. More than that, you will be able to derive it — to show where the $200\,\mu$s comes from in the mathematics, what it measures in the density matrix, and why it is the number that determines whether a computation succeeds or fails before it finishes.
 
 $T_2$ is the coherence time. It measures how long the off-diagonal entries of the density matrix survive before they decay to zero. When they reach zero, the qubit has become classical: it is in the ground state or the excited state with some probability, but it is no longer in a quantum superposition. The quantum-to-classical transition is not a philosophical event. It is a number in microseconds, printed in a paper abstract.
 
-To understand $T_2$ we need the equation that governs it. That equation is the Lindblad master equation.
+To understand $T_2$ you need the equation that governs it. That equation is the Lindblad master equation.
 
 ---
 
 ## Why Pure States Fail: The System–Environment Split
 
-In every previous chapter, we treated qubits as isolated. The state was pure, evolution was unitary, and that was sufficient. In practice, no qubit is truly isolated. A superconducting transmon couples to substrate phonons, control lines, neighboring qubits, and stray electromagnetic fields. A trapped ion couples to laser phase noise and ambient magnetic fields. A nitrogen-vacancy center in diamond sits in a bath of $^{13}$C nuclear spins. These environments are the dominant noise source.
+In every previous chapter, we treated qubits as isolated. The state was pure, evolution was unitary, and that was that. But no qubit is truly isolated. A superconducting transmon couples to substrate phonons, control lines, neighboring qubits, and stray electromagnetic fields. A trapped ion couples to laser phase noise and ambient magnetic fields. A nitrogen-vacancy center in diamond sits in a bath of $^{13}$C nuclear spins. These environments are the dominant noise source.
 
 The formal setup: write the full Hamiltonian as:
 
 $$\hat H_\text{total} = \hat H_S \otimes \hat I_E + \hat I_S \otimes \hat H_E + \hat H_{SE}.$$
 
-The total state $|\Psi(t)\rangle$ of system plus environment evolves unitarily — pure state in, pure state out. The environment has $\sim 10^{23}$ degrees of freedom, so we cannot and do not want to track all of them.
+The total state $|\Psi(t)\rangle$ of system plus environment evolves unitarily — pure state in, pure state out. The problem is that the environment has $\sim 10^{23}$ degrees of freedom. We cannot and do not want to track all of them.
 
-The **reduced density matrix** is the solution. We trace out the environment:
+The **reduced density matrix** is the solution. Trace out the environment:
 
 $$\hat\rho_S(t) = \text{Tr}_E\bigl(|\Psi(t)\rangle\langle\Psi(t)|\bigr).$$
 
-This object gives correct predictions for any measurement on the system alone. The partial trace is not a coarse-graining or an approximation — it is exact. What is approximate is everything we are about to do to find an equation for $\hat\rho_S(t)$.
+This is the object that gives correct predictions for any measurement on the system alone. The partial trace is not a coarse-graining or an approximation — it is exact. What is approximate is everything we are about to do to find an equation for $\hat\rho_S(t)$.
 
 **Why the result is mixed.** Suppose at $t = 0$ the system is in a pure state $|\psi_0\rangle$ and the environment is in $|e_0\rangle$, so the total state is unentangled. After a short time, $\hat H_{SE}$ couples them:
 
 $$|\Psi(t)\rangle = \alpha|0\rangle|e_0(t)\rangle + \beta|1\rangle|e_1(t)\rangle,$$
 
-where $|e_0(t)\rangle$ and $|e_1(t)\rangle$ are environment branches that have diverged depending on the system state. The reduced density matrix is:
+where $|e_0(t)\rangle$ and $|e_1(t)\rangle$ are environment branches that have diverged depending on the system state. The reduced density matrix:
 
 $$\hat\rho_S(t) = |\alpha|^2|0\rangle\langle 0| + \alpha\beta^*\langle e_1(t)|e_0(t)\rangle|0\rangle\langle 1| + \alpha^*\beta\langle e_0(t)|e_1(t)\rangle|1\rangle\langle 0| + |\beta|^2|1\rangle\langle 1|.$$
 
-The off-diagonal terms are suppressed by the overlap $\langle e_0(t)|e_1(t)\rangle$. As the environment branches become more orthogonal — as the environment "records" which state the qubit was in — this overlap decays toward zero. When $\langle e_0(t)|e_1(t)\rangle = 0$, the density matrix is diagonal: $|\alpha|^2|0\rangle\langle 0| + |\beta|^2|1\rangle\langle 1|$. This is a classical probability distribution. Quantum coherence has leaked into the environment and cannot be retrieved.
+The off-diagonal terms are suppressed by the overlap $\langle e_0(t)|e_1(t)\rangle$. As the environment branches become more orthogonal — as the environment "records" which state the qubit was in — this overlap decays toward zero. When $\langle e_0(t)|e_1(t)\rangle = 0$, the density matrix is diagonal: $|\alpha|^2|0\rangle\langle 0| + |\beta|^2|1\rangle\langle 1|$. A classical probability distribution. Quantum coherence has leaked into the environment and cannot be retrieved.
 
 <!-- → [FIGURE: branching-world diagram showing the total state splitting — the qubit's |0⟩ branch entangled with one environment trajectory and |1⟩ with another, the overlap ⟨e₀|e₁⟩ labeled on a bracket connecting the two branches, showing it approaches zero as the branches diverge] -->
 
@@ -53,7 +54,7 @@ $$\hat\rho = \begin{pmatrix} \frac{1+r_z}{2} & \frac{r_x - ir_y}{2} \\[4pt] \fra
 
 The diagonal entries $\rho_{00}$ and $\rho_{11}$ are the populations. The off-diagonal entry $\rho_{01}$ is the coherence — its magnitude measures how quantum the state is. Decoherence shrinks $|\rho_{01}|$ toward zero. Energy relaxation drives $\rho_{11}$ toward zero. Both move the Bloch vector from the surface toward the interior. Energy relaxation additionally pushes it toward the south pole (the ground state $|0\rangle$).
 
-The von Neumann equation for a closed system — $d\hat\rho/dt = -(i/\hbar)[\hat H, \hat\rho]$ — preserves purity. The Bloch vector stays on the sphere surface and precesses, with no dissipation. For an open system this equation is insufficient. The correct equation must satisfy three properties the von Neumann equation alone cannot guarantee: trace preservation ($\text{Tr}(\hat\rho) = 1$ for all time), Hermiticity, and complete positivity.
+The von Neumann equation for a closed system — $d\hat\rho/dt = -(i/\hbar)[\hat H, \hat\rho]$ — preserves purity. The Bloch vector stays on the sphere surface and precesses. No dissipation. For an open system this equation is wrong. The right equation must satisfy three properties the von Neumann equation alone cannot guarantee: trace preservation ($\text{Tr}(\hat\rho) = 1$ for all time), Hermiticity, and complete positivity.
 
 Complete positivity is the subtlest requirement. Ordinary positivity requires all eigenvalues of $\hat\rho$ to be non-negative. Complete positivity requires that $(\mathcal{E}\otimes\mathcal{I})(\hat\rho_\text{ext}) \geq 0$ for any extension of the system to a larger Hilbert space — because the system may be entangled with a reference that is not subject to the noise. Maps that fail complete positivity can produce negative probabilities on entangled inputs, which is unphysical.
 
@@ -65,7 +66,7 @@ In 1976, Gorini, Kossakowski, and Sudarshan, and independently Lindblad, proved 
 
 $$\boxed{\frac{d\hat\rho}{dt} = -\frac{i}{\hbar}[\hat H, \hat\rho] + \sum_k\left(\hat L_k\hat\rho\hat L_k^\dagger - \frac{1}{2}\bigl\{\hat L_k^\dagger\hat L_k, \hat\rho\bigr\}\right).}$$
 
-The first term is Hamiltonian evolution — unitary and reversible. The second is the **dissipator** $\mathcal{D}[\hat\rho]$, summed over noise channels. Each $\hat L_k$ is a **jump operator** encoding one physical decoherence process.
+The first term is Hamiltonian evolution — unitary, reversible. The second is the **dissipator** $\mathcal{D}[\hat\rho]$, summed over noise channels. Each $\hat L_k$ is a **jump operator** encoding one physical decoherence process.
 
 **Trace preservation, explicitly.** Using cyclicity of trace:
 
@@ -75,13 +76,13 @@ So $d\,\text{Tr}(\hat\rho)/dt = 0$: normalization is preserved exactly.
 
 **The Markovian assumption.** The Lindblad equation assumes the bath has no memory — bath correlation functions decay faster than any system timescale. This is the Born–Markov approximation. For most qubit hardware (superconducting transmons in a cold bath, trapped ions with Markovian laser phase noise), it is an excellent approximation. For structured baths — a photonic crystal cavity, a spin bath with long correlations — it breaks down, and non-Markovian extensions are required.
 
-**The GKSL form is not postulated — it is derived.** We start with the full system–bath Hamiltonian, move to the interaction picture, and expand to second order in $\hat H_{SE}$ (Born approximation: weak coupling). We then trace out the bath, apply the Markov approximation (bath correlation time $\tau_B \ll T_1, T_2$), and apply a secular approximation. The result is exactly the GKSL equation, with jump operators and rates determined by the bath spectral density at the system transition frequencies. The key step that forces the anticommutator structure — ensuring complete positivity rather than mere positivity — is the secular approximation applied to a completely positive map.
+**The GKSL form is not postulated — it is derived.** Start with the full system–bath Hamiltonian. Move to the interaction picture. Expand to second order in $\hat H_{SE}$ (Born approximation: weak coupling). Trace out the bath. Apply the Markov approximation (bath correlation time $\tau_B \ll T_1, T_2$) and a secular approximation. The result is exactly the GKSL equation, with jump operators and rates determined by the bath spectral density at the system transition frequencies. The key step forcing the anticommutator structure — ensuring complete positivity rather than mere positivity — is the secular approximation applied to a completely positive map.
 
 ---
 
 ## Deriving the Bloch Equations
 
-We take the qubit Hamiltonian $\hat H = (\hbar\omega_0/2)\hat\sigma_z$ and two jump operators:
+Take the qubit Hamiltonian $\hat H = (\hbar\omega_0/2)\hat\sigma_z$ and two jump operators:
 
 **Pure dephasing:** $\hat L_\phi = \sqrt{1/(2T_\phi)}\,\hat\sigma_z$. Random phase kicks from the environment with no energy exchange.
 
@@ -91,9 +92,9 @@ We take the qubit Hamiltonian $\hat H = (\hbar\omega_0/2)\hat\sigma_z$ and two j
 
 $$\dot r_x^\text{H} = -\omega_0 r_y, \quad \dot r_y^\text{H} = +\omega_0 r_x, \quad \dot r_z^\text{H} = 0.$$
 
-This describes free precession about $\hat z$ at frequency $\omega_0$, with no dissipation.
+Free precession about $\hat z$ at frequency $\omega_0$. No dissipation.
 
-**The dephasing dissipator.** With $\hat L_\phi = \sqrt{1/2T_\phi}\,\hat\sigma_z$, we compute $\hat\sigma_z\hat\rho\hat\sigma_z - \hat\rho$. Using $\hat\sigma_z\hat\sigma_x\hat\sigma_z = -\hat\sigma_x$ and $\hat\sigma_z\hat\sigma_y\hat\sigma_z = -\hat\sigma_y$, the dissipator eliminates the transverse components and leaves the longitudinal one unchanged:
+**The dephasing dissipator.** With $\hat L_\phi = \sqrt{1/2T_\phi}\,\hat\sigma_z$, compute $\hat\sigma_z\hat\rho\hat\sigma_z - \hat\rho$. Using $\hat\sigma_z\hat\sigma_x\hat\sigma_z = -\hat\sigma_x$ and $\hat\sigma_z\hat\sigma_y\hat\sigma_z = -\hat\sigma_y$, the dissipator kills the transverse components and leaves the longitudinal one unchanged:
 
 $$\dot r_x^\phi = -\frac{r_x}{T_\phi}, \qquad \dot r_y^\phi = -\frac{r_y}{T_\phi}, \qquad \dot r_z^\phi = 0.$$
 
@@ -103,7 +104,7 @@ Pure dephasing squeezes the Bloch vector toward the $z$-axis without moving it a
 
 $$\dot r_x^{(1)} = -\frac{r_x}{2T_1}, \qquad \dot r_y^{(1)} = -\frac{r_y}{2T_1}, \qquad \dot r_z^{(1)} = -\frac{r_z + 1}{T_1}.$$
 
-The transverse components decay at *half* the longitudinal rate. This 2:1 ratio is not an approximation — it follows automatically from the Lindblad structure of $\hat\sigma_-$.
+The transverse components decay at *half* the longitudinal rate. This 2:1 ratio is not an approximation — it is automatic from the Lindblad structure of $\hat\sigma_-$.
 
 **Combining all contributions:**
 
@@ -126,11 +127,11 @@ These are the **Bloch equations**. They are the chapter's central result: the de
 
 ## Pointer States and Einselection
 
-A qubit that begins in superposition $\alpha|0\rangle + \beta|1\rangle$ decoheres in the $\{|0\rangle, |1\rangle\}$ basis rather than some other basis. The reason is the coupling Hamiltonian $\hat H_{SE}$.
+Why does a qubit that started in superposition $\alpha|0\rangle + \beta|1\rangle$ decohere in the $\{|0\rangle, |1\rangle\}$ basis rather than some other basis? The answer is the coupling Hamiltonian $\hat H_{SE}$.
 
 Zurek introduced the concept of **pointer states**: the states of the system least disturbed by entanglement with the environment. They are the eigenstates of the system–environment coupling. For a qubit dephasing via $\hat L_\phi \propto \hat\sigma_z$, the coupling commutes with $\hat\sigma_z$, so the eigenstates of $\hat\sigma_z$ — that is, $|0\rangle$ and $|1\rangle$ — are the pointer states. The environment continuously monitors $\sigma_z$. Eigenstates of $\sigma_z$ are stable under this monitoring. Superpositions are not: they rapidly entangle with the environment and decohere into a mixture of pointer states.
 
-This is **einselection** — environment-induced superselection. The environment selects a preferred basis by destroying coherences between non-pointer states. The result appears classical: a probability distribution over $\{|0\rangle, |1\rangle\}$, not a superposition.
+This is **einselection** — environment-induced superselection. The environment selects a preferred basis by destroying coherences between non-pointer states. The result looks classical: a probability distribution over $\{|0\rangle, |1\rangle\}$, not a superposition.
 
 What decoherence explains: why off-diagonal coherences vanish in the pointer basis; why macroscopic superpositions are never observed (decoherence times for dust grains in air are $\sim 10^{-36}$ s); why measurement outcomes look classical when the environment records which path was taken.
 
@@ -140,11 +141,11 @@ What the Lindblad equation does not explain: why one particular outcome obtains 
 
 ## Decoherence Timescales: A Calibration Table
 
-The $T_2 \leq 2T_1$ inequality tells us the structure. The table below provides the scale. Numbers are representative of the 2025–2026 state of the art and will evolve. The inequalities and mechanisms will not.
+The $T_2 \leq 2T_1$ inequality tells you the structure. The table below tells you the scale. Numbers are representative of the 2025–2026 state of the art and will evolve. The inequalities and mechanisms will not.
 
 <!-- → [TABLE: platform comparison table — columns: Platform, T₁, T₂, T₂/T₁ ratio, Dominant dephasing mechanism — rows: superconducting transmon (100–500 µs, 50–300 µs, 0.3–0.8, flux/charge noise), trapped ions (seconds–minutes, seconds, ≈1, motional heating/magnetic field), NV center (ms, µs–ms, 0.001–0.5, ¹³C nuclear spin bath), semiconductor spin qubit (1–10 ms, 1–100 µs, 0.01–0.1, nuclear spin bath/charge noise), photon polarization (∞, meters, —, loss/mode mismatch)] -->
 
-Trapped ions approach the natural linewidth limit ($T_2 \approx 2T_1$): coherence is limited almost entirely by energy relaxation, with minimal pure dephasing. Superconducting qubits have $T_2 < 2T_1$ because flux noise from the Josephson junction environment adds significant pure dephasing. NV centers at room temperature are severely dephasing-limited ($T_2 \ll T_1$), but dynamical decoupling sequences — periodic $\pi$ pulses that reverse the qubit's phase — can extend the effective $T_2$ toward $T_1$ by filtering out slow noise.
+Trapped ions approach the natural linewidth limit ($T_2 \approx 2T_1$): coherence limited almost entirely by energy relaxation, minimal pure dephasing. Superconducting qubits have $T_2 < 2T_1$ because flux noise from the Josephson junction environment adds significant pure dephasing. NV centers at room temperature are severely dephasing-limited ($T_2 \ll T_1$), but dynamical decoupling sequences — periodic $\pi$ pulses that reverse the qubit's phase — can extend the effective $T_2$ toward $T_1$ by filtering out slow noise.
 
 Students should look up current benchmarks before citing these numbers in a paper. The structure — $T_2 \leq 2T_1$, the dominant noise sources, the platform ranking — is durable. The specific microsecond values are not.
 
@@ -152,9 +153,9 @@ Students should look up current benchmarks before citing these numbers in a pape
 
 ## A Worked Calculation: Pure Dephasing
 
-**Setup.** We consider pure dephasing only: $\hat H = (\hbar\omega_0/2)\hat\sigma_z$, jump operator $\hat L_\phi = \sqrt{1/2T_\phi}\,\hat\sigma_z$, no energy relaxation ($T_1 \to \infty$).
+**Setup.** Pure dephasing only: $\hat H = (\hbar\omega_0/2)\hat\sigma_z$, jump operator $\hat L_\phi = \sqrt{1/2T_\phi}\,\hat\sigma_z$, no energy relaxation ($T_1 \to \infty$).
 
-**Initial state.** The qubit starts on the equator of the Bloch sphere: $r_x(0) = 1$, $r_y(0) = 0$, $r_z(0) = 0$. In matrix form, this is the pure state $|+\rangle = (|0\rangle + |1\rangle)/\sqrt{2}$:
+**Initial state.** Qubit on the equator of the Bloch sphere: $r_x(0) = 1$, $r_y(0) = 0$, $r_z(0) = 0$. In matrix form, the pure state $|+\rangle = (|0\rangle + |1\rangle)/\sqrt{2}$:
 
 $$\hat\rho(0) = \frac{1}{2}\begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix}.$$
 
@@ -162,7 +163,7 @@ $$\hat\rho(0) = \frac{1}{2}\begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix}.$$
 
 $$\dot r_x = -\omega_0 r_y - \frac{r_x}{T_\phi}, \qquad \dot r_y = +\omega_0 r_x - \frac{r_y}{T_\phi}, \qquad \dot r_z = 0.$$
 
-**Solution.** We write $\tilde r = r_x + ir_y$:
+**Solution.** Writing $\tilde r = r_x + ir_y$:
 
 $$\dot{\tilde r} = i\omega_0\tilde r - \frac{\tilde r}{T_\phi} \implies \tilde r(t) = \tilde r(0)\,e^{(i\omega_0 - 1/T_\phi)t}.$$
 
@@ -180,7 +181,7 @@ The diagonal entries stay fixed at $1/2$ — populations do not change. The off-
 
 $$\hat\rho(\infty) = \frac{1}{2}\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = \frac{\hat I}{2}.$$
 
-The state is maximally mixed. It has not decayed to the south pole — this is pure dephasing, not energy relaxation. The qubit has not decayed to the ground state. It has lost all quantum phase information. It is now equally likely to be found in $|0\rangle$ or $|1\rangle$, but in a classical mixture, not a quantum superposition.
+Maximally mixed. Not to the south pole — this is pure dephasing, not energy relaxation. The qubit has not decayed to the ground state. It has lost all quantum phase information. It is now equally likely to be found in $|0\rangle$ or $|1\rangle$, but in a classical mixture, not a quantum superposition.
 
 **The physical picture.** The environment performs continuous, imperfect measurements of $\hat\sigma_z$. Each interaction slightly entangles the qubit's phase with the bath. The overlap $\langle e_0(t)|e_1(t)\rangle$ between environmental branches decays at rate $1/T_\phi$. The off-diagonals, which measure exactly that overlap, follow.
 
@@ -370,9 +371,9 @@ Do NOT use math.js. RK4 in vanilla JS. Comments at every physics step.
 
 ---
 
-## Open Questions and Limitations
+## Still Puzzling
 
-The Lindblad equation is derived under the Born–Markov approximation: weak coupling, and bath correlation functions that decay faster than any system timescale. Both are quantitative conditions, not exact ones.
+The Lindblad equation is derived under the Born–Markov approximation: weak coupling, and bath correlation functions that decay faster than any system timescale. Both are quantitative, not exact.
 
 For a photon in a photonic crystal cavity, the bath has a structured density of states: the photon may emit and then reabsorb before the cavity forgets. The dynamics are non-Markovian — the density matrix does not evolve by a Lindblad equation, and the trajectory can show partial coherence revivals that would be impossible in GKSL evolution. For a spin bath like the $^{13}$C nuclei around an NV center, slow spin-spin correlations persist on timescales comparable to $T_2$, making off-diagonal decay non-exponential.
 

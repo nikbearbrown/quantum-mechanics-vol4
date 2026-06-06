@@ -1,17 +1,19 @@
 # Chapter 3 — Bell's Theorem and the CHSH Inequality
 *A calculation that turned a philosophical dispute into a number — and a number that turned out to be wrong for anyone who believed in hidden instructions.*
 
-For several decades after quantum mechanics was formulated, many physicists believed that correlations between distant particles might work like the correlations between two gloves separated into different boxes: each glove carries a definite handedness from the moment of separation, and opening one box reveals the other's content instantaneously only because the information was already there. Under this view, quantum particles would carry hidden instructions encoding their responses to every possible future measurement, established at the moment of creation.
+Here is an argument that seems ironclad. You put a left glove in one box and a right glove in another, seal both without looking, and ship one box to Nairobi and one to Oslo. The moment the Oslo recipient opens her box and finds a left glove, she knows the Nairobi glove is right — instantaneously, regardless of the 6,500 km between them. No one finds this alarming. The correlation existed before the boxes were opened; it was built in at the moment of packing.
 
-John Stewart Bell showed in 1964 that this picture makes a testable quantitative prediction. If hidden instructions govern the correlations, then a certain combination of measured correlations — the CHSH parameter — cannot exceed 2. Quantum mechanics predicts $2\sqrt{2}$. That gap is large enough to measure experimentally, and it has since been confirmed by multiple independent experiments that closed every remaining loophole.
+For fifty years after quantum mechanics was born, many physicists believed entangled particles worked the same way. The two particles, they assumed, must carry definite instructions for every measurement they might later encounter — instructions encoded at the moment of creation, invisible in the formalism but real. Einstein called this the natural view. Bohr disagreed but could not produce a decisive experiment.
 
-This chapter derives that calculation and traces its experimental confirmation.
+John Stewart Bell changed the situation in 1964 — not with a philosophical argument but with a calculation. Bell showed that the glove story, applied to particles, leads to an inequality. Count the correlations the right way and the hidden-instruction story demands a number no larger than 2. Quantum mechanics predicts $2\sqrt{2}$. That gap is not a rounding error. It is large enough to measure in a table-top experiment with photon pairs and polarizers, and it has now been measured, by multiple independent groups, with no remaining wiggle room.
+
+This chapter is that calculation — and its aftermath.
 
 ---
 
 ## What Local Realism Claims
 
-Local realism can be stated as two assumptions.
+"Local realism" sounds philosophical. It is easier to state as two assumptions that can be written in equations.
 
 **Realism:** At the moment the two particles are created, each carries a definite pre-determined value for every measurement that could later be performed on it. Call the shared instruction set $\lambda$ — a hidden variable. Alice's outcome for setting $A_i$ is a deterministic function $A_i(\lambda) \in \{+1, -1\}$. Bob's outcome for $B_j$ is $B_j(\lambda) \in \{+1, -1\}$.
 
@@ -27,7 +29,7 @@ This is the only assumption. Nothing specific about the form of $\lambda$, nothi
 
 ## The CHSH Inequality: Pure Algebra
 
-Clauser, Horne, Shimony, and Holt found the combination of correlations that makes the constraint sharp. Define the **CHSH parameter**:
+Clauser, Horne, Shimony, and Holt found the combination that makes the constraint sharp. Define the **CHSH parameter**:
 
 $$S = E(A_1, B_1) + E(A_1, B_2) + E(A_2, B_1) - E(A_2, B_2).$$
 
@@ -58,7 +60,7 @@ $$|S| = \left|\int S(\lambda)\, \rho(\lambda)\, d\lambda\right| \leq \int |S(\la
 
 $$\boxed{|S| \leq 2.}$$
 
-No choices were made about $\lambda$, about $\rho(\lambda)$, or about the form of $A_i(\lambda)$ and $B_j(\lambda)$. The bound $|S| \leq 2$ is a theorem of arithmetic applied to $\pm 1$ numbers. If the world is locally realistic, $|S|$ cannot exceed 2.
+No choices were made about $\lambda$, about $\rho(\lambda)$, or about the form of $A_i(\lambda)$ and $B_j(\lambda)$. The bound $|S| \leq 2$ is a theorem of arithmetic applied to $\pm 1$ numbers. If the world is locally realistic, $|S|$ cannot exceed 2. Full stop.
 
 <!-- → [DIAGRAM: four-quadrant table of B₁, B₂ values with the key observation annotated: in every row one column is ±2 and the other is 0, so |S(λ)|=2 exactly — visualizing why the bound is tight rather than loose] -->
 
@@ -69,15 +71,15 @@ No choices were made about $\lambda$, about $\rho(\lambda)$, or about the form o
 
 ## What Quantum Mechanics Predicts
 
-We now compute $S$ for the Bell state $|\Phi^+\rangle = \tfrac{1}{\sqrt{2}}(|00\rangle + |11\rangle)$. Alice measures along a direction at angle $\theta_a$ from the $z$-axis; Bob measures at angle $\theta_b$. The two-qubit operator is $(\hat{a}\cdot\vec{\sigma})\otimes(\hat{b}\cdot\vec{\sigma})$.
+Now compute $S$ for the Bell state $|\Phi^+\rangle = \tfrac{1}{\sqrt{2}}(|00\rangle + |11\rangle)$. Alice measures along a direction at angle $\theta_a$ from the $z$-axis; Bob measures at angle $\theta_b$. The two-qubit operator is $(\hat{a}\cdot\vec{\sigma})\otimes(\hat{b}\cdot\vec{\sigma})$.
 
-Using the identity $\langle\Phi^+|(\sigma_i \otimes \sigma_j)|\Phi^+\rangle = \delta_{ij}$ — only matching Pauli indices contribute — the correlation is:
+Using the identity $\langle\Phi^+|(\sigma_i \otimes \sigma_j)|\Phi^+\rangle = \delta_{ij}$ — only matching Pauli indices contribute — the correlation:
 
 $$E(\hat{a}, \hat{b}) = \cos(\theta_a - \theta_b).$$
 
 The correlation depends only on the relative angle between Alice's and Bob's measurement axes. For the singlet $|\Psi^-\rangle$ the formula is $E = -\cos(\theta_a - \theta_b)$, differing by a sign.
 
-We choose four angles to maximize $S$. Taking partial derivatives of $S$ with respect to all four angles and setting to zero yields equally-spaced solutions; the canonical choice for $|\Phi^+\rangle$ is:
+Choose four angles to maximize $S$. Taking partial derivatives of $S$ with respect to all four angles and setting to zero yields equally-spaced solutions; the canonical choice for $|\Phi^+\rangle$ is:
 
 $$\theta_{A_1} = 0°, \quad \theta_{A_2} = 90°, \quad \theta_{B_1} = 45°, \quad \theta_{B_2} = -45°.$$
 
@@ -90,7 +92,7 @@ Therefore:
 
 $$S = \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{2}} - \!\left(-\frac{1}{\sqrt{2}}\right) = \frac{4}{\sqrt{2}} = 2\sqrt{2} \approx 2.828.$$
 
-The local-realistic bound is 2. The quantum prediction is $2\sqrt{2}$. The gap, $2\sqrt{2} - 2 \approx 0.828$, is 41% of the classical bound — large enough to measure in any well-equipped optics laboratory.
+The local-realistic bound is 2. The quantum prediction is $2\sqrt{2}$. The gap, $2\sqrt{2} - 2 \approx 0.828$, is 41% of the classical bound — large enough to measure in any decent optics lab.
 
 <!-- → [CHART: "polar wheel" showing Alice's two measurement directions (0°, 90°) and Bob's two (45°, -45°) around a circle, with the four correlations annotated on the connecting arcs, and S = 2√2 displayed; classical bound at 2 shown as a gray ring] -->
 
@@ -101,17 +103,19 @@ The local-realistic bound is 2. The quantum prediction is $2\sqrt{2}$. The gap, 
 
 ## The Tsirelson Bound
 
-Boris Tsirelson proved in 1980 that quantum mechanics itself imposes a ceiling: for any quantum state and any $\pm 1$-valued observables, $|S| \leq 2\sqrt{2}$.
+Could quantum mechanics produce $|S| > 2\sqrt{2}$? Boris Tsirelson proved in 1980 that it cannot. For any quantum state and any $\pm 1$-valued observables, $|S| \leq 2\sqrt{2}$.
 
 The argument: for anti-commuting observables $A_1, A_2$ each squaring to the identity, the operator $S^{\text{op}} = A_1 \otimes (B_1 + B_2) + A_2 \otimes (B_1 - B_2)$ satisfies $(S^{\text{op}})^2 \leq 8\,\mathbf{I}$, so its operator norm is at most $2\sqrt{2}$, and no state's expectation value can exceed the operator norm.
 
-This places quantum mechanics in the gap $2 < |S| \leq 2\sqrt{2}$, firmly above the classical bound and firmly below the algebraic maximum of 4. Hypothetical Popescu–Rohrlich boxes — devices that respect no-signaling but produce $|S| = 4$ — are logically conceivable. Pawlowski et al. showed in 2009 that such boxes would violate *information causality*: the principle that $n$ bits of classical communication can convey at most $n$ bits of useful information regardless of shared correlations. This gives a candidate reason why $2\sqrt{2}$ is the ceiling, though information causality must be adopted as an axiom rather than derived from anything more primitive.
+This places quantum mechanics in the gap $2 < |S| \leq 2\sqrt{2}$, firmly above the classical bound and firmly below the algebraic maximum of 4. Neither the minimum nor the maximum. Something principled is selecting exactly $2\sqrt{2}$.
+
+What about "super-quantum" correlations? Hypothetical Popescu–Rohrlich boxes — devices that respect no-signaling but produce $|S| = 4$ — are logically conceivable. Pawlowski et al. showed in 2009 that such boxes would violate *information causality*: the principle that $n$ bits of classical communication can convey at most $n$ bits of useful information regardless of shared correlations. This gives a candidate reason why $2\sqrt{2}$ is the ceiling, though information causality must be adopted as an axiom rather than derived from anything more primitive. The deepest reason for the Tsirelson bound is still not fully understood.
 
 ---
 
 ## The Experimental Program
 
-The gap between 2 and 2.828 is measurable. Before a measurement can rule out all local realistic models, two experimental loopholes must be closed.
+The gap between 2 and 2.828 is measurable. But before a measurement can rule out all local realistic models, two experimental loopholes must be closed.
 
 **The detection loophole.** If detectors record only a fraction of produced pairs, a local model might arrange for only favorable pairs to be detected, faking a violation. Closing this requires detector efficiency above roughly 82%, so the detected sample is a fair representation of the whole ensemble.
 
@@ -152,11 +156,11 @@ $$\hat{\rho}_B = \mathrm{Tr}_A\bigl(|\Phi^+\rangle\langle\Phi^+|\bigr) = \frac{1
 
 Alice performing any operation on her qubit — measuring in any basis, applying any unitary, doing nothing at all — leaves Bob's marginal statistics unchanged. The correlation between their outcomes is visible only when they compare notes via a classical channel. Classical channels are bounded by $c$. Entanglement is non-classical, but it is non-signaling.
 
-**A forced interpretational choice.** Bell's theorem forces us to choose which assumption to abandon. Three positions are coherent:
+**A forced interpretational choice.** Bell's theorem forces you to choose which assumption to abandon. Three positions are coherent:
 
 Give up realism: outcomes do not exist before measurement. Standard Copenhagen takes this view. Give up locality: Bohmian mechanics retains definite trajectories but allows non-local influences through the pilot wave. Give up uniqueness of outcomes: many-worlds retains locality and determinism but allows every outcome to occur in different branches.
 
-We cannot retain all three and reproduce quantum predictions. Bell's theorem makes that impossibility precise. Which assumption to jettison is not a question the experiment answers. It is a question each interpreter brings to the experiment.
+You cannot retain all three and reproduce quantum predictions. Bell's theorem makes that impossibility precise. Which assumption to jettison is not a question the experiment answers. It is a question you bring to the experiment.
 
 ---
 
@@ -171,7 +175,7 @@ $$S = -\frac{1}{\sqrt{2}} - \frac{1}{\sqrt{2}} - \frac{1}{\sqrt{2}} - \frac{1}{\
 
 So $|S| = 2\sqrt{2}$, the Tsirelson bound. The sign of $S$ depends on the Bell state; the magnitude of the maximum is the same for all four Bell states.
 
-**A common error to avoid.** Suppose everyone measures in the same direction — $\theta_{A_1} = \theta_{A_2} = \theta_{B_1} = \theta_{B_2} = 0°$. For the singlet all four correlations equal $-1$, so $S = -1 - 1 - (-1) - 1 = -2$: exactly at the classical bound, no violation. The violation is a property of the relative angles, not of any single correlation. A large individual correlation (say $E = 1$, perfect correlation) is easily explained by a classical hidden-variable model — it is the combination of four correlations at four different angles that cannot be explained classically.
+**The trap.** Suppose instead everyone measures in the same direction — $\theta_{A_1} = \theta_{A_2} = \theta_{B_1} = \theta_{B_2} = 0°$. For the singlet all four correlations equal $-1$, so $S = -1 - 1 - (-1) - 1 = -2$: exactly at the classical bound, no violation. The violation is a property of the relative angles, not of any single correlation. A large individual correlation (say $E = 1$, perfect correlation) is easily explained by a classical hidden-variable model — it is the combination of four correlations at four different angles that cannot be explained classically. Students who look at one large correlation and conclude "Bell violation" are making this mistake.
 
 ---
 
@@ -329,15 +333,15 @@ machine" that runs trials.
 
 ---
 
-## Open Questions
+## Still Puzzling
 
-The Tsirelson bound $|S| \leq 2\sqrt{2}$ sits at a particular position between the local-realistic limit of 2 and the no-signaling maximum of 4. Why exactly there?
+The Tsirelson bound $|S| \leq 2\sqrt{2}$ sits at a peculiar position. The local-realistic bound is 2. The no-signaling maximum is 4. Quantum mechanics stops at $2\sqrt{2}$. Why exactly there?
 
-Information causality provides a candidate answer: $2\sqrt{2}$ is the unique value consistent with the principle that $n$ classical bits cannot convey more than $n$ bits of information regardless of shared correlations. But information causality is an axiom in that argument, not derived from anything more primitive.
+Information causality provides a candidate answer: $2\sqrt{2}$ is the unique value consistent with the principle that $n$ classical bits cannot convey more than $n$ bits of information regardless of shared correlations. But information causality is an axiom in that argument, not derived from anything more primitive. The chain of justification eventually ends at a principle we cannot reduce further.
 
-A second observation concerns the Delft experiment (Hensen et al.), which performed 245 trials before publication. The $p$-value was $0.039$ — statistically significant but not overwhelming by the standards of particle physics (which demands $5\sigma$). A subsequent run extended to 2,078 trials and achieved combined $S = 2.38 \pm 0.14$. This illustrates a genuine tension: fully loophole-free experiments with spin qubits produce events slowly (each NV-to-NV entanglement attempt succeeds with low probability), while photon experiments with high statistics still struggle with the detection efficiency threshold.
+A second puzzle: the Delft experiment (Hensen et al.) performed 245 trials before publication. The $p$-value was $0.039$ — statistically significant but not overwhelming by the standards of, say, particle physics (which demands $5\sigma$). A subsequent run extended to 2,078 trials and achieved combined $S = 2.38 \pm 0.14$. This illustrates a genuine tension: fully loophole-free experiments with spin qubits produce events very slowly (each NV-to-NV entanglement attempt succeeds with low probability), while photon experiments with high statistics still struggle with the detection efficiency threshold. The "perfect" experiment — high statistics, high efficiency, large spacelike separation, genuine randomness in setting choice — remains an ongoing engineering challenge.
 
-Bell's theorem forces a choice of which assumption to abandon — locality, realism, or uniqueness of outcomes — but does not specify which. Sixty years of experiment have closed the empirical question. The conceptual question remains in genuinely contested territory.
+And the deepest puzzle is interpretational. Bell's theorem forces you to give up one of three reasonable-sounding assumptions (locality, realism, uniqueness of outcomes), but it does not tell you which. Sixty years of experiment have closed the empirical question. The conceptual question — what the result means — remains in genuinely contested territory.
 
 ---
 

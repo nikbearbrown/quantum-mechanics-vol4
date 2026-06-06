@@ -9,7 +9,7 @@
 ## Chapter 00: Quantum Mechanics
 *Source: `chapters/00-frontmatter.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
+> **Section not yet authored.** No `### Exercise R4 — CLI Exercise` block found in this chapter file.
 > To add this section, edit the source chapter file directly.
 
 ---
@@ -17,87 +17,371 @@
 ## Chapter 01: Chapter 1 — Mixed States and the Density Matrix
 *Source: `chapters/01-mixed-states-and-the-density-matrix.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** a project directory with a `PROJECT.md` naming your chosen paper and a small verified `rho_tools.py` that builds and validates $\hat\rho(\epsilon)$.
+**Tool:** Claude Code — file automation across a project directory you will reuse all volume.
+**Skill level:** Beginner
+**Setup — confirm:**
+- [ ] You have chosen ONE paper (Bell test, QEC milestone, or NV sensing) and have a PDF or arXiv link.
+- [ ] Claude Code installed and a fresh empty directory `reconstruction-dossier/`.
+- [ ] Add to `CLAUDE.md`: "A valid density matrix has unit trace, is Hermitian, and has non-negative eigenvalues. Always assert these in code before using rho."
+**The Task:**
+```
+Create a project directory for a paper-reconstruction dossier.
+
+1. Create PROJECT.md with these fields, filled in for the paper I name here:
+   [PASTE: paper title, authors, journal/arXiv ID, the ONE central numerical
+   claim you intend to reconstruct, e.g. "S = 2.42 +/- 0.20" or "p_L = 0.143%/cycle"].
+2. Create rho_tools.py with a function werner(eps) returning the 4x4 numpy density
+   matrix (1-eps)|Phi+><Phi+| + eps*I4/4, and a function validate(rho) that asserts:
+   trace is 1 (within 1e-9), rho is Hermitian, all eigenvalues >= -1e-9, purity in
+   [0.25, 1]. Add a __main__ block that runs validate(werner(e)) for e in
+   [0, 0.25, 0.5, 0.75, 1.0] and prints eps, purity, eigenvalues for each.
+3. Run it and paste the output back to me. Do not edit PROJECT.md after I confirm it.
+
+Leave any other files alone. Stop after the script runs cleanly.
+```
+**Expected output:** `PROJECT.md`, `rho_tools.py`, and a console table of (eps, purity, eigenvalues) with all validations passing.
+**What to inspect:** purity falls from $1.0$ at $\epsilon=0$ to $0.25$ at $\epsilon=1$; the reduced state is always $\hat I/2$; eigenvalues never go negative.
+**If it goes wrong:** the most common failure is a non-Hermitian `rho` from a transpose-vs-conjugate-transpose slip — if `validate` flags Hermiticity, check that the outer product uses the conjugate transpose, not the plain transpose.
+**CLAUDE.md / AGENTS.md note:** keep the standing rule "always `validate(rho)` before computing any observable from it."
 
 ---
 
 ## Chapter 02: Chapter 2 — Composite Systems and Entanglement
 *Source: `chapters/02-composite-systems-and-entanglement.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** an `entanglement.py` added to your dossier that identifies the Bell state and computes $\det(C)$ and $S_E$ from an amplitude vector.
+**Tool:** Claude Code.
+**Skill level:** Beginner
+**Setup — confirm:**
+- [ ] `reconstruction-dossier/` exists with `PROJECT.md` and `rho_tools.py` from Chapter 1.
+- [ ] Claude Code installed.
+- [ ] Add to `CLAUDE.md`: "Entanglement claims must be backed by a computed invariant: det(C) for two qubits, or Schmidt rank / S_E. Never label a state 'entangled' without one."
+**The Task:**
+```
+In the existing reconstruction-dossier/ directory:
+
+1. Add entanglement.py with:
+   - coeff_matrix(psi): take a length-4 complex amplitude vector
+     [c00,c01,c10,c11] and return the 2x2 matrix C.
+   - is_entangled(psi): return (det(C), bool) using |det| > 1e-9.
+   - schmidt(psi): return the Schmidt coefficients (singular values squared)
+     and entanglement entropy S_E in ebits (log base 2, with 0*log0 = 0).
+2. Add a __main__ block that runs all three on the four Bell states and on the
+   product state |00>, printing for each: name, det(C), entangled?, S_E.
+3. Append to PROJECT.md a line: "Resource state: [the Bell state you identified],
+   S_E = 1 ebit, correlation sign = [+ or -]."
+4. Run it, paste the output. Leave rho_tools.py and the rest untouched.
+
+Stop after the script prints a clean table for all five states.
+```
+**Expected output:** `entanglement.py`, an updated `PROJECT.md` resource-state line, and a table showing $S_E = 1$ for all four Bell states and $S_E = 0$ for $|00\rangle$.
+**What to inspect:** all four Bell states give $|\det(C)| = \tfrac12$ and $S_E = 1$; the product state gives $\det(C) = 0$, $S_E = 0$.
+**If it goes wrong:** if a Bell state reports $S_E \neq 1$, the usual cause is the $0\log 0$ term evaluated as `NaN` — confirm the entropy routine guards against zero Schmidt coefficients.
+**CLAUDE.md / AGENTS.md note:** keep the rule "back every entanglement claim with a computed invariant."
 
 ---
 
 ## Chapter 03: Chapter 3 — Bell's Theorem and the CHSH Inequality
 *Source: `chapters/03-bells-theorem-and-chsh.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** a tested `chsh.py` in your dossier that computes $S$ for arbitrary angles and states, and reproduces the canonical $2\sqrt2$.
+**Tool:** Claude Code.
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `reconstruction-dossier/` with `entanglement.py` (Chapter 2) present.
+- [ ] Claude Code installed.
+- [ ] Add to `CLAUDE.md`: "Every correlator E(a,b) must lie in [-1,1]; every S from a quantum state must satisfy |S| <= 2*sqrt(2). Assert both. The classical bound is |S| <= 2."
+**The Task:**
+```
+In reconstruction-dossier/:
+
+1. Add chsh.py with:
+   - correlator(state, theta_a, theta_b): build sigma_a = sin(theta_a)*X +
+     cos(theta_a)*Z and sigma_b likewise (angles in radians, from z-axis), form
+     M = kron(sigma_a, sigma_b), and return Re(<state| M |state>) for a length-4
+     state vector. Assert the result is in [-1, 1].
+   - chsh_S(state, a1, a2, b1, b2): return E(a1,b1)+E(a1,b2)+E(a2,b1)-E(a2,b2).
+     Assert |S| <= 2*sqrt(2) + 1e-9.
+2. __main__: for |Phi+> at angles (0,90,45,-45) deg, print S and assert it equals
+   2*sqrt(2) within 1e-6. Then print S for the |00> product state at the same
+   angles and assert |S| <= 2.
+3. Add a function fit_eps(S_exp): solve (1-eps)*2*sqrt(2) = S_exp for eps and
+   return it (this links to Chapter 1's rho(eps)). Print eps for S_exp =
+   [PASTE your paper's reported S].
+4. Run it, paste output. Do not modify earlier files.
+
+Stop once the canonical S = 2.828 assertion passes.
+```
+**Expected output:** `chsh.py`, console lines showing $S = 2.828$ for $|\Phi^+\rangle$, $|S|\le2$ for the product state, and the fitted $\epsilon$ corresponding to your paper's $S_\text{exp}$.
+**What to inspect:** the canonical assertion passes to $10^{-6}$; the product-state $S$ never exceeds 2; the fitted $\epsilon = 1 - S_\text{exp}/2\sqrt2$ is in $[0,1]$ and reasonable for a high-quality source.
+**If it goes wrong:** the most common failure is angles passed in degrees to `sin`/`cos` (expecting radians), yielding nonsense $S$ — confirm an explicit `radians()` conversion before the trig.
+**CLAUDE.md / AGENTS.md note:** keep "assert $|S|\le2\sqrt2$ for any quantum state — a violation of Tsirelson is always a code bug, never physics."
 
 ---
 
 ## Chapter 04: Chapter 4 — Quantum Gates and Circuits
 *Source: `chapters/04-quantum-gates-and-circuits.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** a `circuit.py` in your dossier that prepares the Bell state and implements angle measurements via rotations, reproducing `chsh.py`'s $S$.
+**Tool:** Claude Code.
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `reconstruction-dossier/` with `chsh.py` (Chapter 3) present.
+- [ ] Claude Code installed.
+- [ ] Add to `CLAUDE.md`: "Every gate matrix must be unitary (U_dag @ U == I within 1e-9). Assert before use. Index order: q0 is the outer (left) tensor factor."
+**The Task:**
+```
+In reconstruction-dossier/:
+
+1. Add circuit.py with H, X, Z, CNOT (ctrl q0), and Ry(angle) gate matrices, each
+   asserted unitary. Provide kron(U_q0, U_q1) helpers.
+2. bell_prep(): apply (H kron I) then CNOT to |00>, assert the result equals
+   |Phi+> = [1,0,0,1]/sqrt(2) within 1e-9.
+3. measure_angle_correlator(theta_a, theta_b): prepare |Phi+>, apply Ry rotations
+   on each qubit that implement a measurement at theta_a, theta_b, and return the
+   ZZ expectation. Assert it equals chsh.correlator(|Phi+>, theta_a, theta_b)
+   from Chapter 3 within 1e-9 (cross-check the two routes to E).
+4. __main__: print the four canonical correlators and the resulting S via this
+   circuit route; assert S = 2*sqrt(2).
+5. Run, paste output. Leave chsh.py and earlier files unchanged.
+
+Stop when the circuit-route S matches the operator-route S to 1e-9.
+```
+**Expected output:** `circuit.py`, a console confirmation that the gate-circuit correlators equal the operator-expectation correlators and yield $S = 2.828$.
+**What to inspect:** the two independent routes to $E(\theta_a,\theta_b)$ agree to $10^{-9}$ — this cross-check is the point; a Bell-prep output exactly $[1,0,0,1]/\sqrt2$.
+**If it goes wrong:** if the two routes disagree by a sign or a factor, the rotation angle convention (polarizer-angle vs Bloch-angle, factor of 2) is almost always the culprit — fix the `Ry` argument, not the operator route.
+**CLAUDE.md / AGENTS.md note:** keep "assert unitarity on every gate; cross-check any new correlation route against the established one."
 
 ---
 
 ## Chapter 05: Chapter 5 — Quantum Teleportation and Dense Coding
 *Source: `chapters/05-quantum-teleportation-and-dense-coding.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** a `capability.py` in your dossier that maps $S$ (with uncertainty) to $F_\text{tel}$ and flags the classical threshold.
+**Tool:** Claude Code.
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `reconstruction-dossier/` with `chsh.py` and `circuit.py` present.
+- [ ] Claude Code installed.
+- [ ] Add to `CLAUDE.md`: "Capability claims must carry the resource's uncertainty: propagate the error bar through any derived figure of merit and compare to the named classical benchmark (F=2/3 for teleportation)."
+**The Task:**
+```
+In reconstruction-dossier/:
+
+1. Add capability.py with:
+   - f_tel(S): return (1 + S/(2*sqrt(2)))/2. Assert f_tel(2*sqrt(2)) == 1 and
+     f_tel(2) == (1 + 1/sqrt(2))/2 ≈ 0.8536 within 1e-9.
+   - assess(S, dS): return f_tel(S) and the interval [f_tel(S-dS), f_tel(S+dS)],
+     plus a string "above" / "straddles" / "below" relative to 2/3.
+2. __main__: run assess(S_exp, dS_exp) for my paper's reported [PASTE S_exp, dS_exp]
+   and print the fidelity, the interval, and the classical-threshold verdict.
+3. Append to PROJECT.md a line: "Capability: F_tel = [value] ([interval]),
+   classical 2/3 threshold = [above/straddles/below]."
+4. Run, paste output. Leave earlier files untouched.
+
+Stop after the endpoints assertion passes and PROJECT.md is updated.
+```
+**Expected output:** `capability.py`, a console fidelity-with-interval, and a `PROJECT.md` capability line with the classical-threshold verdict.
+**What to inspect:** the $F(2\sqrt2)=1$ and $F(2)\approx0.854$ endpoints hold; the verdict string correctly reflects whether the whole interval clears $2/3$.
+**If it goes wrong:** if `f_tel(2)` does not return $\approx0.8536$, the $2\sqrt2$ normalization in the denominator is wrong (a common $\sqrt2$-vs-$2\sqrt2$ slip) — fix the constant.
+**CLAUDE.md / AGENTS.md note:** keep "always propagate the error bar into derived figures of merit; never report a capability as a bare central value."
 
 ---
 
 ## Chapter 06: Chapter 6 — Open Systems: Decoherence and the Lindblad Equation
 *Source: `chapters/06-open-systems-and-lindblad.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** an `errormodel.py` in your dossier that derives $T_\phi$, coherence loss, and the $\epsilon$/$p$ bridge from reported coherence numbers.
+**Tool:** Claude Code.
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `reconstruction-dossier/` with `chsh.py`, `capability.py`, and `rho_tools.py` present.
+- [ ] Claude Code installed.
+- [ ] Add to `CLAUDE.md`: "Enforce T2 <= 2 T1 in any coherence calculation; assert it. The dephasing envelope is 0.5*exp(-t/T2). Flag non-Markovian baths rather than applying exponential decay blindly."
+**The Task:**
+```
+In reconstruction-dossier/:
+
+1. Add errormodel.py with:
+   - t_phi(T1, T2): return T_phi from 1/T2 = 1/(2T1)+1/T_phi; assert T2 <= 2*T1+1e-12.
+   - coherence_remaining(T2, t): return exp(-t/T2).
+   - eps_from_S(S_exp): return 1 - S_exp/(2*sqrt(2))  (Werner eps for a Bell test).
+   - p_from_gate(t_gate, T2): return t_gate / T2  (order-of-magnitude per-gate error).
+2. __main__: for my paper's [PASTE T1, T2, t_gate, S_exp/duration as available], print
+   T_phi, coherence remaining after one gate and after the experiment, and the bridged
+   eps and/or p.
+3. Cross-check: feed eps_from_S(S_exp) into rho_tools.werner(eps) and into chsh via
+   (1-eps)*2*sqrt(2); confirm it reproduces S_exp within 1e-9.
+4. Run, paste output. Leave earlier files untouched.
+
+Stop once the eps round-trips back to S_exp.
+```
+**Expected output:** `errormodel.py`, console values for $T_\phi$, coherence fractions, $\epsilon$/$p$, and a confirmation that $\epsilon$ round-trips to $S_\text{exp}$.
+**What to inspect:** $T_2 \le 2T_1$ holds; the round-trip $\epsilon \to S$ is exact; the per-gate $p$ estimate is the right order of magnitude vs. the paper's reported error rate.
+**If it goes wrong:** if `t_phi` raises the $T_2 \le 2T_1$ assertion, you likely swapped $T_1$ and $T_2$ in the call — they are easy to transpose; check the argument order against the paper.
+**CLAUDE.md / AGENTS.md note:** keep "assert $T_2 \le 2T_1$; never apply Markovian exponential decay to a flagged non-Markovian bath without saying so."
 
 ---
 
 ## Chapter 07: Chapter 7 — Measurement, Interpretations, and the Quantum–Classical Boundary
 *Source: `chapters/07-measurement-and-interpretations.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** a `HONESTY.md` in your dossier with the claims/does-not-claim table and the result classification, plus a standing rule that this column is author-written.
+**Tool:** Claude Code.
+**Skill level:** Beginner
+**Setup — confirm:**
+- [ ] `reconstruction-dossier/` with prior chapters' files present.
+- [ ] Claude Code installed.
+- [ ] Add to `CLAUDE.md`: "The honesty-layer 'does NOT claim' column is author-written judgment. The agent may draft candidates and format, but must never assert that a specific paper does or does not overstate its claim."
+**The Task:**
+```
+In reconstruction-dossier/:
+
+1. Create HONESTY.md with three sections:
+   - "Establishes": bullet list of what my paper genuinely shows.
+   - "Does NOT establish": bullet list (I will fill/confirm each bullet myself).
+   - "Classification": one of {physical principle / hardware benchmark /
+     sampling advantage}, with a one-line justification of why it is or is not
+     subject to the classical-simulation arms race.
+2. Pre-fill ONLY the "Establishes" section and the Classification from my notes
+   here: [PASTE your own one-line summary and your chosen classification]. Leave
+   "Does NOT establish" as a template with prompting questions for me to answer
+   (do not fill it in).
+3. Print the file. Do not edit any other dossier file.
+
+Stop after HONESTY.md is created with the "Does NOT establish" section left for me.
+```
+**Expected output:** `HONESTY.md` with the Establishes section and Classification filled from your notes, and a deliberately blank "Does NOT establish" section for you to complete.
+**What to inspect:** the agent did NOT fabricate the "does not establish" bullets; the classification's arms-race justification is sound (a threshold-theorem confirmation is *not* fragile; a sampling result *is*).
+**If it goes wrong:** if the agent fills in the "Does NOT establish" column itself, that violates the standing rule — delete its bullets and write your own; the whole point is that this judgment is yours.
+**CLAUDE.md / AGENTS.md note:** keep "the 'does NOT claim' assessment is author-written; the agent drafts candidates only."
 
 ---
 
 ## Chapter 08: Chapter 8 — Quantum Hardware: From Formalism to Physical Qubits
 *Source: `chapters/08-quantum-hardware.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** an `nv.py` (or `hamiltonian.py`) in your dossier that builds the qubit Hamiltonian and computes its observable (ODMR frequencies / transition frequency).
+**Tool:** Claude Code.
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `reconstruction-dossier/` with prior chapters' files present.
+- [ ] Claude Code installed.
+- [ ] Add to `CLAUDE.md`: "NV: D = 2.87 GHz, gamma = 28.025 MHz/mT, ODMR splitting = 56*B MHz/mT for axial field. Assert the zero-field dip is at 2.87 GHz. State the two-level-validity condition with any transition frequency."
+**The Task:**
+```
+In reconstruction-dossier/:
+
+1. Add nv.py with:
+   - h_nv(B, theta=0): return the 3x3 NV Hamiltonian (in GHz) for field magnitude B
+     (mT) at polar angle theta, using D=2.87, gamma=0.028 GHz/mT.
+   - odmr_frequencies(B, theta=0): diagonalize and return the two m=0 -> m=±1
+     transition frequencies.
+   - Assert odmr_frequencies(0) gives a single value 2.87 (within 1e-6), and
+     odmr_frequencies(30, 0) gives 3.71 and 2.03 GHz (within 1e-3).
+2. (If your paper is NOT NV: instead add hamiltonian.py returning the two-level
+   (omega_01/2)*sigma_z and printing omega_01 with the T1/T2 from Chapter 6.)
+3. __main__: print the frequencies for my paper's field [PASTE B, theta] and compare
+   to the paper's reported dip positions [PASTE].
+4. Run, paste output. Leave earlier files untouched.
+
+Stop after the B=30 mT axial check gives 3.71 and 2.03 GHz.
+```
+**Expected output:** `nv.py` (or `hamiltonian.py`), a console print of computed transition frequencies next to the paper's reported dips.
+**What to inspect:** the $B=0$ single dip at 2.87 GHz; the $B=30$ mT axial dips at 3.71 and 2.03 GHz; for off-axis fields the dips do *not* fully merge as $\theta\to90°$ (transverse field mixes sublevels).
+**If it goes wrong:** if the off-axis case gives the same answer as axial, the $\theta$ dependence was dropped — the field must enter as $B\cos\theta$ on $S_z$ plus a transverse $B\sin\theta$ term in the $3\times3$ matrix, not just $B\cos\theta$.
+**CLAUDE.md / AGENTS.md note:** keep "assert the NV zero-field dip at 2.87 GHz; include the transverse field term for off-axis $\theta$."
 
 ---
 
 ## Chapter 09: Chapter 9 — Error and the Threshold Theorem
 *Source: `chapters/09-error-and-the-threshold-theorem.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building this chapter:** a `threshold.py` in your dossier that computes $p_L(d,p)$, inverts $\Lambda$, and reproduces the threshold fixed point.
+**Tool:** Claude Code.
+**Skill level:** Intermediate
+**Setup — confirm:**
+- [ ] `reconstruction-dossier/` with prior chapters' files present.
+- [ ] Claude Code installed.
+- [ ] Add to `CLAUDE.md`: "Threshold formula: p_L = 0.1*(p/0.01)^ceil((d+1)/2). At p=p_th all distances give p_L=0.1. The scaling is approximate at small d: factor-of-3-5 agreement with a reported value is a success, not a failure."
+**The Task:**
+```
+In reconstruction-dossier/:
+
+1. Add threshold.py with:
+   - p_L(d, p, p_th=0.01, A=0.1): return A*(p/p_th)**ceil((d+1)/2).
+   - p_from_lambda(Lam, p_th=0.01): return p_th/Lam.
+   - Assert p_L(d, 0.01) == 0.1 for d in {3,5,7} (the fixed point), within 1e-9.
+2. __main__: for my paper's [PASTE Lambda, reported p_L, distance d], compute the
+   effective p, the predicted p_L at d=3,5,7, and the ratio of predicted-to-reported
+   p_L at the paper's distance. Print whether the ratio is within a factor of 5.
+3. Append to PROJECT.md: "QEC core calc: effective p = [..], predicted p_L(d) = [..],
+   reported p_L = [..], ratio = [..] (within factor 5: yes/no)."
+4. Run, paste output. Leave earlier files untouched.
+
+Stop after the fixed-point assertion passes.
+```
+**Expected output:** `threshold.py`, a console table of predicted $p_L$ vs reported, the ratio, and a within-factor-5 verdict; an updated `PROJECT.md` line.
+**What to inspect:** all distances give $p_L=0.1$ at $p=p_\text{th}$; the predicted $p_L(d{=}7) \approx 0.49\%$ against a reported $0.143\%$ gives a ratio near 3 — a *successful* reconstruction; below threshold the $d=7$ curve is lowest.
+**If it goes wrong:** if the ratio is wildly off (orders of magnitude), check the exponent uses `ceil((d+1)/2)` not `(d+1)/2` (integer-vs-float) and that $p$ came from inverting $\Lambda$, not a guessed value.
+**CLAUDE.md / AGENTS.md note:** keep "the threshold scaling is approximate at small $d$; judge agreement at factor-of-few, not exact."
 
 ---
 
 ## Chapter 10: Chapter 10 — Capstone: Quantum Mechanics in Research
 *Source: `chapters/10-capstone-quantum-mechanics-in-research.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
-> To add this section, edit the source chapter file directly.
+### Exercise R4 — CLI Exercise
+**What you're building:** a single `reconstruct.py` that runs every validated per-chapter routine and emits the dossier's quantitative core — the recomputed number beside the reported one.
+**Tool:** Claude Code — file automation across the whole dossier directory.
+**Skill level:** Advanced
+**Setup — confirm:**
+- [ ] `reconstruction-dossier/` contains all validated scripts: `rho_tools.py`, `entanglement.py`, `chsh.py`, `circuit.py`, `capability.py`, `errormodel.py`, `nv.py`/`hamiltonian.py`, `threshold.py`, and `HONESTY.md`.
+- [ ] Claude Code installed.
+- [ ] `CLAUDE.md` carries the standing rules from every chapter (validity asserts, $|S|\le2\sqrt2$, $T_2\le2T_1$, threshold fixed point, honesty column is author-written).
+**The Task:**
+```
+In reconstruction-dossier/:
+
+1. Create reconstruct.py that imports the relevant per-chapter modules for MY paper
+   type and prints a single dossier table:
+   - For a Bell test: reconstructed S (chsh), reported S_exp, gap, eps (errormodel),
+     F_tel (capability).
+   - For a QEC paper: effective p (threshold.p_from_lambda), predicted p_L(d=3,5,7),
+     reported p_L, ratio, within-factor-5 verdict.
+   - For an NV paper: computed ODMR f_+/f_- (nv), reported dip positions, agreement.
+   The table must show RECOMPUTED and REPORTED side by side with the gap.
+2. Re-run every per-chapter module's self-assertions first (validity, fixed points,
+   Tsirelson, T2<=2T1) and abort with a clear message if any fails — the dossier is
+   only trustworthy if all upstream checks pass.
+3. Write the table to dossier_core.txt and print it. Append a line to PROJECT.md:
+   "Reconstruction complete: recomputed [X] vs reported [Y], gap [Z]."
+4. Do NOT write any confirm/not-confirm verdict and do NOT touch HONESTY.md.
+
+Run reconstruct.py and paste the full output. Stop after the table is written and
+all upstream assertions pass.
+```
+**Expected output:** `reconstruct.py`, `dossier_core.txt` with the recomputed-vs-reported table, a `PROJECT.md` completion line, and confirmation that every upstream assertion passed.
+**What to inspect:** the recomputed central number is in the expected relationship to the reported one (within error bars / factor-of-few / dip-aligned); every upstream self-check passed before the table was emitted; no verdict was auto-written.
+**If it goes wrong:** if `reconstruct.py` aborts on an upstream assertion, that is the system working — the failing check (e.g. a $T_2>2T_1$ or a Tsirelson violation) means an earlier number is wrong; fix it in its own module before trusting the dossier. If the table prints but the gap is implausible, recompute that one number by hand from its chapter's formula.
+**CLAUDE.md / AGENTS.md note:** keep "the dossier is only as trustworthy as its upstream assertions; abort assembly if any fails; never auto-write the confirm/not-confirm verdict."
 
 ---
 
-## Chapter 99: 99 Back Matter
+## Chapter 99: 99-back-matter.md
 *Source: `chapters/99-back-matter.md`*
 
-> **Section not yet authored.** No `### Exercise 4 — CLI Exercise` block found in this chapter file.
+> **Section not yet authored.** No `### Exercise R4 — CLI Exercise` block found in this chapter file.
 > To add this section, edit the source chapter file directly.
 
 ---

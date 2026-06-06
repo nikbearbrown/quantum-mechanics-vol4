@@ -1,10 +1,10 @@
 # Chapter 10 — Capstone: Quantum Mechanics in Research
 
-Consider a sentence from the abstract of a paper published in *Nature* in December 2024 by the Google Quantum AI team:
+Here is a sentence from the abstract of a paper published in *Nature* in December 2024 by the Google Quantum AI team:
 
 > "We demonstrate a below-threshold surface code logical qubit whose error rate decreases as code distance increases, with the distance-7 code achieving a logical error rate of 0.143% per cycle."
 
-At the start of this volume, you understood "qubit" and perhaps "code." We can now parse the entire sentence. We know what a surface code is, what code distance means, why scaling it should suppress errors, what "below threshold" means in the context of the threshold theorem, and why $0.143\%$ per cycle is both impressive and far from sufficient for a large Shor factoring computation. We can also identify what the sentence does *not* say — it does not claim fault-tolerant universal computation, it does not claim quantum advantage over classical computers, and it does not claim the qubit is good enough for any practical algorithm.
+At the start of this volume, you understood "qubit" and perhaps "code." You can now parse the entire sentence. You know what a surface code is, what code distance means, why scaling it should suppress errors, what "below threshold" means in the context of the threshold theorem, and why $0.143\%$ per cycle is both impressive and far from sufficient for a large Shor factoring computation. You can also identify what the sentence does *not* say — it does not claim fault-tolerant universal computation, it does not claim quantum advantage over classical computers, and it does not claim the qubit is good enough for any practical algorithm.
 
 That last skill — reading what the paper does not claim — is at least as important as reading what it does. The quantum computing literature in 2019–2026 contains several results whose popular interpretation substantially overstated the experimental finding. Learning to distinguish milestone from marketing is not cynicism; it is literacy.
 
@@ -22,13 +22,13 @@ For a QEC paper: given the code distance and physical error rate, use the thresh
 
 For an NV sensing paper: given the applied magnetic field and the NV Hamiltonian, compute the ODMR transition frequencies and compare to the dip positions in the paper's spectrum.
 
-**Reconstruct means check.** You are verifying the paper's arithmetic against a first-principles calculation. If your numbers agree, you understand the paper. If they disagree, you have either found an error or, more likely, misunderstood something — and that misunderstanding is the most valuable thing in the exercise.
+**Reconstruct means check.** You are not a passive reader transcribing results. You are verifying the paper's arithmetic against your own first-principles calculation. If your numbers agree, you understand the paper. If they disagree, you have either found an error or, more likely, misunderstood something — and that misunderstanding is the most valuable thing in the exercise.
 
 ---
 
 ## How to Read a Quantum Paper: A Triage Framework
 
-A research paper in quantum mechanics has a structure. Learning the structure allows you to navigate papers in unfamiliar subfields more efficiently than you might expect.
+A research paper in quantum mechanics has a structure. Learn the structure and you can navigate papers in unfamiliar subfields faster than you expect.
 
 **Step 1: Identify the problem class.** Bell test? QEC milestone? Quantum sensing? Sampling-based advantage claim? Each class has a characteristic formalism, a characteristic claim structure, and a characteristic set of things that can go wrong. Knowing which class you are in tells you which chapters to reach for.
 
@@ -40,7 +40,7 @@ A research paper in quantum mechanics has a structure. Learning the structure al
 
 **Step 5: Check against theory.** The quantum theory prediction should appear in the paper. Can you derive it from this volume's tools? If yes, the paper is accessible. If not, you have identified the frontier.
 
-**Step 6: Assess statistical strength.** A CHSH violation at $p = 0.039$ from 245 trials is qualitatively different from $p < 10^{-7}$ from millions of trials. A QEC demonstration with below-threshold scaling across three code distances is more convincing than a single-distance result. Papers without error bars deserve extra scrutiny.
+**Step 6: Assess statistical strength.** A CHSH violation at $p = 0.039$ from 245 trials is qualitatively different from $p < 10^{-7}$ from millions of trials. A QEC demonstration with below-threshold scaling across three code distances is more convincing than a single-distance result. Read papers without error bars with extra caution.
 
 **Step 7: Read the honesty disclaimer.** A well-written paper states explicitly what it cannot demonstrate. "We demonstrate X, which does not imply Y" is a sign of a trustworthy paper. Look for it. Notice when it is absent.
 
@@ -78,7 +78,7 @@ $$E(\hat a, \hat b) = \langle\Phi^+|(\hat a\cdot\vec\sigma)\otimes(\hat b\cdot\v
 
 $$S = E(A_1,B_1) + E(A_1,B_2) + E(A_2,B_1) - E(A_2,B_2).$$
 
-The experimental $S$ falls slightly below $2\sqrt{2}$ due to decoherence and detection imperfections, but remains well above 2. The ideal calculation sets the upper bound; the gap to the experimental value reflects imperfections quantified in the supplementary material.
+The experimental $S$ falls slightly below $2\sqrt{2}$ due to decoherence and detection imperfections, but remains well above 2. Your ideal calculation sets the upper bound; the gap to the experimental value reflects imperfections quantified in the supplementary material.
 
 **Honesty layer:** The physics is settled. Bell violations are now routine. What Bell's theorem does *not* determine is the interpretation of quantum mechanics: Bohmian mechanics preserves determinism by giving up locality; many-worlds preserves locality by giving up the single-outcome assumption; Copenhagen asserts correlations are primitive. Bell cannot distinguish among them.
 
@@ -90,7 +90,7 @@ The experimental $S$ falls slightly below $2\sqrt{2}$ due to decoherence and det
 
 **Series tools required:** Chapter 9 (surface code; code distance; threshold theorem; suppression formula); Chapter 6 (Lindblad equation; $T_1$, $T_2$; amplitude-damping and dephasing channels as the error model); Chapter 8 (superconducting transmon qubits).
 
-**Reconstruction target:** We use the threshold scaling formula with $p_\text{th} = 0.01$, $A = 0.1$:
+**Reconstruction target:** Use the threshold scaling formula with $p_\text{th} = 0.01$, $A = 0.1$:
 
 $$p_L^{(d)} \approx 0.1\cdot\left(\frac{p}{0.01}\right)^{\lceil(d+1)/2\rceil}.$$
 
@@ -149,7 +149,7 @@ $$|1_L 0_L\rangle = \tfrac{1}{\sqrt{2}}(|0101\rangle + |1010\rangle), \qquad |1_
 
 The stabilizers are $XXXX$ and $ZZZZ$.
 
-**Reconstruction target.** We verify that $|0_L 0_L\rangle$ is a $+1$ eigenstate of both stabilizers:
+**Reconstruction target.** Verify that $|0_L 0_L\rangle$ is a $+1$ eigenstate of both stabilizers:
 
 $$XXXX\,\tfrac{1}{\sqrt{2}}(|0000\rangle + |1111\rangle) = \tfrac{1}{\sqrt{2}}(|1111\rangle + |0000\rangle) = |0_L 0_L\rangle. \checkmark$$
 
@@ -178,13 +178,13 @@ $$E(A_2,B_1) = \cos(45°) = +\tfrac{1}{\sqrt{2}}, \quad E(A_2,B_2) = \cos(135°)
 
 **Step 4.** The local-realistic bound is $|S| \leq 2$ (derived in Chapter 3). The quantum prediction $S = 2\sqrt{2}$ exceeds this by 0.828 — the gap experiments are designed to resolve.
 
-**Step 5.** Giustina et al. 2015 report $S > 2$ with $p < 3.74\times10^{-31}$. The experimental $S$ falls slightly below $2\sqrt{2}$ due to photon loss, detection inefficiency, and residual decoherence. The ideal calculation gives the upper bound; the gap reflects imperfections characterized in the supplementary material.
+**Step 5.** Giustina et al. 2015 report $S > 2$ with $p < 3.74\times10^{-31}$. The experimental $S$ falls slightly below $2\sqrt{2}$ due to photon loss, detection inefficiency, and residual decoherence. Your ideal calculation gives the upper bound; the gap reflects imperfections characterized in the supplementary material.
 
 **Step 6.** The locality loophole is closed: Alice's and Bob's settings are chosen by a random-number generator within the light-travel time between the stations. The detection loophole is closed by high-efficiency superconducting single-photon detectors.
 
-The entire reconstruction uses only CHSH machinery from Chapter 3, Bell-state definitions from Chapter 2, and first-year linear algebra. We have verified the central quantitative claim of a Nobel-adjacent experiment using tools from this volume.
+The entire reconstruction uses only CHSH machinery from Chapter 3, Bell-state definitions from Chapter 2, and first-year linear algebra. You have verified the central quantitative claim of a Nobel-adjacent experiment using tools from this volume.
 
-An extension: we can model the slightly mixed state $\hat\rho = (1-\epsilon)|\Phi^+\rangle\langle\Phi^+| + \epsilon\hat I/4$, compute $S(\epsilon) = (1-\epsilon)\cdot2\sqrt{2}$, and fit $\epsilon$ from the experimental $S$ value. This connects Chapter 1 (density matrix) and Chapter 3 (CHSH) and is a natural next step.
+An extension: model the slightly mixed state $\hat\rho = (1-\epsilon)|\Phi^+\rangle\langle\Phi^+| + \epsilon\hat I/4$, compute $S(\epsilon) = (1-\epsilon)\cdot2\sqrt{2}$, and fit $\epsilon$ from the experimental $S$ value. This connects Chapter 1 (density matrix) and Chapter 3 (CHSH) and is a natural next step.
 
 ---
 
@@ -200,17 +200,17 @@ A reconstruction note should demonstrate:
 | Connections to prior chapters | 15% | Each key tool cited by volume and chapter |
 | Honest assessment | 15% | One thing the paper does not claim; whether the result is a physical principle, hardware benchmark, or advantage claim |
 
-The rubric is designed so that a student who understands the formalism but has not read the paper carefully can pass the calculation portion (30%) but will lose points on the honest assessment (15%) — which is the harder thing to demonstrate.
+The rubric is designed so that a student who understands the formalism but has not read the paper carefully can pass the calculation portion (30%) but will lose points on the honest assessment (15%) — which is the harder thing to fake.
 
 ---
 
-## Open Questions
+## Still Puzzling
 
 **Whether practical quantum advantage arrives, and when.** As of mid-2026: no practically useful quantum advantage has been demonstrated on a real-world problem. The NIST post-quantum cryptography standards (FIPS 203, 204, 205) were finalized in August 2024 — the world's cryptographic infrastructure is already being updated in anticipation of fault-tolerant quantum computers that do not yet exist. If fault-tolerant machines arrive, Shor's algorithm will break RSA. The lattice-based replacements in the NIST standards are believed quantum-resistant, but "believed" is not "proven." The societal consequences are already being implemented; the physical capability remains on a roadmap.
 
-**Whether topological quantum computation will work.** Majorana-based topologically protected qubits have been pursued for two decades — systems whose error protection is enforced by topology rather than active correction, potentially eliminating most overhead. As of 2026, no topological qubit has outperformed a surface-code qubit on a competing platform. The field remains open.
+**Whether topological quantum computation will work.** Majorana-based topologically protected qubits have been pursued for two decades — systems whose error protection is enforced by topology rather than active correction, potentially eliminating most overhead. The physics is beautiful; the engineering is unforgiving. As of 2026, no topological qubit has outperformed a surface-code qubit on a competing platform. The field remains open.
 
-**The measurement problem, still.** We have a complete formalism that predicts the statistics of every experiment in this chapter to extraordinary precision. We have decoherence to explain why outcomes look classical. What we do not have is a derivation from first principles of why one particular outcome obtains in one particular run. Copenhagen asserts it without explanation; many-worlds says all outcomes occur; Bohmian mechanics uses a pilot wave. None adds a prediction the others do not make. The formalism provides tools that work. It does not provide resolved metaphysics. This is not a failure of the tools. It is a frontier.
+**The measurement problem, still.** We have a complete formalism that predicts the statistics of every experiment in this chapter to extraordinary precision. We have decoherence to explain why outcomes look classical. What we do not have is a derivation from first principles of why one particular outcome obtains in one particular run. Copenhagen asserts it without explanation; many-worlds says all outcomes occur; Bohmian mechanics uses a pilot wave. None adds a prediction the others do not make. The formalism gives you tools that work. It does not give you resolved metaphysics. This is not a failure of the tools. It is a frontier.
 
 ---
 
@@ -339,7 +339,7 @@ Tab 3: at B=30 mT, theta=0: dips at 3.71 and 2.03 GHz.
 
 ## Running Project — Reconstruct a Real Research Result (Integration)
 
-This is the capstone. Across Chapters 1–9 you built the pieces: the imperfect-state model ($\hat\rho(\epsilon)$, Ch 1), the entangled-resource identification (Ch 2), the CHSH calculation (Ch 3), the measurement-circuit model (Ch 4), the capability bridge ($F_\text{tel}$, Ch 5), the decoherence/error-rate model (Ch 6), the honesty-layer assessment (Ch 7), the hardware Hamiltonian and ODMR reconstruction (Ch 8), and the threshold scaling formula (Ch 9). Here we **assemble the full reconstruction dossier**: the recomputed central number beside the paper's reported number, and the written assessment of what the paper does and does not claim.
+This is the capstone. Across Chapters 1–9 you built the pieces: the imperfect-state model ($\hat\rho(\epsilon)$, Ch 1), the entangled-resource identification (Ch 2), the CHSH calculation (Ch 3), the measurement-circuit model (Ch 4), the capability bridge ($F_\text{tel}$, Ch 5), the decoherence/error-rate model (Ch 6), the honesty-layer assessment (Ch 7), the hardware Hamiltonian and ODMR reconstruction (Ch 8), and the threshold scaling formula (Ch 9). Here you **assemble the full reconstruction dossier**: the recomputed central number beside the paper's reported number, and the written assessment of what the paper does and does not claim.
 
 **This chapter integrates:** R3 and R4 assemble the complete dossier — recomputing your paper's central quantitative claim from first principles and writing it next to the reported value. R5 validates the recomputed number against the paper's reported value *and* adjudicates the honesty layer: what the paper does not claim, and whether the result is a settled physical principle or a fragile advantage claim.
 

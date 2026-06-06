@@ -1,8 +1,12 @@
 # Chapter 4 — Quantum Gates and Circuits
 
-A quantum gate cannot discard information. Every classical logic gate that discards an input — an AND gate, for example — has two inputs and one output. Rolf Landauer showed in 1961 that erasing one bit costs at least $kT\ln 2$ of energy as heat, not as a limitation of engineering but as a thermodynamic law. A quantum gate, by contrast, is a unitary matrix. Running the circuit backward — applying the conjugate transpose of each gate in reverse order — recovers the original input exactly. Nothing is erased, because unitarity requires that probability sum to 1 at every step.
+The first thing you should know about a quantum computer is that it cannot throw anything away.
 
-This reversibility has an important consequence: we cannot copy an unknown quantum state. The impossibility is not a limitation of current hardware; it follows from the mathematics of unitarity.
+Every classical computer runs on gates that discard information. An AND gate has two inputs and one output. Hand it (0, 0) and it returns 0; hand it (0, 1) and it also returns 0. The inputs are gone. Rolf Landauer showed in 1961 that erasing one bit costs at least $kT\ln 2$ of energy as heat — not a limitation of current engineering, but a thermodynamic law. Classical computers are in the business of forgetting.
+
+A quantum gate works differently. It is a unitary matrix. Run the circuit backward — applying the conjugate transpose of each gate in reverse order — and you recover your original input exactly. Nothing is erased. This follows directly from the requirement that probability must sum to 1 at every step.
+
+That reversibility has a consequence it took decades to properly appreciate: you cannot copy an unknown quantum state. The impossibility is not a limitation of current hardware. It follows from the mathematics.
 
 ---
 
@@ -14,7 +18,7 @@ A quantum gate on $n$ qubits is a linear map $U : \mathbb{C}^{2^n} \to \mathbb{C
 
 **Inner-product preservation.** $\langle\phi|U^\dagger U|\psi\rangle = \langle\phi|\psi\rangle$. Quantum gates are rigid rotations — they rotate the Bloch sphere without stretching or compressing.
 
-To implement a classical irreversible gate in a quantum circuit, we must add ancilla qubits to store the discarded bits. The Toffoli gate (three-qubit controlled-NOT) provides a universal reversible classical gate set, at the cost of making everything three-input, three-output.
+To implement a classical irreversible gate in a quantum circuit, you must add ancilla qubits to store the discarded bits. The Toffoli gate (three-qubit controlled-NOT) provides a universal reversible classical gate set, at the cost of making everything three-input, three-output.
 
 ---
 
@@ -28,7 +32,7 @@ $$\langle\phi|\psi\rangle = \langle\phi|^{\otimes 2}|\psi\rangle^{\otimes 2} = \
 
 A complex number satisfying $z = z^2$ is either 0 or 1. So $\langle\phi|\psi\rangle \in \{0,1\}$ — the states are either orthogonal or identical. No cloner can handle arbitrary unknown states. $\square$
 
-No-cloning is not a technology limitation. Its consequences include: eavesdropping on a quantum channel requires measuring, which disturbs the state and can be detected. Quantum error correction cannot use simple copying and must hide information in entanglement instead. No-cloning also enforces no-signaling: if Bob could clone his half of a Bell pair and measure in many bases, he could infer Alice's setting — but cloning is impossible.
+No-cloning is not a technology limitation. Its cascade: eavesdropping on a quantum channel requires measuring, which disturbs the state and can be detected. Quantum error correction cannot use simple copying and must hide information in entanglement instead. No-cloning enforces no-signaling: if Bob could clone his half of a Bell pair and measure in many bases, he could infer Alice's setting — but cloning is impossible.
 
 ---
 
@@ -76,7 +80,7 @@ The crucial case is when the control is in a superposition:
 
 $$\mathrm{CNOT}\cdot\frac{1}{\sqrt{2}}(|00\rangle + |10\rangle) = \frac{1}{\sqrt{2}}(|00\rangle + |11\rangle) = |\Phi^+\rangle.$$
 
-CNOT creates entanglement. Starting from the appropriate product state it produces a maximally entangled Bell state. CNOT applied to a basis state performs a classical XOR; entanglement requires a superposed control. The Hadamard that precedes the CNOT in Bell-state preparation is essential.
+CNOT creates entanglement. Starting from the appropriate product state it produces a maximally entangled Bell state — this is the gate's entangling power. But CNOT applied to a basis state just performs a classical XOR; entanglement requires a superposed control. The Hadamard that precedes the CNOT in Bell-state preparation is not optional.
 
 ---
 
@@ -94,7 +98,7 @@ Current hardware fidelities (2024-2025): single-qubit gates routinely exceed 99.
 
 ## Worked Example 1 — H-CNOT Bell-State Preparation
 
-We apply $H$ to qubit 0, then CNOT with control = qubit 0, target = qubit 1.
+Apply $H$ to qubit 0, then CNOT with control = qubit 0, target = qubit 1.
 
 **Step 0.** $|\psi_0\rangle = |00\rangle$. Both Bloch vectors at the north pole. Product state.
 
@@ -151,9 +155,9 @@ $$|\pi_2\rangle = \frac{1}{\sqrt{2}}\bigl[(-1)^{f(0)}|0\rangle + (-1)^{f(1)}|1\r
 
 Measure $q_0$: outcome 0 → constant; outcome 1 → balanced.
 
-**Why this works.** The speedup does not come from evaluating $f(0)$ and $f(1)$ simultaneously. Quantum parallelism alone does not help: measuring after the oracle step gives one random value. The advantage comes from **interference**. The oracle writes the comparison $f(0)\oplus f(1)$ into a relative phase between $|0\rangle$ and $|1\rangle$. The final Hadamard converts that relative phase into a distinguishable amplitude. One global property — constant vs. balanced — is extracted from one query. The phase information is invisible to direct measurement but visible after interference.
+**Why this works.** The speedup is not "we evaluated $f(0)$ and $f(1)$ simultaneously." Quantum parallelism alone does not help: measuring after the oracle step gives one random value. What provides the advantage is **interference**. The oracle writes the comparison $f(0)\oplus f(1)$ into a relative phase between $|0\rangle$ and $|1\rangle$. The final Hadamard converts that relative phase into a distinguishable amplitude. One global property — constant vs. balanced — is extracted from one query. The phase information is invisible to direct measurement but visible after interference.
 
-This is the template for quantum algorithms: superposition evaluates a function on many inputs; interference filters the outputs so the answer has high amplitude and wrong answers cancel.
+This is the template for all quantum algorithms: superposition evaluates a function on many inputs; interference filters the outputs so the answer has high amplitude and wrong answers cancel.
 
 ---
 
@@ -165,15 +169,15 @@ This is the template for quantum algorithms: superposition evaluates a function 
 
 ---
 
-## Open Questions
+## Still Puzzling
 
-The Deutsch-Jozsa algorithm extends Deutsch to $n$-bit functions: one quantum query versus $2^{n-1}+1$ deterministic classical queries — an exponential separation. This problem, however, is artificial. Real-world computation rarely encounters functions promised to be constant or balanced.
+The Deutsch-Jozsa algorithm extends Deutsch to $n$-bit functions: one quantum query versus $2^{n-1}+1$ deterministic classical queries — an exponential separation. But this problem is artificial. Real-world computation rarely encounters functions promised to be constant or balanced.
 
 Simon's algorithm (1994) gives an exponential speedup for a more natural problem, and Shor's algorithm was directly inspired by it. The question of which classically hard problems have quantum speedups — and why — is still being mapped out. BQP, the complexity class of problems efficiently solvable on a quantum computer, sits somewhere between BPP and PSPACE; its relationship to NP is unknown.
 
-A practical consideration for the coming decade: fault-tolerant implementations of Shor require thousands to millions of error-corrected logical qubits. Current hardware has tens to hundreds of noisy physical qubits. Whether quantum computers will reach cryptographically relevant scale before classical post-quantum cryptography becomes universal is genuinely open as of 2026.
+A practical puzzle for the coming decade: fault-tolerant implementations of Shor require thousands to millions of error-corrected logical qubits. Current hardware has tens to hundreds of noisy physical qubits. Whether quantum computers will reach cryptographically relevant scale before classical post-quantum cryptography becomes universal is genuinely open as of 2026.
 
-A conceptual point remains as well: quantum circuits produce output via measurement, which is irreversible. Every gate is unitary; the final measurement is not. The tension between unitary evolution and measurement collapse sits at the heart of interpretational quantum mechanics.
+And a conceptual puzzle: quantum circuits produce output via measurement, which is irreversible. Every gate is unitary; the final measurement is not. The tension between unitary evolution and measurement collapse — whether collapse is fundamental or emergent from decoherence — sits at the heart of interpretational quantum mechanics.
 
 ---
 
@@ -428,4 +432,4 @@ Validation Checklist — Quantum Gates and Circuits
 
 ---
 
-Chapter 5 covers quantum error correction. The no-cloning theorem prevents copying qubits; errors accumulate during computation. Error correction must hide logical information in entangled states, detecting and correcting errors without ever measuring the logical qubit directly. The three-qubit bit-flip code and the Shor nine-qubit code are the entry points.
+*Chapter 5 follows: quantum error correction. The no-cloning theorem prevents copying qubits; errors accumulate during computation. Error correction must hide logical information in entangled states, detecting and correcting errors without ever measuring the logical qubit directly. The three-qubit bit-flip code and the Shor nine-qubit code are the entry points.*
