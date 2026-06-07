@@ -117,7 +117,7 @@ An error becomes undetectable only if it forms a chain connecting opposite bound
 
 The surface code threshold is approximately $p_\text{th} \approx 1\%$ — high enough that current hardware can approach it. Concatenated codes achieve thresholds around $10^{-4}$ to $10^{-5}$, which is why the surface code displaced them as the practical target.
 
-The logical error rate for a distance-$d$ surface code at physical error rate $p$ scales as:
+The logical error rate for a $\text{distance-}d$ surface code at physical error rate $p$ scales as:
 
 $$\boxed{p_L \approx A\left(\frac{p}{p_\text{th}}\right)^{\lceil(d+1)/2\rceil},}$$
 
@@ -148,7 +148,7 @@ The threshold theorem (proved independently by Aharonov and Ben-Or, 1997/1999; K
 
 "Below threshold, bigger codes are better" is the intuitive statement. "Arbitrarily low logical error rate by scaling the code" is the precise statement. "The threshold is not zero" is why the result is significant — we do not need perfect hardware, just sufficiently good hardware.
 
-The overhead is substantial. A distance-$d$ surface code requires approximately $2d^2$ physical qubits per logical qubit. To achieve $p_L = 10^{-15}$ at physical error rate $p = 0.1\%$, one needs $d \approx 25$, implying roughly 1,250 physical qubits per logical qubit. A 1,000-logical-qubit fault-tolerant computer might require 1–10 million physical qubits. Current hardware has $10^2$ to $10^3$ physical qubits. The gap is large; the timeline is contested.
+The overhead is substantial. A $\text{distance-}d$ surface code requires approximately $2d^2$ physical qubits per logical qubit. To achieve $p_L = 10^{-15}$ at physical error rate $p = 0.1\%$, one needs $d \approx 25$, implying roughly 1,250 physical qubits per logical qubit. A 1,000-logical-qubit fault-tolerant computer might require 1–10 million physical qubits. Current hardware has $10^2$ to $10^3$ physical qubits. The gap is large; the timeline is contested.
 
 ---
 

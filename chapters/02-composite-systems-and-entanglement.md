@@ -1,7 +1,7 @@
 # Chapter 2 — Composite Systems and Entanglement
 *Why two qubits live in a four-dimensional space where most states cannot be written as products — and what that means.*
 
-When we combine two spin-$\frac{1}{2}$ particles into a single system, the joint Hilbert space is not simply two copies of a two-dimensional space placed side by side. It is the tensor product — a four-dimensional space in which most vectors do not correspond to any product of single-particle states. The structure that the tensor product adds, compared to a direct sum, is precisely where entanglement lives. Entangled states are, in a precise sense, more typical than product states: a random unit vector in $\mathbb{C}^4$ is almost certainly entangled.
+When we combine two $\text{spin-}\frac{1}{2}$ particles into a single system, the joint Hilbert space is not simply two copies of a two-dimensional space placed side by side. It is the tensor product — a four-dimensional space in which most vectors do not correspond to any product of single-particle states. The structure that the tensor product adds, compared to a direct sum, is precisely where entanglement lives. Entangled states are, in a precise sense, more typical than product states: a random unit vector in $\mathbb{C}^4$ is almost certainly entangled.
 
 This chapter develops the geometry of that space. We will see how to distinguish product states from entangled ones, how to quantify the amount of entanglement a state carries, and what these tools look like in practice.
 

@@ -106,7 +106,7 @@ Bohmian mechanics is explicitly nonlocal (Bell's theorem requires this of any hi
 
 This is the only class that functions as a genuine *alternative theory*, not just a reinterpretation.
 
-**GRW:** The Schrödinger equation is modified by spontaneous random localization events. Each particle undergoes a "hit" — a sudden collapse to a Gaussian of width $r_C \approx 10^{-7}$ m — at rate $\lambda \approx 10^{-17}$ s$^{-1}$. For a single particle, hits are negligibly rare (one per $\sim 10^9$ years). For $N \sim 10^{23}$ particles, the rate scales as $N\lambda \sim 10^6$ s$^{-1}$ — nearly instantaneous. Macroscopic superpositions collapse in microseconds; microscopic superpositions survive.
+**GRW:** The Schrödinger equation is modified by spontaneous random localization events. Each particle undergoes a "hit" — a sudden collapse to a Gaussian of width $r_C \approx 10^{-7}$ m — at rate $\lambda \approx 10^{-17}$ $\text{s}^{-1}$. For a single particle, hits are negligibly rare (one per $\sim 10^9$ years). For $N \sim 10^{23}$ particles, the rate scales as $N\lambda \sim 10^6$ $\text{s}^{-1}$ — nearly instantaneous. Macroscopic superpositions collapse in microseconds; microscopic superpositions survive.
 
 **CSL** (Continuous Spontaneous Localization): a continuous stochastic generalization with two free parameters, the collapse rate $\lambda$ and the correlation length $r_C$.
 
@@ -116,7 +116,7 @@ Because CSL modifies the Schrödinger equation, it predicts deviations from stan
 - **Optomechanical experiments** with levitated nanospheres constrain collapse-induced diffusion from below.
 - **Molecular interferometry** (Arndt group, Vienna) sets upper bounds — if collapse rates were fast enough, interference would vanish.
 
-Current status (2026): The original GRW parameters survive; the Adler parameters ($\lambda \sim 10^{-8}$ s$^{-1}$) are under pressure. The allowed parameter space is shrinking. This is a live experimental program. [contested]
+Current status (2026): The original GRW parameters survive; the Adler parameters ($\lambda \sim 10^{-8}$ $\text{s}^{-1}$) are under pressure. The allowed parameter space is shrinking. This is a live experimental program. [contested]
 
 *Experimental distinguishability:* **Yes** — the only class with distinct testable predictions.
 
@@ -196,7 +196,7 @@ Where each interpretation places its cut:
 
 **Bohmian mechanics** has no cut for $\psi$ — it evolves unitarily. The particle has a definite position determined by its trajectory and the guiding equation. That position is the outcome. The other branch of $|\Psi_3\rangle$ is an empty wave — real, but carrying no particle.
 
-**GRW/CSL** inserts a stochastic physical collapse event at Step 2 or 3. For a macroscopic apparatus with $\sim 10^{23}$ particles, $N\lambda \sim 10^6$ s$^{-1}$: the superposition terminates essentially instantaneously. The surviving branch is selected randomly with probabilities $|\alpha|^2$ and $|\beta|^2$.
+**GRW/CSL** inserts a stochastic physical collapse event at Step 2 or 3. For a macroscopic apparatus with $\sim 10^{23}$ particles, $N\lambda \sim 10^6$ $\text{s}^{-1}$: the superposition terminates essentially instantaneously. The surviving branch is selected randomly with probabilities $|\alpha|^2$ and $|\beta|^2$.
 
 **QBism** has no physical collapse event. The chain is the agent's model of the world. Upon having the experience of seeing an outcome, the agent updates their state assignment. $|\Psi_3\rangle$ was never a description of the physical world — it was the agent's probability assignment tool.
 

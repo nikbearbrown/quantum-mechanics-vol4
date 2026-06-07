@@ -10,7 +10,7 @@ To understand $T_2$ we need the equation that governs it. That equation is the L
 
 ## Why Pure States Fail: The System–Environment Split
 
-In every previous chapter, we treated qubits as isolated. The state was pure, evolution was unitary, and that was sufficient. In practice, no qubit is truly isolated. A superconducting transmon couples to substrate phonons, control lines, neighboring qubits, and stray electromagnetic fields. A trapped ion couples to laser phase noise and ambient magnetic fields. A nitrogen-vacancy center in diamond sits in a bath of $^{13}$C nuclear spins. These environments are the dominant noise source.
+In every previous chapter, we treated qubits as isolated. The state was pure, evolution was unitary, and that was sufficient. In practice, no qubit is truly isolated. A superconducting transmon couples to substrate phonons, control lines, neighboring qubits, and stray electromagnetic fields. A trapped ion couples to laser phase noise and ambient magnetic fields. A nitrogen-vacancy center in diamond sits in a bath of $^{13}\text{C}$ nuclear spins. These environments are the dominant noise source.
 
 The formal setup: write the full Hamiltonian as:
 
@@ -184,7 +184,7 @@ The state is maximally mixed. It has not decayed to the south pole — this is p
 
 **The physical picture.** The environment performs continuous, imperfect measurements of $\hat\sigma_z$. Each interaction slightly entangles the qubit's phase with the bath. The overlap $\langle e_0(t)|e_1(t)\rangle$ between environmental branches decays at rate $1/T_\phi$. The off-diagonals, which measure exactly that overlap, follow.
 
-**Where the calculation breaks.** The derivation assumes the Markov approximation: the bath forgets faster than $T_\phi$. For a $^{13}$C nuclear spin bath with slow spin-spin dynamics, the decay of the off-diagonal is not a single exponential — it can show Gaussian initial decay, non-exponential tails, or partial coherence revivals. The Lindblad equation then fails and non-Markovian equations are required. Dynamical decoupling suppresses slow dephasing noise by periodically flipping the qubit, effectively averaging out low-frequency bath fluctuations. This is how NV centers at room temperature achieve millisecond coherence despite a dense nuclear spin bath.
+**Where the calculation breaks.** The derivation assumes the Markov approximation: the bath forgets faster than $T_\phi$. For a $^{13}\text{C}$ nuclear spin bath with slow spin-spin dynamics, the decay of the off-diagonal is not a single exponential — it can show Gaussian initial decay, non-exponential tails, or partial coherence revivals. The Lindblad equation then fails and non-Markovian equations are required. Dynamical decoupling suppresses slow dephasing noise by periodically flipping the qubit, effectively averaging out low-frequency bath fluctuations. This is how NV centers at room temperature achieve millisecond coherence despite a dense nuclear spin bath.
 
 ---
 
@@ -192,7 +192,7 @@ The state is maximally mixed. It has not decayed to the south pole — this is p
 
 The Lindblad equation is derived under the Born–Markov approximation: weak coupling, and bath correlation functions that decay faster than any system timescale. Both are quantitative conditions, not exact ones.
 
-For a photon in a photonic crystal cavity, the bath has a structured density of states: the photon may emit and then reabsorb before the cavity forgets. The dynamics are non-Markovian — the density matrix does not evolve by a Lindblad equation, and the trajectory can show partial coherence revivals that would be impossible in GKSL evolution. For a spin bath like the $^{13}$C nuclei around an NV center, slow spin-spin correlations persist on timescales comparable to $T_2$, making off-diagonal decay non-exponential.
+For a photon in a photonic crystal cavity, the bath has a structured density of states: the photon may emit and then reabsorb before the cavity forgets. The dynamics are non-Markovian — the density matrix does not evolve by a Lindblad equation, and the trajectory can show partial coherence revivals that would be impossible in GKSL evolution. For a spin bath like the $^{13}\text{C}$ nuclei around an NV center, slow spin-spin correlations persist on timescales comparable to $T_2$, making off-diagonal decay non-exponential.
 
 The active research area is finding tractable alternatives to GKSL for these cases. The Nakajima-Zwanzig equation is formally exact but intractable in general. Time-convolutionless master equations are a working compromise. Neither is as clean as the Lindblad equation, and neither delivers the same intuition. The Lindblad equation earns its place as the standard tool not because it is always right, but because it is right under conditions that are well-defined, widely applicable, and physically interpretable. Knowing when to trust it — and when to look for non-exponential decay or coherence revivals — is the practical judgment this chapter is building.
 
@@ -216,10 +216,10 @@ The active research area is finding tractable alternatives to GKSL for these cas
 4. *[Bloch equation derivation for dephasing]* Starting from the Lindblad equation with $\hat L_\phi = \sqrt{1/2T_\phi}\hat\sigma_z$ and $\hat H = 0$, derive $\dot r_x$ by computing $d\,\text{Tr}(\hat\rho\hat\sigma_x)/dt$ from the dissipator. Show all intermediate algebra.
 *What this tests: deriving a Bloch equation term from the Lindblad structure rather than just reading it off.*
 
-5. *[Bloch equation solution with combined noise]* A qubit starts on the equator: $(r_x, r_y, r_z) = (1, 0, 0)$. It evolves with $\omega_0 = 0$, $T_1 = 4\,\mu$s, $T_\phi = 4\,\mu$s (so $T_2 = 2\,\mu$s by the sum formula). (a) Write the full solution $(r_x(t), r_y(t), r_z(t))$. (b) Compute the purity at $t = T_2$. (c) Where is the Bloch vector at $t \to \infty$ — the origin or the south pole? Explain physically.
+5. *[Bloch equation solution with combined noise]* A qubit starts on the equator: $(r_x, r_y, r_z) = (1, 0, 0)$. It evolves with $\omega_0 = 0$, $T_1 = 4\,\mu\text{s}$, $T_\phi = 4\,\mu\text{s}$ (so $T_2 = 2\,\mu\text{s}$ by the sum formula). (a) Write the full solution $(r_x(t), r_y(t), r_z(t))$. (b) Compute the purity at $t = T_2$. (c) Where is the Bloch vector at $t \to \infty$ — the origin or the south pole? Explain physically.
 *What this tests: solving the Bloch equations with both $T_1$ and $T_\phi$ active; distinguishing the limiting state of pure dephasing from energy relaxation.*
 
-6. *[$T_1$–$T_2$ constraint and hardware numbers]* A transmon qubit has $T_1 = 300\,\mu$s. (a) What is the maximum possible $T_2$? (b) If the measured $T_2 = 180\,\mu$s, compute $T_\phi$. (c) If a noise-mitigation technique doubles $T_\phi$, what is the new $T_2$?
+6. *[$T_1$–$T_2$ constraint and hardware numbers]* A transmon qubit has $T_1 = 300\,\mu\text{s}$. (a) What is the maximum possible $T_2$? (b) If the measured $T_2 = 180\,\mu\text{s}$, compute $T_\phi$. (c) If a noise-mitigation technique doubles $T_\phi$, what is the new $T_2$?
 *What this tests: using the sum formula to infer $T_\phi$ from measured $T_1$ and $T_2$, and predicting the effect of improvements.*
 
 **Synthesis**

@@ -112,7 +112,7 @@ The paper reports $p_L^{(7)} = 0.143\%$ — roughly $3\times$ smaller. The discr
 
 **Series tools required:** Vol. 3 Chapter 9 (Zeeman perturbation; first-order eigenvalue shifts linear in the applied field); Chapter 8 (NV Hamiltonian; ODMR readout; $D = 2.87$ GHz zero-field splitting; $g\mu_B/h = 28.025$ MHz/mT); Chapter 6 ($T_2$ as coherence time linking to linewidth).
 
-**The NV Hamiltonian and transition frequencies.** The spin-1 NV$^-$ ground-state Hamiltonian in an axial field $B$:
+**The NV Hamiltonian and transition frequencies.** The spin-1 $\text{NV}^-$ ground-state Hamiltonian in an axial field $B$:
 
 $$\hat H_\text{NV} = D\hat S_z^2 + g\mu_B B\hat S_z,$$
 
