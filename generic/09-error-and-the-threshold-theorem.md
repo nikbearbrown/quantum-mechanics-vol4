@@ -32,7 +32,7 @@ $$E_k = a_k I + b_k X + c_k Y + d_k Z.$$
 
 Every conceivable single-qubit error — a tiny rotation, a partial dephasing, a correlated amplitude-and-phase perturbation — is a linear combination of four operators. The key insight, stated precisely by Knill and Laflamme in 1997, is:
 
-*If a code can detect and correct $X$ errors and $Z$ errors independently, it corrects any single-qubit error whatsoever.*
+*If a code can detect and correct* $X$ *errors and* $Z$ *errors independently, it corrects any single-qubit error whatsoever.*
 
 The continuous error space is spanned by four basis errors. Correct the basis; correct everything. This is the digitization of errors.
 
@@ -104,7 +104,7 @@ The stabilizer formalism is where error correction becomes computationally tract
 
 The **surface code** (Kitaev 1997/2003; Fowler et al. 2012) is approximately a $[\![2d^2, 1, d]\!]$ code for a $d\times d$ array of data qubits. Two types of stabilizers are measured:
 
-**$X$-stabilizers** (plaquette operators): $X$ acting on the four data qubits around a square face. Detects $Z$ errors. **$Z$-stabilizers** (star operators): $Z$ acting on the four data qubits surrounding a vertex. Detects $X$ errors.
+$X$-**stabilizers** (plaquette operators): $X$ acting on the four data qubits around a square face. Detects $Z$ errors. $Z$-**stabilizers** (star operators): $Z$ acting on the four data qubits surrounding a vertex. Detects $X$ errors.
 
 Every stabilizer involves only nearest-neighbor qubits — the feature that makes the surface code compatible with 2D chip architectures.
 
@@ -144,7 +144,7 @@ The distinction matters in practice. A code might be an excellent error-correcti
 
 The threshold theorem (proved independently by Aharonov and Ben-Or, 1997/1999; Knill, Laflamme, and Zurek, 1998; Kitaev, 1997) is the central theoretical result:
 
-*There exists a threshold error rate $p_\text{th}$ such that, if every physical gate error rate $p < p_\text{th}$, fault-tolerant quantum computation can be performed on circuits of arbitrary depth with only polylogarithmic overhead.*
+*There exists a threshold error rate* $p_\text{th}$ *such that, if every physical gate error rate* $p < p_\text{th}$, *fault-tolerant quantum computation can be performed on circuits of arbitrary depth with only polylogarithmic overhead.*
 
 "Below threshold, bigger codes are better" is the intuitive statement. "Arbitrarily low logical error rate by scaling the code" is the precise statement. "The threshold is not zero" is why the result is significant — we do not need perfect hardware, just sufficiently good hardware.
 
@@ -176,14 +176,14 @@ We trace the full cycle — encode, error, syndrome, correct, verify — for the
 
 $$|\Psi\rangle = (\alpha|010\rangle + \beta|101\rangle)|00\rangle.$$
 
-**Step 2: Measure $M_1 = Z_1Z_2$.** We write the parity of $(q_1, q_2)$ into ancilla 1 via CNOT gates. In the state $\alpha|010\rangle + \beta|101\rangle$:
+**Step 2: Measure** $M_1 = Z_1Z_2$. We write the parity of $(q_1, q_2)$ into ancilla 1 via CNOT gates. In the state $\alpha|010\rangle + \beta|101\rangle$:
 
 - Term $|010\rangle$: qubit 1 is $|0\rangle$, qubit 2 is $|1\rangle$. Parity: odd.
 - Term $|101\rangle$: qubit 1 is $|1\rangle$, qubit 2 is $|0\rangle$. Parity: odd.
 
 Both terms have the same parity, so measuring ancilla 1 returns a definite $-1$ without collapsing the $(\alpha, \beta)$ superposition. Ancilla 1 reads $-1$.
 
-**Step 3: Measure $M_2 = Z_2Z_3$.** Similarly:
+**Step 3: Measure** $M_2 = Z_2Z_3$. Similarly:
 
 - Term $|010\rangle$: qubit 2 is $|1\rangle$, qubit 3 is $|0\rangle$. Parity: odd.
 - Term $|101\rangle$: qubit 2 is $|0\rangle$, qubit 3 is $|1\rangle$. Parity: odd.

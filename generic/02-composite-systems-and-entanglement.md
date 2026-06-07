@@ -50,7 +50,7 @@ $$C_\text{sep} = \begin{pmatrix}\alpha\gamma & \alpha\delta \\ \beta\gamma & \be
 
 This is a **rank-1 matrix** — the outer product of two vectors. The determinant of a rank-1 matrix is zero: $\det(C_\text{sep}) = \alpha\gamma\cdot\beta\delta - \alpha\delta\cdot\beta\gamma = \alpha\beta\gamma\delta - \alpha\beta\delta\gamma = 0$.
 
-Conversely, if $C$ has rank 1, then $C = \vec{u}\vec{v}^T$ for some vectors $\vec{u}$ and $\vec{v}$, and the state factors as $|a\rangle = u_0|0\rangle + u_1|1\rangle$ tensored with $|b\rangle = v_0|0\rangle + v_1|1\rangle$. The conclusion: **for two qubits, $|\psi_{AB}\rangle$ is a product state if and only if $\text{rank}(C) = 1$, equivalently $\det(C) = 0$.**
+Conversely, if $C$ has rank 1, then $C = \vec{u}\vec{v}^T$ for some vectors $\vec{u}$ and $\vec{v}$, and the state factors as $|a\rangle = u_0|0\rangle + u_1|1\rangle$ tensored with $|b\rangle = v_0|0\rangle + v_1|1\rangle$. The conclusion: **for two qubits,** $|\psi_{AB}\rangle$ **is a product state if and only if** $\text{rank}(C) = 1$, **equivalently** $\det(C) = 0$.
 
 This gives a quick computational test for entanglement:
 
@@ -72,7 +72,7 @@ Each has a coefficient matrix proportional to a Pauli matrix or the identity, al
 
 The reduced density matrix of qubit $A$ in any Bell state is $\hat\rho_A = \text{Tr}_B(|\psi\rangle\langle\psi|) = \tfrac{1}{2}\hat{I}$ — the maximally mixed state. No single-qubit measurement distinguishes among the Bell states. All the information is in the joint correlations. This is the defining feature of maximal entanglement: learning the local state of one party tells you nothing; all the information is shared.
 
-**Preparing $|\Phi^+\rangle$ from $|00\rangle$** uses two gates:
+**Preparing** $|\Phi^+\rangle$ **from** $|00\rangle$ uses two gates:
 
 $$|00\rangle \overset{H\otimes I}{\longrightarrow} \frac{|00\rangle + |10\rangle}{\sqrt{2}} = |{+}\rangle_A\otimes|0\rangle_B \overset{\text{CNOT}}{\longrightarrow} \frac{|00\rangle + |11\rangle}{\sqrt{2}} = |\Phi^+\rangle.$$
 
@@ -158,7 +158,7 @@ $$C = \frac{1}{2}\begin{pmatrix}1 & 1 \\ 1 & -1\end{pmatrix}.$$
 
 Normalization check: $\|C\|_F^2 = 4\times\tfrac{1}{4} = 1$. Good.
 
-**Compute $C^\dagger C$:**
+**Compute** $C^\dagger C$:
 
 $$C^\dagger C = \frac{1}{4}\begin{pmatrix}1 & 1 \\ 1 & -1\end{pmatrix}\begin{pmatrix}1 & 1 \\ 1 & -1\end{pmatrix} = \frac{1}{4}\begin{pmatrix}2 & 0 \\ 0 & 2\end{pmatrix} = \frac{1}{2}\hat{I}.$$
 

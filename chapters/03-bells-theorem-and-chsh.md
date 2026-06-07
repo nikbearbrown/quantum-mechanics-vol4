@@ -192,9 +192,9 @@ Bell's theorem forces a choice of which assumption to abandon — locality, real
 **Warm-up**
 
 1. *[CHSH algebra — the key step]* Write out all four possible assignments of $(B_1, B_2)$. For each, with $A_1 = A_2 = +1$, compute $S(\lambda) = A_1[B_1 + B_2] + A_2[B_1 - B_2]$ and verify $|S(\lambda)| = 2$ in every case. Repeat with $A_1 = +1$, $A_2 = -1$.
-*What this tests: internalizing the one arithmetic observation that makes the entire inequality — that for ±1 values, exactly one of $|B_1+B_2|$ and $|B_1-B_2|$ equals 2 and the other equals 0.*
+*What this tests: internalizing the one arithmetic observation that makes the entire inequality — that for ±1 values, exactly one of* $|B_1+B_2|$ *and* $|B_1-B_2|$ *equals 2 and the other equals 0.*
 
-2. *[Correlation formula for $|\Phi^+\rangle$]* For $|\Phi^+\rangle$ with $\theta_{A_1} = 30°$ and $\theta_{B_1} = 75°$, compute $E(A_1, B_1)$. What is $E$ when Alice and Bob measure in the same direction? In anti-parallel directions?
+2. [*Correlation formula for* $|\Phi^+\rangle$] For $|\Phi^+\rangle$ with $\theta_{A_1} = 30°$ and $\theta_{B_1} = 75°$, compute $E(A_1, B_1)$. What is $E$ when Alice and Bob measure in the same direction? In anti-parallel directions?
 *What this tests: applying the quantum correlation formula and identifying its extreme values.*
 
 3. *[CHSH at suboptimal angles]* For $|\Phi^+\rangle$ with $\theta_{A_1} = 0°$, $\theta_{A_2} = 60°$, $\theta_{B_1} = 30°$, $\theta_{B_2} = 90°$: compute all four $E(A_i, B_j)$ and evaluate $S$. Is this optimal? Does it violate the classical bound?
@@ -217,7 +217,7 @@ Bell's theorem forces a choice of which assumption to abandon — locality, real
 *What this tests: connecting the loophole structure to the experimental numbers; understanding what "fair sampling" requires.*
 
 8. *[Information causality]* State, in your own words, what a Popescu–Rohrlich box would do, why it does not violate no-signaling, and why Pawlowski et al. argue it is still physically unreasonable. What does this suggest about the status of information causality as a physical principle — is it a theorem or an axiom?
-*What this tests: engaging with the open question of why quantum correlations stop at $2\sqrt{2}$ rather than at the no-signaling limit.*
+*What this tests: engaging with the open question of why quantum correlations stop at* $2\sqrt{2}$ *rather than at the no-signaling limit.*
 
 **Challenge**
 

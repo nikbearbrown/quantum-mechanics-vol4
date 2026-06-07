@@ -54,7 +54,7 @@ $H|0\rangle = |{+}\rangle = (|0\rangle + |1\rangle)/\sqrt{2}$, $H|1\rangle = |{-
 
 **Phase gate** ($S$): $S = \bigl(\begin{smallmatrix}1&0\\0&i\end{smallmatrix}\bigr)$. $S^2 = Z$.
 
-**$T$ gate:** $T = \bigl(\begin{smallmatrix}1&0\\0&e^{i\pi/4}\end{smallmatrix}\bigr)$. $T^2 = S$, $T^4 = Z$, $T^8 = \mathbf{I}$. The $T$ gate is the source of non-Clifford computational power. In fault-tolerant architectures it requires magic state distillation — hundreds of physical qubits per logical $T$ gate — making $T$-count a key resource metric.
+$T$ **gate:** $T = \bigl(\begin{smallmatrix}1&0\\0&e^{i\pi/4}\end{smallmatrix}\bigr)$. $T^2 = S$, $T^4 = Z$, $T^8 = \mathbf{I}$. The $T$ gate is the source of non-Clifford computational power. In fault-tolerant architectures it requires magic state distillation — hundreds of physical qubits per logical $T$ gate — making $T$-count a key resource metric.
 
 **Continuous rotations:**
 
@@ -98,7 +98,7 @@ We apply $H$ to qubit 0, then CNOT with control = qubit 0, target = qubit 1.
 
 **Step 0.** $|\psi_0\rangle = |00\rangle$. Both Bloch vectors at the north pole. Product state.
 
-**Step 1 — $H\otimes I$.** 
+**Step 1 —** $H\otimes I$. 
 
 $$(H\otimes I)|00\rangle = (H|0\rangle)\otimes|0\rangle = \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)\otimes|0\rangle = \frac{1}{\sqrt{2}}(|00\rangle + |10\rangle).$$
 
@@ -133,11 +133,11 @@ Given a function $f:\{0,1\}\to\{0,1\}$ as a black box, determine whether it is c
 
 **State trace.**
 
-*After $H\otimes H$:*
+*After* $H\otimes H$:
 
 $$|\pi_1\rangle = |{+}\rangle\otimes|{-}\rangle = \frac{1}{2}(|0\rangle + |1\rangle)(|0\rangle - |1\rangle).$$
 
-*After $U_f$ — phase kickback.* For each basis component $|x\rangle$ of $q_0$ with the ancilla in $|{-}\rangle$:
+*After* $U_f$ — *phase kickback.* For each basis component $|x\rangle$ of $q_0$ with the ancilla in $|{-}\rangle$:
 
 $$U_f|x\rangle|{-}\rangle = (-1)^{f(x)}|x\rangle|{-}\rangle.$$
 
@@ -147,7 +147,7 @@ $$|\pi_2\rangle = \frac{1}{\sqrt{2}}\bigl[(-1)^{f(0)}|0\rangle + (-1)^{f(1)}|1\r
 
 *Two cases.* If $f$ is constant: both terms acquire the same phase, so $q_0 \propto |0\rangle + |1\rangle = \sqrt{2}|{+}\rangle$. If $f$ is balanced: the phases are opposite, so $q_0 \propto |0\rangle - |1\rangle = \sqrt{2}|{-}\rangle$.
 
-*After $H$ on $q_0$:* $H|{+}\rangle = |0\rangle$ (constant); $H|{-}\rangle = |1\rangle$ (balanced).
+*After* $H$ *on* $q_0$: $H|{+}\rangle = |0\rangle$ (constant); $H|{-}\rangle = |1\rangle$ (balanced).
 
 Measure $q_0$: outcome 0 → constant; outcome 1 → balanced.
 

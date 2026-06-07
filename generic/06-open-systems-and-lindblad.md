@@ -120,7 +120,7 @@ These are the **Bloch equations**. They are the chapter's central result: the de
 ![annotated Bloch sphere showing three processes simultaneously — precession around z at ω₀ (orange circular arrow), transverse shrinkage at…](../images/06-open-systems-and-lindblad-fig-02.png)
 *Figure 6.2 — annotated Bloch sphere showing three processes simultaneously — precession around z at ω₀ (orange circular arrow), transverse shrinkage at…*
 
-**The constraint $T_2 \leq 2T_1$.** Since $1/T_\phi \geq 0$, we have $1/T_2 = 1/(2T_1) + 1/T_\phi \geq 1/(2T_1)$, hence $T_2 \leq 2T_1$. Equality $T_2 = 2T_1$ — the **natural linewidth limit** — is achieved when $T_\phi \to \infty$: no pure dephasing, only energy relaxation. Real hardware always has some pure dephasing. Coherence is always at least as fragile as population.
+**The constraint** $T_2 \leq 2T_1$. Since $1/T_\phi \geq 0$, we have $1/T_2 = 1/(2T_1) + 1/T_\phi \geq 1/(2T_1)$, hence $T_2 \leq 2T_1$. Equality $T_2 = 2T_1$ — the **natural linewidth limit** — is achieved when $T_\phi \to \infty$: no pure dephasing, only energy relaxation. Real hardware always has some pure dephasing. Coherence is always at least as fragile as population.
 
 ---
 
@@ -217,10 +217,10 @@ The active research area is finding tractable alternatives to GKSL for these cas
 *What this tests: deriving a Bloch equation term from the Lindblad structure rather than just reading it off.*
 
 5. *[Bloch equation solution with combined noise]* A qubit starts on the equator: $(r_x, r_y, r_z) = (1, 0, 0)$. It evolves with $\omega_0 = 0$, $T_1 = 4\,\mu\text{s}$, $T_\phi = 4\,\mu\text{s}$ (so $T_2 = 2\,\mu\text{s}$ by the sum formula). (a) Write the full solution $(r_x(t), r_y(t), r_z(t))$. (b) Compute the purity at $t = T_2$. (c) Where is the Bloch vector at $t \to \infty$ — the origin or the south pole? Explain physically.
-*What this tests: solving the Bloch equations with both $T_1$ and $T_\phi$ active; distinguishing the limiting state of pure dephasing from energy relaxation.*
+*What this tests: solving the Bloch equations with both* $T_1$ *and* $T_\phi$ *active; distinguishing the limiting state of pure dephasing from energy relaxation.*
 
-6. *[$T_1$–$T_2$ constraint and hardware numbers]* A transmon qubit has $T_1 = 300\,\mu\text{s}$. (a) What is the maximum possible $T_2$? (b) If the measured $T_2 = 180\,\mu\text{s}$, compute $T_\phi$. (c) If a noise-mitigation technique doubles $T_\phi$, what is the new $T_2$?
-*What this tests: using the sum formula to infer $T_\phi$ from measured $T_1$ and $T_2$, and predicting the effect of improvements.*
+6. [$T_1$–$T_2$ *constraint and hardware numbers]* A transmon qubit has $T_1 = 300\,\mu\text{s}$. (a) What is the maximum possible $T_2$? (b) If the measured $T_2 = 180\,\mu\text{s}$, compute $T_\phi$. (c) If a noise-mitigation technique doubles $T_\phi$, what is the new $T_2$?
+*What this tests: using the sum formula to infer* $T_\phi$ *from measured* $T_1$ *and* $T_2$, *and predicting the effect of improvements.*
 
 **Synthesis**
 

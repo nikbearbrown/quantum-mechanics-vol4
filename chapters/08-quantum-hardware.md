@@ -205,7 +205,7 @@ A microwave field oscillating at $\nu_{0,-1}$ applies the same Rabi Hamiltonian 
 
 2. *Difficulty: Warm-up — tests the Bloch equation coherence time relation.*
    A qubit has $T_1 = 1$ ms and $T_\phi = 500\,\mu\text{s}$. (a) Compute $T_2$. (b) A second qubit has $T_1 = 1$ ms and no pure dephasing ($T_\phi \to \infty$); what is its $T_2$? (c) A third qubit has $T_2 = 2T_1$; what does this imply about $T_\phi$? (d) For the first qubit with two-qubit gate time 200 ns, how many gates can be run per coherence cycle?
-   *Tests: applying the fundamental $T_2$ relation; the $2T_1$ ceiling; gates-per-coherence-cycle figure of merit.*
+   *Tests: applying the fundamental* $T_2$ *relation; the* $2T_1$ *ceiling; gates-per-coherence-cycle figure of merit.*
 
 3. *Difficulty: Warm-up — tests NV center transition frequency and two-level validity.*
    The NV center qubit transition frequency is $\nu_{0,-1} \approx 2870 - 28B$ MHz, $B$ in mT. (a) At what field does $\nu_{0,-1}$ cross 2.4 GHz? (b) At $B = 100$ mT, what is the detuning between the $|0\rangle\leftrightarrow|1\rangle$ and $|0\rangle\leftrightarrow|m_s=+1\rangle$ transitions? (c) For Rabi frequency $\Omega_R/2\pi = 5$ MHz, is the two-level approximation valid at this field?
@@ -219,17 +219,17 @@ A microwave field oscillating at $\nu_{0,-1}$ applies the same Rabi Hamiltonian 
 
 5. *Difficulty: Application — platform figures of merit.*
    Using the mid-2026 values given in the platform descriptions: (a) compute $N_\text{gates} = T_2/t_\text{gate}$ for superconducting (transmon with $T_2 = 400\,\mu\text{s}$, $t_\text{gate} = 100$ ns) and trapped ion ($T_2 = 10$ s, $t_\text{gate} = 500\,\mu\text{s}$); (b) which platform has more usable gates per coherence cycle, and by how much? (c) The "megaquop" milestone requires $10^6$ high-fidelity operations. Which platform's coherence-cycle gate count is closer to this target, and what would be needed to reach it on the other platform?
-   *Tests: computing and comparing the $T_2/t_\text{gate}$ figure of merit across platforms; connecting to the megaquop milestone.*
+   *Tests: computing and comparing the* $T_2/t_\text{gate}$ *figure of merit across platforms; connecting to the megaquop milestone.*
 
 6. *Difficulty: Application — coherence time measurement.*
    A Ramsey experiment on a superconducting qubit measures the free precession decay of the off-diagonal density matrix element. The experiment applies $\pi/2$-pulse, waits time $\tau$, applies another $\pi/2$-pulse, and measures $P(|1\rangle)$ as a function of $\tau$. (a) Sketch the expected $P(|1\rangle)$ vs. $\tau$ for a qubit with $T_2^* = 10\,\mu\text{s}$ (showing a decaying oscillation). (b) A spin-echo sequence (Ramsey with a $\pi$-pulse in the middle) gives a decay time $T_2 = 100\,\mu\text{s}$ on the same qubit. What physical noise source does the spin echo refocus? (c) Why is $T_2 > T_2^*$, and what does the ratio $T_2/T_2^*$ tell you about the noise spectrum?
-   *Tests: Ramsey vs. spin echo; $T_2^*$ vs. $T_2$; static vs. dynamic noise.*
+   *Tests: Ramsey vs. spin echo;* $T_2^*$ *vs.* $T_2$; *static vs. dynamic noise.*
 
 **Synthesis**
 
 7. *Difficulty: Synthesis — platform selection for a specified task.*
    An application requires 100 fully connected qubits, two-qubit gate fidelity $>99.5\%$, and the ability to run 1000 two-qubit gates in a single circuit before decoherence. Assess the three leading gate-based platforms (superconducting, trapped ion, neutral atom) against each requirement. State which platform currently best meets the requirements and which requirement is hardest to satisfy on each platform. Note that these numbers change rapidly. [verify]
-   *Tests: applying the DiVincenzo rubric and the $N_\text{gates}$ criterion to a realistic specification; recognizing trade-offs.*
+   *Tests: applying the DiVincenzo rubric and the* $N_\text{gates}$ *criterion to a realistic specification; recognizing trade-offs.*
 
 8. *Difficulty: Synthesis — NISQ structural analysis.*
    The NISQ concept is often described as "not enough qubits" or "not enough fidelity." Argue that it is better described as "not enough $N_\text{gates}$ per logical qubit to support error correction," using the threshold theorem (Chapter 9). (a) For a surface code with physical error rate $p = 0.5\%$ (just below threshold), how many physical qubits are needed per logical qubit at code distance $d = 7$? (b) For a 1000-qubit NISQ device with this error rate, how many logical qubits could it support? (c) What would need to change — error rate, qubit count, or both — for the device to be "post-NISQ"?

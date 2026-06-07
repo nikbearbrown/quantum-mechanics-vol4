@@ -66,7 +66,7 @@ The structural distinction: **demonstrations of physical principles** (Bell viol
 
 **Representative papers:** Giustina, M. et al. *Phys. Rev. Lett.* 115, 250401 (2015); Shalm, L.K. et al. *Phys. Rev. Lett.* 115, 250402 (2015). [verify]
 
-*Note for instructors: Hensen et al. 2015 (NV spins, $S = 2.42\pm0.20$, $p = 0.039$, $n = 245$) provides excellent continuity with Chapter 8's NV hardware discussion but has marginal statistics. Giustina 2015 or Shalm 2015 ($p < 10^{-7}$ and $p < 10^{-8}$ respectively) are preferable for the reconstruction exercise. The CHSH formalism is identical regardless.*
+*Note for instructors: Hensen et al. 2015 (NV spins,* $S = 2.42\pm0.20$, $p = 0.039$, $n = 245$) *provides excellent continuity with Chapter 8's NV hardware discussion but has marginal statistics. Giustina 2015 or Shalm 2015 (*$p < 10^{-7}$ *and* $p < 10^{-8}$ *respectively) are preferable for the reconstruction exercise. The CHSH formalism is identical regardless.*
 
 **Problem class:** Bell test. Determines whether measured correlations between distant entangled particles exceed the local hidden-variable bound.
 
@@ -142,7 +142,7 @@ where $\gamma_e/2\pi = 28$ MHz/mT and $N$ is measurement repetitions per unit ti
 
 **Series tools required:** Chapter 9 (stabilizer codes, $[\![n,k,d]\!]$ notation, fault-tolerant gates); Chapter 8 (neutral-atom qubits, Rydberg blockade, optical tweezers); Chapter 2 (entanglement structure of multi-qubit states).
 
-**The core code: $[\![4,2,2]\!]$.** Encodes 2 logical qubits in 4 physical qubits with code distance 2. The logical basis states:
+**The core code:** $[\![4,2,2]\!]$. Encodes 2 logical qubits in 4 physical qubits with code distance 2. The logical basis states:
 
 $$|0_L 0_L\rangle = \tfrac{1}{\sqrt{2}}(|0000\rangle + |1111\rangle), \qquad |0_L 1_L\rangle = \tfrac{1}{\sqrt{2}}(|0011\rangle + |1100\rangle),$$
 $$|1_L 0_L\rangle = \tfrac{1}{\sqrt{2}}(|0101\rangle + |1010\rangle), \qquad |1_L 1_L\rangle = \tfrac{1}{\sqrt{2}}(|0110\rangle + |1001\rangle).$$

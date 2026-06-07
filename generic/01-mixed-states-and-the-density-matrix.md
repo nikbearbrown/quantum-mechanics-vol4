@@ -102,7 +102,7 @@ This is a pure joint state: $\hat\rho_{AB} = |\Phi^+\rangle\langle\Phi^+|$.
 
 $$\hat\rho_{AB} = \frac{1}{2}\bigl(|00\rangle\langle00| + |00\rangle\langle11| + |11\rangle\langle00| + |11\rangle\langle11|\bigr).$$
 
-**Step 2: Partial trace over qubit $B$.** Using basis $\{|0\rangle_B, |1\rangle_B\}$:
+**Step 2: Partial trace over qubit** $B$. Using basis $\{|0\rangle_B, |1\rangle_B\}$:
 
 $$\hat\rho_A = \langle0|_B\,\hat\rho_{AB}\,|0\rangle_B + \langle1|_B\,\hat\rho_{AB}\,|1\rangle_B.$$
 
