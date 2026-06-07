@@ -188,6 +188,9 @@ $$S_E = -\tfrac{3}{4}\log_2\tfrac{3}{4} - \tfrac{1}{4}\log_2\tfrac{1}{4} \approx
 
 Less than 1 ebit. The asymmetric Schmidt coefficients indicate that qubit $A$ leans toward the $|0\rangle$ outcome: more information is available locally, so less is locked in the correlations. Entanglement entropy captures exactly this trade-off between local information and joint correlations.
 
+![Line chart of entanglement entropy S_E versus Schmidt angle θ from 0 to π/4, with three marked points: product state at origin, partially entangled example state, and maximally entangled Bell state at the peak](../images/02-composite-systems-and-entanglement-fig-04.png)
+*Figure 2.4 — Entanglement entropy S_E(θ) = −cos²θ log₂ cos²θ − sin²θ log₂ sin²θ for the family cos θ|00⟩ + sin θ|11⟩: rises from 0 at the product state (θ = 0) to a maximum of 1 ebit at the Bell state (θ = π/4), with the partially entangled worked-example state (λ₁ = 3/4) marked at S_E ≈ 0.811 ebits.*
+
 ---
 
 ## Exercises

@@ -30,6 +30,9 @@ For quantum error correction, we need $N_\text{gates} \gg 10^4$ per logical qubi
 
 The criteria are a rubric, not a checklist. Every current platform satisfies them imperfectly at scale. The relevant question is not "does this platform satisfy the criteria?" but "at what qubit count and fidelity does each criterion begin to fail?"
 
+![DiVincenzo criteria rubric matrix: six platforms by five criteria](../images/08-quantum-hardware-fig-05.png)
+*Figure 8.5 — DiVincenzo criteria rubric: six qubit platforms (columns) assessed against five criteria (rows) using filled, half-filled, and empty circles to indicate full, partial, or absent satisfaction at current scale.*
+
 ---
 
 ## Coherence Times and the Bloch Equation Connection
@@ -48,6 +51,9 @@ A third timescale, $T_2^*$ (free-induction decay time), is shorter than $T_2$ wh
 
 The gate-operation figure of merit $N_\text{gates} = T_2/t_\text{gate}$ is what matters for fault tolerance. A trapped-ion gate with fidelity 99.99% and $t_\text{gate} = 500\,\mu\text{s}$ in a system with $T_2 = 10$ s gives $2\times10^4$ gates per coherence cycle. A transmon gate with fidelity 99.5% and $t_\text{gate} = 100$ ns in a system with $T_2 = 100\,\mu\text{s}$ gives $10^3$ gates per coherence cycle. The ratio is what matters for fault tolerance, not either number individually.
 
+![Platform comparison: T1, T2, and N_gates on log axes across five qubit platforms](../images/08-quantum-hardware-fig-04.png)
+*Figure 8.4 — Qubit platform comparison on logarithmic axes: $T_1$ and $T_2$ coherence times (left panel) and $N_\text{gates} = T_2/t_\text{gate}$ figure of merit (right panel) for superconducting transmons, trapped ions, neutral atoms, NV centers, and spin qubits.*
+
 ---
 
 ## The NISQ Concept
@@ -57,6 +63,9 @@ John Preskill coined "Noisy Intermediate-Scale Quantum" (NISQ) in his 2018 essay
 NISQ machines can run circuits that are hard to simulate classically within certain assumptions, demonstrate quantum error detection, and probe quantum many-body physics. The limitation is that they cannot sustain enough error correction for the class of problems — Shor's algorithm on large integers, full quantum chemistry — that originally motivated the field. Whether NISQ devices offer practical advantage over classical computers for any useful problem remains contested. [contested]
 
 As of 2026, the community speaks of "utility-scale" quantum computing and the "megaquop" milestone — $10^6$ high-fidelity gate operations — as the next phase beyond NISQ. Fault-tolerant quantum computing requires per-gate error rates well below $\sim10^{-3}$ (the threshold theorem, Chapter 9) sustained across thousands of physical qubits. Current best devices approach this per-gate threshold but cannot sustain it at scale.
+
+![NISQ phase space: gate fidelity vs. physical qubit count with threshold lines](../images/08-quantum-hardware-fig-07.png)
+*Figure 8.7 — NISQ phase space: two-qubit gate fidelity versus physical qubit count on log-linear axes, with the fault-tolerance threshold ($\sim 0.99$) and NISQ lower boundary ($\sim 50$ qubits) dividing the plane into four zones; platform markers show mid-2026 representative positions.*
 
 <!-- → [TABLE: summary table of all six platforms — columns: platform, T₁, T₂, two-qubit gate time, two-qubit gate fidelity, physical-qubit scale, cryogenic requirement; rows: superconducting transmon, trapped ion, neutral atom Rydberg, photonic, NV center, semiconductor spin; all numbers marked as "mid-2026 approximate" with a note that they age within 12-24 months] -->
 
@@ -79,6 +88,9 @@ Dominant noise sources: two-level system (TLS) defects in substrate and junction
 **Current state (mid-2026).** IBM Heron r2 (156 qubits, July 2024): median two-qubit gate error $\sim0.17\%$. Google Willow (105 qubits, December 2024): demonstrated below-threshold surface code error correction, the first time a quantum error-correcting code improved with code distance (*Nature* 2025, Acharya et al.). [verify] Best research transmons: $T_1$ approaching 1.68 ms. Single-qubit gate fidelity $>99.9\%$; two-qubit gate fidelity 99.0–99.7%.
 
 Infrastructure: dilution refrigerators at 10–20 mK.
+
+![Transmon circuit schematic with Josephson junction and energy level anharmonicity inset](../images/08-quantum-hardware-fig-02.png)
+*Figure 8.2 — Transmon circuit topology: the qubit loop (capacitor in series with Josephson junction) coupled to a readout resonator, with the energy level ladder showing unequal spacing and the anharmonicity $\alpha$ that isolates the two-level qubit subspace.*
 
 ---
 
@@ -105,6 +117,9 @@ Entangling gates via Rydberg blockade: two atoms are excited to high principal q
 **Current state (mid-2026).** QuEra/Harvard (*Nature* 626:58, 2024, Bluvstein et al.): 48 logical qubits from a 280-atom array — the first demonstration of fault-tolerant gates on many logical qubits simultaneously. [verify] QuEra (January 2026, *Nature*): 96 logical qubits from a 448-atom array using high-rate codes — the current logical-qubit count record. [verify] Atom Computing Phoenix: 1,180 physical-qubit array in production. Two-qubit Rydberg gate fidelity $\sim99.5\%$ in best demonstrations.
 
 Infrastructure: ultra-high vacuum; laser cooling (atoms at µK via lasers alone, no dilution fridge).
+
+![Rydberg blockade gate mechanism: three-step sequence showing ground state, Rydberg excitation and blockade, and entangled output](../images/08-quantum-hardware-fig-06.png)
+*Figure 8.6 — Rydberg blockade entangling gate: (1) both atoms in ground state in optical tweezers; (2) one atom excited to Rydberg state, blocking double excitation of the second atom; (3) gate complete, atoms left in an entangled state.*
 
 ---
 
@@ -185,6 +200,9 @@ The two-level approximation is valid as long as the microwave drive does not als
 A microwave field oscillating at $\nu_{0,-1}$ applies the same Rabi Hamiltonian as the transmon case. Readout replaces dispersive detection with optical fluorescence, but the underlying two-level dynamics are formally identical.
 
 **The limit of the NV two-level picture.** It breaks down when the drive frequency approaches $2g_e\mu_B B/h$ (coupling to $m_s = +1$), or when the hyperfine coupling to the $^{14}\text{N}$ nuclear spin ($A \approx -2.16$ MHz) is not resolved by the measurement. At high microwave power ($\Omega_R \gtrsim A$), the three-level structure must be treated explicitly.
+
+![NV center crystal structure and spin-1 energy level diagram with Zeeman splitting](../images/08-quantum-hardware-fig-03.png)
+*Figure 8.3 — NV center in diamond: (left) crystal lattice fragment showing adjacent nitrogen and vacancy sites with the NV axis; (right) spin-1 energy level diagram with zero-field splitting $D$ and Zeeman splitting under applied field, with the $\{m_s = 0, m_s = -1\}$ qubit subspace bracketed.*
 
 **The central point.** Six physically different systems — superconducting circuits, trapped atomic ions, neutral atoms, photons, diamond defects, silicon quantum dots — all reduce to the same Hamiltonian $(\hbar\omega_0/2)\hat\sigma_z$ in their two-level operating subspace. Every gate operation in every platform is an SU(2) rotation on the Bloch sphere. The physics is different; the formalism is identical. The two-level model is not an approximation imposed by the formalism — it is a physical fact about the structure of matter that each platform exploits.
 

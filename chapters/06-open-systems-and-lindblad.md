@@ -122,6 +122,9 @@ These are the **Bloch equations**. They are the chapter's central result: the de
 
 **The constraint** $T_2 \leq 2T_1$. Since $1/T_\phi \geq 0$, we have $1/T_2 = 1/(2T_1) + 1/T_\phi \geq 1/(2T_1)$, hence $T_2 \leq 2T_1$. Equality $T_2 = 2T_1$ — the **natural linewidth limit** — is achieved when $T_\phi \to \infty$: no pure dephasing, only energy relaxation. Real hardware always has some pure dephasing. Coherence is always at least as fragile as population.
 
+![Bloch vector trajectories under three decoherence regimes](../images/06-open-systems-and-lindblad-fig-03.png)
+*Figure 6.3 — Bloch vector dynamics under three decoherence regimes: pure dephasing (equatorial spiral toward z-axis), pure energy relaxation (vertical decay to south pole), and combined dephasing and relaxation (spiral convergence to south pole).*
+
 ---
 
 ## Pointer States and Einselection
@@ -131,6 +134,9 @@ A qubit that begins in superposition $\alpha|0\rangle + \beta|1\rangle$ decohere
 Zurek introduced the concept of **pointer states**: the states of the system least disturbed by entanglement with the environment. They are the eigenstates of the system–environment coupling. For a qubit dephasing via $\hat L_\phi \propto \hat\sigma_z$, the coupling commutes with $\hat\sigma_z$, so the eigenstates of $\hat\sigma_z$ — that is, $|0\rangle$ and $|1\rangle$ — are the pointer states. The environment continuously monitors $\sigma_z$. Eigenstates of $\sigma_z$ are stable under this monitoring. Superpositions are not: they rapidly entangle with the environment and decohere into a mixture of pointer states.
 
 This is **einselection** — environment-induced superselection. The environment selects a preferred basis by destroying coherences between non-pointer states. The result appears classical: a probability distribution over $\{|0\rangle, |1\rangle\}$, not a superposition.
+
+![Pointer state stability versus superposition instability under environment coupling](../images/06-open-systems-and-lindblad-fig-05.png)
+*Figure 6.5 — Pointer states and einselection: a superposition state in a non-pointer basis decoheres into a mixture over the pointer states, while a state already in the pointer basis is left unchanged by environment coupling.*
 
 What decoherence explains: why off-diagonal coherences vanish in the pointer basis; why macroscopic superpositions are never observed (decoherence times for dust grains in air are $\sim 10^{-36}$ s); why measurement outcomes look classical when the environment records which path was taken.
 
@@ -143,6 +149,9 @@ What the Lindblad equation does not explain: why one particular outcome obtains 
 The $T_2 \leq 2T_1$ inequality tells us the structure. The table below provides the scale. Numbers are representative of the 2025–2026 state of the art and will evolve. The inequalities and mechanisms will not.
 
 <!-- → [TABLE: platform comparison table — columns: Platform, T₁, T₂, T₂/T₁ ratio, Dominant dephasing mechanism — rows: superconducting transmon (100–500 µs, 50–300 µs, 0.3–0.8, flux/charge noise), trapped ions (seconds–minutes, seconds, ≈1, motional heating/magnetic field), NV center (ms, µs–ms, 0.001–0.5, ¹³C nuclear spin bath), semiconductor spin qubit (1–10 ms, 1–100 µs, 0.01–0.1, nuclear spin bath/charge noise), photon polarization (∞, meters, —, loss/mode mismatch)] -->
+
+![T1 and T2 coherence times compared across hardware platforms on log scale](../images/06-open-systems-and-lindblad-fig-06.png)
+*Figure 6.6 — $T_1$ and $T_2$ across qubit platforms: grouped horizontal bars on a logarithmic time axis showing that trapped ions approach the $T_2 = 2T_1$ natural linewidth limit while superconducting transmons and NV centers exhibit significant pure dephasing.*
 
 Trapped ions approach the natural linewidth limit ($T_2 \approx 2T_1$): coherence is limited almost entirely by energy relaxation, with minimal pure dephasing. Superconducting qubits have $T_2 < 2T_1$ because flux noise from the Josephson junction environment adds significant pure dephasing. NV centers at room temperature are severely dephasing-limited ($T_2 \ll T_1$), but dynamical decoupling sequences — periodic $\pi$ pulses that reverse the qubit's phase — can extend the effective $T_2$ toward $T_1$ by filtering out slow noise.
 
@@ -183,6 +192,9 @@ $$\hat\rho(\infty) = \frac{1}{2}\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = \
 The state is maximally mixed. It has not decayed to the south pole — this is pure dephasing, not energy relaxation. The qubit has not decayed to the ground state. It has lost all quantum phase information. It is now equally likely to be found in $|0\rangle$ or $|1\rangle$, but in a classical mixture, not a quantum superposition.
 
 **The physical picture.** The environment performs continuous, imperfect measurements of $\hat\sigma_z$. Each interaction slightly entangles the qubit's phase with the bath. The overlap $\langle e_0(t)|e_1(t)\rangle$ between environmental branches decays at rate $1/T_\phi$. The off-diagonals, which measure exactly that overlap, follow.
+
+![Off-diagonal coherence and diagonal population decay curves](../images/06-open-systems-and-lindblad-fig-04.png)
+*Figure 6.4 — Density matrix element decay: the off-diagonal coherence $|\rho_{01}(t)|$ decays on timescale $T_2$ while the diagonal populations $\rho_{00}(t)$ and $\rho_{11}(t)$ exchange on timescale $T_1$, with $T_2 \leq 2T_1$.*
 
 **Where the calculation breaks.** The derivation assumes the Markov approximation: the bath forgets faster than $T_\phi$. For a $^{13}\text{C}$ nuclear spin bath with slow spin-spin dynamics, the decay of the off-diagonal is not a single exponential — it can show Gaussian initial decay, non-exponential tails, or partial coherence revivals. The Lindblad equation then fails and non-Markovian equations are required. Dynamical decoupling suppresses slow dephasing noise by periodically flipping the qubit, effectively averaging out low-frequency bath fluctuations. This is how NV centers at room temperature achieve millisecond coherence despite a dense nuclear spin bath.
 

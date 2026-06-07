@@ -10,6 +10,9 @@ That last skill — reading what the paper does not claim — is at least as imp
 
 This chapter is structured around four research doorways. Each opens onto a genre of current quantum mechanics research; each requires a different subset of this volume's tools. The goal is not to master any of the four — that is what graduate courses are for. The goal is to read the first two pages of a paper in each genre and know what is happening.
 
+![Four research doorway taxonomy: Bell tests, QEC, NV magnetometry, neutral-atom processors in a 2x2 grid](../images/10-capstone-quantum-mechanics-in-research-fig-01.png)
+*Figure 10.1 — Four research doorways: the chapter's four problem classes arranged as a 2×2 taxonomy — Bell tests (top left), quantum error correction (top right), NV-center magnetometry (bottom left), and neutral-atom logical processors (bottom right).*
+
 ---
 
 ## What "Reconstruct the Core Result" Means
@@ -43,6 +46,9 @@ A research paper in quantum mechanics has a structure. Learning the structure al
 **Step 6: Assess statistical strength.** A CHSH violation at $p = 0.039$ from 245 trials is qualitatively different from $p < 10^{-7}$ from millions of trials. A QEC demonstration with below-threshold scaling across three code distances is more convincing than a single-distance result. Papers without error bars deserve extra scrutiny.
 
 **Step 7: Read the honesty disclaimer.** A well-written paper states explicitly what it cannot demonstrate. "We demonstrate X, which does not imply Y" is a sign of a trustworthy paper. Look for it. Notice when it is absent.
+
+![Seven-step paper-reading triage flowchart with decision branch at step 5](../images/10-capstone-quantum-mechanics-in-research-fig-02.png)
+*Figure 10.2 — Paper-reading triage framework: seven sequential steps from problem-class identification (step 1) through honesty-disclaimer reading (step 7), with a decision branch at step 5 looping back to step 3 when theory and data disagree.*
 
 ---
 
@@ -132,6 +138,9 @@ $$\eta \approx \frac{1}{\gamma_e T_2\sqrt{N}}\,\text{T}/\sqrt{\text{Hz}},$$
 
 where $\gamma_e/2\pi = 28$ MHz/mT and $N$ is measurement repetitions per unit time.
 
+![NV-center energy level diagram and ODMR spectrum with two symmetric Lorentzian dips](../images/10-capstone-quantum-mechanics-in-research-fig-04.png)
+*Figure 10.4 — NV-center ODMR: (top) spin-1 energy levels showing zero-field splitting $D$ and Zeeman-induced splitting at $B > 0$ with the two ODMR transition arrows; (bottom) fluorescence spectrum with two symmetric Lorentzian dips at frequencies $f_\pm = D \pm 28B$ MHz/mT.*
+
 **Honesty layer:** NV magnetometry claims are generally robust. Published sensitivities in the nT/$\sqrt{\text{Hz}}$ regime are achieved under controlled laboratory conditions (isotopically purified diamond, low temperature, long averaging, vibration isolation). Room-temperature chip-scale performance lags laboratory performance by orders of magnitude as of 2026. The physics is settled; the engineering is ongoing.
 
 ### Doorway 4 — Neutral-Atom Logical Qubit Processor
@@ -175,6 +184,9 @@ $$E(A_1,B_1) = \cos(-45°) = +\tfrac{1}{\sqrt{2}}, \quad E(A_1,B_2) = \cos(45°)
 $$E(A_2,B_1) = \cos(45°) = +\tfrac{1}{\sqrt{2}}, \quad E(A_2,B_2) = \cos(135°) = -\tfrac{1}{\sqrt{2}}.$$
 
 **Step 3.** $S = \tfrac{1}{\sqrt{2}} + \tfrac{1}{\sqrt{2}} + \tfrac{1}{\sqrt{2}} + \tfrac{1}{\sqrt{2}} = \tfrac{4}{\sqrt{2}} = 2\sqrt{2} \approx 2.828$.
+
+![CHSH optimal measurement angles on a unit circle and the four correlation values as a bar chart](../images/10-capstone-quantum-mechanics-in-research-fig-03.png)
+*Figure 10.3 — CHSH geometry: Alice's two axes (0°, 90°) and Bob's two axes (45°, −45°) shown on a unit circle, with the four correlators $E(A_i, B_j)$ as a bar chart summing to $S = 2\sqrt{2}$; the classical bound $S = 2$ shown as a dashed reference.*
 
 **Step 4.** The local-realistic bound is $|S| \leq 2$ (derived in Chapter 3). The quantum prediction $S = 2\sqrt{2}$ exceeds this by 0.828 — the gap experiments are designed to resolve.
 

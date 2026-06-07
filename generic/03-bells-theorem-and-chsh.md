@@ -140,6 +140,9 @@ In October 2022, the Nobel Committee awarded the Physics Prize to **Alain Aspect
 
 Since 2015, the frontier has moved to satellite-based Bell tests. In 2017, Yin et al. distributed entangled photons over 1,200 km between ground stations via the Micius satellite — the largest spacelike separation yet achieved. Device-independent quantum key distribution, where cryptographic security is certified by Bell violation alone without trusting the devices, was demonstrated experimentally by Nadlinger et al. in 2022.
 
+![Horizontal timeline from 1964 to 2022 with labeled Bell-test milestones and two loophole-status bands showing when each loophole was closed](../images/03-bells-theorem-and-chsh-fig-04.png)
+*Figure 3.4 — Fifty years of Bell experiments: each major experiment is marked with the loopholes it addressed, showing the detection loophole (sky blue band) and locality loophole (green band) transition from open (hatched) to closed at 1982 and 2015 respectively, culminating in the 2022 Nobel Prize.*
+
 ---
 
 ## What Bell's Theorem Does and Does Not Say
@@ -157,6 +160,9 @@ Alice performing any operation on her qubit — measuring in any basis, applying
 Give up realism: outcomes do not exist before measurement. Standard Copenhagen takes this view. Give up locality: Bohmian mechanics retains definite trajectories but allows non-local influences through the pilot wave. Give up uniqueness of outcomes: many-worlds retains locality and determinism but allows every outcome to occur in different branches.
 
 We cannot retain all three and reproduce quantum predictions. Bell's theorem makes that impossibility precise. Which assumption to jettison is not a question the experiment answers. It is a question each interpreter brings to the experiment.
+
+![Branching tree diagram from a single root node representing Bell inequality violation to three leaf nodes representing the three coherent interpretational exits: give up realism, give up locality, or give up unique outcomes](../images/03-bells-theorem-and-chsh-fig-05.png)
+*Figure 3.5 — Three interpretational exits from Bell's theorem: any internally consistent position must abandon exactly one of realism (Copenhagen), locality (Bohmian mechanics), or uniqueness of outcomes (many-worlds); no experiment adjudicates among them.*
 
 ---
 

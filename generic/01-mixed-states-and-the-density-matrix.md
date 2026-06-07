@@ -74,6 +74,9 @@ Purity in terms of the Bloch vector: $\text{Tr}(\hat\rho^2) = \tfrac{1}{2}(1 + |
 
 This picture is not merely geometric illustration. The Bloch vector components are directly measurable: $r_x = \langle\hat\sigma_x\rangle$, $r_y = \langle\hat\sigma_y\rangle$, $r_z = \langle\hat\sigma_z\rangle$. Quantum state tomography — the experimental reconstruction of $\hat\rho$ from measurements — is precisely the measurement of all three components. Single-qubit gates are rotations of the Bloch sphere. Decoherence is the process that shrinks $|\vec r|$ from the surface inward, turning a pure state into a mixed one. All the dynamics of an open qubit are visible in the geometry of this ball.
 
+![Bloch ball cross-section showing pure states on the surface, mixed states in the interior, and the maximally mixed state at the center](../images/01-mixed-states-and-the-density-matrix-fig-01.png)
+*Figure 1.1 — The Bloch ball cross-section: pure states lie on the surface at |r| = 1 (blue), the maximally mixed state sits at the center at |r| = 0 (orange), and a generic mixed state occupies the interior with its Bloch vector (green) indicating purity via Tr(ρ²) = ½(1 + |r|²).*
+
 ---
 
 ## The Partial Trace and Reduced Density Matrices
@@ -118,6 +121,9 @@ Qubit $A$ is in the maximally mixed state. Every measurement on $A$ alone, in an
 
 For comparison: if the joint state is a product state $|00\rangle\langle00|$, then $\hat\rho_A = |0\rangle\langle0|$, purity $= 1$, and the subsystem is pure. For pure joint states, the subsystem is mixed if and only if the joint state is entangled. This is the precise content of the partial trace.
 
+![Three-panel diagram of the partial trace procedure: joint Bell state, tracing out qubit B, and the resulting maximally mixed reduced state of qubit A](../images/01-mixed-states-and-the-density-matrix-fig-02.png)
+*Figure 1.2 — The partial trace as a three-stage process: (left) qubits A and B in the pure Bell state |Φ+⟩, each with a surface Bloch vector; (center) summing over B's basis states, erasing B's contribution; (right) the reduced state ρ_A = I/2 with Bloch vector collapsed to the center.*
+
 ---
 
 ## Interpretation and Open Questions
@@ -127,6 +133,9 @@ The density matrix provides a well-defined procedure for handling incomplete inf
 When the joint state of a qubit plus its environment is pure and we trace out the environment, we obtain $\hat\rho$ for the qubit — a mathematically precise and physically useful operation. The qubit is entangled with environmental degrees of freedom such as stray phonons and nuclear spins. The joint system remains pure, and unitary evolution continues. Decoherence explains why the qubit's density matrix becomes diagonal in the pointer basis, so that measurements appear classical. It does not explain why any particular outcome occurs.
 
 Whether the qubit has a definite pure state that the formalism merely fails to track — whether the mixedness is epistemic (a matter of ignorance) or ontic (a matter of fact) — is a question about the interpretation of quantum mechanics. The formalism is settled. The meaning continues to be debated.
+
+![Two Bloch ball cross-sections side by side with an equality sign between them, showing that mixing |0⟩ and |1⟩ or mixing |+⟩ and |−⟩ both yield the same maximally mixed center point](../images/01-mixed-states-and-the-density-matrix-fig-03.png)
+*Figure 1.3 — Decomposition non-uniqueness: an equal mixture of |0⟩ and |1⟩ (left, z-axis endpoints) and an equal mixture of |+⟩ and |−⟩ (right, x-axis endpoints) are geometrically distinct preparations that map to the identical center point ρ = I/2, demonstrating that the density matrix does not uniquely determine the physical ensemble.*
 
 ---
 

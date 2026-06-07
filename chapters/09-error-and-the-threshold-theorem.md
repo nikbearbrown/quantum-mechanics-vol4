@@ -60,6 +60,9 @@ The full syndrome table:
 
 <!-- → [TABLE: 3-qubit bit-flip code syndrome table — four rows (No error, X₁, X₂, X₃), columns: Error, Syndrome (M₁,M₂), Correction — with the syndrome pattern shown clearly: (+1,+1), (−1,+1), (−1,−1), (+1,−1)] -->
 
+![Syndrome table for the 3-qubit bit-flip code: four error cases mapped to four distinct syndrome outcomes](../images/09-error-and-the-threshold-theorem-fig-03.png)
+*Figure 9.3 — Syndrome table for the 3-qubit bit-flip code: each row shows one error case (no error, $X_1$, $X_2$, $X_3$) with the corresponding parity syndrome outcomes $(M_1, M_2)$, demonstrating that each error maps to a unique syndrome without revealing the encoded amplitudes.*
+
 Four outcomes; four unambiguous diagnoses. What was measured: not the qubit values $\alpha$ or $\beta$, but only the parity structure of errors. The amplitudes appear in every row — they are invisible to the syndrome measurement. We apply the correction and the logical state is restored.
 
 The syndrome operators commute with the logical operators $\bar Z = Z_1Z_2Z_3$ and $\bar X = X_1X_2X_3$ by construction. Measuring the syndrome gives no information about the logical state.
@@ -97,6 +100,9 @@ The code is characterized by three numbers $[\![n, k, d]\!]$: $n$ physical qubit
 The 3-qubit bit-flip code is $[\![3,1,1]\!]$. The Shor code is $[\![9,1,3]\!]$: distance 3, correcting any single-qubit error.
 
 The stabilizer formalism is where error correction becomes computationally tractable. Instead of tracking $2^n$-dimensional state vectors, we track the $n-k$ generators of $\mathcal{S}$ — a polynomial description. Simulating a stabilizer code classically is efficient.
+
+![Distance-5 surface code lattice with data qubits, plaquette X-stabilizers, star Z-stabilizers, and logical operator chain](../images/09-error-and-the-threshold-theorem-fig-04.png)
+*Figure 9.4 — Surface code lattice ($d = 5$): data qubits at vertices, plaquette X-stabilizers (filled squares at face centers) and star Z-stabilizers (filled circles), with one highlighted plaquette and one highlighted star showing their four-qubit interactions, and a logical operator chain of length 5 crossing the lattice.*
 
 ---
 
@@ -138,6 +144,9 @@ Error correction detects and reverses errors on data qubits. The syndrome measur
 
 The distinction matters in practice. A code might be an excellent error-correcting code but fail to be fault-tolerant if its syndrome extraction circuit allows error propagation. The surface code is designed so that each syndrome qubit touches exactly four data qubits — single syndrome errors propagate to at most one data-qubit error, which the code can still correct.
 
+![Fault-tolerant vs. non-fault-tolerant syndrome extraction: error propagation comparison](../images/09-error-and-the-threshold-theorem-fig-06.png)
+*Figure 9.6 — Fault tolerance versus error correction: in a non-fault-tolerant circuit (left), a single ancilla error propagates to multiple data qubits; in a fault-tolerant circuit (right), each ancilla interacts with at most four data qubits so a single error propagates to at most one.*
+
 ---
 
 ## The Threshold Theorem
@@ -149,6 +158,9 @@ The threshold theorem (proved independently by Aharonov and Ben-Or, 1997/1999; K
 "Below threshold, bigger codes are better" is the intuitive statement. "Arbitrarily low logical error rate by scaling the code" is the precise statement. "The threshold is not zero" is why the result is significant — we do not need perfect hardware, just sufficiently good hardware.
 
 The overhead is substantial. A $\text{distance-}d$ surface code requires approximately $2d^2$ physical qubits per logical qubit. To achieve $p_L = 10^{-15}$ at physical error rate $p = 0.1\%$, one needs $d \approx 25$, implying roughly 1,250 physical qubits per logical qubit. A 1,000-logical-qubit fault-tolerant computer might require 1–10 million physical qubits. Current hardware has $10^2$ to $10^3$ physical qubits. The gap is large; the timeline is contested.
+
+![Surface code threshold: logical error rate vs. physical error rate for code distances 3, 5, and 7](../images/09-error-and-the-threshold-theorem-fig-05.png)
+*Figure 9.5 — Surface code threshold on log-log axes: logical error rate $p_L$ versus physical error rate $p$ for $d = 3, 5, 7$; curves cross at the threshold $p_\text{th} \approx 1\%$, below which larger codes suppress errors faster, with the experimental Willow data point shown on the $d = 7$ curve.*
 
 ---
 

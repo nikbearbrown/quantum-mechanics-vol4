@@ -95,6 +95,9 @@ The two classical bits are not a formality. They are the protocol. Without them,
 
 It is worth understanding why the reduced density matrix is $\hat{I}/2$ regardless of $|\psi\rangle$. Look at $|\Psi_2\rangle$: it is a sum of four terms, each with weight $1/4$, containing Bob's states $|\psi\rangle$, $X|\psi\rangle$, $Z|\psi\rangle$, and $ZX|\psi\rangle$. The mixed state formed by averaging over these four states — which is what the partial trace computes — equals $\hat{I}/2$ for any $|\psi\rangle$, because $\{I, X, Z, XZ\}$ forms a 1-design on the Bloch sphere: averaging over these four transformations maps any state to the center. The symmetry of the protocol over all outcomes is what prevents information from flowing faster than light.
 
+![Two-panel comparison: left panel shows a general single-qubit density matrix as a bar chart with nonzero off-diagonal elements and a near-surface Bloch sphere point; right panel shows the maximally mixed density matrix I/2 as equal diagonal bars with zero off-diagonals and Bloch vector at the origin](../images/05-quantum-teleportation-and-dense-coding-fig-05.png)
+*Figure 5.5 — Bob's reduced state before the classical bits arrive: any single-qubit state ψ (left) has coherences and a surface Bloch vector, but tracing over Alice's qubits collapses Bob's state to ρ_B = I/2 (right), the maximally mixed state with no off-diagonal elements and Bloch vector at the center — confirming no information about ψ reaches Bob before the phone call.*
+
 ---
 
 ## Superdense Coding: The Dual Protocol
@@ -120,12 +123,18 @@ Each Pauli rotation on Alice's single qubit steers the shared pair into a differ
 
 Bob reads off Alice's two-bit message with certainty.
 
+![Hub-and-spoke diagram: center node represents the pre-shared Bell pair |Φ+⟩, four spokes lead to four nodes each showing which Pauli gate Alice applies (I, X, Z, iY) and the resulting Bell state amplitude pattern](../images/05-quantum-teleportation-and-dense-coding-fig-03.png)
+*Figure 5.3 — Dense coding encoding map: Alice steers the shared Bell pair into one of four orthogonal Bell states by applying a single Pauli gate to her half; each spoke corresponds to one two-bit message, and the bar charts inside each node show which basis amplitudes are nonzero in the resulting Bell state.*
+
 **The duality.**
 
 $$\text{Teleportation: } 1\text{ ebit} + 2\text{ cbits} \;\longrightarrow\; \text{transmit } 1\text{ qubit}.$$
 $$\text{Dense coding: } 1\text{ ebit} + 1\text{ qubit channel} \;\longrightarrow\; \text{transmit } 2\text{ cbits}.$$
 
 The entanglement resource is identical. The direction of the resource expenditure is reversed. Without pre-shared entanglement, one qubit can carry at most one classical bit (Holevo's theorem). Entanglement doubles the classical capacity. It does not create something from nothing — the Bell pair is the resource being spent.
+
+![Two-row duality diagram: top row shows teleportation resource accounting (1 ebit + 2 classical bits yields 1 qubit transmitted), bottom row shows dense coding (1 ebit + 1 qubit channel yields 2 classical bits), with the shared ebit icon identical in both rows and vertical arrows highlighting the input/output role reversal](../images/05-quantum-teleportation-and-dense-coding-fig-04.png)
+*Figure 5.4 — Teleportation–dense coding duality: the same ebit resource (purple) appears in both protocols, but what is input in one protocol is output in the other; two classical bits and a qubit channel swap roles between the two rows.*
 
 <!-- → [FIGURE: side-by-side comparison of teleportation and dense coding — left panel shows teleportation circuit with resource accounting (1 ebit + 2 cbits → 1 qubit transmitted); right panel shows dense coding circuit with resource accounting (1 ebit + 1 qubit channel → 2 cbits transmitted); shared feature: the Bell pair |Φ+⟩ appears in both, emphasizing the same resource used in opposite directions] -->
 

@@ -40,6 +40,9 @@ $$\alpha|\!\uparrow\rangle|A_\uparrow\rangle + \beta|\!\downarrow\rangle|A_\down
 
 Including the observer, both observer states $|O_\text{"up"}\rangle$ and $|O_\text{"down"}\rangle$ appear as terms in the growing superposition. At no step does unitary evolution produce a single outcome. Von Neumann identified the *Schnitt* (cut): somewhere in this chain, the quantum description ends and the classical description begins. He gave no physical criterion for where the cut is. That is the gap each interpretation fills differently.
 
+![Von Neumann measurement chain: system, apparatus, environment, observer nodes with density matrix inset](../images/07-measurement-and-interpretations-fig-01.png)
+*Figure 7.1 — The von Neumann measurement chain: four entanglement stages S→A→E→O, with the off-diagonal elements of the reduced density matrix suppressed at the environment coupling step while both diagonal populations remain nonzero.*
+
 ---
 
 ## What Decoherence Explains — and What It Does Not
@@ -117,6 +120,9 @@ Because CSL modifies the Schrödinger equation, it predicts deviations from stan
 - **Molecular interferometry** (Arndt group, Vienna) sets upper bounds — if collapse rates were fast enough, interference would vanish.
 
 Current status (2026): The original GRW parameters survive; the Adler parameters ($\lambda \sim 10^{-8}$ $\text{s}^{-1}$) are under pressure. The allowed parameter space is shrinking. This is a live experimental program. [contested]
+
+![CSL parameter space: collapse rate vs. correlation length with three experimental exclusion boundaries](../images/07-measurement-and-interpretations-fig-03.png)
+*Figure 7.3 — CSL parameter space ($\lambda$ vs. $r_C$) with three experimental exclusion boundaries (LISA Pathfinder, optomechanics, molecular interferometry); the original GRW parameters survive in the white region while the Adler parameters are under pressure.*
 
 *Experimental distinguishability:* **Yes** — the only class with distinct testable predictions.
 
@@ -202,11 +208,17 @@ Where each interpretation places its cut:
 
 **Consistent histories** replaces the cut with a framework choice. In the history set containing "apparatus reads up" and "apparatus reads down" as distinct, decohered histories, each receives probability $|\alpha|^2$ or $|\beta|^2$, and classical reasoning applies within that framework.
 
+![Six interpretations placing the von Neumann cut at different positions on the same S-A-E-O chain](../images/07-measurement-and-interpretations-fig-02.png)
+*Figure 7.2 — Where each interpretation places the von Neumann cut: six rows sharing the identical S→A→E→O chain, each with a distinct cut marker or structural indicator, with equal visual weight across all rows.*
+
 ---
 
 ## Open Questions
 
 The measurement problem is genuinely open. A 2025 review (arXiv:2502.19278) surveyed all major interpretations and declined to declare a winner — not for lack of effort but because the problem remains logically unresolved. A 2013 survey of 33 physicists at a foundations conference (Schlosshauer, Kofler, Zeilinger, *Am. J. Phys.* 81:325) found Copenhagen-adjacent 42%, many-worlds 18%, information-theoretic 24%, other/none 16%.
+
+![Bar chart of physicist interpretation preferences from Schlosshauer et al. 2013 survey](../images/07-measurement-and-interpretations-fig-04.png)
+*Figure 7.4 — Interpretation preferences among physicists surveyed at a quantum foundations conference (Schlosshauer et al. 2013, $n = 33$): Copenhagen-adjacent 42%, information-theoretic 24%, many-worlds 18%, other/none 16%, with equal bar coloring to avoid privileging any position.*
 
 Objective-collapse models are the only class where experiment can help: the allowed parameter space is being constrained from multiple directions simultaneously. Whether GRW/CSL will be ruled out or survive as viable alternatives to standard QM is a question that ongoing precision measurements are working to resolve.
 
