@@ -555,6 +555,106 @@ Validation Checklist — Quantum Gates and Circuits
 > *2:* The AI could not determine the correct angle convention for my paper's physical measurement (polarizer vs spin axis) — I fixed the factor-of-2 by checking against the operator-route correlator.
 **Physics-judgment connection:** This validation trains the discipline of cross-checking a result by two independent routes and testing at non-special inputs — the way real bugs (like a factor-of-2 that hides at the symmetric angles) are caught.
 
+## Chapter 4 — Quantum Gate Circuit Physics Rules
+
+1. State: complex 4-vector psi = [c_00, c_01, c_10, c_11].
+   First index = q0 (outer), second = q1 (inner).
+   Normalize after every gate; warn if |sum|c_i|^2 - 1| > 1e-6.
+
+2. Single-qubit gate on q0: U_full = kron(U, I_2).
+   Single-qubit gate on q1: U_full = kron(I_2, U).
+   Implement kron explicitly.
+   Test: kron(H,I) on |00> gives [1,0,1,0]/sqrt(2), NOT [1,1,0,0]/sqrt(2).
+
+3. CNOT (ctrl=q0, tgt=q1): [[1,0,0,0],[0,1,0,0],[0,0,0,1],[0,0,1,0]]
+   CNOT (ctrl=q1, tgt=q0): [[1,0,0,0],[0,0,0,1],[0,0,1,0],[0,1,0,0]]
+   Verify: CNOT(ctrl=q0) on |10> gives |11>.
+
+4. Gate matrices (exact, radians):
+   H: [[1,1],[1,-1]]/sqrt(2)
+   X: [[0,1],[1,0]]
+   Y: [[0,-i],[i,0]]
+   Z: [[1,0],[0,-1]]
+   S: [[1,0],[0,i]]
+   T: [[1,0],[0,exp(i*pi/4)]]   ← pi/4 radians, NOT 45 degrees
+   Rz(theta): [[exp(-i*theta/2),0],[0,exp(i*theta/2)]]
+
+5. Reduced density matrix for Bloch vector:
+   rho_q0[a,b] = sum_k psi[a*2+k] * conj(psi[b*2+k])  for k in {0,1}
+   rho_q1[a,b] = sum_k psi[k*2+a] * conj(psi[k*2+b])  for k in {0,1}
+   Bloch components:
+     r_x = 2 * Re(rho[0,1])
+     r_y = 2 * Im(rho[1,0])
+     r_z = rho[0,0] - rho[1,1]
+   Clamp |r| <= 1.0 before rendering.
+
+6. Symbolic state recognition (tolerance 0.001, up to global phase):
+   |Phi+>: psi = [1,0,0,1]/sqrt(2)
+   |Phi->: psi = [1,0,0,-1]/sqrt(2)
+   |Psi+>: psi = [0,1,1,0]/sqrt(2)
+   |Psi->: psi = [0,1,-1,0]/sqrt(2)
+
+FAILURE MODES:
+(a) kron index order swapped (q0 must be outer).
+(b) CNOT matrix wrong when control/target swapped.
+(c) T gate in degrees not radians.
+(d) Reduced density matrix index order wrong.
+````
+
+### The Simulation Prompt
+
+````
+Read CLAUDE.md and PROJECT.md first.
+
+Build 04-gate-circuit.html: single self-contained HTML, D3 v7 from CDN, no other dependencies.
+
+PANEL A — Circuit grid (700 × 420 SVG):
+  q0 wire at y=100, q1 wire at y=200. Labels at left.
+  Five gate slots per wire, spaced x=150 to x=650.
+  Empty slot: light grey rectangle, clickable to remove gate.
+  Gate palette (x=30 to x=130): H, X, Y, Z, S, T, CNOT, Rz.
+    Colored rectangles, draggable to any slot.
+    Rz: shows number input for theta (0-360 deg) when placed.
+  CNOT in a slot: vertical line, filled dot on control, open circle on target.
+    Clicking placed CNOT swaps control/target.
+  "Reset circuit" button top-right: restores H(q0, slot1) + CNOT(slot2).
+  Default: H slot1 q0, CNOT slot2 (ctrl=q0, tgt=q1). q0 q1 start |0>.
+
+PANEL B — State vector (700 × 220 SVG):
+  Four bars |00> |01> |10> |11>. Height = |c_i|^2 * 150px.
+  Bar color: HSL hue = arg(c_i)*180/pi.
+  Numerical: probability P_i and phase in degrees below each bar.
+  Symbolic state name below bars if recognized, else "general state".
+
+PANEL C — Bloch spheres (700 × 260 SVG):
+  Two panels 340 × 260 each, labeled q0 and q1.
+  Orthographic projection: equatorial circle (rx=100, ry=20),
+    prime meridian (rx=20, ry=100), polar axis. All #ccc.
+  Orange arrow from (cx,cy) to (cx + r_x*90, cy - r_z*90). Arrowhead.
+  Red dot at center if |r| < 0.05.
+  r_x, r_y, r_z text below each sphere.
+
+Console sanity checks:
+  After default scaffold: psi ≈ [1,0,0,1]/sqrt(2); r_x,r_y,r_z of q0 ≈ 0.
+  H on q0 alone: psi ≈ [1,0,1,0]/sqrt(2); q0 Bloch ≈ (1,0,0), q1 ≈ (0,0,1).
+  CNOT alone on |00>: psi = [1,0,0,0] unchanged.
+  X on q0: psi = [0,0,1,0]; q0 Bloch ≈ (0,0,-1).
+````
+
+### Exploration Tasks
+
+**Default Bell state.** Load the page. The state readout should show $|\Phi^+\rangle$. Both Bloch vectors are at the origin. Remove the CNOT from slot 2 by clicking it. The state should become $(|0\rangle + |1\rangle)/\sqrt{2}\otimes|0\rangle$; both Bloch vectors return to the surface.
+
+**Pauli NOT.** Clear the circuit. Place $X$ on $q_0$ only. Final state: $|10\rangle$. Bloch vector of $q_0$: south pole $(0,0,-1)$. Place $X$ again: recover $|00\rangle$.
+
+**Deutsch for $f_2$.** The oracle for balanced $f_2$ (where $f(x) = x$) is just CNOT. Circuit: place $X$ on $q_1$ in slot 0 (to initialize $|1\rangle$), then $H$ on both in slot 1, then CNOT in slot 2, then $H$ on $q_0$ in slot 3. Final state of $q_0$: should be $|1\rangle$ — "balanced."
+
+**Deutsch for $f_4$.** The oracle for constant $f_4$ (where $f(x) = 1$) is $X$ on $q_1$. Circuit: $X$ on $q_1$ slot 0, $H$ on both slot 1, $X$ on $q_1$ slot 2 (the oracle), $H$ on $q_0$ slot 3. Final $q_0$: should be $|0\rangle$ — "constant."
+
+**Bloch geometry of $HTH$.** Build the sequence $H, T, H$ on $q_0$. Since $T$ is a $\pi/4$ rotation about $\hat z$, and $H$ swaps $\hat x$ and $\hat z$, the combination $HTH$ is a $\pi/4$ rotation about $\hat x$. Start from $q_0 = |0\rangle$ (north pole, Bloch vector $(0,0,1)$) and verify the Bloch vector has rotated by $\pi/4$ about $\hat x$.
+
+---
+
 ---
 
 Chapter 5 covers quantum error correction. The no-cloning theorem prevents copying qubits; errors accumulate during computation. Error correction must hide logical information in entangled states, detecting and correcting errors without ever measuring the logical qubit directly. The three-qubit bit-flip code and the Shor nine-qubit code are the entry points.
@@ -922,6 +1022,81 @@ Validation Checklist — Measurement and Interpretations
 > *1:* The AI drafted candidate "establishes / does not establish" bullets and a result classification.
 > *2:* The AI could not be trusted to judge whether my paper overstates its claim — distinguishing settled physics from interpretation and catching the overreach required my own physics literacy.
 **Physics-judgment connection:** This validation trains the irreducibly human check at the heart of the project — bounding a research claim, catching what it omits, and refusing to let an AI's fluent restatement of a paper's framing stand in for that judgment.
+
+## Chapter 7 — Measurement and Interpretations Physics Rules
+
+1. State: (α, β) normalized. ρ = [[|α|², αβ*], [α*β, |β|²]].
+
+2. Decoherence: ρ_01(t) = ρ_01(0) * exp(-t/τ). ρ_00, ρ_11 unchanged.
+
+3. Cut placement for each interpretation:
+   Copenhagen: amber dashed line between APPARATUS and ENVIRONMENT boxes.
+   Many-worlds: no cut; all terms real; show two-branch labels at OBSERVER.
+   Bohmian: no cut for ψ; particle-position indicator below SYSTEM with
+     definite value ↑ or ↓ (randomly assigned on load); other branch
+     labeled "empty wave."
+   GRW/CSL: red starburst at ENVIRONMENT at Step 2; one branch struck
+     through; surviving branch randomly selected weighted by |α|² and |β|².
+   QBism: OBSERVER highlighted; labeled "Agent's belief update (not physical)."
+   Relational: each arrow labeled "relative to [next system]."
+
+4. DO NOT collapse to a single outcome during decoherence.
+   "SINGLE OUTCOME SELECTED? NO" must remain red in all non-GRW modes.
+   Only GRW "Trigger collapse" button switches to "YES — outcome: [↑/↓]."
+
+5. GRW collapse is random, weighted by ρ_00 and ρ_11.
+   "Re-collapse" button resamples the outcome.
+````
+
+### The Simulation Prompt
+
+````
+Read CLAUDE.md, DESIGN.md, and PROJECT.md first.
+
+Build 07-von-neumann-chain.html: single self-contained HTML, D3 v7 from CDN, no other dependencies.
+
+PANEL A — Von Neumann chain (800 × 500 SVG):
+Five rectangles (120 × 80) labeled SYSTEM, APPARATUS, ENVIRONMENT, OBSERVER, WORLD,
+connected by right arrows, positioned horizontally.
+
+Sliders below:
+  |α|²: range 0–1, step 0.01. β = sqrt(1 - α²) auto.
+  Step: 0, 1, 2, 3.
+
+State text below chain (Unicode math):
+  Step 0: α|↑⟩ + β|↓⟩
+  Step 1: α|↑⟩|A↑⟩ + β|↓⟩|A↓⟩
+  Step 2: α|↑⟩|A↑⟩|E↑⟩ + β|↓⟩|A↓⟩|E↓⟩
+  Step 3: (above) ⊗ |O"up"⟩ and |O"down"⟩ terms
+
+Radio buttons: Copenhagen, Many-worlds, Bohmian, GRW, QBism, Relational.
+  Apply visual markers per CLAUDE.md rule 3.
+
+PANEL B — Decoherence (700 × 400 SVG):
+Four vertical bars: ρ_00 (|α|²), ρ_01 (|αβ|*exp(-t/τ)), ρ_10 (same),
+  ρ_11 (|β|²). Populations blue, coherences orange.
+t/τ slider 0–6.
+Persistent red text: "SINGLE OUTCOME SELECTED? NO"
+  Does not change except GRW mode after "Trigger collapse".
+GRW only: "Trigger collapse" button, selects outcome weighted by ρ_00/ρ_11.
+"Re-collapse" button resamples.
+
+Comments at every physics step.
+````
+
+### Exploration Tasks
+
+**Step through the chain.** Set $|\alpha|^2 = 0.5$. Advance through Steps 0–3 in no-interpretation mode. Write out the state vector at each step. At what step do decoherence effects first become relevant?
+
+**Copenhagen vs. Many-worlds.** Select Copenhagen. Which box has the amber dashed line? Select Many-worlds. What changes? The key visual difference: Copenhagen marks the cut; many-worlds has no cut.
+
+**GRW collapse.** Select GRW. Click "Trigger collapse" ten times, recording each outcome. Over many runs, how often do you get $|\!\uparrow\rangle$? Compare to $|\alpha|^2 = 0.5$.
+
+**Decoherence is not collapse.** In Panel B, advance the decoherence slider to $t/\tau = 5$. The coherences have decayed by $e^{-5} \approx 0.7\%$ of their original value. Does the "SINGLE OUTCOME SELECTED?" indicator change? Set the interpretation to anything other than GRW — it should always say NO.
+
+**Bohmian particle.** Select Bohmian. The particle-position indicator below SYSTEM shows a definite outcome. The wave function chain shows normally but labeled $\psi_\text{guide}$. The other branch is labeled "empty wave." In one sentence: what does the particle position represent physically?
+
+---
 
 ---
 
