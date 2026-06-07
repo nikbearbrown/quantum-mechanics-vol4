@@ -1,0 +1,137 @@
+<!--
+  CAJAL SVG Figure
+  Book: Quantum Mechanics — Information, Measurement, and Open Systems
+  Book-slug: quantum-mechanics-vol4
+  Chapter: 08-quantum-hardware
+  Figure: 05
+  Title: T1 and T2 Relationship — Bloch Sphere Decay Channels and Timescale Hierarchy
+  Type: mechanism-chart (MC)
+  Priority: Important
+  Author: Humanitarians AI Incorporated
+  Date: 2026-06-06
+  Source: pantry/08-quantum-hardware-cajal.md
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-08-05">
+  <title id="fig-title-08-05">T1 and T2 Relationship — Bloch Sphere Decay Channels and Timescale Hierarchy</title>
+  <desc>Left panel shows a Bloch sphere with two decay arrows: energy relaxation (T1) toward the south pole and pure dephasing (T-phi) spiraling inward toward the equator. Right panel shows the timescale hierarchy bar showing T1 greater than or equal to T2, and T2 greater than T2-star.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics — Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="08-quantum-hardware"
+      figure-number="05"
+      figure-title="T1 and T2 Relationship — Bloch Sphere Decay Channels"
+      figure-slug="t1-t2-bloch-decay"
+      figure-type="mechanism-chart"
+      priority="Important"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/08-quantum-hardware-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow-blue-05" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arrow-red-05" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#C8102E"/>
+    </marker>
+    <marker id="arrow-gray-05" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ADADAD"/>
+    </marker>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="24" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e">T&#x2081; and T&#x2082; Relationship — Bloch Sphere Decay Channels</text>
+
+  <!-- ===== LEFT PANEL: Bloch sphere ===== -->
+  <rect x="32" y="42" width="370" height="360" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="217" y="60" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Two independent decay channels</text>
+
+  <!-- Bloch sphere circle, center (217, 205), radius 120 -->
+  <circle cx="217" cy="205" r="120" fill="none" stroke="#D4D4D4" stroke-width="1"/>
+  <!-- Equatorial ellipse -->
+  <ellipse cx="217" cy="205" rx="120" ry="30" fill="none" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 3"/>
+  <!-- Polar axis -->
+  <line x1="217" y1="85" x2="217" y2="325" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- North pole label: |1> excited -->
+  <text x="223" y="83" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">|1&#x27E9;</text>
+  <!-- South pole label: |0> ground -->
+  <text x="223" y="338" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">|0&#x27E9;</text>
+
+  <!-- Bloch vector: starting at upper hemisphere, slightly equatorial direction -->
+  <!-- From center (217,205) to upper-right: tip at (287,145) -->
+  <line x1="217" y1="205" x2="282" y2="150" stroke="#C8860E" stroke-width="2.5" marker-end="url(#arrow-blue-05)"/>
+  <text x="290" y="145" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#C8860E">r&#x20d7;</text>
+
+  <!-- Energy relaxation arrow: pointing toward south pole (downward from vector tip) -->
+  <!-- From tip area (282,150) curving toward south pole (217,325) -->
+  <path d="M 282,155 C 280,200 260,270 220,320" fill="none" stroke="#2a1a0e" stroke-width="2" marker-end="url(#arrow-blue-05)"/>
+  <text x="310" y="230" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">T&#x2081; decay</text>
+  <text x="310" y="245" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">energy relaxation</text>
+  <text x="310" y="258" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">|1&#x27E9; &#x2192; |0&#x27E9;</text>
+
+  <!-- Dephasing arrow: spiraling inward toward equator (shrinks r_xy) -->
+  <!-- From tip area curving inward toward sphere center at equatorial level -->
+  <path d="M 278,148 C 265,148 250,155 237,165 C 222,175 217,185 217,195" fill="none" stroke="#ADADAD" stroke-width="2" stroke-dasharray="4 2" marker-end="url(#arrow-gray-05)"/>
+  <text x="55" y="160" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#ADADAD">T&#x03c6; decay</text>
+  <text x="55" y="175" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">pure dephasing</text>
+  <text x="55" y="188" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">r&#x22a5; &#x2192; 0</text>
+
+  <!-- Formula box -->
+  <rect x="46" y="340" width="340" height="50" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="216" y="358" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">1/T&#x2082; = 1/(2T&#x2081;) + 1/T&#x03c6;</text>
+  <text x="216" y="378" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">T&#x2082; &#x2264; 2T&#x2081; — natural linewidth limit when T&#x03c6; = &#x221e;</text>
+
+  <!-- ===== RIGHT PANEL: Timescale hierarchy ===== -->
+  <rect x="414" y="42" width="254" height="360" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="541" y="60" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Timescale hierarchy</text>
+
+  <!-- Bar chart: bars representing relative timescales on log axis -->
+  <!-- y-axis is categorical; x-axis represents log duration -->
+  <!-- T1: longest, 2T1: reference ceiling, T2: between, T2*: shortest -->
+  <!-- Bars: y positions at 100, 170, 240, 310 -->
+  <!-- x goes from 430 to 650 (220 wide) -->
+
+  <!-- T1 bar: full width (longest) -->
+  <rect x="430" y="90" width="210" height="28" fill="#2a1a0e"/>
+  <text x="424" y="108" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">T&#x2081;</text>
+
+  <!-- 2T1 reference dashed line -->
+  <line x1="640" y1="78" x2="640" y2="380" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 3"/>
+  <text x="640" y="76" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">2T&#x2081; limit</text>
+
+  <!-- T2 bar: ~65% of T1 width -->
+  <rect x="430" y="158" width="137" height="28" fill="#C8102E"/>
+  <text x="424" y="176" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#C8102E">T&#x2082;</text>
+
+  <!-- T2* bar: ~35% of T1 width (even shorter due to inhomogeneous broadening) -->
+  <rect x="430" y="226" width="74" height="28" fill="#787878"/>
+  <text x="424" y="244" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#787878">T&#x2082;*</text>
+
+  <!-- Inequality markers -->
+  <!-- T1 >= T2 -->
+  <line x1="541" y1="120" x2="541" y2="155" stroke="#545454" stroke-width="0.75"/>
+  <text x="548" y="142" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">T&#x2081; &#x2265; T&#x2082;</text>
+
+  <!-- T2 >= T2* -->
+  <line x1="504" y1="188" x2="504" y2="223" stroke="#545454" stroke-width="0.75"/>
+  <text x="511" y="210" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">T&#x2082; &#x2265; T&#x2082;*</text>
+
+  <!-- Axis -->
+  <line x1="430" y1="86" x2="430" y2="340" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Explanation notes -->
+  <text x="430" y="302" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">T&#x2082;* includes inhomogeneous</text>
+  <text x="430" y="315" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">broadening: reversible with</text>
+  <text x="430" y="328" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">spin-echo refocusing</text>
+
+  <rect x="430" y="342" width="220" height="46" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="540" y="358" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#2a1a0e">T&#x2082;* &#x2264; T&#x2082; &#x2264; 2T&#x2081;</text>
+  <text x="540" y="374" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">Equality when T&#x03c6; = &#x221e; (pure relaxation limit)</text>
+
+</svg>

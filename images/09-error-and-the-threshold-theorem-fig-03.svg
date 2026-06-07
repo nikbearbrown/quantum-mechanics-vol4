@@ -1,0 +1,148 @@
+<!--
+  CAJAL SVG Figure
+  Book: Quantum Mechanics — Information, Measurement, and Open Systems
+  Book-slug: quantum-mechanics-vol4
+  Chapter: 09-error-and-the-threshold-theorem
+  Figure: 03
+  Title: Syndrome Table — Error-to-Syndrome Mapping for 3-Qubit Bit-Flip Code
+  Type: verification-gap (VG)
+  Priority: Critical
+  Author: Humanitarians AI Incorporated
+  Date: 2026-06-06
+  Source: pantry/09-error-and-the-threshold-theorem-cajal.md
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-09-03">
+  <title id="fig-title-09-03">Syndrome Table — Error-to-Syndrome Mapping for 3-Qubit Bit-Flip Code</title>
+  <desc>Four-row panel. Each row shows three qubit circles and two syndrome diamonds. Row 1 has no error and both syndromes positive. Rows 2, 3, 4 each have one highlighted error qubit and corresponding syndrome measurement outcomes that uniquely identify the error location.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics — Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="09-error-and-the-threshold-theorem"
+      figure-number="03"
+      figure-title="Syndrome Table — Error-to-Syndrome Mapping for 3-Qubit Bit-Flip Code"
+      figure-slug="syndrome-table-3qubit"
+      figure-type="verification-gap"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/09-error-and-the-threshold-theorem-cajal.md"/>
+  </metadata>
+
+  <!-- Canvas -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="24" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e">Syndrome Table — 3-Qubit Bit-Flip Code</text>
+
+  <!-- Column headers -->
+  <rect x="32" y="35" width="636" height="30" fill="#2a1a0e"/>
+  <text x="130" y="54" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#FFFFFF">error condition</text>
+  <text x="285" y="54" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#FFFFFF">q&#x2081;</text>
+  <text x="350" y="54" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#FFFFFF">M&#x2081;</text>
+  <text x="415" y="54" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#FFFFFF">q&#x2082;</text>
+  <text x="480" y="54" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#FFFFFF">M&#x2082;</text>
+  <text x="545" y="54" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#FFFFFF">q&#38;#x3</text>
+  <text x="545" y="54" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#FFFFFF">q&#x2083;</text>
+  <text x="620" y="54" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#FFFFFF">correction</text>
+
+  <!-- Row helper: each row height=78, first row y=65 -->
+  <!-- Elements: qubit circle r=18 at x=285,415,545; syndrome diamond at x=350,480 -->
+
+  <!-- ===== Row 1: No error ===== -->
+  <rect x="32" y="65" width="636" height="78" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.5"/>
+  <text x="130" y="100" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">No error</text>
+  <text x="130" y="116" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">M&#x2081;M&#x2082; = 00</text>
+  <!-- q1: gray -->
+  <circle cx="285" cy="104" r="18" fill="#D4D4D4" stroke="#ADADAD" stroke-width="1"/>
+  <!-- M1: green (positive +1) -->
+  <polygon points="350,87 368,104 350,121 332,104" fill="#787878"/>
+  <text x="350" y="108" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF">+1</text>
+  <!-- q2: gray -->
+  <circle cx="415" cy="104" r="18" fill="#D4D4D4" stroke="#ADADAD" stroke-width="1"/>
+  <!-- M2: green -->
+  <polygon points="480,87 498,104 480,121 462,104" fill="#787878"/>
+  <text x="480" y="108" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF">+1</text>
+  <!-- q3: gray -->
+  <circle cx="545" cy="104" r="18" fill="#D4D4D4" stroke="#ADADAD" stroke-width="1"/>
+  <!-- Correction: none -->
+  <text x="620" y="100" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#787878">none</text>
+  <text x="620" y="115" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">I&#x2081;I&#x2082;I&#x2083;</text>
+
+  <!-- ===== Row 2: Error on q1 ===== -->
+  <rect x="32" y="143" width="636" height="78" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.5"/>
+  <text x="130" y="178" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">X error on q&#x2081;</text>
+  <text x="130" y="194" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">M&#x2081;M&#x2082; = 10</text>
+  <!-- q1: red (error) -->
+  <circle cx="285" cy="182" r="18" fill="#C8102E" stroke="#C8102E" stroke-width="1"/>
+  <text x="285" y="186" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF">X</text>
+  <!-- M1: negative (orange) -->
+  <polygon points="350,165 368,182 350,199 332,182" fill="#C8860E"/>
+  <text x="350" y="186" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF">&#x2212;1</text>
+  <!-- q2: gray -->
+  <circle cx="415" cy="182" r="18" fill="#D4D4D4" stroke="#ADADAD" stroke-width="1"/>
+  <!-- M2: positive (green) -->
+  <polygon points="480,165 498,182 480,199 462,182" fill="#787878"/>
+  <text x="480" y="186" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF">+1</text>
+  <!-- q3: gray -->
+  <circle cx="545" cy="182" r="18" fill="#D4D4D4" stroke="#ADADAD" stroke-width="1"/>
+  <!-- Correction: X on q1 -->
+  <text x="620" y="178" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#C8102E">X&#x2081;</text>
+  <text x="620" y="193" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">flip q&#x2081;</text>
+
+  <!-- ===== Row 3: Error on q2 ===== -->
+  <rect x="32" y="221" width="636" height="78" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.5"/>
+  <text x="130" y="256" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">X error on q&#x2082;</text>
+  <text x="130" y="272" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">M&#x2081;M&#x2082; = 11</text>
+  <!-- q1: gray -->
+  <circle cx="285" cy="260" r="18" fill="#D4D4D4" stroke="#ADADAD" stroke-width="1"/>
+  <!-- M1: negative -->
+  <polygon points="350,243 368,260 350,277 332,260" fill="#C8860E"/>
+  <text x="350" y="264" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF">&#x2212;1</text>
+  <!-- q2: red -->
+  <circle cx="415" cy="260" r="18" fill="#C8102E" stroke="#C8102E" stroke-width="1"/>
+  <text x="415" y="264" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF">X</text>
+  <!-- M2: negative -->
+  <polygon points="480,243 498,260 480,277 462,260" fill="#C8860E"/>
+  <text x="480" y="264" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF">&#x2212;1</text>
+  <!-- q3: gray -->
+  <circle cx="545" cy="260" r="18" fill="#D4D4D4" stroke="#ADADAD" stroke-width="1"/>
+  <!-- Correction: X on q2 -->
+  <text x="620" y="256" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#C8102E">X&#x2082;</text>
+  <text x="620" y="271" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">flip q&#x2082;</text>
+
+  <!-- ===== Row 4: Error on q3 ===== -->
+  <rect x="32" y="299" width="636" height="78" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.5"/>
+  <text x="130" y="334" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">X error on q&#x2083;</text>
+  <text x="130" y="350" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">M&#x2081;M&#x2082; = 01</text>
+  <!-- q1: gray -->
+  <circle cx="285" cy="338" r="18" fill="#D4D4D4" stroke="#ADADAD" stroke-width="1"/>
+  <!-- M1: positive -->
+  <polygon points="350,321 368,338 350,355 332,338" fill="#787878"/>
+  <text x="350" y="342" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF">+1</text>
+  <!-- q2: gray -->
+  <circle cx="415" cy="338" r="18" fill="#D4D4D4" stroke="#ADADAD" stroke-width="1"/>
+  <!-- M2: negative -->
+  <polygon points="480,321 498,338 480,355 462,338" fill="#C8860E"/>
+  <text x="480" y="342" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF">&#x2212;1</text>
+  <!-- q3: red -->
+  <circle cx="545" cy="338" r="18" fill="#C8102E" stroke="#C8102E" stroke-width="1"/>
+  <text x="545" y="342" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#FFFFFF">X</text>
+  <!-- Correction: X on q3 -->
+  <text x="620" y="334" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#C8102E">X&#x2083;</text>
+  <text x="620" y="349" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">flip q&#x2083;</text>
+
+  <!-- Legend -->
+  <rect x="32" y="385" width="636" height="28" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.5"/>
+  <circle cx="55" cy="399" r="8" fill="#D4D4D4"/>
+  <text x="68" y="403" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">no error</text>
+  <circle cx="135" cy="399" r="8" fill="#C8102E"/>
+  <text x="148" y="403" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">X error</text>
+  <polygon points="228,392 246,399 228,406 210,399" fill="#787878"/>
+  <text x="255" y="403" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">syndrome +1</text>
+  <polygon points="350,392 368,399 350,406 332,399" fill="#C8860E"/>
+  <text x="377" y="403" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">syndrome &#x2212;1</text>
+  <text x="490" y="403" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">M&#x2081; = ZZ&#x2297;I, M&#x2082; = I&#x2297;ZZ — parity checks</text>
+
+</svg>

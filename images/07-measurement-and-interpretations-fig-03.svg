@@ -1,0 +1,158 @@
+<!--
+  CAJAL SVG Figure
+  Book: Quantum Mechanics — Information, Measurement, and Open Systems
+  Book-slug: quantum-mechanics-vol4
+  Chapter: 07-measurement-and-interpretations
+  Figure: 03
+  Title: CSL Parameter Space — Exclusion Boundaries and Named Points
+  Type: quantitative-chart (PQ)
+  Priority: Important
+  Author: Humanitarians AI Incorporated
+  Date: 2026-06-06
+  Source: pantry/07-measurement-and-interpretations-cajal.md
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-07-03">
+  <title id="fig-title-07-03">CSL Parameter Space — Exclusion Boundaries and Named Reference Points</title>
+  <desc>Log-log scatter plot of CSL collapse rate lambda vs correlation length r_C. Three experimental exclusion boundaries (LISA Pathfinder, optomechanics, molecular interferometry) narrow the allowed region. The GRW original parameters survive inside the allowed region; the Adler parameters lie at or near the exclusion boundary.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics — Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="07-measurement-and-interpretations"
+      figure-number="03"
+      figure-title="CSL Parameter Space — Exclusion Boundaries and Named Reference Points"
+      figure-slug="csl-parameter-space"
+      figure-type="quantitative-chart"
+      priority="Important"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/07-measurement-and-interpretations-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow-07-03" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="24" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e">CSL Parameter Space — Collapse Rate &#x3bb; vs Correlation Length r&#x1d34;</text>
+
+  <!-- Chart area: x: 70 to 620, y: 40 to 340 -->
+  <!-- x: r_C from 10^-9 to 10^-4 m (log10: -9 to -4, range 5 decades) -->
+  <!-- y: lambda from 10^-20 to 10^-7 s^-1 (log10: -20 to -7, range 13 decades) -->
+  <!-- x_svg = 70 + ((log10(rC) - (-9)) / 5) * 550 -->
+  <!-- y_svg = 340 - ((log10(lam) - (-20)) / 13) * 300 -->
+
+  <rect x="70" y="40" width="550" height="300" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- X-axis ticks: r_C = 10^-9, 10^-8, 10^-7, 10^-6, 10^-5, 10^-4 -->
+  <!-- x positions: log = -9,-8,-7,-6,-5,-4 → svg_x = 70+(i/5)*550 for i=0..5 -->
+  <line x1="70" y1="340" x2="70" y2="346" stroke="#545454" stroke-width="0.75"/>
+  <text x="70" y="358" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">10&#x207B;&#x2079;</text>
+  <line x1="180" y1="340" x2="180" y2="346" stroke="#545454" stroke-width="0.75"/>
+  <text x="180" y="358" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">10&#x207B;&#x2078;</text>
+  <line x1="290" y1="340" x2="290" y2="346" stroke="#545454" stroke-width="0.75"/>
+  <text x="290" y="358" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">10&#x207B;&#x2077;</text>
+  <line x1="400" y1="340" x2="400" y2="346" stroke="#545454" stroke-width="0.75"/>
+  <text x="400" y="358" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">10&#x207B;&#x2076;</text>
+  <line x1="510" y1="340" x2="510" y2="346" stroke="#545454" stroke-width="0.75"/>
+  <text x="510" y="358" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">10&#x207B;&#x2075;</text>
+  <line x1="620" y1="340" x2="620" y2="346" stroke="#545454" stroke-width="0.75"/>
+  <text x="620" y="358" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">10&#x207B;&#x2074;</text>
+
+  <!-- X gridlines -->
+  <line x1="180" y1="40" x2="180" y2="340" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="290" y1="40" x2="290" y2="340" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="400" y1="40" x2="400" y2="340" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="510" y1="40" x2="510" y2="340" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+
+  <!-- Y-axis ticks: lambda = 10^-20 to 10^-7, ticks at every 3 decades -->
+  <!-- y_svg = 340 - ((loglam - (-20)) / 13) * 300 -->
+  <!-- log=-20: y=340, log=-17: y=340-(3/13)*300=340-69.2=270.8, log=-14: y=201.5 log=-11: y=132.3, log=-8: y=63 -->
+  <line x1="64" y1="340" x2="70" y2="340" stroke="#545454" stroke-width="0.75"/>
+  <text x="60" y="343" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">10&#x207B;&#xb2;&#x2070;</text>
+  <line x1="64" y1="271" x2="70" y2="271" stroke="#545454" stroke-width="0.75"/>
+  <text x="60" y="274" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">10&#x207B;&#xb9;&#x2077;</text>
+  <line x1="64" y1="202" x2="70" y2="202" stroke="#545454" stroke-width="0.75"/>
+  <text x="60" y="205" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">10&#x207B;&#xb9;&#x2074;</text>
+  <line x1="64" y1="133" x2="70" y2="133" stroke="#545454" stroke-width="0.75"/>
+  <text x="60" y="136" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">10&#x207B;&#xb9;&#xb9;</text>
+  <line x1="64" y1="63" x2="70" y2="63" stroke="#545454" stroke-width="0.75"/>
+  <text x="60" y="66" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">10&#x207B;&#x2078;</text>
+
+  <!-- Y gridlines -->
+  <line x1="70" y1="271" x2="620" y2="271" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="70" y1="202" x2="620" y2="202" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="70" y1="133" x2="620" y2="133" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="70" y1="63" x2="620" y2="63" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+
+  <!-- Axis labels -->
+  <text x="345" y="374" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">correlation length r&#x1d34; (m)</text>
+  <text x="22" y="190" text-anchor="middle" transform="rotate(-90,22,190)" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">collapse rate &#x3bb; (s&#x207B;&#xb9;)</text>
+
+  <!-- ===== Exclusion regions ===== -->
+  <!-- Key coordinate conversions:
+       r_C = 10^-7 m → x = 70 + ((-7-(-9))/5)*550 = 70+220 = 290
+       lambda = 10^-17 s^-1 → y = 340-((−17−(−20))/13)*300 = 340-(3/13)*300 = 340-69.2 = 270.8
+       lambda = 10^-8 s^-1 → y = 340-((−8−(−20))/13)*300 = 340-(12/13)*300 = 340-276.9 = 63.1 -->
+
+  <!-- Exclusion boundary 1: LISA Pathfinder — sweeps upper-left to mid panel -->
+  <!-- Excluded region: above this curve (high lambda, small r_C) -->
+  <!-- Boundary: starts top-left, sweeps right and down -->
+  <path d="M 70,40 C 90,60 120,90 180,120 C 240,150 290,170 340,185 C 380,195 420,200 460,205 C 490,208 530,210 580,212 L 620,213 L 620,40 Z"
+        fill="#2a1a0e" fill-opacity="0.07" stroke="none"/>
+  <path d="M 70,40 C 90,60 120,90 180,120 C 240,150 290,170 340,185 C 380,195 420,200 460,205 C 490,208 530,210 580,212 L 620,213"
+        fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="135" y="80" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#2a1a0e">LISA Pathfinder</text>
+
+  <!-- Exclusion boundary 2: optomechanics/GW — upper-right region -->
+  <!-- Boundary sweeps from upper-right toward lower-right -->
+  <path d="M 580,40 C 560,65 545,90 530,115 C 515,145 505,175 500,210 C 496,235 494,260 493,290 L 493,340 L 620,340 L 620,40 Z"
+        fill="#787878" fill-opacity="0.10" stroke="none"/>
+  <path d="M 580,40 C 560,65 545,90 530,115 C 515,145 505,175 500,210 C 496,235 494,260 493,290 L 493,340"
+        fill="none" stroke="#787878" stroke-width="1.5"/>
+  <text x="530" y="130" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#787878" text-anchor="end">optomechanics</text>
+
+  <!-- Exclusion boundary 3: molecular interferometry — roughly horizontal upper bound -->
+  <path d="M 70,110 C 120,112 200,113 290,115 C 380,117 460,118 530,119 L 580,119 L 580,40 L 70,40 Z"
+        fill="#ADADAD" fill-opacity="0.12" stroke="none"/>
+  <path d="M 70,110 C 120,112 200,113 290,115 C 380,117 460,118 530,119 L 580,119"
+        fill="none" stroke="#ADADAD" stroke-width="1.5"/>
+  <text x="390" y="108" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">molecular interferometry</text>
+
+  <!-- Allowed (surviving) region label -->
+  <text x="200" y="310" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">allowed</text>
+  <text x="200" y="322" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">region</text>
+
+  <!-- GRW parameters: r_C ~ 10^-7 m → x=290, lambda ~ 10^-17 s^-1 → y=271 -->
+  <circle cx="290" cy="271" r="6" fill="#787878"/>
+  <text x="303" y="275" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#787878">GRW</text>
+
+  <!-- Adler parameters: r_C ~ 10^-7 m → x=290, lambda ~ 10^-8 s^-1 → y=63 -->
+  <!-- Diamond shape -->
+  <polygon points="290,55 298,63 290,71 282,63" fill="#C8860E"/>
+  <text x="303" y="67" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8860E">Adler</text>
+
+  <!-- Axes -->
+  <line x1="70" y1="340" x2="620" y2="340" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="70" y1="40" x2="70" y2="340" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Legend -->
+  <rect x="65" y="385" width="580" height="28" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="78" y1="399" x2="100" y2="399" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="105" y="403" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#2a1a0e">LISA Pathfinder</text>
+  <line x1="195" y1="399" x2="217" y2="399" stroke="#787878" stroke-width="1.5"/>
+  <text x="222" y="403" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#2a1a0e">optomechanics</text>
+  <line x1="310" y1="399" x2="332" y2="399" stroke="#ADADAD" stroke-width="1.5"/>
+  <text x="337" y="403" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#2a1a0e">mol. interferometry</text>
+  <circle cx="435" cy="399" r="5" fill="#787878"/>
+  <text x="444" y="403" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#2a1a0e">GRW (survives)</text>
+  <polygon points="522,394 528,399 522,404 516,399" fill="#C8860E"/>
+  <text x="533" y="403" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#2a1a0e">Adler (under pressure)</text>
+
+</svg>

@@ -1,0 +1,193 @@
+<!--
+  CAJAL SVG Figure
+  Book: Quantum Mechanics — Information, Measurement, and Open Systems
+  Book-slug: quantum-mechanics-vol4
+  Chapter: 10-capstone-quantum-mechanics-in-research
+  Figure: 04
+  Title: NV-Center ODMR — Ground-State Levels and Zeeman-Split Spectral Dips
+  Type: mixed-content (MC)
+  Priority: Critical
+  Author: Humanitarians AI Incorporated
+  Date: 2026-06-06
+  Source: pantry/10-capstone-quantum-mechanics-in-research-cajal.md
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-10-04">
+  <title id="fig-title-10-04">NV-Center ODMR — Ground-State Spin-1 Levels and Zeeman-Split Fluorescence Dips</title>
+  <desc>Left panel shows spin-1 ground-state energy levels. At zero field, m_s equal plus-one and minus-one are degenerate above m_s zero by D equals 2.87 GHz. At nonzero B field, the degeneracy lifts by 2 gamma B with two separate levels. Qubit subspace bracket highlights the m_s zero and m_s minus-one transition. Right panel shows two symmetric downward Lorentzian fluorescence dips at the two ESR transition frequencies, separated by 2 gamma B.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics — Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="10-capstone-quantum-mechanics-in-research"
+      figure-number="04"
+      figure-title="NV-Center ODMR — Ground-State Levels and Zeeman-Split Spectral Dips"
+      figure-slug="nv-center-odmr-energy-levels"
+      figure-type="mixed-content"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/10-capstone-quantum-mechanics-in-research-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow-10-04" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arrow-up" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="22" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e">NV-Center ODMR — Ground-State Zeeman Splitting</text>
+
+  <!-- ====== LEFT PANEL: Energy level diagram ====== -->
+  <rect x="32" y="36" width="310" height="370" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="187" y="54" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Ground-state spin-1 energy levels</text>
+
+  <!-- === B = 0 column === -->
+  <text x="128" y="76" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">B = 0</text>
+
+  <!-- m_s = +1, -1 degenerate level (upper) at y=110 -->
+  <line x1="72" y1="110" x2="184" y2="110" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="186" y="114" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">m&#x209b; = &#xb1;1</text>
+
+  <!-- D = 2.87 GHz gap indicator -->
+  <line x1="55" y1="110" x2="55" y2="218" stroke="#545454" stroke-width="0.75"/>
+  <line x1="50" y1="110" x2="60" y2="110" stroke="#545454" stroke-width="0.75"/>
+  <line x1="50" y1="218" x2="60" y2="218" stroke="#545454" stroke-width="0.75"/>
+  <text x="42" y="164" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454" transform="rotate(-90 42 164)">D = 2.87 GHz</text>
+
+  <!-- m_s = 0 level (lower) at y=218 -->
+  <line x1="72" y1="218" x2="184" y2="218" stroke="#787878" stroke-width="2"/>
+  <text x="186" y="222" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">m&#x209b; = 0</text>
+
+  <!-- === B > 0 column === -->
+  <text x="258" y="76" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">B &gt; 0</text>
+
+  <!-- m_s = +1 shifted up by γB -->
+  <line x1="218" y1="82" x2="290" y2="82" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="292" y="86" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">m&#x209b; = +1</text>
+
+  <!-- m_s = -1 shifted down by γB, at y=138 -->
+  <line x1="218" y1="138" x2="290" y2="138" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="292" y="142" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">m&#x209b; = &#x2212;1</text>
+
+  <!-- Zeeman split indicator -->
+  <line x1="305" y1="82" x2="305" y2="138" stroke="#C8860E" stroke-width="1"/>
+  <line x1="300" y1="82" x2="310" y2="82" stroke="#C8860E" stroke-width="1"/>
+  <line x1="300" y1="138" x2="310" y2="138" stroke="#C8860E" stroke-width="1"/>
+  <text x="316" y="113" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="8" fill="#C8860E">2&#x03b3;B</text>
+
+  <!-- m_s = 0 unchanged at y=218 -->
+  <line x1="218" y1="218" x2="290" y2="218" stroke="#787878" stroke-width="2"/>
+  <text x="292" y="222" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">m&#x209b; = 0</text>
+
+  <!-- Qubit subspace bracket: {m_s=0, m_s=-1} in B>0 case -->
+  <rect x="208" y="128" width="96" height="100" fill="none" stroke="#787878" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="254" y="244" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#787878">qubit subspace</text>
+
+  <!-- Transition arrows in B>0 -->
+  <!-- f+ transition: m_s=0 → m_s=+1 -->
+  <line x1="236" y1="215" x2="236" y2="87" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow-10-04)"/>
+  <text x="221" y="152" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="8" fill="#545454">f&#x208a;</text>
+  <!-- f- transition: m_s=0 → m_s=-1 -->
+  <line x1="258" y1="215" x2="258" y2="143" stroke="#C8102E" stroke-width="1.5" marker-end="url(#arrow-10-04)"/>
+  <text x="260" y="185" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="8" fill="#C8102E">f&#x208b;</text>
+
+  <!-- Annotations below levels -->
+  <line x1="52" y1="260" x2="330" y2="260" stroke="#D4D4D4" stroke-width="0.5"/>
+  <text x="187" y="274" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">f&#x208a; = D + &#x03b3;B &#160;&#160;&#160; f&#x208b; = D &#x2212; &#x03b3;B</text>
+  <text x="187" y="289" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">D = 2.87 GHz at zero field</text>
+  <text x="187" y="304" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">&#x03b3;&#x2044;2&#x03c0; &#x2248; 28 MHz/mT</text>
+
+  <!-- MW drive label -->
+  <line x1="128" y1="155" x2="128" y2="175" stroke="#2a1a0e" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="128" y="185" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">MW resonant</text>
+  <text x="128" y="196" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">excitation</text>
+
+  <!-- ====== RIGHT PANEL: ODMR spectrum ====== -->
+  <rect x="358" y="36" width="310" height="370" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="513" y="54" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">ODMR fluorescence spectrum</text>
+
+  <!-- Chart area for spectrum -->
+  <rect x="376" y="68" width="272" height="220" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Y-axis -->
+  <line x1="376" y1="68" x2="376" y2="288" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="368" y="72" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">high</text>
+  <text x="368" y="128" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">FL</text>
+  <text x="368" y="288" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">low</text>
+  <!-- Y-axis label -->
+  <text x="358" y="178" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454" transform="rotate(-90 358 178)">Fluorescence intensity</text>
+
+  <!-- X-axis -->
+  <line x1="376" y1="288" x2="648" y2="288" stroke="#2a1a0e" stroke-width="1"/>
+  <!-- X ticks -->
+  <line x1="444" y1="284" x2="444" y2="292" stroke="#545454" stroke-width="0.75"/>
+  <text x="444" y="302" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">f&#x208b;</text>
+  <line x1="512" y1="284" x2="512" y2="292" stroke="#545454" stroke-width="0.75"/>
+  <text x="512" y="302" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">D</text>
+  <line x1="580" y1="284" x2="580" y2="292" stroke="#545454" stroke-width="0.75"/>
+  <text x="580" y="302" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">f&#x208a;</text>
+  <!-- X-axis label -->
+  <text x="512" y="318" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">Microwave frequency</text>
+
+  <!-- Baseline fluorescence at y=88 (high) -->
+  <!-- ODMR Lorentzian dips: baseline=88, dip depth to y=200 -->
+  <!-- Left dip: Lorentzian centered at x=444 (f-), FWHM ~30px -->
+  <!-- Right dip: Lorentzian centered at x=580 (f+), FWHM ~30px -->
+  <!-- Baseline segments and Lorentzian curves as polylines -->
+
+  <!-- Flat baseline: left segment -->
+  <polyline points="376,88 420,88" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <!-- Left Lorentzian dip around x=444 -->
+  <!-- Points: Lorentzian y=88 + (200-88)/(1+((x-444)/18)^2) from x=400 to x=488 -->
+  <!-- Key points computed: x=444 → y=200; x=462 → y=144; x=426 → y=144; x=480→y=96; x=408→y=96 -->
+  <polyline points="420,88 426,91 432,100 438,127 441,162 443,190 444,200 445,190 447,162 450,127 456,100 462,91 468,88" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+
+  <!-- Middle flat segment between dips -->
+  <polyline points="468,88 556,88" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+
+  <!-- Right Lorentzian dip around x=580 -->
+  <polyline points="556,88 562,91 568,100 574,127 577,162 579,190 580,200 581,190 583,162 586,127 592,100 598,91 604,88" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+
+  <!-- Right flat segment to end -->
+  <polyline points="604,88 648,88" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+
+  <!-- Dip fill areas (light red tint) for visibility -->
+  <path d="M420,88 L426,91 L432,100 L438,127 L441,162 L443,190 L444,200 L445,190 L447,162 L450,127 L456,100 L462,91 L468,88 Z" fill="#C8102E" fill-opacity="0.08"/>
+  <path d="M556,88 L562,91 L568,100 L574,127 L577,162 L579,190 L580,200 L581,190 L583,162 L586,127 L592,100 L598,91 L604,88 Z" fill="#C8102E" fill-opacity="0.08"/>
+
+  <!-- Dip depth lines -->
+  <line x1="444" y1="88" x2="444" y2="200" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="3 2"/>
+  <line x1="580" y1="88" x2="580" y2="200" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="3 2"/>
+
+  <!-- Dip markers -->
+  <circle cx="444" cy="200" r="3" fill="#C8102E"/>
+  <circle cx="580" cy="200" r="3" fill="#C8102E"/>
+
+  <!-- 2γB split bracket -->
+  <line x1="444" y1="228" x2="580" y2="228" stroke="#C8860E" stroke-width="1.5"/>
+  <line x1="444" y1="222" x2="444" y2="234" stroke="#C8860E" stroke-width="1.5"/>
+  <line x1="580" y1="222" x2="580" y2="234" stroke="#C8860E" stroke-width="1.5"/>
+  <text x="512" y="244" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8860E">2&#x03b3;B (Zeeman split)</text>
+
+  <!-- Contrast annotation -->
+  <line x1="620" y1="88" x2="620" y2="200" stroke="#545454" stroke-width="0.75"/>
+  <line x1="615" y1="88" x2="625" y2="88" stroke="#545454" stroke-width="0.75"/>
+  <line x1="615" y1="200" x2="625" y2="200" stroke="#545454" stroke-width="0.75"/>
+  <text x="634" y="148" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="8" fill="#545454" transform="rotate(90 634 148)">contrast (~30%)</text>
+
+  <!-- Annotations below spectrum -->
+  <text x="513" y="335" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">Spin resonance &#x2192; reduced fluorescence</text>
+  <text x="513" y="350" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">Each dip: MW &#x2194; spin-flip &#x2192; triplet decay</text>
+  <text x="513" y="366" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#2a1a0e">B &#x221d; &#x394;f = f&#x208a; &#x2212; f&#x208b; = 2&#x03b3;B</text>
+  <text x="513" y="382" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">magnetometry: sub-nT sensitivity</text>
+  <text x="513" y="398" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8102E">room-temperature quantum sensor</text>
+
+</svg>

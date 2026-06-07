@@ -1,0 +1,204 @@
+<!--
+  CAJAL SVG Figure
+  Book: Quantum Mechanics — Information, Measurement, and Open Systems
+  Book-slug: quantum-mechanics-vol4
+  Chapter: 10-capstone-quantum-mechanics-in-research
+  Figure: 01
+  Title: Four Research Doorways — Problem-Class Taxonomy
+  Type: verification-gap (VG)
+  Priority: Critical
+  Author: Humanitarians AI Incorporated
+  Date: 2026-06-06
+  Source: pantry/10-capstone-quantum-mechanics-in-research-cajal.md
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-10-01">
+  <title id="fig-title-10-01">Four Research Doorways — Problem-Class Taxonomy</title>
+  <desc>2x2 grid of four equal cells, each with a schematic icon. Top-left: Bell test with two detector stations and entangled pair. Top-right: quantum error correction surface code fragment. Bottom-left: NV center magnetometry with diamond lattice and field arrow. Bottom-right: neutral atom processor with Rydberg interaction arc.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics — Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="10-capstone-quantum-mechanics-in-research"
+      figure-number="01"
+      figure-title="Four Research Doorways — Problem-Class Taxonomy"
+      figure-slug="four-research-doorways"
+      figure-type="verification-gap"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/10-capstone-quantum-mechanics-in-research-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow-10-01" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arrow-red-10-01" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#C8102E"/>
+    </marker>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="24" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e">Four Research Doorways — Problem-Class Taxonomy</text>
+
+  <!-- 2x2 grid: each cell 310x175, plus 20px margins -->
+  <!-- Cell TL: x=32,y=38, w=308,h=168 -->
+  <!-- Cell TR: x=360,y=38, w=308,h=168 -->
+  <!-- Cell BL: x=32,y=226, w=308,h=168 -->
+  <!-- Cell BR: x=360,y=226, w=308,h=168 -->
+
+  <!-- Cross dividers -->
+  <line x1="346" y1="38" x2="346" y2="394" stroke="#D4D4D4" stroke-width="1"/>
+  <line x1="32" y1="212" x2="668" y2="212" stroke="#D4D4D4" stroke-width="1"/>
+
+  <!-- ===== Cell TL: Bell test ===== -->
+  <rect x="32" y="38" width="314" height="174" fill="#2a1a0e" fill-opacity="0.04" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="189" y="56" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Bell test / entanglement verification</text>
+
+  <!-- Left detector station -->
+  <rect x="52" y="80" width="52" height="38" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="78" y="103" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#2a1a0e">A</text>
+  <!-- Right detector station -->
+  <rect x="244" y="80" width="52" height="38" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="270" y="103" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#2a1a0e">B</text>
+  <!-- Entangled pair source at center (midpoint 174) -->
+  <circle cx="174" cy="99" r="8" fill="#ADADAD" stroke="#ADADAD" stroke-width="1"/>
+  <!-- Photon lines -->
+  <line x1="104" y1="99" x2="166" y2="99" stroke="#ADADAD" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="182" y1="99" x2="244" y2="99" stroke="#ADADAD" stroke-width="1" stroke-dasharray="4 3"/>
+  <!-- Arrows from source -->
+  <line x1="174" y1="99" x2="110" y2="99" stroke="#ADADAD" stroke-width="1" marker-end="url(#arrow-10-01)"/>
+  <line x1="174" y1="99" x2="238" y2="99" stroke="#ADADAD" stroke-width="1" marker-end="url(#arrow-10-01)"/>
+
+  <text x="174" y="116" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#ADADAD">|&#x3a6;&#x207a;&#x27E9; source</text>
+
+  <!-- CHSH measurement angles -->
+  <text x="78" y="130" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">a&#x2081;, a&#x2082;</text>
+  <text x="270" y="130" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">b&#x2081;, b&#x2082;</text>
+
+  <text x="189" y="155" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">S = |E(a&#x2081;,b&#x2081;)+E(a&#x2081;,b&#x2082;)+E(a&#x2082;,b&#x2081;)&#x2212;E(a&#x2082;,b&#x2082;)| &#x2264; 2</text>
+  <text x="189" y="170" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">QM: S &#x2264; 2&#x221a;2 &#x2248; 2.83 — violates classical bound</text>
+
+  <!-- ===== Cell TR: QEC ===== -->
+  <rect x="354" y="38" width="314" height="174" fill="#2a1a0e" fill-opacity="0.04" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="511" y="56" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Quantum error correction (surface code)</text>
+
+  <!-- 3x3 surface code fragment -->
+  <!-- Vertices at (430,80),(468,80),(506,80),(430,118),(468,118),(506,118),(430,156),(468,156),(506,156) -->
+  <!-- Lattice edges -->
+  <line x1="430" y1="80" x2="586" y2="80" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="430" y1="118" x2="586" y2="118" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="430" y1="156" x2="586" y2="156" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="430" y1="80" x2="430" y2="156" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="468" y1="80" x2="468" y2="156" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="506" y1="80" x2="506" y2="156" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="544" y1="80" x2="544" y2="156" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="582" y1="80" x2="582" y2="156" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Plaquette syndrome at (449,99): square -->
+  <rect x="441" y="91" width="16" height="16" fill="#2a1a0e"/>
+  <rect x="517" y="91" width="16" height="16" fill="#2a1a0e"/>
+  <rect x="441" y="129" width="16" height="16" fill="#2a1a0e"/>
+  <rect x="517" y="129" width="16" height="16" fill="#2a1a0e"/>
+  <!-- Star syndrome (circles) -->
+  <circle cx="487" cy="99" r="8" fill="#C8860E"/>
+  <circle cx="487" cy="137" r="8" fill="#C8860E"/>
+  <!-- Arms from one plaquette -->
+  <line x1="449" y1="99" x2="432" y2="83" stroke="#2a1a0e" stroke-width="1.5"/>
+  <line x1="449" y1="99" x2="466" y2="83" stroke="#2a1a0e" stroke-width="1.5"/>
+  <line x1="449" y1="99" x2="432" y2="115" stroke="#2a1a0e" stroke-width="1.5"/>
+  <line x1="449" y1="99" x2="466" y2="115" stroke="#2a1a0e" stroke-width="1.5"/>
+  <!-- Data qubits -->
+  <circle cx="430" cy="80" r="5" fill="#D4D4D4" stroke="#ADADAD" stroke-width="0.75"/>
+  <circle cx="468" cy="80" r="5" fill="#D4D4D4" stroke="#ADADAD" stroke-width="0.75"/>
+  <circle cx="506" cy="80" r="5" fill="#D4D4D4" stroke="#ADADAD" stroke-width="0.75"/>
+  <circle cx="544" cy="80" r="5" fill="#D4D4D4" stroke="#ADADAD" stroke-width="0.75"/>
+  <circle cx="582" cy="80" r="5" fill="#D4D4D4" stroke="#ADADAD" stroke-width="0.75"/>
+  <circle cx="430" cy="118" r="5" fill="#D4D4D4" stroke="#ADADAD" stroke-width="0.75"/>
+  <circle cx="468" cy="118" r="5" fill="#D4D4D4" stroke="#ADADAD" stroke-width="0.75"/>
+  <circle cx="506" cy="118" r="5" fill="#D4D4D4" stroke="#ADADAD" stroke-width="0.75"/>
+  <circle cx="544" cy="118" r="5" fill="#D4D4D4" stroke="#ADADAD" stroke-width="0.75"/>
+  <circle cx="582" cy="118" r="5" fill="#D4D4D4" stroke="#ADADAD" stroke-width="0.75"/>
+  <circle cx="430" cy="156" r="5" fill="#D4D4D4" stroke="#ADADAD" stroke-width="0.75"/>
+  <circle cx="468" cy="156" r="5" fill="#D4D4D4" stroke="#ADADAD" stroke-width="0.75"/>
+  <circle cx="506" cy="156" r="5" fill="#D4D4D4" stroke="#ADADAD" stroke-width="0.75"/>
+  <circle cx="544" cy="156" r="5" fill="#D4D4D4" stroke="#ADADAD" stroke-width="0.75"/>
+  <circle cx="582" cy="156" r="5" fill="#D4D4D4" stroke="#ADADAD" stroke-width="0.75"/>
+
+  <!-- Suppression arrow -->
+  <text x="511" y="175" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">threshold crossing: p&#x1d39; &#x2193; as d &#x2191; (below p&#x209c;&#x210e;)</text>
+
+  <!-- ===== Cell BL: NV magnetometry ===== -->
+  <rect x="32" y="220" width="314" height="174" fill="#C8860E" fill-opacity="0.04" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="189" y="238" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">NV-center magnetometry (ODMR)</text>
+
+  <!-- 3-atom diamond fragment with vacancy -->
+  <!-- Carbon atoms at (110,290),(150,290),(130,270) — triangle -->
+  <line x1="110" y1="295" x2="150" y2="295" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="110" y1="295" x2="130" y2="270" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="150" y1="295" x2="130" y2="270" stroke="#ADADAD" stroke-width="1"/>
+  <!-- Nitrogen at (130,270) — ochre -->
+  <circle cx="130" cy="270" r="8" fill="#C8860E"/>
+  <!-- Vacancy at center (130,290) — dashed -->
+  <circle cx="130" cy="290" r="8" fill="#FFFFFF" stroke="#545454" stroke-width="1" stroke-dasharray="2 2"/>
+  <!-- Carbon atoms -->
+  <circle cx="110" cy="295" r="6" fill="#545454"/>
+  <circle cx="150" cy="295" r="6" fill="#545454"/>
+  <!-- NV axis arrow -->
+  <line x1="130" y1="270" x2="130" y2="284" stroke="#ADADAD" stroke-width="1" stroke-dasharray="2 2" marker-end="url(#arrow-10-01)"/>
+
+  <!-- Magnetic field arrow entering from below -->
+  <line x1="130" y1="360" x2="130" y2="330" stroke="#C8102E" stroke-width="2" marker-end="url(#arrow-red-10-01)"/>
+  <text x="160" y="358" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E">B&#x20d7; field</text>
+
+  <!-- ODMR spectrum sketch -->
+  <!-- Two Lorentzian dips -->
+  <line x1="52" y1="330" x2="270" y2="330" stroke="#D4D4D4" stroke-width="0.75"/>
+  <path d="M 52,315 C 60,315 68,316 80,316 C 92,316 100,316 110,316 C 118,316 122,316 127,312 C 130,310 132,310 135,308 C 137,306 138,304 140,305 C 142,307 143,310 146,313 C 150,316 158,316 165,316 C 172,316 178,316 186,316 C 192,316 196,315 198,312 C 200,310 201,308 203,306 C 205,304 207,305 209,308 C 211,311 213,314 218,316 C 225,316 240,316 270,315"
+        fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="161" y="376" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">f&#x207B; = D &#x2212; g&#x3bc;&#x1d38;B/h</text>
+  <text x="161" y="390" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">B extracted from dip splitting: &#x394;f = 2g&#x3bc;&#x1d38;B/h</text>
+
+  <!-- ===== Cell BR: Neutral atom processor ===== -->
+  <rect x="354" y="220" width="314" height="174" fill="#787878" fill-opacity="0.05" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="511" y="238" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Neutral atom logical processor</text>
+
+  <!-- 3x3 atom grid -->
+  <!-- Row 1: (406,278),(442,278),(478,278) -->
+  <!-- Row 2: (406,312),(442,312),(478,312) -->
+  <!-- Row 3: (406,346),(442,346),(478,346) -->
+  <circle cx="406" cy="278" r="6" fill="#2a1a0e"/>
+  <circle cx="442" cy="278" r="6" fill="#2a1a0e"/>
+  <circle cx="478" cy="278" r="6" fill="#2a1a0e"/>
+  <circle cx="406" cy="312" r="6" fill="#2a1a0e"/>
+  <circle cx="442" cy="312" r="6" fill="#2a1a0e"/>
+  <circle cx="478" cy="312" r="6" fill="#2a1a0e"/>
+  <circle cx="406" cy="346" r="6" fill="#2a1a0e"/>
+  <circle cx="442" cy="346" r="6" fill="#2a1a0e"/>
+  <circle cx="478" cy="346" r="6" fill="#2a1a0e"/>
+
+  <!-- Highlighted atoms at (442,278) and (478,278) with Rydberg arc -->
+  <circle cx="442" cy="278" r="12" fill="none" stroke="#C8860E" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <circle cx="478" cy="278" r="12" fill="none" stroke="#C8860E" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <!-- Rydberg interaction arc -->
+  <path d="M 442,266 C 451,250 469,250 478,266" fill="none" stroke="#C8860E" stroke-width="1.5" stroke-dasharray="4 2"/>
+  <text x="460" y="246" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8860E">V&#x1d3f;&#x1d67;d</text>
+
+  <!-- Logical qubit array + gate count -->
+  <text x="511" y="385" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">48+ physical qubits → logical Bell pair</text>
+  <text x="511" y="400" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#2a1a0e">N&#x1d4d2;&#x2090;&#x209c;&#x2091;&#x209b; ~ 10&#x2075; — threshold crossed</text>
+
+  <!-- Cell labels (corner decoration) -->
+  <text x="44" y="52" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#545454">I</text>
+  <text x="366" y="52" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#545454">II</text>
+  <text x="44" y="234" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#545454">III</text>
+  <text x="366" y="234" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="12" fill="#545454">IV</text>
+
+  <!-- Caption -->
+  <text x="350" y="410" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">Four active research programs covered in this capstone chapter</text>
+
+</svg>

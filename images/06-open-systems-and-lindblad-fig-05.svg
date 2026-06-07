@@ -1,0 +1,138 @@
+<!--
+  CAJAL SVG Figure
+  Book: Quantum Mechanics — Information, Measurement, and Open Systems
+  Book-slug: quantum-mechanics-vol4
+  Chapter: 06-open-systems-and-lindblad
+  Figure: 05
+  Title: Pointer States and Einselection — Decoherence Basis Selection
+  Type: verification-gap (VG)
+  Priority: Important
+  Author: Humanitarians AI Incorporated
+  Date: 2026-06-06
+  Source: pantry/06-open-systems-and-lindblad-cajal.md
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-05">
+  <title id="fig-title-05">Pointer States and Einselection — Decoherence Basis Selection</title>
+  <desc>Two-column panel comparing non-pointer basis states (superposition becomes mixed after environment coupling) with pointer states (eigenstates of the coupling Hamiltonian remain stable after coupling).</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics — Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="06-open-systems-and-lindblad"
+      figure-number="05"
+      figure-title="Pointer States and Einselection — Decoherence Basis Selection"
+      figure-slug="pointer-states-einselection"
+      figure-type="verification-gap"
+      priority="Important"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/06-open-systems-and-lindblad-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow-05" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arrow-red-05" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#C8102E"/>
+    </marker>
+    <marker id="arrow-green-05" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#787878"/>
+    </marker>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="24" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e">Pointer States and Einselection — Decoherence Basis Selection</text>
+
+  <!-- ===== LEFT COLUMN: Non-pointer basis ===== -->
+  <rect x="40" y="38" width="270" height="360" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="175" y="55" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Non-pointer basis state</text>
+  <text x="175" y="68" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">superposition &#x3b1;|0&#x27E9; + &#x3b2;|1&#x27E9;</text>
+
+  <!-- Bloch sphere 1: initial superposition (equatorial vector) -->
+  <circle cx="175" cy="140" r="52" fill="none" stroke="#D4D4D4" stroke-width="1"/>
+  <ellipse cx="175" cy="140" rx="52" ry="13" fill="none" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 2"/>
+  <line x1="175" y1="88" x2="175" y2="192" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- Vector pointing to equator, diagonal direction -->
+  <line x1="175" y1="140" x2="220" y2="125" stroke="#ADADAD" stroke-width="2" marker-end="url(#arrow-green-05)"/>
+  <text x="228" y="121" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#ADADAD">|&#x3c8;&#x27E9;</text>
+
+  <!-- Environment coupling icon: wavy arrows down -->
+  <text x="175" y="210" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">environment coupling H&#x2093;&#x1d49;</text>
+  <!-- Coupling arrows -->
+  <line x1="145" y1="215" x2="145" y2="235" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-05)"/>
+  <line x1="175" y1="215" x2="175" y2="235" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-05)"/>
+  <line x1="205" y1="215" x2="205" y2="235" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-05)"/>
+
+  <!-- Bloch sphere 2: after coupling — mixture (two poles) -->
+  <circle cx="175" cy="305" r="52" fill="none" stroke="#D4D4D4" stroke-width="1"/>
+  <ellipse cx="175" cy="305" rx="52" ry="13" fill="none" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 2"/>
+  <line x1="175" y1="253" x2="175" y2="357" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- North pole open circle: |1> state -->
+  <circle cx="175" cy="253" r="5" fill="none" stroke="#ADADAD" stroke-width="1.5"/>
+  <!-- South pole open circle: |0> state -->
+  <circle cx="175" cy="357" r="5" fill="none" stroke="#ADADAD" stroke-width="1.5"/>
+  <!-- Probability weights indicated by small dashes -->
+  <line x1="163" y1="265" x2="187" y2="265" stroke="#ADADAD" stroke-width="1" stroke-dasharray="2 2"/>
+  <line x1="163" y1="345" x2="187" y2="345" stroke="#ADADAD" stroke-width="1" stroke-dasharray="2 2"/>
+  <!-- Center: no bloch vector (mixed state) -->
+  <circle cx="175" cy="305" r="3" fill="#ADADAD"/>
+
+  <text x="175" y="378" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">mixed state — pointer basis</text>
+  <text x="175" y="390" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">diagonal in {|0&#x27E9;, |1&#x27E9;}</text>
+
+  <!-- ===== CENTRAL SEPARATOR with einselection indicator ===== -->
+  <!-- Vertical divider -->
+  <line x1="350" y1="45" x2="350" y2="400" stroke="#D4D4D4" stroke-width="1"/>
+
+  <!-- Einselection funnel arrow -->
+  <!-- Left side arrow pointing right with funnel concept -->
+  <line x1="316" y1="215" x2="332" y2="215" stroke="#C8860E" stroke-width="1.5" marker-end="url(#arrow-05)"/>
+  <!-- Funnel triangle pointing right -->
+  <polygon points="308,208 316,215 308,222" fill="#C8860E"/>
+  <!-- Label -->
+  <text x="352" y="208" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8860E" transform="rotate(-90,352,208)">einselection</text>
+  <!-- Right side arrow pointing right -->
+  <line x1="368" y1="215" x2="384" y2="215" stroke="#C8860E" stroke-width="1.5" marker-end="url(#arrow-05)"/>
+
+  <!-- ===== RIGHT COLUMN: Pointer state ===== -->
+  <rect x="390" y="38" width="270" height="360" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="525" y="55" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Pointer state</text>
+  <text x="525" y="68" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">eigenstate of &#x3c3;&#x1d63; — e.g., |0&#x27E9; or |1&#x27E9;</text>
+
+  <!-- Bloch sphere 3: initial pointer state (south pole) -->
+  <circle cx="525" cy="140" r="52" fill="none" stroke="#D4D4D4" stroke-width="1"/>
+  <ellipse cx="525" cy="140" rx="52" ry="13" fill="none" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 2"/>
+  <line x1="525" y1="88" x2="525" y2="192" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- Vector pointing to south pole (pointer state |0>) -->
+  <line x1="525" y1="140" x2="525" y2="185" stroke="#2a1a0e" stroke-width="2" marker-end="url(#arrow-05)"/>
+
+  <!-- Environment coupling -->
+  <text x="525" y="210" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">environment coupling H&#x2093;&#x1d49;</text>
+  <line x1="495" y1="215" x2="495" y2="235" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-05)"/>
+  <line x1="525" y1="215" x2="525" y2="235" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-05)"/>
+  <line x1="555" y1="215" x2="555" y2="235" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-05)"/>
+
+  <!-- Bloch sphere 4: UNCHANGED after coupling — same pointer state -->
+  <circle cx="525" cy="305" r="52" fill="none" stroke="#D4D4D4" stroke-width="1"/>
+  <ellipse cx="525" cy="305" rx="52" ry="13" fill="none" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 2"/>
+  <line x1="525" y1="253" x2="525" y2="357" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- Same pointer state vector: still pointing south -->
+  <line x1="525" y1="305" x2="525" y2="350" stroke="#2a1a0e" stroke-width="2" marker-end="url(#arrow-05)"/>
+  <!-- Stability checkmark -->
+  <polyline points="513,278 519,284 537,268" fill="none" stroke="#787878" stroke-width="2"/>
+
+  <text x="525" y="378" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">pointer state — unchanged</text>
+  <text x="525" y="390" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">[H&#x2093;&#x1d49;, &#x03C1;&#x2096;] = 0 — no decoherence</text>
+
+  <!-- Pointer basis labels on both columns -->
+  <text x="175" y="88" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#D4D4D4">|1&#x27E9;</text>
+  <text x="175" y="200" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#D4D4D4">|0&#x27E9;</text>
+  <text x="525" y="88" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#D4D4D4">|1&#x27E9;</text>
+  <text x="525" y="200" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#D4D4D4">|0&#x27E9;</text>
+
+</svg>

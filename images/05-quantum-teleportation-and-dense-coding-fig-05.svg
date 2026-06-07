@@ -1,0 +1,144 @@
+<!--
+  CAJAL SVG Generator — quantum-mechanics-vol4
+  Chapter: 05-quantum-teleportation-and-dense-coding
+  Figure: 05
+  Title: Bob's reduced density matrix before classical bits — no-signaling result
+  Source: pantry/05-quantum-teleportation-and-dense-coding-cajal.md
+  Generated: 2026-06-06
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-qtp05">
+  <title id="fig-title-qtp05">Bob's reduced density matrix before classical bits: general state vs. maximally mixed I/2</title>
+  <desc>Two bar charts side by side showing density matrix elements: left panel shows a general qubit state with nonzero off-diagonal coherences; right panel shows the maximally mixed state I/2 with equal diagonal bars and zero off-diagonals. Bloch sphere icons below each chart. A directional arrow between panels signals loss of information.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="05-quantum-teleportation-and-dense-coding"
+      figure-number="05"
+      figure-title="Bob's reduced density matrix before classical bits"
+      figure-slug="bob-reduced-density-matrix"
+      figure-type="bar-chart"
+      priority="SUPPLEMENTARY"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/05-quantum-teleportation-and-dense-coding-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arr-qtp05" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#C8102E"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Figure title -->
+  <text x="350" y="24" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Bob's reduced state — before and after classical bits arrive</text>
+
+  <!-- ===== LEFT PANEL: General qubit state with coherences ===== -->
+  <rect x="50" y="40" width="260" height="200" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="180" y="58" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle" font-weight="700">General state (with coherences)</text>
+
+  <!-- Y-axis -->
+  <line x1="80" y1="220" x2="80" y2="68" stroke="#2a1a0e" stroke-width="1"/>
+  <!-- X-axis baseline -->
+  <line x1="78" y1="220" x2="290" y2="220" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Y-axis ticks -->
+  <line x1="75" y1="220" x2="80" y2="220" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="72" y="224" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454" text-anchor="end">0</text>
+  <line x1="75" y1="144" x2="80" y2="144" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="72" y="148" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454" text-anchor="end">0.5</text>
+  <line x1="75" y1="68" x2="80" y2="68" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="72" y="72" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454" text-anchor="end">1</text>
+
+  <!-- Bars for general state: ρ₀₀, ρ₀₁, ρ₁₀, ρ₁₁ -->
+  <!-- ρ₀₀ ≈ 0.7 → height = 0.7*152 = 106.4, top y = 220-106 = 114 -->
+  <rect x="100" y="114" width="35" height="106" fill="#2a1a0e" opacity="0.7" stroke="none"/>
+  <!-- ρ₀₁ ≈ 0.35 (off-diag) → height = 0.35*152 = 53.2, top y = 167 -->
+  <rect x="148" y="167" width="35" height="53" fill="#787878" opacity="0.7" stroke="none"/>
+  <!-- ρ₁₀ ≈ 0.35 (off-diag) → height = 53 -->
+  <rect x="196" y="167" width="35" height="53" fill="#787878" opacity="0.7" stroke="none"/>
+  <!-- ρ₁₁ ≈ 0.3 → height = 0.3*152 = 45.6, top y = 174 -->
+  <rect x="244" y="174" width="35" height="46" fill="#2a1a0e" opacity="0.7" stroke="none"/>
+
+  <!-- X-axis bar labels -->
+  <text x="117" y="234" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454" text-anchor="middle">ρ₀₀</text>
+  <text x="165" y="234" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454" text-anchor="middle">ρ₀₁</text>
+  <text x="213" y="234" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454" text-anchor="middle">ρ₁₀</text>
+  <text x="261" y="234" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454" text-anchor="middle">ρ₁₁</text>
+
+  <!-- Bloch sphere icon below left panel — surface/near-surface point -->
+  <circle cx="180" cy="295" r="35" fill="none" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="180" y1="260" x2="180" y2="330" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="3 2"/>
+  <line x1="145" y1="295" x2="215" y2="295" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="3 2"/>
+  <!-- Surface point (upper right) -->
+  <circle cx="207" cy="273" r="6" fill="#2a1a0e"/>
+  <line x1="180" y1="295" x2="204" y2="276" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="180" y="348" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">|r| close to 1</text>
+
+  <!-- ===== DIRECTIONAL ARROW between panels ===== -->
+  <!-- Arrow pointing LEFT (tracing removes information) -->
+  <line x1="390" y1="150" x2="320" y2="150" stroke="#C8102E" stroke-width="2" marker-end="url(#arr-qtp05)"/>
+  <text x="355" y="140" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#C8102E" text-anchor="middle">Tr_A</text>
+  <text x="355" y="168" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#C8102E" text-anchor="middle">before</text>
+  <text x="355" y="180" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#C8102E" text-anchor="middle">cbits arrive</text>
+
+  <!-- ===== RIGHT PANEL: Maximally mixed state I/2 ===== -->
+  <rect x="390" y="40" width="260" height="200" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="520" y="58" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#C8102E" text-anchor="middle" font-weight="700">Maximally mixed ρ_B = I/2</text>
+
+  <!-- Y-axis -->
+  <line x1="420" y1="220" x2="420" y2="68" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="418" y1="220" x2="630" y2="220" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Y-axis ticks -->
+  <line x1="415" y1="220" x2="420" y2="220" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="412" y="224" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454" text-anchor="end">0</text>
+  <line x1="415" y1="144" x2="420" y2="144" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="412" y="148" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454" text-anchor="end">0.5</text>
+  <line x1="415" y1="68" x2="420" y2="68" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="412" y="72" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454" text-anchor="end">1</text>
+
+  <!-- Bars for maximally mixed: ρ₀₀=0.5, ρ₀₁=0, ρ₁₀=0, ρ₁₁=0.5 -->
+  <!-- 0.5 → height = 0.5*152 = 76, top y = 220-76 = 144 -->
+  <rect x="440" y="144" width="35" height="76" fill="#C8102E" opacity="0.5" stroke="none"/>
+  <!-- ρ₀₁ = 0 — zero height bar, just a tick mark -->
+  <rect x="488" y="220" width="35" height="0" fill="#545454" opacity="0.3"/>
+  <line x1="488" y1="218" x2="523" y2="218" stroke="#D4D4D4" stroke-width="1"/>
+  <!-- ρ₁₀ = 0 -->
+  <rect x="536" y="220" width="35" height="0" fill="#545454" opacity="0.3"/>
+  <line x1="536" y1="218" x2="571" y2="218" stroke="#D4D4D4" stroke-width="1"/>
+  <!-- ρ₁₁ = 0.5 -->
+  <rect x="584" y="144" width="35" height="76" fill="#C8102E" opacity="0.5" stroke="none"/>
+
+  <!-- X-axis bar labels -->
+  <text x="457" y="234" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454" text-anchor="middle">ρ₀₀</text>
+  <text x="505" y="234" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454" text-anchor="middle">ρ₀₁</text>
+  <text x="553" y="234" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454" text-anchor="middle">ρ₁₀</text>
+  <text x="601" y="234" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454" text-anchor="middle">ρ₁₁</text>
+
+  <!-- Values label -->
+  <text x="520" y="136" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#C8102E" text-anchor="middle">= ½, ½</text>
+
+  <!-- Bloch sphere icon below right panel — center point -->
+  <circle cx="520" cy="295" r="35" fill="none" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="520" y1="260" x2="520" y2="330" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="3 2"/>
+  <line x1="485" y1="295" x2="555" y2="295" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="3 2"/>
+  <!-- Center point -->
+  <circle cx="520" cy="295" r="7" fill="#C8102E"/>
+  <text x="520" y="348" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#C8102E" text-anchor="middle">|r| = 0 (maximally mixed)</text>
+
+  <!-- LEGEND -->
+  <rect x="60" y="368" width="14" height="12" fill="#2a1a0e" opacity="0.7"/>
+  <text x="78" y="379" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Diagonal elements ρᵢᵢ</text>
+  <rect x="230" y="368" width="14" height="12" fill="#787878" opacity="0.7"/>
+  <text x="248" y="379" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Off-diagonal coherences ρᵢⱼ</text>
+  <rect x="430" y="368" width="14" height="12" fill="#C8102E" opacity="0.5"/>
+  <text x="448" y="379" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">I/2 (ρ₀₀=ρ₁₁=½, coherences=0)</text>
+
+  <!-- No-signaling note -->
+  <text x="350" y="404" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#C8102E" text-anchor="middle">Tracing over Alice's qubits always yields I/2 — no information reaches Bob until classical bits arrive</text>
+</svg>

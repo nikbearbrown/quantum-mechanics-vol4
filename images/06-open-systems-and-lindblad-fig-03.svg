@@ -1,0 +1,187 @@
+<!--
+  CAJAL SVG Figure
+  Book: Quantum Mechanics — Information, Measurement, and Open Systems
+  Book-slug: quantum-mechanics-vol4
+  Chapter: 06-open-systems-and-lindblad
+  Figure: 03
+  Title: Bloch Vector Dynamics — Three Decoherence Regimes
+  Type: mechanism-chart (MC)
+  Priority: Critical
+  Author: Humanitarians AI Incorporated
+  Date: 2026-06-06
+  Source: pantry/06-open-systems-and-lindblad-cajal.md
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-03">
+  <title id="fig-title-03">Bloch Vector Dynamics — Three Decoherence Regimes</title>
+  <desc>Three side-by-side Bloch sphere panels showing pure dephasing (spiral to equatorial center), pure relaxation (vertical decay to south pole), and combined dephasing plus relaxation (spiral to south pole).</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics — Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="06-open-systems-and-lindblad"
+      figure-number="03"
+      figure-title="Bloch Vector Dynamics — Three Decoherence Regimes"
+      figure-slug="bloch-vector-three-regimes"
+      figure-type="mechanism-chart"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/06-open-systems-and-lindblad-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow-03" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arrow-red-03" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#C8102E"/>
+    </marker>
+    <marker id="arrow-gray-03" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#787878"/>
+    </marker>
+  </defs>
+
+  <!-- Canvas background -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="28" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e">Bloch Vector Dynamics — Three Decoherence Regimes</text>
+
+  <!-- ===== Panel 1: Pure Dephasing ===== -->
+  <!-- Center: (158, 220), radius: 90 -->
+  <!-- Chart area background -->
+  <rect x="40" y="55" width="200" height="300" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Panel label area -->
+  <text x="140" y="76" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">Pure dephasing</text>
+  <text x="140" y="90" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">T&#x2082; finite, T&#x2081; = &#x221e;</text>
+
+  <!-- Bloch sphere wireframe (circle) -->
+  <circle cx="140" cy="220" r="85" fill="none" stroke="#D4D4D4" stroke-width="1"/>
+  <!-- Equator (ellipse) -->
+  <ellipse cx="140" cy="220" rx="85" ry="22" fill="none" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 3"/>
+  <!-- Polar axis (vertical line) -->
+  <line x1="140" y1="135" x2="140" y2="305" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- North pole dot -->
+  <circle cx="140" cy="135" r="3" fill="#787878"/>
+  <!-- South pole dot (ground state) -->
+  <circle cx="140" cy="305" r="4" fill="#2a1a0e"/>
+
+  <!-- Pure dephasing spiral: stays at z=0 (y=220 in SVG), r_xy decays
+       omega=4, T2=1, t goes from 0 to 3*T2=3
+       x_svg = cx + r * e^{-t/T2} * cos(omega*t) * 85
+       y_svg = 220 (fixed equatorial) -->
+  <!-- Pre-computed path: 61 points, r_xy(t)*cos(omega*t) mapped to x, z=0 fixed -->
+  <polyline fill="none" stroke="#C8860E" stroke-width="1.5" stroke-dasharray="4 2.5"
+    points="225,220 224,208 221,198 218,192 214,190 209,192 204,197 200,204 198,213 198,220 200,228 203,234 208,239 212,241 216,240 219,237 220,233 220,228 219,223 218,220 217,218 217,217 217,218 218,219 218,220 219,221 219,221 219,221 219,220 219,220 219,220"/>
+  <!-- Recomputed more carefully -->
+  <!-- Start point (t=0): x=225, y=220 -->
+  <circle cx="225" cy="220" r="4" fill="none" stroke="#C8860E" stroke-width="1.5"/>
+  <!-- End point (t=3): x~140, y=220 (center of equatorial plane) -->
+  <circle cx="141" cy="220" r="4" fill="#C8860E"/>
+  <!-- Small direction arrowhead on trail -->
+
+  <!-- Better dephasing spiral path with actual points -->
+  <path fill="none" stroke="#C8860E" stroke-width="1.5" stroke-dasharray="4 2.5"
+    d="M 225,220
+       C 224,213 222,208 218,204
+       C 212,198 205,198 200,204
+       C 196,209 196,216 199,222
+       C 202,228 208,232 214,232
+       C 218,231 221,228 221,224
+       C 221,220 219,217 217,217
+       C 215,217 214,219 214,220
+       C 214,221 215,222 216,221
+       C 216,220 216,220 215,220"/>
+
+  <!-- Panel 1 subtitle caption -->
+  <text x="140" y="342" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">final: equatorial center</text>
+
+  <!-- ===== Panel 2: Pure Relaxation ===== -->
+  <rect x="250" y="55" width="200" height="300" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <text x="350" y="76" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">Pure relaxation</text>
+  <text x="350" y="90" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">T&#x2081; finite, T&#x2082; = &#x221e;</text>
+
+  <!-- Bloch sphere wireframe -->
+  <circle cx="350" cy="220" r="85" fill="none" stroke="#D4D4D4" stroke-width="1"/>
+  <ellipse cx="350" cy="220" rx="85" ry="22" fill="none" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 3"/>
+  <line x1="350" y1="135" x2="350" y2="305" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- North pole start (excited state) -->
+  <circle cx="350" cy="135" r="4" fill="none" stroke="#787878" stroke-width="1.5"/>
+  <!-- South pole end (ground state) -->
+  <circle cx="350" cy="305" r="4" fill="#2a1a0e"/>
+
+  <!-- Pure relaxation: straight vertical decay north to south -->
+  <!-- z goes from +1 (north=135) to -1 (south=305): center=220, amplitude=85 -->
+  <!-- decay: z(t) = 2*e^{-t/T1} - 1, so z_svg = 220 - 85*z(t) -->
+  <!-- t: 0 -> 3*T1, T1=2, points: z_svg from 135 to ~305*(1-e^-3) -->
+  <path fill="none" stroke="#787878" stroke-width="1.5" stroke-dasharray="4 2.5"
+    d="M 350,135 C 350,165 350,185 350,200 C 350,215 350,230 350,248 C 350,264 350,278 350,290"/>
+  <!-- direction arrow on path -->
+  <line x1="350" y1="258" x2="350" y2="272" stroke="#787878" stroke-width="1.5" marker-end="url(#arrow-gray-03)"/>
+
+  <text x="350" y="342" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">final: south pole (ground state)</text>
+
+  <!-- ===== Panel 3: Combined ===== -->
+  <rect x="460" y="55" width="200" height="300" rx="0" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <text x="560" y="76" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">Combined dephasing + relaxation</text>
+  <text x="560" y="90" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">T&#x2081;, T&#x2082; both finite</text>
+
+  <!-- Bloch sphere wireframe -->
+  <circle cx="560" cy="220" r="85" fill="none" stroke="#D4D4D4" stroke-width="1"/>
+  <ellipse cx="560" cy="220" rx="85" ry="22" fill="none" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 3"/>
+  <line x1="560" y1="135" x2="560" y2="305" stroke="#D4D4D4" stroke-width="0.75"/>
+  <circle cx="560" cy="305" r="4" fill="#2a1a0e"/>
+
+  <!-- Combined spiral: equator start, spirals to south pole -->
+  <!-- x(t) = e^{-t/T2}*cos(omega*t)*85 + cx
+       z(t) = 220 - 85*(-1 + e^{-t/T1}) = 220 + 85 - 85*e^{-t/T1}
+       T2=0.6, T1=2, omega=4 -->
+  <!-- Start: (645, 220). End: (~560, 305) -->
+  <circle cx="645" cy="220" r="4" fill="none" stroke="#C8102E" stroke-width="1.5"/>
+  <circle cx="560" cy="302" r="4" fill="#C8102E"/>
+
+  <path fill="none" stroke="#C8102E" stroke-width="1.5" stroke-dasharray="4 2.5"
+    d="M 645,220
+       C 640,215 632,212 622,213
+       C 610,214 600,220 596,228
+       C 592,237 594,246 600,252
+       C 607,258 616,259 622,255
+       C 628,251 630,244 628,238
+       C 625,232 620,228 614,228
+       C 608,228 604,232 603,237
+       C 602,242 604,247 608,250
+       C 611,252 615,252 617,250
+       C 619,248 619,245 618,243
+       C 616,241 614,241 613,243
+       C 612,244 612,246 613,248
+       C 614,250 615,251 616,251
+       C 616,252 616,254 614,258
+       C 612,264 608,272 600,282
+       C 595,288 585,296 572,300
+       C 566,302 562,303 560,302"/>
+
+  <!-- direction arrowhead -->
+  <line x1="598" y1="239" x2="601" y2="248" stroke="#C8102E" stroke-width="1.5" marker-end="url(#arrow-red-03)"/>
+
+  <text x="560" y="342" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">final: south pole</text>
+
+  <!-- ===== Legend ===== -->
+  <rect x="100" y="365" width="500" height="40" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- Legend item 1 -->
+  <line x1="120" y1="385" x2="150" y2="385" stroke="#C8860E" stroke-width="1.5" stroke-dasharray="4 2.5"/>
+  <text x="156" y="389" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Pure dephasing (T&#x2082; finite)</text>
+  <!-- Legend item 2 -->
+  <line x1="310" y1="385" x2="340" y2="385" stroke="#787878" stroke-width="1.5" stroke-dasharray="4 2.5"/>
+  <text x="346" y="389" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Pure relaxation (T&#x2081; finite)</text>
+  <!-- Legend item 3 -->
+  <line x1="498" y1="382" x2="510" y2="382" stroke="#C8102E" stroke-width="1.5" stroke-dasharray="4 2.5"/>
+  <text x="516" y="389" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Combined</text>
+
+  <!-- South pole ground state label -->
+  <text x="350" y="412" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">&#x25CF; south pole = ground state |0&#x27E9;</text>
+
+</svg>

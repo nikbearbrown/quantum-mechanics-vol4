@@ -1,0 +1,138 @@
+<!--
+  CAJAL SVG Generator — quantum-mechanics-vol4
+  Chapter: 04-quantum-gates-and-circuits
+  Figure: 01
+  Title: Single-qubit gates as Bloch sphere rotations
+  Source: pantry/04-quantum-gates-and-circuits-cajal.md
+  Generated: 2026-06-06
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-g01">
+  <title id="fig-title-g01">Single-qubit gates as Bloch sphere rotations</title>
+  <desc>2D xz-plane cross-section of the Bloch ball showing five gate rotation arcs: X (π about x̂, swaps poles), Z (π about ẑ, phase flip), H (π about diagonal, north to +x), S (π/2 about ẑ), T (π/4 about ẑ). Each arc is color-coded and proportional to its rotation angle.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="04-quantum-gates-and-circuits"
+      figure-number="01"
+      figure-title="Single-qubit gates as Bloch sphere rotations"
+      figure-slug="single-qubit-gate-rotations"
+      figure-type="diagram"
+      priority="CRITICAL"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/04-quantum-gates-and-circuits-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arr-g01-x" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#C8102E"/>
+    </marker>
+    <marker id="arr-g01-z" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arr-g01-h" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#545454"/>
+    </marker>
+    <marker id="arr-g01-s" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#787878"/>
+    </marker>
+    <marker id="arr-g01-t" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ADADAD"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+  <rect x="32" y="32" width="636" height="356" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Figure title -->
+  <text x="350" y="24" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Single-qubit gates as Bloch sphere rotations (xz cross-section)</text>
+
+  <!-- Bloch circle: center 310,210, radius 155 -->
+  <circle cx="310" cy="210" r="155" fill="none" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Axes (dashed) -->
+  <!-- z-axis vertical -->
+  <line x1="310" y1="45" x2="310" y2="375" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <!-- x-axis horizontal -->
+  <line x1="145" y1="210" x2="475" y2="210" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+
+  <!-- Axis labels -->
+  <text x="312" y="42" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="12" fill="#545454">ẑ</text>
+  <text x="480" y="214" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="12" fill="#545454">x̂</text>
+
+  <!-- Anchor points -->
+  <!-- North pole |0⟩ at 310, 55 -->
+  <circle cx="310" cy="55" r="5" fill="#2a1a0e"/>
+  <text x="320" y="54" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#2a1a0e">|0⟩</text>
+  <!-- South pole |1⟩ at 310, 365 -->
+  <circle cx="310" cy="365" r="5" fill="#2a1a0e"/>
+  <text x="320" y="369" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#2a1a0e">|1⟩</text>
+  <!-- +x at 465, 210 -->
+  <circle cx="465" cy="210" r="5" fill="#2a1a0e"/>
+  <text x="468" y="200" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#2a1a0e">|+⟩</text>
+  <!-- -x at 155, 210 -->
+  <circle cx="155" cy="210" r="5" fill="#2a1a0e"/>
+  <text x="130" y="200" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#2a1a0e">|−⟩</text>
+
+  <!-- ===== X GATE: π-rotation about x̂ — sweeps north pole to south pole ===== -->
+  <!-- Arc from (310,55) to (310,365) going around the right side of circle: r=155 -->
+  <!-- Large arc: sweep left side -->
+  <path d="M 310 55 A 155 155 0 0 0 310 365"
+        fill="none" stroke="#C8102E" stroke-width="2" marker-end="url(#arr-g01-x)"/>
+  <!-- X gate label -->
+  <text x="128" y="216" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#C8102E" font-weight="700">X</text>
+
+  <!-- ===== Z GATE: π-rotation about ẑ — arc at north pole region, right side ===== -->
+  <!-- Z rotation about z: north pole point sweeps right (phase). Show as arc at equator right side, radius=165 -->
+  <path d="M 465 190 A 20 20 0 0 1 465 230"
+        fill="none" stroke="#2a1a0e" stroke-width="2" marker-end="url(#arr-g01-z)"/>
+  <text x="490" y="215" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#2a1a0e" font-weight="700">Z (π)</text>
+
+  <!-- ===== H GATE: π-rotation about (x̂+ẑ)/√2 — swaps north pole and +x ===== -->
+  <!-- Arc from north pole (310,55) to +x (465,210), going through the diagonal region -->
+  <!-- Approximate: path from 310,55 to 465,210 along a circular arc -->
+  <path d="M 310 55 Q 420 55 465 210"
+        fill="none" stroke="#545454" stroke-width="2" marker-end="url(#arr-g01-h)"/>
+  <text x="390" y="95" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#545454" font-weight="700">H</text>
+
+  <!-- ===== S GATE: π/2-rotation about ẑ — shorter arc at equator ===== -->
+  <!-- S: half of Z, show at outer radius 170 -->
+  <path d="M 465 195 A 28 28 0 0 1 465 240"
+        fill="none" stroke="#787878" stroke-width="2" marker-end="url(#arr-g01-s)"/>
+  <text x="496" y="230" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#787878" font-weight="700">S (π/2)</text>
+
+  <!-- ===== T GATE: π/4-rotation about ẑ — shortest arc ===== -->
+  <!-- T: quarter of Z, even shorter arc -->
+  <path d="M 465 198 A 35 35 0 0 1 465 228"
+        fill="none" stroke="#ADADAD" stroke-width="2" marker-end="url(#arr-g01-t)"/>
+  <text x="504" y="248" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#ADADAD" font-weight="700">T (π/4)</text>
+
+  <!-- LEGEND -->
+  <text x="520" y="80" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="13" fill="#2a1a0e" font-weight="700">Gates</text>
+
+  <!-- X gate -->
+  <line x1="520" y1="100" x2="548" y2="100" stroke="#C8102E" stroke-width="2" marker-end="url(#arr-g01-x)"/>
+  <text x="555" y="104" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">X — π about x̂</text>
+
+  <!-- Z gate -->
+  <line x1="520" y1="120" x2="548" y2="120" stroke="#2a1a0e" stroke-width="2" marker-end="url(#arr-g01-z)"/>
+  <text x="555" y="124" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Z — π about ẑ</text>
+
+  <!-- H gate -->
+  <line x1="520" y1="140" x2="548" y2="140" stroke="#545454" stroke-width="2" marker-end="url(#arr-g01-h)"/>
+  <text x="555" y="144" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">H — π about (x̂+ẑ)/√2</text>
+
+  <!-- S gate -->
+  <line x1="520" y1="160" x2="548" y2="160" stroke="#787878" stroke-width="2" marker-end="url(#arr-g01-s)"/>
+  <text x="555" y="164" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">S — π/2 about ẑ</text>
+
+  <!-- T gate -->
+  <line x1="520" y1="180" x2="548" y2="180" stroke="#ADADAD" stroke-width="2" marker-end="url(#arr-g01-t)"/>
+  <text x="555" y="184" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">T — π/4 about ẑ</text>
+
+  <!-- Relation note -->
+  <text x="520" y="210" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454">T² = S, S² = Z</text>
+</svg>

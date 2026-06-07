@@ -1,0 +1,185 @@
+<!--
+  CAJAL SVG Figure
+  Book: Quantum Mechanics — Information, Measurement, and Open Systems
+  Book-slug: quantum-mechanics-vol4
+  Chapter: 07-measurement-and-interpretations
+  Figure: 02
+  Title: Von Neumann Cut Positions — Six Interpretations
+  Type: verification-gap (VG)
+  Priority: Critical
+  Author: Humanitarians AI Incorporated
+  Date: 2026-06-06
+  Source: pantry/07-measurement-and-interpretations-cajal.md
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-07-02">
+  <title id="fig-title-07-02">Von Neumann Cut Positions — Six Interpretations</title>
+  <desc>Six equal-height rows, each showing the S-A-E-O chain. Each row places the von Neumann cut or special marker at a different position: Copenhagen between A and E, Many-worlds with no cut, Bohmian with particle marker below S, GRW/CSL with starburst on E, QBism between E and O, Consistent histories with spanning bracket.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics — Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="07-measurement-and-interpretations"
+      figure-number="02"
+      figure-title="Von Neumann Cut Positions — Six Interpretations"
+      figure-slug="interpretation-cut-positions"
+      figure-type="verification-gap"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/07-measurement-and-interpretations-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow-07-02" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="24" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e">Von Neumann Cut Positions — Six Interpretations</text>
+
+  <!-- Column headers -->
+  <text x="160" y="45" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">interpretation</text>
+  <text x="310" y="45" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">S</text>
+  <text x="400" y="45" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">A</text>
+  <text x="490" y="45" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">E</text>
+  <text x="580" y="45" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">O</text>
+
+  <!-- Helper macro: each row has 4 nodes at x=285,375,465,555 -->
+  <!-- Node width=46, height=30. Rows at y= 55, 118, 181, 244, 307, 370 -->
+  <!-- Row height=55, internal node top-offset=7 -->
+
+  <!-- ===== Row 1: Copenhagen ===== -->
+  <rect x="32" y="55" width="636" height="55" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.5"/>
+  <text x="160" y="78" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Copenhagen</text>
+  <text x="160" y="92" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">cut: A | E</text>
+  <!-- Node S -->
+  <rect x="285" y="66" width="46" height="30" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="308" y="86" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">S</text>
+  <!-- Arrow -->
+  <line x1="331" y1="81" x2="373" y2="81" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-07-02)"/>
+  <!-- Node A -->
+  <rect x="375" y="66" width="46" height="30" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="398" y="86" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">A</text>
+  <!-- Cut bar: dashed vertical between A and E -->
+  <line x1="445" y1="57" x2="445" y2="108" stroke="#ADADAD" stroke-width="2" stroke-dasharray="4 3"/>
+  <!-- Arrow -->
+  <line x1="421" y1="81" x2="463" y2="81" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-07-02)"/>
+  <!-- Node E -->
+  <rect x="465" y="66" width="46" height="30" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="488" y="86" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">E</text>
+  <!-- Arrow -->
+  <line x1="511" y1="81" x2="553" y2="81" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-07-02)"/>
+  <!-- Node O -->
+  <rect x="555" y="66" width="46" height="30" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="578" y="86" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">O</text>
+  <!-- Cut label -->
+  <text x="445" y="52" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="8" fill="#ADADAD">cut</text>
+
+  <!-- ===== Row 2: Many-worlds ===== -->
+  <rect x="32" y="110" width="636" height="55" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.5"/>
+  <text x="160" y="133" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Many-worlds</text>
+  <text x="160" y="147" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">no cut — all branches real</text>
+  <!-- Nodes with green outlines (all branches persist) -->
+  <rect x="285" y="121" width="46" height="30" fill="#FFFFFF" stroke="#787878" stroke-width="1.5"/>
+  <text x="308" y="141" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">S</text>
+  <line x1="331" y1="136" x2="373" y2="136" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-07-02)"/>
+  <rect x="375" y="121" width="46" height="30" fill="#FFFFFF" stroke="#787878" stroke-width="1.5"/>
+  <text x="398" y="141" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">A</text>
+  <line x1="421" y1="136" x2="463" y2="136" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-07-02)"/>
+  <rect x="465" y="121" width="46" height="30" fill="#FFFFFF" stroke="#787878" stroke-width="1.5"/>
+  <text x="488" y="141" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">E</text>
+  <line x1="511" y1="136" x2="553" y2="136" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-07-02)"/>
+  <rect x="555" y="121" width="46" height="30" fill="#FFFFFF" stroke="#787878" stroke-width="1.5"/>
+  <text x="578" y="141" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">O</text>
+
+  <!-- ===== Row 3: Bohmian ===== -->
+  <rect x="32" y="165" width="636" height="55" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.5"/>
+  <text x="160" y="188" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Bohmian</text>
+  <text x="160" y="202" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">no cut — definite particle position</text>
+  <rect x="285" y="176" width="46" height="30" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="308" y="196" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">S</text>
+  <!-- Particle position marker below S -->
+  <circle cx="308" cy="212" r="4" fill="#2a1a0e"/>
+  <line x1="308" y1="206" x2="308" y2="212" stroke="#2a1a0e" stroke-width="0.75" stroke-dasharray="2 2"/>
+  <line x1="331" y1="191" x2="373" y2="191" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-07-02)"/>
+  <rect x="375" y="176" width="46" height="30" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="398" y="196" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">A</text>
+  <line x1="421" y1="191" x2="463" y2="191" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-07-02)"/>
+  <rect x="465" y="176" width="46" height="30" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="488" y="196" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">E</text>
+  <line x1="511" y1="191" x2="553" y2="191" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-07-02)"/>
+  <rect x="555" y="176" width="46" height="30" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="578" y="196" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">O</text>
+
+  <!-- ===== Row 4: GRW/CSL ===== -->
+  <rect x="32" y="220" width="636" height="55" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.5"/>
+  <text x="160" y="243" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">GRW / CSL</text>
+  <text x="160" y="257" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">physical collapse at E node</text>
+  <rect x="285" y="231" width="46" height="30" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="308" y="251" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">S</text>
+  <line x1="331" y1="246" x2="373" y2="246" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-07-02)"/>
+  <rect x="375" y="231" width="46" height="30" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="398" y="251" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">A</text>
+  <line x1="421" y1="246" x2="463" y2="246" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-07-02)"/>
+  <!-- E node with starburst (GRW collapse event) -->
+  <rect x="465" y="231" width="46" height="30" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="488" y="251" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">E</text>
+  <!-- Starburst (star polygon) centered at E node -->
+  <polygon points="488,222 491,228 497,228 492,232 494,238 488,235 482,238 484,232 479,228 485,228"
+           fill="#C8860E" stroke="none"/>
+  <line x1="511" y1="246" x2="553" y2="246" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-07-02)"/>
+  <rect x="555" y="231" width="46" height="30" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="578" y="251" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">O</text>
+
+  <!-- ===== Row 5: QBism ===== -->
+  <rect x="32" y="275" width="636" height="55" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.5"/>
+  <text x="160" y="298" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">QBism</text>
+  <text x="160" y="312" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">cut: E | O (agent's experience)</text>
+  <rect x="285" y="286" width="46" height="30" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="308" y="306" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">S</text>
+  <line x1="331" y1="301" x2="373" y2="301" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-07-02)"/>
+  <rect x="375" y="286" width="46" height="30" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="398" y="306" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">A</text>
+  <line x1="421" y1="301" x2="463" y2="301" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-07-02)"/>
+  <rect x="465" y="286" width="46" height="30" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="488" y="306" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">E</text>
+  <!-- Cut bar: solid between E and O -->
+  <line x1="535" y1="277" x2="535" y2="328" stroke="#ADADAD" stroke-width="2"/>
+  <line x1="511" y1="301" x2="553" y2="301" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-07-02)"/>
+  <rect x="555" y="286" width="46" height="30" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="578" y="306" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">O</text>
+  <text x="535" y="274" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="8" fill="#ADADAD">cut</text>
+
+  <!-- ===== Row 6: Consistent histories ===== -->
+  <rect x="32" y="330" width="636" height="55" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.5"/>
+  <text x="160" y="353" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Consistent histories</text>
+  <text x="160" y="367" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">framework spans full chain</text>
+  <rect x="285" y="341" width="46" height="30" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="308" y="361" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">S</text>
+  <line x1="331" y1="356" x2="373" y2="356" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-07-02)"/>
+  <rect x="375" y="341" width="46" height="30" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="398" y="361" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">A</text>
+  <line x1="421" y1="356" x2="463" y2="356" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-07-02)"/>
+  <rect x="465" y="341" width="46" height="30" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="488" y="361" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">E</text>
+  <line x1="511" y1="356" x2="553" y2="356" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-07-02)"/>
+  <rect x="555" y="341" width="46" height="30" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="578" y="361" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">O</text>
+  <!-- Bracket spanning all four nodes -->
+  <line x1="285" y1="337" x2="601" y2="337" stroke="#2a1a0e" stroke-width="1.5"/>
+  <line x1="285" y1="337" x2="285" y2="333" stroke="#2a1a0e" stroke-width="1.5"/>
+  <line x1="601" y1="337" x2="601" y2="333" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="443" y="330" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#2a1a0e">framework choice</text>
+
+  <!-- Row separators -->
+  <line x1="270" y1="110" x2="636" y2="110" stroke="#D4D4D4" stroke-width="0.5"/>
+
+  <!-- Equal visual weight notice -->
+  <text x="350" y="400" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">All six rows shown at equal visual weight — no interpretation is privileged</text>
+
+</svg>

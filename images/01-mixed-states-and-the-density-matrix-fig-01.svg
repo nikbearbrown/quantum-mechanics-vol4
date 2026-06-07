@@ -1,0 +1,107 @@
+<!--
+  CAJAL SVG Generator — quantum-mechanics-vol4
+  Chapter: 01-mixed-states-and-the-density-matrix
+  Figure: 01
+  Title: Bloch ball cross-section: purity and the Bloch vector
+  Source: pantry/01-mixed-states-and-the-density-matrix-cajal.md
+  Generated: 2026-06-06
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-01">
+  <title id="fig-title-01">Bloch ball cross-section: purity and the Bloch vector</title>
+  <desc>A 2D equatorial cross-section of the Bloch ball showing pure states on the surface (|r|=1), the maximally mixed state at the center (|r|=0), and a generic interior mixed state with its Bloch vector r; purity equals 1 on the surface and 1/2 at the center.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="01-mixed-states-and-the-density-matrix"
+      figure-number="01"
+      figure-title="Bloch ball cross-section: purity and the Bloch vector"
+      figure-slug="bloch-ball-cross-section-purity"
+      figure-type="diagram"
+      priority="CRITICAL"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/01-mixed-states-and-the-density-matrix-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow-01" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arrow-bloch-01" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#C8102E"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Chart area background -->
+  <rect x="32" y="32" width="636" height="356" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Figure title -->
+  <text x="350" y="24" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Bloch ball cross-section — purity and the Bloch vector</text>
+
+  <!-- Bloch ball circle (equatorial cross-section), centered at 350,210, radius 150 -->
+  <circle cx="350" cy="210" r="150" fill="none" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Dashed z-axis (vertical) -->
+  <line x1="350" y1="50" x2="350" y2="370" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+
+  <!-- Dashed x-axis (horizontal) -->
+  <line x1="190" y1="210" x2="510" y2="210" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+
+  <!-- North pole |0⟩ — pure state surface point -->
+  <circle cx="350" cy="60" r="6" fill="#2a1a0e" stroke="none"/>
+  <!-- South pole |1⟩ — pure state surface point -->
+  <circle cx="350" cy="360" r="6" fill="#2a1a0e" stroke="none"/>
+
+  <!-- Maximally mixed center point ρ = I/2 -->
+  <circle cx="350" cy="210" r="7" fill="#C8102E" stroke="none"/>
+
+  <!-- Generic mixed-state point at ~55% radius, upper-right quadrant
+       r=0.55*150=82.5, angle=50° from z-axis: x=350+82.5*sin(50°), y=210-82.5*cos(50°) -->
+  <!-- sin(50°)≈0.766, cos(50°)≈0.643: x=350+63.2=413.2, y=210-53.0=157.0 -->
+  <circle cx="413" cy="157" r="6" fill="#787878" stroke="none"/>
+
+  <!-- Bloch vector r: from center to mixed state point -->
+  <line x1="350" y1="210" x2="408" y2="160" stroke="#C8102E" stroke-width="1.5" fill="none" marker-end="url(#arrow-bloch-01)"/>
+
+  <!-- Bracket showing |r| scale from center to boundary along radial direction -->
+  <!-- Radial direction at 50°: x2=350+150*sin(50°)=350+114.9=464.9, y2=210-150*cos(50°)=210-96.4=113.6 -->
+  <!-- Bracket: center to edge -->
+  <line x1="350" y1="210" x2="465" y2="114" stroke="#2a1a0e" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <!-- Bracket tick at center -->
+  <line x1="347" y1="212" x2="353" y2="208" stroke="#2a1a0e" stroke-width="1"/>
+  <!-- Bracket tick at edge -->
+  <line x1="460" y1="117" x2="470" y2="111" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Labels -->
+  <!-- |0⟩ label at north pole -->
+  <text x="362" y="58" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#2a1a0e">|0⟩</text>
+  <!-- |1⟩ label at south pole -->
+  <text x="362" y="368" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#2a1a0e">|1⟩</text>
+  <!-- r label on Bloch vector -->
+  <text x="372" y="178" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#C8102E" font-style="italic">r</text>
+  <!-- ρ = I/2 label -->
+  <text x="358" y="225" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">ρ=I/2</text>
+  <!-- |r|=0 at center, |r|=1 at surface labels along bracket -->
+  <text x="476" y="110" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#545454">|r|=1</text>
+  <text x="330" y="230" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#545454">|r|=0</text>
+
+  <!-- Purity annotation -->
+  <text x="350" y="400" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454" text-anchor="middle">Purity Tr(ρ²) = ½(1 + |r|²) — surface: 1, center: ½</text>
+
+  <!-- Pure state marker labels (x-axis intersections) -->
+  <text x="174" y="214" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle">|−⟩</text>
+  <text x="522" y="214" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle">|+⟩</text>
+
+  <!-- Legend -->
+  <circle cx="52" cy="348" r="5" fill="#2a1a0e"/>
+  <text x="62" y="352" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Pure state |r|=1</text>
+  <circle cx="52" cy="368" r="6" fill="#C8102E"/>
+  <text x="62" y="372" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Maximally mixed ρ=I/2</text>
+  <circle cx="226" cy="348" r="5" fill="#787878"/>
+  <text x="236" y="352" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Generic mixed state</text>
+</svg>

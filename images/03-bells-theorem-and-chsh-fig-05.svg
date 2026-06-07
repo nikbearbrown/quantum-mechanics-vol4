@@ -1,0 +1,98 @@
+<!--
+  CAJAL SVG Generator — quantum-mechanics-vol4
+  Chapter: 03-bells-theorem-and-chsh
+  Figure: 05
+  Title: Three interpretational exits from Bell's theorem
+  Source: pantry/03-bells-theorem-and-chsh-cajal.md
+  Generated: 2026-06-06
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-chsh-05">
+  <title id="fig-title-chsh-05">Three interpretational exits from Bell's theorem</title>
+  <desc>Branching tree diagram with root node representing Bell inequality violation, branching into three equal exits: give up realism (dashed box), give up locality (non-local arc), give up unique outcomes (Y-fork). No preferred interpretation.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="03-bells-theorem-and-chsh"
+      figure-number="05"
+      figure-title="Three interpretational exits from Bell's theorem"
+      figure-slug="bell-interpretational-exits"
+      figure-type="diagram"
+      priority="SUPPLEMENTARY"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/03-bells-theorem-and-chsh-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow-t05" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+  <rect x="32" y="32" width="636" height="356" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Figure title -->
+  <text x="350" y="24" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Three interpretational exits from Bell's theorem</text>
+
+  <!-- ROOT NODE — Bell inequality violated (experimental fact) -->
+  <circle cx="350" cy="100" r="36" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="350" y="95" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle" font-weight="700">Bell inequality</text>
+  <text x="350" y="109" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle" font-weight="700">violated</text>
+
+  <!-- Branch arrows from root to leaves (root bottom: 350, 136) -->
+  <!-- Left branch: 350,136 → 140,270 -->
+  <line x1="330" y1="133" x2="162" y2="252" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow-t05)"/>
+  <!-- Center branch: 350,136 → 350,268 -->
+  <line x1="350" y1="136" x2="350" y2="257" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow-t05)"/>
+  <!-- Right branch: 350,136 → 556,270 -->
+  <line x1="370" y1="133" x2="538" y2="252" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow-t05)"/>
+
+  <!-- ===== LEAF 1: Give up realism — dashed question-mark box ===== -->
+  <!-- Center: 140, 300 -->
+  <rect x="70" y="260" width="140" height="80" fill="#FFFFFF" stroke="#C8860E" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <!-- Question mark icon -->
+  <text x="140" y="293" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="28" fill="#C8860E" text-anchor="middle">?</text>
+  <text x="140" y="325" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle" font-weight="700">Give up realism</text>
+  <!-- Caption -->
+  <text x="140" y="360" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">Outcomes lack pre-existing</text>
+  <text x="140" y="372" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">values (Copenhagen / standard QM)</text>
+
+  <!-- ===== LEAF 2: Give up locality — non-local arc ===== -->
+  <!-- Center: 350, 300 -->
+  <rect x="278" y="260" width="144" height="80" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <!-- Two boxes connected by non-local arc -->
+  <rect x="294" y="274" width="36" height="26" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <rect x="370" y="274" width="36" height="26" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <!-- Thick non-local arc -->
+  <path d="M 330 287 Q 350 255 370 287" fill="none" stroke="#C8102E" stroke-width="2.5"/>
+  <text x="350" y="325" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle" font-weight="700">Give up locality</text>
+  <!-- Caption -->
+  <text x="350" y="360" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">Non-local correlations</text>
+  <text x="350" y="372" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">(Bohmian pilot-wave)</text>
+
+  <!-- ===== LEAF 3: Give up unique outcomes — Y-fork ===== -->
+  <!-- Center: 560, 300 -->
+  <rect x="489" y="260" width="142" height="80" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <!-- Y-fork icon: stem + two branches -->
+  <line x1="560" y1="295" x2="560" y2="275" stroke="#2a1a0e" stroke-width="2"/>
+  <line x1="560" y1="295" x2="540" y2="315" stroke="#2a1a0e" stroke-width="1.5"/>
+  <line x1="560" y1="295" x2="580" y2="315" stroke="#2a1a0e" stroke-width="1.5"/>
+  <circle cx="540" cy="315" r="3" fill="#2a1a0e"/>
+  <circle cx="580" cy="315" r="3" fill="#2a1a0e"/>
+  <text x="560" y="335" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle" font-weight="700">Give up unique outcomes</text>
+  <!-- Caption -->
+  <text x="560" y="360" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">All outcomes occur in</text>
+  <text x="560" y="372" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">separate branches (many-worlds)</text>
+
+  <!-- Branch labels on arrows -->
+  <text x="225" y="185" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle" transform="rotate(-35, 225, 185)">Exit 1</text>
+  <text x="362" y="195" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454">Exit 2</text>
+  <text x="470" y="185" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" transform="rotate(35, 470, 185)">Exit 3</text>
+
+  <!-- Equal branch indicator — small horizontal rule beneath root -->
+  <text x="350" y="410" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">All three exits are logically equivalent — Bell's theorem does not select among them</text>
+</svg>

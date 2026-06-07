@@ -1,0 +1,122 @@
+<!--
+  CAJAL SVG Generator — quantum-mechanics-vol4
+  Chapter: 02-composite-systems-and-entanglement
+  Figure: 04
+  Title: Entanglement entropy vs. Schmidt angle
+  Source: pantry/02-composite-systems-and-entanglement-cajal.md
+  Generated: 2026-06-06
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-04">
+  <title id="fig-title-04">Entanglement entropy vs. Schmidt angle</title>
+  <desc>Line chart of von Neumann entanglement entropy S_E as a function of Schmidt angle θ from 0 to π/4, rising from 0 (product state) to 1 ebit (Bell state), with the chapter worked-example partial state marked at θ≈0.524, S_E≈0.811.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="02-composite-systems-and-entanglement"
+      figure-number="04"
+      figure-title="Entanglement entropy vs. Schmidt angle"
+      figure-slug="entanglement-entropy-schmidt-angle"
+      figure-type="line-chart"
+      priority="IMPORTANT"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/02-composite-systems-and-entanglement-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow-04" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Figure title -->
+  <text x="350" y="24" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Entanglement entropy vs. Schmidt angle</text>
+
+  <!-- Chart area -->
+  <rect x="80" y="40" width="560" height="340" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Grid lines (y-axis) -->
+  <!-- y = 0.5 → svg y = 210 -->
+  <line x1="80" y1="210" x2="640" y2="210" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <!-- y = 1.0 → svg y = 40 -->
+  <line x1="80" y1="40" x2="640" y2="40" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+
+  <!-- Reference horizontal at S_E = 1 -->
+  <line x1="80" y1="40" x2="640" y2="40" stroke="#ADADAD" stroke-width="1" stroke-dasharray="6 3"/>
+
+  <!-- Axes -->
+  <!-- x-axis -->
+  <line x1="80" y1="380" x2="650" y2="380" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-04)"/>
+  <!-- y-axis -->
+  <line x1="80" y1="390" x2="80" y2="30" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-04)"/>
+
+  <!-- Axis ticks: x -->
+  <!-- x=80 (θ=0) -->
+  <line x1="80" y1="380" x2="80" y2="386" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="80" y="398" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#545454" text-anchor="middle">0</text>
+  <!-- x=360 (θ=π/8) -->
+  <line x1="360" y1="380" x2="360" y2="386" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="360" y="398" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#545454" text-anchor="middle">π/8</text>
+  <!-- x=640 (θ=π/4) -->
+  <line x1="640" y1="380" x2="640" y2="386" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="640" y="398" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#545454" text-anchor="middle">π/4</text>
+
+  <!-- Axis ticks: y -->
+  <!-- y=380 (S_E=0) -->
+  <line x1="80" y1="380" x2="74" y2="380" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="70" y="384" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#545454" text-anchor="end">0</text>
+  <!-- y=210 (S_E=0.5) -->
+  <line x1="80" y1="210" x2="74" y2="210" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="70" y="214" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#545454" text-anchor="end">0.5</text>
+  <!-- y=40 (S_E=1) -->
+  <line x1="80" y1="40" x2="74" y2="40" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="70" y="44" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#545454" text-anchor="end">1</text>
+
+  <!-- Axis labels -->
+  <text x="365" y="415" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#545454" text-anchor="middle">Schmidt angle θ (radians)</text>
+  <text x="22" y="210" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#545454" text-anchor="middle" transform="rotate(-90, 22, 210)">S_E (ebits)</text>
+
+  <!-- Entropy curve — computed via python3 -->
+  <polyline points="80.00,380.00 87.00,379.52 94.00,378.32 101.00,376.58 108.00,374.35 115.00,371.70 122.00,368.67 129.00,365.30 136.00,361.62 143.00,357.65 150.00,353.42 157.00,348.95 164.00,344.25 171.00,339.36 178.00,334.27 185.00,329.02 192.00,323.61 199.00,318.05 206.00,312.37 213.00,306.57 220.00,300.67 227.00,294.67 234.00,288.59 241.00,282.44 248.00,276.23 255.00,269.97 262.00,263.66 269.00,257.33 276.00,250.97 283.00,244.59 290.00,238.21 297.00,231.83 304.00,225.46 311.00,219.10 318.00,212.77 325.00,206.47 332.00,200.22 339.00,194.00 346.00,187.84 353.00,181.74 360.00,175.70 367.00,169.74 374.00,163.85 381.00,158.04 388.00,152.32 395.00,146.70 402.00,141.18 409.00,135.76 416.00,130.45 423.00,125.25 430.00,120.17 437.00,115.22 444.00,110.39 451.00,105.70 458.00,101.14 465.00,96.72 472.00,92.45 479.00,88.32 486.00,84.34 493.00,80.52 500.00,76.85 507.00,73.34 514.00,70.00 521.00,66.82 528.00,63.81 535.00,60.97 542.00,58.30 549.00,55.81 556.00,53.49 563.00,51.35 570.00,49.39 577.00,47.62 584.00,46.03 591.00,44.62 598.00,43.40 605.00,42.36 612.00,41.51 619.00,40.85 626.00,40.38 633.00,40.09 640.00,40.00"
+        fill="none" stroke="#C8102E" stroke-width="2"/>
+
+  <!-- Key point: Product state (θ=0, S_E=0) -->
+  <circle cx="80" cy="380" r="6" fill="#2a1a0e" stroke="#FFFFFF" stroke-width="1.5"/>
+
+  <!-- Key point: Partial entanglement (θ≈0.524, S_E≈0.811) — svg coords (453.3, 104.2) -->
+  <!-- theta_partial = 0.5236 → x = 80 + (0.5236/0.7854)*560 = 80 + 373.1 = 453.1 -->
+  <!-- se_partial = 0.8113 → y = 380 - 0.8113*340 = 380 - 275.8 = 104.2 -->
+  <circle cx="453" cy="104" r="6" fill="#787878" stroke="#FFFFFF" stroke-width="1.5"/>
+  <!-- Annotation line -->
+  <line x1="453" y1="104" x2="490" y2="80" stroke="#545454" stroke-width="0.75"/>
+  <text x="493" y="78" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">λ₁=¾, λ₂=¼</text>
+  <text x="493" y="90" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454">S_E≈0.811</text>
+
+  <!-- Key point: Bell state (θ=π/4, S_E=1) -->
+  <circle cx="640" cy="40" r="6" fill="#C8102E" stroke="#FFFFFF" stroke-width="1.5"/>
+  <!-- Bell state label -->
+  <line x1="640" y1="40" x2="606" y2="62" stroke="#545454" stroke-width="0.75"/>
+  <text x="520" y="72" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Bell state |Φ⁺⟩</text>
+
+  <!-- Product state label -->
+  <line x1="80" y1="380" x2="120" y2="358" stroke="#545454" stroke-width="0.75"/>
+  <text x="122" y="356" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Product state</text>
+
+  <!-- Reference line label -->
+  <text x="645" y="44" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#ADADAD">1 ebit</text>
+
+  <!-- Legend -->
+  <circle cx="90" cy="58" r="5" fill="#C8102E"/>
+  <text x="100" y="62" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">S_E(θ) = −cos²θ log₂cos²θ − sin²θ log₂sin²θ</text>
+  <circle cx="90" cy="76" r="5" fill="#2a1a0e" stroke="#FFFFFF" stroke-width="1"/>
+  <text x="100" y="80" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Product state</text>
+  <circle cx="200" cy="76" r="5" fill="#787878" stroke="#FFFFFF" stroke-width="1"/>
+  <text x="210" y="80" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Worked example</text>
+  <circle cx="330" cy="76" r="5" fill="#C8102E" stroke="#FFFFFF" stroke-width="1"/>
+  <text x="340" y="80" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Bell state</text>
+</svg>

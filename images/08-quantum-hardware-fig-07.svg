@@ -1,0 +1,170 @@
+<!--
+  CAJAL SVG Figure
+  Book: Quantum Mechanics — Information, Measurement, and Open Systems
+  Book-slug: quantum-mechanics-vol4
+  Chapter: 08-quantum-hardware
+  Figure: 07
+  Title: NISQ Phase Space — Gate Fidelity vs Physical Qubit Count
+  Type: quantitative-chart (PQ)
+  Priority: Supplementary
+  Author: Humanitarians AI Incorporated
+  Date: 2026-06-06
+  Source: pantry/08-quantum-hardware-cajal.md
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-08-07">
+  <title id="fig-title-08-07">NISQ Phase Space — Two-Qubit Gate Fidelity vs Physical Qubit Count</title>
+  <desc>Scatter diagram with log x-axis (qubit count 1 to 10000) and linear y-axis (gate fidelity 0.90 to 1.00). Five platform markers positioned at representative mid-2026 coordinates. Fault-tolerance threshold horizontal line at 0.99. NISQ lower boundary vertical line at 50 qubits. Four quadrant zones labeled.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics — Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="08-quantum-hardware"
+      figure-number="07"
+      figure-title="NISQ Phase Space — Gate Fidelity vs Physical Qubit Count"
+      figure-slug="nisq-phase-space"
+      figure-type="quantitative-chart"
+      priority="Supplementary"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/08-quantum-hardware-cajal.md"/>
+  </metadata>
+
+  <!-- Canvas -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="22" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="13" font-weight="400" fill="#2a1a0e">NISQ Phase Space — Two-Qubit Gate Fidelity vs Physical Qubit Count</text>
+
+  <!-- Chart area: x: 75 to 630, y: 38 to 310 -->
+  <!-- x-axis: log scale 1 to 10^4. log range 0 to 4, span=4 -->
+  <!-- x_svg = 75 + (log10(qubits)/4) * 555 -->
+  <!-- y-axis: linear 0.90 to 1.00, range 0.10 -->
+  <!-- y_svg = 310 - ((fidelity - 0.90)/0.10) * 272 -->
+
+  <!-- Quadrant background fills -->
+  <!-- NISQ zone: x > log10(50)=1.699 → x_svg=75+(1.699/4)*555=75+235=310; y: 0.90 to 0.99 -->
+  <!-- y: threshold at 0.99 → y_svg=310-((0.99-0.90)/0.10)*272=310-0.9*272=310-244.8=65.2 -->
+  <!-- NISQ zone: x=310..630, y=65..310 -->
+  <rect x="310" y="65" width="320" height="245" fill="#C8860E" fill-opacity="0.07"/>
+  <!-- Fault-tolerant target zone: x>310, y<65 -->
+  <rect x="310" y="38" width="320" height="27" fill="#787878" fill-opacity="0.10"/>
+
+  <rect x="75" y="38" width="555" height="272" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75" fill-opacity="0.3"/>
+
+  <!-- X-axis ticks: 1, 10, 100, 1000, 10000 -->
+  <!-- log 0→75, log 1→213.75, log 2→352.5, log 3→491.25, log 4→630 -->
+  <line x1="75" y1="310" x2="75" y2="315" stroke="#545454" stroke-width="0.75"/>
+  <text x="75" y="326" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">1</text>
+  <line x1="214" y1="310" x2="214" y2="315" stroke="#545454" stroke-width="0.75"/>
+  <text x="214" y="326" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">10</text>
+  <line x1="353" y1="310" x2="353" y2="315" stroke="#545454" stroke-width="0.75"/>
+  <text x="353" y="326" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">100</text>
+  <line x1="491" y1="310" x2="491" y2="315" stroke="#545454" stroke-width="0.75"/>
+  <text x="491" y="326" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">1,000</text>
+  <line x1="630" y1="310" x2="630" y2="315" stroke="#545454" stroke-width="0.75"/>
+  <text x="630" y="326" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">10,000</text>
+
+  <!-- X gridlines -->
+  <line x1="214" y1="38" x2="214" y2="310" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="353" y1="38" x2="353" y2="310" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="491" y1="38" x2="491" y2="310" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+
+  <!-- Y-axis ticks: 0.90, 0.92, 0.94, 0.96, 0.98, 0.99, 1.00 -->
+  <!-- y_svg = 310 - ((f-0.90)/0.10)*272 -->
+  <!-- 0.90→310, 0.92→255.6, 0.94→201.2, 0.96→146.8, 0.98→92.4, 0.99→65.2, 1.00→38 -->
+  <line x1="69" y1="310" x2="75" y2="310" stroke="#545454" stroke-width="0.75"/>
+  <text x="65" y="313" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">0.90</text>
+  <line x1="69" y1="256" x2="75" y2="256" stroke="#545454" stroke-width="0.75"/>
+  <text x="65" y="259" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">0.92</text>
+  <line x1="69" y1="201" x2="75" y2="201" stroke="#545454" stroke-width="0.75"/>
+  <text x="65" y="204" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">0.94</text>
+  <line x1="69" y1="147" x2="75" y2="147" stroke="#545454" stroke-width="0.75"/>
+  <text x="65" y="150" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">0.96</text>
+  <line x1="69" y1="92" x2="75" y2="92" stroke="#545454" stroke-width="0.75"/>
+  <text x="65" y="95" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">0.98</text>
+  <line x1="69" y1="65" x2="75" y2="65" stroke="#545454" stroke-width="0.75"/>
+  <text x="65" y="68" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">0.99</text>
+  <line x1="69" y1="38" x2="75" y2="38" stroke="#545454" stroke-width="0.75"/>
+  <text x="65" y="41" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">1.00</text>
+
+  <!-- Y gridlines -->
+  <line x1="75" y1="256" x2="630" y2="256" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="75" y1="201" x2="630" y2="201" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="75" y1="147" x2="630" y2="147" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="75" y1="92" x2="630" y2="92" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+
+  <!-- Axis labels -->
+  <text x="352" y="342" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">physical qubit count (log scale)</text>
+  <text x="28" y="174" text-anchor="middle" transform="rotate(-90,28,174)" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">two-qubit gate fidelity</text>
+
+  <!-- Y-axis break marker at 0.90 -->
+  <line x1="72" y1="312" x2="78" y2="308" stroke="#545454" stroke-width="1"/>
+  <line x1="72" y1="316" x2="78" y2="312" stroke="#545454" stroke-width="1"/>
+  <text x="65" y="328" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="8" fill="#545454">axis break</text>
+
+  <!-- Fault-tolerance threshold: horizontal dashed line at y=0.99 → y_svg=65 -->
+  <line x1="75" y1="65" x2="630" y2="65" stroke="#C8102E" stroke-width="1.5" stroke-dasharray="6 3"/>
+  <text x="80" y="60" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8102E">fault-tolerance threshold (~0.99)</text>
+
+  <!-- NISQ lower boundary: vertical dashed line at 50 qubits → log10(50)=1.699 → x_svg=75+(1.699/4)*555=310 -->
+  <line x1="310" y1="38" x2="310" y2="310" stroke="#545454" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="313" y="50" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">NISQ boundary (~50 qubits)</text>
+
+  <!-- Quadrant labels -->
+  <text x="190" y="200" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">pre-NISQ</text>
+  <text x="190" y="212" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">small scale</text>
+  <text x="465" y="200" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8860E">NISQ</text>
+  <text x="465" y="212" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8860E">regime</text>
+  <text x="465" y="55" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#787878">fault-tolerant target</text>
+
+  <!-- Platform markers -->
+  <!-- Superconducting: 100 qubits, 0.993 fidelity
+       x = 75+(log10(100)/4)*555 = 75+(2/4)*555 = 75+277.5 = 352.5
+       y = 310-((0.993-0.90)/0.10)*272 = 310-0.93*272 = 310-252.96 = 57 -->
+  <rect x="347" y="51" width="11" height="11" fill="#2a1a0e"/>
+  <text x="362" y="62" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">SC</text>
+
+  <!-- Trapped ion: 50 qubits, 0.9992 fidelity
+       x = 75+(log10(50)/4)*555 = 75+(1.699/4)*555 = 310
+       y = 310-((0.9992-0.90)/0.10)*272 = 310-0.992*272 = 310-269.8 = 40.2 -->
+  <circle cx="310" cy="40" r="7" fill="#C8102E"/>
+  <text x="320" y="44" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8102E">TI</text>
+
+  <!-- Neutral atom: 300 qubits, 0.995 fidelity
+       x = 75+(log10(300)/4)*555 = 75+(2.477/4)*555 = 75+343.2 = 418
+       y = 310-((0.995-0.90)/0.10)*272 = 310-0.95*272 = 310-258.4 = 51.6 -->
+  <polygon points="418,43 425,57 411,57" fill="#787878"/>
+  <text x="430" y="57" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">NA</text>
+
+  <!-- Spin qubit: 12 qubits, 0.99 fidelity
+       x = 75+(log10(12)/4)*555 = 75+(1.079/4)*555 = 75+149.7 = 225
+       y = 310-((0.99-0.90)/0.10)*272 = 310-0.9*272 = 310-244.8 = 65.2 -->
+  <polygon points="221,61 225,67 229,61 225,55" fill="#ADADAD"/>
+  <text x="232" y="66" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">SQ</text>
+
+  <!-- NV center: 2 qubits, 0.90 fidelity
+       x = 75+(log10(2)/4)*555 = 75+(0.301/4)*555 = 75+41.8 = 116.8
+       y = 310-((0.90-0.90)/0.10)*272 = 310 (at axis bottom) -->
+  <polygon points="113,305 117,295 121,305 117,315" fill="#545454" opacity="0.7"/>
+  <text x="126" y="308" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">NV</text>
+
+  <!-- Axes -->
+  <line x1="75" y1="38" x2="75" y2="310" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="75" y1="310" x2="630" y2="310" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Legend -->
+  <rect x="75" y="355" width="580" height="50" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.5"/>
+  <rect x="88" y="363" width="9" height="9" fill="#2a1a0e"/>
+  <text x="101" y="371" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#2a1a0e">SC = Superconducting (100 q / 0.993)</text>
+  <circle cx="255" cy="367" r="5" fill="#C8102E"/>
+  <text x="264" y="371" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#2a1a0e">TI = Trapped ion (50 q / 0.9992)</text>
+  <polygon points="410,363 414,372 406,372" fill="#787878"/>
+  <text x="419" y="371" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#2a1a0e">NA = Neutral atom (300 q / 0.995)</text>
+  <polygon points="86,386 90,380 94,386 90,392" fill="#ADADAD"/>
+  <text x="99" y="388" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#2a1a0e">SQ = Spin qubit (12 q / 0.99)</text>
+  <polygon points="255,383 259,375 263,383 259,391" fill="#545454" opacity="0.7"/>
+  <text x="268" y="388" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#2a1a0e">NV = NV center (2 q / 0.90)</text>
+  <text x="430" y="388" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">Representative mid-2026 values</text>
+
+</svg>

@@ -1,0 +1,193 @@
+<!--
+  CAJAL SVG Figure
+  Book: Quantum Mechanics — Information, Measurement, and Open Systems
+  Book-slug: quantum-mechanics-vol4
+  Chapter: 08-quantum-hardware
+  Figure: 04
+  Title: Platform Comparison — T1, T2, and Gate Figure of Merit on Log Axes
+  Type: quantitative-chart (PQ)
+  Priority: Critical
+  Author: Humanitarians AI Incorporated
+  Date: 2026-06-06
+  Source: pantry/08-quantum-hardware-cajal.md
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-08-04">
+  <title id="fig-title-08-04">Quantum Hardware Platform Comparison — T1, T2, and N-gates on Logarithmic Axes</title>
+  <desc>Two-panel grouped horizontal bar chart. Left panel shows T1 and T2 coherence times on a log scale for five platforms. Right panel shows N-gates (coherence cycles per two-qubit gate) on a log scale. Platforms sorted by T2: trapped ion and neutral atom at top, NV center and spin qubit at bottom.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics — Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="08-quantum-hardware"
+      figure-number="04"
+      figure-title="Platform Comparison — T1, T2, and Gate Figure of Merit"
+      figure-slug="platform-t1-t2-ngates"
+      figure-type="quantitative-chart"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/08-quantum-hardware-cajal.md"/>
+  </metadata>
+
+  <!-- Canvas -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="22" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="13" font-weight="400" fill="#2a1a0e">Platform Comparison — T&#x2081;, T&#x2082;, and N&#x1d4d2;&#x2090;&#x209c;&#x2091;&#x209b; (log scale)</text>
+
+  <!-- ===== LEFT PANEL: T1/T2 bars ===== -->
+  <!-- Chart: x: 155 to 420, y: 38 to 305 -->
+  <!-- x-axis: log ns from 10^5 to 10^12 (100 µs to 1000 s) -->
+  <!-- log10 range: 5 to 12, span=7 -->
+  <!-- x_svg = 155 + ((log10(val_ns) - 5) / 7) * 265 -->
+
+  <rect x="155" y="38" width="265" height="267" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="287" y="30" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">T&#x2081; and T&#x2082; (nanoseconds)</text>
+
+  <!-- Left panel x-axis: 10^5 to 10^12 ns -->
+  <!-- positions: log5→155, log6→193, log7→231, log8→268, log9→306, log10→344, log11→382, log12→420 -->
+  <line x1="155" y1="305" x2="155" y2="310" stroke="#545454" stroke-width="0.75"/>
+  <text x="155" y="322" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="8" fill="#545454">10&#x2075;</text>
+  <text x="155" y="331" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="7" fill="#545454">100&#x3bc;s</text>
+  <line x1="193" y1="305" x2="193" y2="310" stroke="#545454" stroke-width="0.75"/>
+  <text x="193" y="322" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="8" fill="#545454">10&#x2076;</text>
+  <text x="193" y="331" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="7" fill="#545454">1ms</text>
+  <line x1="231" y1="305" x2="231" y2="310" stroke="#545454" stroke-width="0.75"/>
+  <text x="231" y="322" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="8" fill="#545454">10&#x2077;</text>
+  <text x="231" y="331" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="7" fill="#545454">10ms</text>
+  <line x1="268" y1="305" x2="268" y2="310" stroke="#545454" stroke-width="0.75"/>
+  <text x="268" y="322" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="8" fill="#545454">10&#x2078;</text>
+  <text x="268" y="331" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="7" fill="#545454">100ms</text>
+  <line x1="306" y1="305" x2="306" y2="310" stroke="#545454" stroke-width="0.75"/>
+  <text x="306" y="322" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="8" fill="#545454">10&#x2079;</text>
+  <text x="306" y="331" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="7" fill="#545454">1s</text>
+  <line x1="344" y1="305" x2="344" y2="310" stroke="#545454" stroke-width="0.75"/>
+  <text x="344" y="322" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="8" fill="#545454">10&#xb9;&#x2070;</text>
+  <text x="344" y="331" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="7" fill="#545454">10s</text>
+  <line x1="382" y1="305" x2="382" y2="310" stroke="#545454" stroke-width="0.75"/>
+  <text x="382" y="322" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="8" fill="#545454">10&#xb9;&#xb9;</text>
+  <line x1="420" y1="305" x2="420" y2="310" stroke="#545454" stroke-width="0.75"/>
+  <text x="420" y="322" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="8" fill="#545454">10&#xb9;&#xb2;</text>
+
+  <!-- Gridlines -->
+  <line x1="193" y1="38" x2="193" y2="305" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="231" y1="38" x2="231" y2="305" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="268" y1="38" x2="268" y2="305" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="306" y1="38" x2="306" y2="305" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="344" y1="38" x2="344" y2="305" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="382" y1="38" x2="382" y2="305" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+
+  <!-- Row separator lines -->
+  <line x1="40" y1="90" x2="420" y2="90" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="40" y1="144" x2="420" y2="144" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="40" y1="198" x2="420" y2="198" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="40" y1="252" x2="420" y2="252" stroke="#D4D4D4" stroke-width="0.5"/>
+
+  <!-- Platform labels (left of chart) -->
+  <text x="150" y="60" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">Trapped</text>
+  <text x="150" y="72" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">ion</text>
+  <text x="150" y="114" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">Neutral</text>
+  <text x="150" y="126" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">atom</text>
+  <text x="150" y="169" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">Supercond.</text>
+  <text x="150" y="181" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">transmon</text>
+  <text x="150" y="224" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">Spin</text>
+  <text x="150" y="236" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">qubit</text>
+  <text x="150" y="278" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">NV</text>
+  <text x="150" y="290" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">center</text>
+
+  <!-- Row 1: Trapped ion — T1=T2 ~ 10^12 ns → width=(12-5)/7*265=265 -->
+  <rect x="155" y="44" width="265" height="16" fill="#2a1a0e"/>
+  <!-- T2 ~ 3*10^10 ns → log=10.477 → width=(10.477-5)/7*265=207 -->
+  <rect x="155" y="64" width="207" height="16" fill="#C8102E"/>
+
+  <!-- Row 2: Neutral atom — T1=T2 ~ 10^12 ns → width=265 -->
+  <rect x="155" y="98" width="265" height="16" fill="#2a1a0e"/>
+  <!-- T2 ~ 5*10^11 ns → log=11.699 → width=(11.699-5)/7*265=253 -->
+  <rect x="155" y="118" width="253" height="16" fill="#C8102E"/>
+
+  <!-- Row 3: Superconducting — T1=5*10^8 ns log=8.699→w=(8.699-5)/7*265=140 -->
+  <rect x="155" y="152" width="140" height="16" fill="#2a1a0e"/>
+  <!-- T2=4*10^8 ns log=8.602→w=(8.602-5)/7*265=136 -->
+  <rect x="155" y="172" width="136" height="16" fill="#C8102E"/>
+
+  <!-- Row 4: Spin qubit — T1=10^7 ns log=7→w=(7-5)/7*265=75.7 -->
+  <rect x="155" y="206" width="76" height="16" fill="#2a1a0e"/>
+  <!-- T2=10^6 ns log=6→w=(6-5)/7*265=37.9 -->
+  <rect x="155" y="226" width="38" height="16" fill="#C8102E"/>
+
+  <!-- Row 5: NV center — T1=3*10^6 ns log=6.477→w=(6.477-5)/7*265=55.9 -->
+  <rect x="155" y="260" width="56" height="16" fill="#2a1a0e"/>
+  <!-- T2=10^6 ns log=6→w=38 -->
+  <rect x="155" y="280" width="38" height="16" fill="#C8102E"/>
+
+  <!-- Axes for left panel -->
+  <line x1="155" y1="38" x2="155" y2="305" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="155" y1="305" x2="420" y2="305" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- ===== RIGHT PANEL: N_gates ===== -->
+  <!-- Chart: x: 450 to 665, y: 38 to 305 -->
+  <!-- x-axis: log from 10^1 to 10^7, span=6 decades -->
+  <!-- x_svg = 450 + ((log10(val) - 1) / 6) * 215 -->
+
+  <rect x="450" y="38" width="215" height="267" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="557" y="30" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">N&#x1d4d2;&#x2090;&#x209c;&#x2091;&#x209b; = T&#x2082;/t&#x1d4d2;&#x2090;&#x209c;&#x2091;</text>
+
+  <!-- X ticks: 10^1 to 10^7 -->
+  <!-- positions: log1→450, log2→486, log3→521.7, log4→557.3, log5→593, log6→629, log7→665 -->
+  <line x1="450" y1="305" x2="450" y2="310" stroke="#545454" stroke-width="0.75"/>
+  <text x="450" y="320" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="8" fill="#545454">10</text>
+  <line x1="486" y1="305" x2="486" y2="310" stroke="#545454" stroke-width="0.75"/>
+  <text x="486" y="320" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="8" fill="#545454">10&#xb2;</text>
+  <line x1="522" y1="305" x2="522" y2="310" stroke="#545454" stroke-width="0.75"/>
+  <text x="522" y="320" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="8" fill="#545454">10&#xb3;</text>
+  <line x1="557" y1="305" x2="557" y2="310" stroke="#545454" stroke-width="0.75"/>
+  <text x="557" y="320" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="8" fill="#545454">10&#x2074;</text>
+  <line x1="593" y1="305" x2="593" y2="310" stroke="#545454" stroke-width="0.75"/>
+  <text x="593" y="320" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="8" fill="#545454">10&#x2075;</text>
+  <line x1="629" y1="305" x2="629" y2="310" stroke="#545454" stroke-width="0.75"/>
+  <text x="629" y="320" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="8" fill="#545454">10&#x2076;</text>
+  <line x1="665" y1="305" x2="665" y2="310" stroke="#545454" stroke-width="0.75"/>
+  <text x="665" y="320" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="8" fill="#545454">10&#x2077;</text>
+
+  <!-- Gridlines -->
+  <line x1="486" y1="38" x2="486" y2="305" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="522" y1="38" x2="522" y2="305" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="557" y1="38" x2="557" y2="305" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="593" y1="38" x2="593" y2="305" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="629" y1="38" x2="629" y2="305" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+
+  <!-- Row separator lines right panel -->
+  <line x1="450" y1="90" x2="665" y2="90" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="450" y1="144" x2="665" y2="144" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="450" y1="198" x2="665" y2="198" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="450" y1="252" x2="665" y2="252" stroke="#D4D4D4" stroke-width="0.5"/>
+
+  <!-- N_gates bars (single bar per platform, centered in row) -->
+  <!-- Row 1: Trapped ion ~15000 → log=4.18 → w=(4.18-1)/6*215=113.8 -->
+  <rect x="450" y="54" width="114" height="26" fill="#787878"/>
+  <!-- Row 2: Neutral atom ~750000 → log=5.875 → w=(5.875-1)/6*215=174.6 -->
+  <rect x="450" y="108" width="175" height="26" fill="#787878"/>
+  <!-- Row 3: Superconducting ~7000 → log=3.845 → w=(3.845-1)/6*215=101.9 -->
+  <rect x="450" y="162" width="102" height="26" fill="#787878"/>
+  <!-- Row 4: Spin qubit ~10000 → log=4 → w=(4-1)/6*215=107.5 -->
+  <rect x="450" y="216" width="108" height="26" fill="#787878"/>
+  <!-- Row 5: NV center ~5 → log=0.7 → w=(0.7-1)/6*215 < 0, so very small ~5 px -->
+  <rect x="450" y="270" width="8" height="26" fill="#787878"/>
+
+  <!-- Axes for right panel -->
+  <line x1="450" y1="38" x2="450" y2="305" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="450" y1="305" x2="665" y2="305" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Legend -->
+  <rect x="155" y="345" width="390" height="32" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.5"/>
+  <rect x="168" y="353" width="30" height="12" fill="#2a1a0e"/>
+  <text x="204" y="363" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">T&#x2081; (energy relaxation)</text>
+  <rect x="310" y="353" width="30" height="12" fill="#C8102E"/>
+  <text x="346" y="363" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">T&#x2082; (coherence)</text>
+  <rect x="455" y="353" width="30" height="12" fill="#787878"/>
+  <text x="491" y="363" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">N&#x1d4d2;&#x2090;&#x209c;&#x2091;&#x209b;</text>
+
+  <text x="350" y="395" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">Representative order-of-magnitude values, ~2025–2026. Photonic platform omitted (gate time not directly comparable).</text>
+
+</svg>

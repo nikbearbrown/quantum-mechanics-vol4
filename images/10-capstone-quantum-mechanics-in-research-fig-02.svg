@@ -1,0 +1,135 @@
+<!--
+  CAJAL SVG Figure
+  Book: Quantum Mechanics — Information, Measurement, and Open Systems
+  Book-slug: quantum-mechanics-vol4
+  Chapter: 10-capstone-quantum-mechanics-in-research
+  Figure: 02
+  Title: Paper-Reading Triage Framework — Seven-Step Flowchart
+  Type: mechanism-chart (MC)
+  Priority: Critical
+  Author: Humanitarians AI Incorporated
+  Date: 2026-06-06
+  Source: pantry/10-capstone-quantum-mechanics-in-research-cajal.md
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-10-02">
+  <title id="fig-title-10-02">Paper-Reading Triage Framework — Seven-Step Flowchart</title>
+  <desc>Vertical seven-step flowchart. Steps 1-4 in dark ink nodes represent information-gathering: identify problem class, locate central claim, identify Hamiltonian, identify observable. Steps 5-7 in red outline nodes represent verification: check against theory, assess statistical strength, read honesty disclaimer. A decision diamond after step 5 branches to continue (downward) or loop back to step 3 (disagreement path).</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics — Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="10-capstone-quantum-mechanics-in-research"
+      figure-number="02"
+      figure-title="Paper-Reading Triage Framework — Seven-Step Flowchart"
+      figure-slug="paper-reading-flowchart"
+      figure-type="mechanism-chart"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/10-capstone-quantum-mechanics-in-research-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow-10-02" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arrow-green-10-02" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#787878"/>
+    </marker>
+    <marker id="arrow-red-10-02" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#C8102E"/>
+    </marker>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="22" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e">Paper-Reading Triage Framework — Seven Steps</text>
+
+  <!-- Phase divider line between steps 4 and 5 -->
+  <line x1="210" y1="250" x2="490" y2="250" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <text x="350" y="247" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">information gathering &#x2191; | &#x2193; verification</text>
+
+  <!-- === Information gathering phase: Steps 1-4 === -->
+  <!-- Step 1: y=40-80 -->
+  <rect x="210" y="35" width="280" height="38" fill="#2a1a0e" stroke="none"/>
+  <text x="350" y="51" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#FFFFFF">1. Identify problem class</text>
+  <text x="350" y="66" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#D4D4D4">Bell test / QEC / sensing / computation?</text>
+  <line x1="350" y1="73" x2="350" y2="88" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-10-02)"/>
+
+  <!-- Step 2: y=90-130 -->
+  <rect x="210" y="90" width="280" height="38" fill="#2a1a0e" stroke="none"/>
+  <text x="350" y="106" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#FFFFFF">2. Locate the central quantitative claim</text>
+  <text x="350" y="121" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#D4D4D4">abstract + figure captions</text>
+  <line x1="350" y1="128" x2="350" y2="143" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-10-02)"/>
+
+  <!-- Step 3: y=145-185 (target of loop-back) -->
+  <rect x="210" y="145" width="280" height="38" fill="#2a1a0e" stroke="none"/>
+  <text x="350" y="161" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#FFFFFF">3. Identify system Hamiltonian</text>
+  <text x="350" y="176" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#D4D4D4">what degrees of freedom, what couplings?</text>
+  <line x1="350" y1="183" x2="350" y2="198" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-10-02)"/>
+
+  <!-- Step 4: y=200-240 -->
+  <rect x="210" y="200" width="280" height="38" fill="#2a1a0e" stroke="none"/>
+  <text x="350" y="216" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#FFFFFF">4. Identify observable and measurement basis</text>
+  <text x="350" y="231" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#D4D4D4">what is measured, in what basis?</text>
+  <line x1="350" y1="238" x2="350" y2="258" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-10-02)"/>
+
+  <!-- === Verification phase: Steps 5-7 === -->
+
+  <!-- Step 5: y=260-300 -->
+  <rect x="210" y="260" width="280" height="38" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="350" y="276" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">5. Check result against theory</text>
+  <text x="350" y="291" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">does p&#x1d39; suppression match code distance scaling?</text>
+
+  <!-- Decision diamond after step 5 -->
+  <line x1="350" y1="298" x2="350" y2="313" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-10-02)"/>
+  <!-- Diamond: center (350,328), width 80, height 30 -->
+  <polygon points="350,313 390,328 350,343 310,328" fill="#C8860E" stroke="none"/>
+  <text x="350" y="332" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#FFFFFF">agrees?</text>
+
+  <!-- Agreement: downward to step 6 -->
+  <line x1="350" y1="343" x2="350" y2="358" stroke="#787878" stroke-width="1" marker-end="url(#arrow-green-10-02)"/>
+  <text x="356" y="352" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#787878">yes</text>
+
+  <!-- Disagreement: rightward then upward loop back to step 3 -->
+  <line x1="390" y1="328" x2="510" y2="328" stroke="#C8102E" stroke-width="1"/>
+  <line x1="510" y1="328" x2="510" y2="164" stroke="#C8102E" stroke-width="1"/>
+  <line x1="510" y1="164" x2="492" y2="164" stroke="#C8102E" stroke-width="1" marker-end="url(#arrow-red-10-02)"/>
+  <text x="516" y="248" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8102E">no →</text>
+  <text x="516" y="260" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8102E">re-examine</text>
+  <text x="516" y="272" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8102E">Hamiltonian</text>
+
+  <!-- Step 6: y=360-395 -->
+  <rect x="210" y="360" width="280" height="30" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="350" y="373" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">6. Assess statistical strength</text>
+  <text x="350" y="386" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">sample size, error bars, significance</text>
+
+  <!-- Arrow to Step 7 (right side, shifted) -->
+  <line x1="350" y1="390" x2="350" y2="402" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-10-02)"/>
+
+  <!-- Step 7: y=404 (truncated for space, shown as continuation) -->
+  <text x="350" y="414" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">7. &#x2193; Read honesty disclaimer — caveats, acknowledged limitations</text>
+
+  <!-- Left annotation labels -->
+  <rect x="32" y="35" width="170" height="213" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.5"/>
+  <text x="117" y="52" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">Information</text>
+  <text x="117" y="65" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">gathering</text>
+  <text x="117" y="78" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">steps 1–4</text>
+  <text x="117" y="140" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">What is this?</text>
+  <text x="117" y="155" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">What do they</text>
+  <text x="117" y="168" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">claim?</text>
+  <text x="117" y="200" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">H = ?</text>
+  <text x="117" y="215" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">O = ?</text>
+
+  <rect x="32" y="260" width="170" height="148" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.5"/>
+  <text x="117" y="277" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">Verification</text>
+  <text x="117" y="290" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">steps 5–7</text>
+  <text x="117" y="330" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">Does it add up?</text>
+  <text x="117" y="345" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">How solid is it?</text>
+  <text x="117" y="360" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">What do they</text>
+  <text x="117" y="373" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">admit?</text>
+
+</svg>

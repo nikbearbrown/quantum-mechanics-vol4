@@ -1,0 +1,163 @@
+<!--
+  CAJAL SVG Figure
+  Book: Quantum Mechanics — Information, Measurement, and Open Systems
+  Book-slug: quantum-mechanics-vol4
+  Chapter: 06-open-systems-and-lindblad
+  Figure: 06
+  Title: T1 vs T2 Across Quantum Hardware Platforms
+  Type: quantitative-chart (PQ)
+  Priority: Important
+  Author: Humanitarians AI Incorporated
+  Date: 2026-06-06
+  Source: pantry/06-open-systems-and-lindblad-cajal.md
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-06">
+  <title id="fig-title-06">T1 vs T2 Across Quantum Hardware Platforms</title>
+  <desc>Grouped horizontal bar chart on a logarithmic time axis comparing T1 (energy relaxation) and T2 (coherence) times for four qubit platforms: superconducting transmon, trapped ion, NV center, and semiconductor spin qubit. T2 is always less than or equal to 2T1.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics — Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="06-open-systems-and-lindblad"
+      figure-number="06"
+      figure-title="T1 vs T2 Across Quantum Hardware Platforms"
+      figure-slug="t1-t2-hardware-platforms"
+      figure-type="quantitative-chart"
+      priority="Important"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/06-open-systems-and-lindblad-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow-06" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="24" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e">T&#x2081; vs T&#x2082; Across Quantum Hardware Platforms</text>
+
+  <!-- Chart area: x: 185 to 660, y: 50 to 340 -->
+  <!-- Log x-axis: 1 µs (10^0 µs) to 10^6 µs (1 s range) -->
+  <!-- Actually: from 1 µs to 10^8 µs to cover all platforms -->
+  <!-- Log10(1µs)=0, log10(1000s)=9 in µs units -->
+  <!-- Let's use: 10^0 µs to 10^8 µs, so log range 0 to 8 -->
+  <!-- x_svg = 185 + (log10(val_us)/8)*475 -->
+
+  <rect x="185" y="50" width="475" height="290" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- X-axis log ticks: 1µs, 10µs, 100µs, 1ms, 10ms, 100ms, 1s, 10s, 100s -->
+  <!-- log10 values: 0, 1, 2, 3, 4, 5, 6, 7, 8 -->
+  <!-- x positions: 185 + (i/8)*475 for i=0..8 -->
+  <line x1="185" y1="340" x2="185" y2="345" stroke="#545454" stroke-width="0.75"/>
+  <text x="185" y="356" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">1&#x3bc;s</text>
+
+  <line x1="244.4" y1="340" x2="244.4" y2="345" stroke="#545454" stroke-width="0.75"/>
+  <text x="244.4" y="356" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">10&#x3bc;s</text>
+
+  <line x1="303.8" y1="340" x2="303.8" y2="345" stroke="#545454" stroke-width="0.75"/>
+  <text x="303.8" y="356" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">100&#x3bc;s</text>
+
+  <line x1="363.1" y1="340" x2="363.1" y2="345" stroke="#545454" stroke-width="0.75"/>
+  <text x="363.1" y="356" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">1ms</text>
+
+  <line x1="422.5" y1="340" x2="422.5" y2="345" stroke="#545454" stroke-width="0.75"/>
+  <text x="422.5" y="356" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">10ms</text>
+
+  <line x1="481.9" y1="340" x2="481.9" y2="345" stroke="#545454" stroke-width="0.75"/>
+  <text x="481.9" y="356" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">100ms</text>
+
+  <line x1="541.3" y1="340" x2="541.3" y2="345" stroke="#545454" stroke-width="0.75"/>
+  <text x="541.3" y="356" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">1s</text>
+
+  <line x1="600.6" y1="340" x2="600.6" y2="345" stroke="#545454" stroke-width="0.75"/>
+  <text x="600.6" y="356" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">10s</text>
+
+  <line x1="660" y1="340" x2="660" y2="345" stroke="#545454" stroke-width="0.75"/>
+  <text x="660" y="356" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">100s</text>
+
+  <!-- Gridlines at each decade -->
+  <line x1="244.4" y1="50" x2="244.4" y2="340" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="303.8" y1="50" x2="303.8" y2="340" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="363.1" y1="50" x2="363.1" y2="340" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="422.5" y1="50" x2="422.5" y2="340" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="481.9" y1="50" x2="481.9" y2="340" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="541.3" y1="50" x2="541.3" y2="340" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+  <line x1="600.6" y1="50" x2="600.6" y2="340" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="2 3"/>
+
+  <!-- X-axis label -->
+  <text x="422.5" y="372" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">coherence time (log scale)</text>
+
+  <!-- Platform rows: 4 platforms, each with T1 and T2 bars -->
+  <!-- Platform row heights: y centers at 95, 165, 235, 305 -->
+  <!-- T1 bar: top of group, T2 bar: below with small gap -->
+  <!-- Bar height: 20px each, gap 4px between T1 and T2 -->
+
+  <!-- Helper: x_svg for value v in µs = 185 + (log10(v)/8)*475 -->
+  <!-- Superconducting: T1=300µs (log10=5.48), T2=150µs (log10=5.18) -->
+  <!-- log10(300)=2.477 relative to µs base... wait: 300µs = log10(300)=2.477 -->
+  <!-- Ah I need to be careful: 1µs has log10=0 in the µs domain -->
+  <!-- 300µs: log10(300)=2.477, x = 185 + (2.477/8)*475 = 185+147.2 = 332.2 -->
+  <!-- T2=150µs: log10(150)=2.176, x = 185 + (2.176/8)*475 = 185+129.4 = 314.4 -->
+
+  <!-- Superconducting transmon row, center y=95 -->
+  <!-- Row background (alternating) -->
+  <rect x="185" y="64" width="475" height="62" fill="#FFFFFF" opacity="0.5"/>
+  <text x="180" y="90" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Superconducting</text>
+  <text x="180" y="103" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">transmon</text>
+  <!-- T1=300µs bar: log10(300)=2.477 → x=332.2 -->
+  <rect x="185" y="72" width="147" height="18" fill="#2a1a0e" stroke="none"/>
+  <!-- T2=150µs: log10(150)=2.176 → x=314.4 -->
+  <rect x="185" y="94" width="129" height="18" fill="#C8102E" stroke="none"/>
+
+  <!-- Trapped ion row, center y=165 -->
+  <rect x="185" y="134" width="475" height="62" fill="#F5F5F5" opacity="0.5"/>
+  <text x="180" y="158" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Trapped ion</text>
+  <!-- T1=100s = 10^8 µs: log10(10^8)=8 → x=660 (max) -->
+  <rect x="185" y="142" width="475" height="18" fill="#2a1a0e" stroke="none"/>
+  <!-- T2=30s = 3*10^7 µs: log10(3e7)=7.477 → x=185+(7.477/8)*475=185+444.1=629.1 → width=444 -->
+  <rect x="185" y="164" width="444" height="18" fill="#C8102E" stroke="none"/>
+
+  <!-- NV center row, center y=235 -->
+  <rect x="185" y="204" width="475" height="62" fill="#FFFFFF" opacity="0.5"/>
+  <text x="180" y="228" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">NV center</text>
+  <text x="180" y="241" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">diamond</text>
+  <!-- T1=3ms = 3000µs: log10(3000)=3.477 → width=(3.477/8)*475=206.7 -->
+  <rect x="185" y="212" width="207" height="18" fill="#2a1a0e" stroke="none"/>
+  <!-- T2=0.5ms = 500µs: log10(500)=2.699 → width=(2.699/8)*475=160.5 -->
+  <rect x="185" y="234" width="161" height="18" fill="#C8102E" stroke="none"/>
+
+  <!-- Spin qubit row, center y=305 -->
+  <rect x="185" y="274" width="475" height="62" fill="#F5F5F5" opacity="0.5"/>
+  <text x="180" y="298" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Spin qubit</text>
+  <text x="180" y="311" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">semiconductor</text>
+  <!-- T1=5ms=5000µs: log10(5000)=3.699 → width=(3.699/8)*475=219.9 -->
+  <rect x="185" y="282" width="220" height="18" fill="#2a1a0e" stroke="none"/>
+  <!-- T2=30µs: log10(30)=1.477 → width=(1.477/8)*475=87.8 -->
+  <rect x="185" y="304" width="88" height="18" fill="#C8102E" stroke="none"/>
+
+  <!-- Row separator lines -->
+  <line x1="40" y1="135" x2="660" y2="135" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="40" y1="205" x2="660" y2="205" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="40" y1="275" x2="660" y2="275" stroke="#D4D4D4" stroke-width="0.5"/>
+
+  <!-- Axes -->
+  <line x1="185" y1="50" x2="185" y2="340" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="185" y1="340" x2="660" y2="340" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Legend -->
+  <rect x="220" y="385" width="300" height="28" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
+  <rect x="232" y="393" width="28" height="12" fill="#2a1a0e"/>
+  <text x="266" y="403" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">T&#x2081; (energy relaxation)</text>
+  <rect x="380" y="393" width="28" height="12" fill="#C8102E"/>
+  <text x="414" y="403" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">T&#x2082; (coherence)</text>
+
+  <!-- Note: T2 ≤ 2T1 always -->
+  <text x="422.5" y="415" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">T&#x2082; &#x2264; 2T&#x2081; for all platforms — representative 2025–2026 values</text>
+
+</svg>

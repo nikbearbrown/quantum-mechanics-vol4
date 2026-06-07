@@ -1,0 +1,210 @@
+<!--
+  CAJAL SVG Figure
+  Book: Quantum Mechanics — Information, Measurement, and Open Systems
+  Book-slug: quantum-mechanics-vol4
+  Chapter: 08-quantum-hardware
+  Figure: 03
+  Title: NV Center Crystal Structure and Spin-1 Energy Level Diagram
+  Type: verification-gap (VG)
+  Priority: Critical
+  Author: Humanitarians AI Incorporated
+  Date: 2026-06-06
+  Source: pantry/08-quantum-hardware-cajal.md
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-08-03">
+  <title id="fig-title-08-03">NV Center Crystal Structure and Spin-1 Energy Level Diagram</title>
+  <desc>Left panel shows a diamond carbon lattice with nitrogen and vacancy defects and the NV axis arrow. Right panel shows the spin-1 energy level diagram at zero and nonzero magnetic field, with zero-field splitting D and Zeeman-split qubit subspace.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics — Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="08-quantum-hardware"
+      figure-number="03"
+      figure-title="NV Center Crystal Structure and Spin-1 Energy Level Diagram"
+      figure-slug="nv-center-crystal-energy"
+      figure-type="verification-gap"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/08-quantum-hardware-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow-08-03" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arrow-nv-03" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ADADAD"/>
+    </marker>
+    <marker id="arrow-orange-03" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#C8860E"/>
+    </marker>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="24" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e">NV Center in Diamond — Crystal Structure and Spin-1 Energy Levels</text>
+
+  <!-- ===== LEFT PANEL: Crystal lattice ===== -->
+  <rect x="32" y="40" width="305" height="350" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="184" y="58" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Diamond carbon lattice — NV defect</text>
+
+  <!-- Carbon lattice: tetrahedral-like 2D projection -->
+  <!-- Draw a 4x4 grid of carbon atoms with bonds, with N and V marked -->
+  <!-- Atom positions in a diamond-like arrangement -->
+  <!-- Row by row: offset rows for hexagonal-like pattern -->
+
+  <!-- Define carbon atom positions -->
+  <!-- Row 1: (80,100), (130,100), (180,100), (230,100), (280,100) -->
+  <!-- Row 2: (105,140), (155,140), (205,140), (255,140) -->
+  <!-- Row 3: (80,180), (130,180), (180,180), (230,180), (280,180) -->
+  <!-- Row 4: (105,220), (155,220), (205,220), (255,220) -->
+  <!-- Row 5: (80,260), (130,260), (180,260), (230,260), (280,260) -->
+
+  <!-- Bonds between atoms -->
+  <!-- Row 1-2 connections -->
+  <line x1="80" y1="100" x2="105" y2="140" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="130" y1="100" x2="105" y2="140" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="130" y1="100" x2="155" y2="140" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="180" y1="100" x2="155" y2="140" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="180" y1="100" x2="205" y2="140" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="230" y1="100" x2="205" y2="140" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="230" y1="100" x2="255" y2="140" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="280" y1="100" x2="255" y2="140" stroke="#ADADAD" stroke-width="1"/>
+  <!-- Row 2-3 -->
+  <line x1="105" y1="140" x2="80" y2="180" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="105" y1="140" x2="130" y2="180" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="155" y1="140" x2="130" y2="180" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="155" y1="140" x2="180" y2="180" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="205" y1="140" x2="180" y2="180" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="205" y1="140" x2="230" y2="180" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="255" y1="140" x2="230" y2="180" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="255" y1="140" x2="280" y2="180" stroke="#ADADAD" stroke-width="1"/>
+  <!-- Row 3-4 -->
+  <line x1="80" y1="180" x2="105" y2="220" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="130" y1="180" x2="105" y2="220" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="130" y1="180" x2="155" y2="220" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="180" y1="180" x2="155" y2="220" stroke="#ADADAD" stroke-width="1"/>
+  <!-- NV region: skip bond from 180,180 to 205,220 (vacancy) and 230,180 to 205,220 -->
+  <line x1="230" y1="180" x2="255" y2="220" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="280" y1="180" x2="255" y2="220" stroke="#ADADAD" stroke-width="1"/>
+  <!-- Row 4-5 -->
+  <line x1="105" y1="220" x2="80" y2="260" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="105" y1="220" x2="130" y2="260" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="155" y1="220" x2="130" y2="260" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="155" y1="220" x2="180" y2="260" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="205" y1="220" x2="180" y2="260" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="205" y1="220" x2="230" y2="260" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="255" y1="220" x2="230" y2="260" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="255" y1="220" x2="280" y2="260" stroke="#ADADAD" stroke-width="1"/>
+
+  <!-- Carbon atoms: Row 1 -->
+  <circle cx="80" cy="100" r="7" fill="#545454"/>
+  <circle cx="130" cy="100" r="7" fill="#545454"/>
+  <circle cx="180" cy="100" r="7" fill="#545454"/>
+  <circle cx="230" cy="100" r="7" fill="#545454"/>
+  <circle cx="280" cy="100" r="7" fill="#545454"/>
+  <!-- Row 2 -->
+  <circle cx="105" cy="140" r="7" fill="#545454"/>
+  <circle cx="155" cy="140" r="7" fill="#545454"/>
+  <circle cx="205" cy="140" r="7" fill="#545454"/>
+  <circle cx="255" cy="140" r="7" fill="#545454"/>
+  <!-- Row 3 -->
+  <circle cx="80" cy="180" r="7" fill="#545454"/>
+  <circle cx="130" cy="180" r="7" fill="#545454"/>
+  <circle cx="180" cy="180" r="7" fill="#545454"/>
+  <!-- Nitrogen at (230,180) — ochre/orange -->
+  <circle cx="230" cy="180" r="8" fill="#C8860E"/>
+  <circle cx="280" cy="180" r="7" fill="#545454"/>
+  <!-- Row 4 -->
+  <circle cx="105" cy="220" r="7" fill="#545454"/>
+  <circle cx="155" cy="220" r="7" fill="#545454"/>
+  <!-- Vacancy at (205,220) — dashed circle -->
+  <circle cx="205" cy="220" r="8" fill="#FFFFFF" stroke="#545454" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <circle cx="255" cy="220" r="7" fill="#545454"/>
+  <!-- Row 5 -->
+  <circle cx="80" cy="260" r="7" fill="#545454"/>
+  <circle cx="130" cy="260" r="7" fill="#545454"/>
+  <circle cx="180" cy="260" r="7" fill="#545454"/>
+  <circle cx="230" cy="260" r="7" fill="#545454"/>
+  <circle cx="280" cy="260" r="7" fill="#545454"/>
+
+  <!-- NV axis arrow: from N (230,180) to V (205,220) -->
+  <line x1="230" y1="180" x2="209" y2="216" stroke="#ADADAD" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow-nv-03)"/>
+
+  <!-- Legend for crystal -->
+  <rect x="42" y="285" width="10" height="10" fill="#545454"/>
+  <text x="58" y="294" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">C (carbon)</text>
+  <rect x="42" y="303" width="10" height="10" fill="#C8860E"/>
+  <text x="58" y="312" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">N (nitrogen)</text>
+  <circle cx="47" cy="326" r="5" fill="#FFFFFF" stroke="#545454" stroke-width="1.5" stroke-dasharray="2 1"/>
+  <text x="58" y="330" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">V (vacancy)</text>
+  <line x1="42" y1="348" x2="56" y2="348" stroke="#ADADAD" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="58" y="352" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">NV axis</text>
+  <text x="42" y="370" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">D = 2.87 GHz (zero-field splitting)</text>
+
+  <!-- ===== RIGHT PANEL: Energy levels ===== -->
+  <rect x="349" y="40" width="319" height="350" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="508" y="58" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Spin-1 energy levels</text>
+
+  <!-- B=0 column: x~420-450, B>0 column: x~530-570 -->
+  <text x="430" y="78" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">B = 0</text>
+  <text x="565" y="78" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">B &gt; 0</text>
+
+  <!-- B=0 levels -->
+  <!-- m_s = 0: y=300 (lowest) -->
+  <line x1="400" y1="300" x2="460" y2="300" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="395" y="304" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">m&#x209b;=0</text>
+  <!-- m_s=±1 degenerate: y=180 (D gap = 2.87 GHz above) -->
+  <line x1="400" y1="183" x2="460" y2="183" stroke="#2a1a0e" stroke-width="2"/>
+  <line x1="400" y1="177" x2="460" y2="177" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="395" y="181" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">m&#x209b;=&#xb1;1</text>
+
+  <!-- D bracket between m_s=0 and m_s=±1 -->
+  <line x1="462" y1="300" x2="468" y2="300" stroke="#C8860E" stroke-width="1"/>
+  <line x1="468" y1="180" x2="468" y2="300" stroke="#C8860E" stroke-width="1"/>
+  <line x1="462" y1="180" x2="468" y2="180" stroke="#C8860E" stroke-width="1"/>
+  <text x="472" y="248" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8860E">D</text>
+  <text x="472" y="260" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8860E">2.87 GHz</text>
+
+  <!-- B>0 levels: split -->
+  <!-- m_s=0: unchanged at y=300 -->
+  <line x1="535" y1="300" x2="595" y2="300" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="600" y="304" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">m&#x209b;=0</text>
+  <!-- m_s=+1: shifted UP by gμB*B: y=145 -->
+  <line x1="535" y1="148" x2="595" y2="148" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="600" y="152" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">m&#x209b;=+1</text>
+  <!-- m_s=-1: shifted DOWN by gμB*B: y=215 -->
+  <line x1="535" y1="215" x2="595" y2="215" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="600" y="219" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">m&#x209b;=&#x2212;1</text>
+
+  <!-- Transition arrows: m_s=0 to m_s=+1 and m_s=0 to m_s=-1 -->
+  <line x1="556" y1="298" x2="556" y2="150" stroke="#C8860E" stroke-width="1.5" marker-end="url(#arrow-orange-03)"/>
+  <line x1="570" y1="298" x2="570" y2="217" stroke="#C8860E" stroke-width="1.5" marker-end="url(#arrow-orange-03)"/>
+
+  <!-- Zeeman split bracket -->
+  <line x1="597" y1="148" x2="603" y2="148" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="603" y1="148" x2="603" y2="215" stroke="#ADADAD" stroke-width="1"/>
+  <line x1="603" y1="215" x2="597" y2="215" stroke="#ADADAD" stroke-width="1"/>
+  <text x="608" y="185" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#ADADAD">Zeeman</text>
+  <text x="608" y="196" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#ADADAD">splitting</text>
+
+  <!-- Qubit subspace: m_s=0 and m_s=-1 -->
+  <line x1="533" y1="216" x2="527" y2="216" stroke="#787878" stroke-width="1"/>
+  <line x1="527" y1="216" x2="527" y2="299" stroke="#787878" stroke-width="1"/>
+  <line x1="527" y1="299" x2="533" y2="299" stroke="#787878" stroke-width="1"/>
+  <text x="525" y="265" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#787878">qubit</text>
+  <text x="525" y="277" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#787878">subspace</text>
+
+  <!-- Energy axis arrow -->
+  <line x1="368" y1="320" x2="368" y2="85" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-08-03)"/>
+  <text x="362" y="200" text-anchor="middle" transform="rotate(-90,362,200)" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">energy</text>
+
+  <!-- Caption -->
+  <text x="508" y="370" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">H&#x2093;&#x1d49; = DS&#x1d63;&#xb2; + g&#x3bc;&#x1d38; B S&#x1d63;</text>
+  <text x="508" y="385" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">Qubit: {m&#x209b;=0, m&#x209b;=&#x2212;1} — microwave addressable</text>
+
+</svg>

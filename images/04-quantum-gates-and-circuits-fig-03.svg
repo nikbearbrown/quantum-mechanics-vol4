@@ -1,0 +1,99 @@
+<!--
+  CAJAL SVG Generator — quantum-mechanics-vol4
+  Chapter: 04-quantum-gates-and-circuits
+  Figure: 03
+  Title: Universal gate set nesting: Clifford group and T gate
+  Source: pantry/04-quantum-gates-and-circuits-cajal.md
+  Generated: 2026-06-06
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-g03">
+  <title id="fig-title-g03">Universal gate set nesting: Clifford group inside universal set inside all unitaries</title>
+  <desc>Three concentric rectangular regions: innermost contains Clifford generators H, S, CNOT (classically simulable by Gottesman-Knill); annular gap between inner and middle contains T gate (non-Clifford resource for universality); outermost represents full unitary space SU(2^n).</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="04-quantum-gates-and-circuits"
+      figure-number="03"
+      figure-title="Universal gate set nesting: Clifford group and T gate"
+      figure-slug="universal-gate-set-nesting"
+      figure-type="diagram"
+      priority="IMPORTANT"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/04-quantum-gates-and-circuits-cajal.md"/>
+  </metadata>
+
+  <!-- Background -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+  <rect x="32" y="32" width="636" height="356" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Figure title -->
+  <text x="350" y="24" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Gate set nesting — Clifford group ⊂ {H,T,CNOT} ⊂ SU(2ⁿ)</text>
+
+  <!-- Outer region: all unitaries SU(2^n) -->
+  <rect x="60" y="55" width="580" height="310" fill="#F5F5F5" stroke="#ADADAD" stroke-width="1.5" stroke-dasharray="6 3"/>
+  <text x="350" y="76" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#ADADAD" text-anchor="middle">All unitaries SU(2ⁿ)</text>
+
+  <!-- Middle region: universal set {H, T, CNOT} -->
+  <rect x="110" y="90" width="480" height="240" fill="#FFFFFF" stroke="#545454" stroke-width="1.5"/>
+  <text x="350" y="108" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454" text-anchor="middle">Universal set — {H, T, CNOT} — generates dense subgroup of SU(2ⁿ)</text>
+
+  <!-- Inner region: Clifford group {H, S, CNOT} with very light fill -->
+  <rect x="165" y="125" width="370" height="175" fill="#2a1a0e" fill-opacity="0.04" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="350" y="142" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle" font-weight="700">Clifford group — {H, S, CNOT}</text>
+  <text x="350" y="155" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">Classically simulable (Gottesman-Knill)</text>
+
+  <!-- Gate symbols inside Clifford region -->
+  <!-- H gate box -->
+  <rect x="210" y="175" width="50" height="32" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="235" y="196" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="16" fill="#2a1a0e" text-anchor="middle" font-weight="700">H</text>
+
+  <!-- S gate box -->
+  <rect x="325" y="175" width="50" height="32" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="350" y="196" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="16" fill="#2a1a0e" text-anchor="middle" font-weight="700">S</text>
+
+  <!-- CNOT symbol: control dot + target circle + vertical line -->
+  <g transform="translate(435,180)">
+    <!-- control wire -->
+    <line x1="0" y1="8" x2="55" y2="8" stroke="#2a1a0e" stroke-width="1.5"/>
+    <!-- target wire -->
+    <line x1="0" y1="24" x2="55" y2="24" stroke="#2a1a0e" stroke-width="1.5"/>
+    <!-- control dot -->
+    <circle cx="28" cy="8" r="5" fill="#2a1a0e"/>
+    <!-- connecting line -->
+    <line x1="28" y1="8" x2="28" y2="18" stroke="#2a1a0e" stroke-width="1.5"/>
+    <!-- target ⊕ -->
+    <circle cx="28" cy="24" r="7" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+    <line x1="21" y1="24" x2="35" y2="24" stroke="#2a1a0e" stroke-width="1.5"/>
+    <line x1="28" y1="17" x2="28" y2="31" stroke="#2a1a0e" stroke-width="1.5"/>
+  </g>
+  <text x="462" y="256" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454" text-anchor="middle">CNOT</text>
+
+  <!-- Gate labels beneath boxes -->
+  <text x="235" y="224" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">Hadamard</text>
+  <text x="350" y="224" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">Phase</text>
+
+  <!-- T gate in annular gap between inner (y=300 for inner bottom) and middle region -->
+  <!-- T gate placed at right side of middle region, outside inner Clifford box -->
+  <!-- Inner bottom at y=300, Middle bottom at y=330 — place T gate between them, or beside the inner box -->
+  <!-- Best position: right side of inner box, inside middle region but outside inner -->
+  <rect x="560" y="165" width="50" height="32" fill="#FFFFFF" stroke="#C8860E" stroke-width="2"/>
+  <text x="585" y="186" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="16" fill="#C8860E" text-anchor="middle" font-weight="700">T</text>
+  <text x="585" y="215" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#C8860E" text-anchor="middle">Non-Clifford</text>
+  <text x="585" y="228" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#C8860E" text-anchor="middle">resource</text>
+  <!-- T = π/4 label -->
+  <text x="585" y="243" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#C8860E" text-anchor="middle">T² = S</text>
+
+  <!-- Arrow from T gate pointing to inner boundary — T extends Clifford to universal -->
+  <line x1="557" y1="181" x2="537" y2="181" stroke="#C8860E" stroke-width="1" stroke-dasharray="4 2"/>
+
+  <!-- Caption at bottom -->
+  <text x="350" y="345" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">Adding T to the Clifford group produces a dense subgroup (Solovay-Kitaev: efficient approximation)</text>
+  <text x="350" y="358" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">T breaks classical simulability — it is the non-Clifford computational resource</text>
+
+  <!-- Note box -->
+  <rect x="60" y="370" width="580" height="16" fill="none"/>
+  <text x="350" y="382" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">Clifford circuits (no T) can be efficiently simulated on a classical computer; {H, T, CNOT} circuits cannot (in general)</text>
+</svg>

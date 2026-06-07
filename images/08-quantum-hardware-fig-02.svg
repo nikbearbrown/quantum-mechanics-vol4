@@ -1,0 +1,179 @@
+<!--
+  CAJAL SVG Figure
+  Book: Quantum Mechanics — Information, Measurement, and Open Systems
+  Book-slug: quantum-mechanics-vol4
+  Chapter: 08-quantum-hardware
+  Figure: 02
+  Title: Transmon Circuit Topology — Anharmonic LC Oscillator
+  Type: verification-gap (VG)
+  Priority: Critical
+  Author: Humanitarians AI Incorporated
+  Date: 2026-06-06
+  Source: pantry/08-quantum-hardware-cajal.md
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-08-02">
+  <title id="fig-title-08-02">Transmon Circuit Topology — Anharmonic LC Oscillator with Energy Level Inset</title>
+  <desc>Left panel shows the transmon qubit circuit: capacitor and Josephson junction in a loop, with a readout resonator coupled via a coupling capacitor. Right panel shows the anharmonic energy level ladder with unequal spacing, indicating the qubit subspace at levels 0 and 1, plus a dotted harmonic reference.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics — Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="08-quantum-hardware"
+      figure-number="02"
+      figure-title="Transmon Circuit Topology — Anharmonic LC Oscillator"
+      figure-slug="transmon-circuit-energy-levels"
+      figure-type="verification-gap"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/08-quantum-hardware-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow-08-02" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arrow-dbl-08-02" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto">
+      <polygon points="8 0, 0 3, 8 6" fill="#545454"/>
+    </marker>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="24" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e">Transmon Circuit Topology — Anharmonic LC Oscillator</text>
+
+  <!-- ===== LEFT PANEL: Circuit schematic ===== -->
+  <rect x="32" y="40" width="420" height="340" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="242" y="58" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Transmon qubit circuit</text>
+
+  <!-- Main qubit loop: rectangle from (100,90) to (360,200) -->
+  <!-- Top wire -->
+  <line x1="100" y1="90" x2="360" y2="90" stroke="#2a1a0e" stroke-width="1.5"/>
+  <!-- Bottom wire -->
+  <line x1="100" y1="200" x2="360" y2="200" stroke="#2a1a0e" stroke-width="1.5"/>
+  <!-- Left wire -->
+  <line x1="100" y1="90" x2="100" y2="200" stroke="#2a1a0e" stroke-width="1.5"/>
+  <!-- Right wire split into C and JJ sections -->
+  <!-- Right side: Capacitor section (top) -->
+  <!-- Wire right side top: (360,90) to (360,125) -->
+  <line x1="360" y1="90" x2="360" y2="122" stroke="#2a1a0e" stroke-width="1.5"/>
+  <!-- Capacitor symbol: two parallel plates at y=125 to y=135 -->
+  <line x1="342" y1="125" x2="378" y2="125" stroke="#2a1a0e" stroke-width="2.5"/>
+  <line x1="342" y1="132" x2="378" y2="132" stroke="#2a1a0e" stroke-width="2.5"/>
+  <!-- Wire between cap plates and JJ -->
+  <line x1="360" y1="135" x2="360" y2="155" stroke="#2a1a0e" stroke-width="1.5"/>
+  <!-- JJ symbol: box with X -->
+  <rect x="344" y="155" width="32" height="24" fill="#FFFFFF" stroke="#C8102E" stroke-width="2"/>
+  <line x1="348" y1="159" x2="372" y2="175" stroke="#C8102E" stroke-width="1.5"/>
+  <line x1="348" y1="175" x2="372" y2="159" stroke="#C8102E" stroke-width="1.5"/>
+  <!-- Wire from JJ to bottom -->
+  <line x1="360" y1="179" x2="360" y2="200" stroke="#2a1a0e" stroke-width="1.5"/>
+
+  <!-- Labels for circuit elements -->
+  <text x="392" y="132" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">C</text>
+  <text x="392" y="124" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">E&#x1d34;</text>
+  <text x="392" y="172" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#C8102E">JJ</text>
+  <text x="392" y="163" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E">E&#x1d40;</text>
+
+  <!-- Loop label -->
+  <text x="220" y="148" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">qubit loop</text>
+
+  <!-- Coupling capacitor: vertical element on bottom wire -->
+  <!-- Draw coupling cap at x=200, connecting qubit loop to readout resonator -->
+  <line x1="200" y1="200" x2="200" y2="222" stroke="#C8860E" stroke-width="1.5"/>
+  <line x1="182" y1="225" x2="218" y2="225" stroke="#C8860E" stroke-width="2"/>
+  <line x1="182" y1="232" x2="218" y2="232" stroke="#C8860E" stroke-width="2"/>
+  <line x1="200" y1="235" x2="200" y2="252" stroke="#C8860E" stroke-width="1.5"/>
+  <text x="228" y="230" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8860E">C&#x9c;</text>
+  <text x="228" y="242" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8860E">coupling</text>
+
+  <!-- Readout resonator loop -->
+  <line x1="100" y1="252" x2="360" y2="252" stroke="#ADADAD" stroke-width="1.25"/>
+  <line x1="100" y1="310" x2="360" y2="310" stroke="#ADADAD" stroke-width="1.25"/>
+  <line x1="100" y1="252" x2="100" y2="310" stroke="#ADADAD" stroke-width="1.25"/>
+
+  <!-- Resonator inductor (coil): on right side -->
+  <line x1="360" y1="252" x2="360" y2="270" stroke="#ADADAD" stroke-width="1.25"/>
+  <!-- Inductor coil symbol: three bumps -->
+  <path d="M 360,270 Q 368,270 368,278 Q 368,286 360,286 Q 352,286 352,278 Q 352,270 360,270
+           M 360,286 Q 368,286 368,294 Q 368,302 360,302
+           M 360,302 Q 368,302 368,310 Q 368,318 360,318" fill="none" stroke="#ADADAD" stroke-width="1.25"/>
+
+  <!-- Resonator cap -->
+  <line x1="110" y1="252" x2="110" y2="272" stroke="#ADADAD" stroke-width="1.25"/>
+  <line x1="92" y1="275" x2="128" y2="275" stroke="#ADADAD" stroke-width="1.5"/>
+  <line x1="92" y1="282" x2="128" y2="282" stroke="#ADADAD" stroke-width="1.5"/>
+  <line x1="110" y1="285" x2="110" y2="310" stroke="#ADADAD" stroke-width="1.25"/>
+
+  <text x="220" y="285" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#ADADAD">readout resonator</text>
+
+  <!-- E_J >> E_C annotation -->
+  <text x="100" y="340" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">E&#x1d40; &#x226b; E&#x1d34;</text>
+  <text x="100" y="355" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">transmon regime — charge dispersion suppressed</text>
+  <text x="100" y="370" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8102E">Josephson junction = nonlinear inductance</text>
+
+  <!-- ===== RIGHT PANEL: Energy levels ===== -->
+  <rect x="464" y="40" width="204" height="340" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="566" y="58" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Energy levels</text>
+
+  <!-- Energy levels: anharmonic ladder
+       Level 0 at y=290, Level 1 at y=230 (gap 60),
+       Level 2 at y=180 (gap 50 < 60 — anharmonic!),
+       Level 3 at y=140 (gap 40)
+       Reference harmonic: 0 at 290, 1 at 230, 2 at 170, 3 at 110 (equal spacing 60) -->
+
+  <!-- Harmonic reference (dotted) -->
+  <line x1="494" y1="290" x2="560" y2="290" stroke="#D4D4D4" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="494" y1="230" x2="560" y2="230" stroke="#D4D4D4" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="494" y1="170" x2="560" y2="170" stroke="#D4D4D4" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="494" y1="110" x2="560" y2="110" stroke="#D4D4D4" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="493" y="286" text-anchor="end" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="8" fill="#D4D4D4">harm.</text>
+
+  <!-- Anharmonic levels -->
+  <!-- Level 0: y=290 -->
+  <line x1="566" y1="290" x2="648" y2="290" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="656" y="294" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">|0&#x27E9;</text>
+
+  <!-- Level 1: y=225 (spacing 65 same as harmonic) -->
+  <line x1="566" y1="225" x2="648" y2="225" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="656" y="229" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">|1&#x27E9;</text>
+
+  <!-- Qubit subspace bracket spanning 0 and 1 -->
+  <line x1="568" y1="226" x2="564" y2="226" stroke="#787878" stroke-width="1"/>
+  <line x1="564" y1="226" x2="564" y2="289" stroke="#787878" stroke-width="1"/>
+  <line x1="564" y1="289" x2="568" y2="289" stroke="#787878" stroke-width="1"/>
+  <text x="555" y="262" text-anchor="end" transform="rotate(-90,555,262)" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#787878">qubit</text>
+
+  <!-- omega_01 arrow: between 0 and 1 -->
+  <line x1="590" y1="288" x2="590" y2="227" stroke="#545454" stroke-width="0.75" stroke-dasharray="2 2"/>
+
+  <!-- Level 2: y=170 (spacing 55, less than 65 — this is the anharmonicity) -->
+  <line x1="566" y1="170" x2="648" y2="170" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="656" y="174" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">|2&#x27E9;</text>
+
+  <!-- Level 3: y=122 (spacing 48) -->
+  <line x1="566" y1="122" x2="648" y2="122" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="656" y="126" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">|3&#x27E9;</text>
+
+  <!-- Anharmonicity bracket: between omega_01 spacing and omega_12 spacing -->
+  <!-- omega_01 gap = 65, omega_12 gap = 55 -->
+  <!-- Show the difference visually -->
+  <!-- Double bracket on right side showing omega_01 vs omega_12 -->
+  <line x1="632" y1="225" x2="640" y2="225" stroke="#C8860E" stroke-width="1"/>
+  <line x1="640" y1="225" x2="640" y2="290" stroke="#C8860E" stroke-width="1"/>
+  <line x1="640" y1="290" x2="632" y2="290" stroke="#C8860E" stroke-width="1"/>
+  <text x="649" y="262" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="8" fill="#C8860E">&#x03c9;&#x2080;&#x2081;</text>
+
+  <line x1="632" y1="170" x2="642" y2="170" stroke="#C8860E" stroke-width="1"/>
+  <line x1="642" y1="170" x2="642" y2="225" stroke="#C8860E" stroke-width="1"/>
+  <line x1="642" y1="225" x2="632" y2="225" stroke="#C8860E" stroke-width="1"/>
+  <text x="649" y="202" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="8" fill="#C8860E">&#x03c9;&#x2081;&#x2082;</text>
+
+  <!-- Anharmonicity alpha label -->
+  <text x="566" y="340" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8860E">&#x3b1; = &#x03c9;&#x2081;&#x2082; &#x2212; &#x03c9;&#x2080;&#x2081; &lt; 0</text>
+  <text x="566" y="355" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">prevents leakage to |2&#x27E9;</text>
+
+</svg>

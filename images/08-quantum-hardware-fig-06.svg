@@ -1,0 +1,162 @@
+<!--
+  CAJAL SVG Figure
+  Book: Quantum Mechanics — Information, Measurement, and Open Systems
+  Book-slug: quantum-mechanics-vol4
+  Chapter: 08-quantum-hardware
+  Figure: 06
+  Title: Rydberg Blockade Gate Mechanism — Neutral Atoms
+  Type: mechanism-chart (MC)
+  Priority: Important
+  Author: Humanitarians AI Incorporated
+  Date: 2026-06-06
+  Source: pantry/08-quantum-hardware-cajal.md
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-08-06">
+  <title id="fig-title-08-06">Rydberg Blockade Gate Mechanism — Three-Step Neutral Atom Entangling Gate</title>
+  <desc>Three-panel sequential diagram. Step 1: two neutral atoms in optical tweezer traps in ground state. Step 2: one atom excited to Rydberg state with large halo; blockade symbol prevents double excitation. Step 3: return pulse creates entangled state, shown by dotted arc between atoms.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics — Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="08-quantum-hardware"
+      figure-number="06"
+      figure-title="Rydberg Blockade Gate Mechanism — Neutral Atoms"
+      figure-slug="rydberg-blockade-gate"
+      figure-type="mechanism-chart"
+      priority="Important"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/08-quantum-hardware-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow-08-06" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arrow-green-06" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#787878"/>
+    </marker>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="24" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e">Rydberg Blockade Gate — Neutral Atom Entangling Mechanism</text>
+
+  <!-- Panel backgrounds -->
+  <rect x="32" y="38" width="190" height="350" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <rect x="255" y="38" width="190" height="350" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <rect x="478" y="38" width="190" height="350" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Step labels -->
+  <text x="127" y="56" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Step 1 — Initial state</text>
+  <text x="350" y="56" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Step 2 — Rydberg excitation</text>
+  <text x="573" y="56" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Step 3 — Gate complete</text>
+
+  <!-- ===== STEP 1 ===== -->
+  <!-- Two atoms in ground state -->
+  <!-- Atom 1 at (82, 200), Atom 2 at (172, 200) -->
+  <!-- Tweezer potential wells below: V-shapes -->
+
+  <!-- Laser arrows (nothing firing in step 1, just arrows pointing in) -->
+
+  <!-- Tweezer well 1 -->
+  <polyline points="52,290 82,250 112,290" fill="none" stroke="#ADADAD" stroke-width="1.25"/>
+  <!-- Tweezer well 2 -->
+  <polyline points="142,290 172,250 202,290" fill="none" stroke="#ADADAD" stroke-width="1.25"/>
+
+  <!-- Atom 1: ground state (small filled circle) -->
+  <circle cx="82" cy="200" r="10" fill="#2a1a0e"/>
+  <!-- Atom 2: ground state -->
+  <circle cx="172" cy="200" r="10" fill="#2a1a0e"/>
+
+  <!-- State labels -->
+  <text x="82" y="185" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">|g&#x27E9;</text>
+  <text x="172" y="185" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">|g&#x27E9;</text>
+
+  <!-- Separation bracket -->
+  <line x1="82" y1="230" x2="172" y2="230" stroke="#545454" stroke-width="0.75"/>
+  <line x1="82" y1="226" x2="82" y2="234" stroke="#545454" stroke-width="0.75"/>
+  <line x1="172" y1="226" x2="172" y2="234" stroke="#545454" stroke-width="0.75"/>
+  <text x="127" y="246" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">~10 &#x3bc;m</text>
+
+  <text x="127" y="330" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">optical tweezer traps</text>
+  <text x="127" y="345" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">both atoms: |g&#x27E9; ground state</text>
+  <text x="127" y="360" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">|gg&#x27E9; initial state</text>
+
+  <!-- Transition arrow to step 2 -->
+  <line x1="225" y1="205" x2="250" y2="205" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow-08-06)"/>
+
+  <!-- ===== STEP 2 ===== -->
+  <!-- Atom 1 excited to Rydberg (large halo), Atom 2 blocked -->
+  <!-- Atom 1 center: (305, 200), Atom 2 center: (395, 200) -->
+
+  <!-- Laser pulse on atom 1 (Rydberg excitation) -->
+  <line x1="305" y1="80" x2="305" y2="155" stroke="#787878" stroke-width="1.5" marker-end="url(#arrow-green-06)"/>
+  <text x="305" y="76" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#787878">&#x3c9; laser</text>
+
+  <!-- Rydberg atom 1: large halo + core -->
+  <circle cx="305" cy="200" r="36" fill="none" stroke="#C8860E" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.7"/>
+  <circle cx="305" cy="200" r="10" fill="#2a1a0e"/>
+  <text x="305" y="185" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8860E">|r&#x27E9;</text>
+  <text x="305" y="174" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8860E">Rydberg</text>
+
+  <!-- Blockade symbol between atoms: barrier/barrier line -->
+  <!-- Red barrier between (341,200) and (359,200) -->
+  <line x1="345" y1="165" x2="345" y2="235" stroke="#C8102E" stroke-width="2"/>
+  <line x1="348" y1="170" x2="358" y2="165" stroke="#C8102E" stroke-width="1.5"/>
+  <line x1="348" y1="185" x2="358" y2="180" stroke="#C8102E" stroke-width="1.5"/>
+  <line x1="348" y1="200" x2="358" y2="195" stroke="#C8102E" stroke-width="1.5"/>
+  <line x1="348" y1="215" x2="358" y2="210" stroke="#C8102E" stroke-width="1.5"/>
+  <line x1="348" y1="230" x2="358" y2="225" stroke="#C8102E" stroke-width="1.5"/>
+  <text x="350" y="155" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8102E">blockade</text>
+
+  <!-- Atom 2: still ground state (blocked) -->
+  <circle cx="395" cy="200" r="10" fill="#2a1a0e"/>
+  <text x="395" y="185" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">|g&#x27E9;</text>
+
+  <!-- Tweezer wells -->
+  <polyline points="275,290 305,250 335,290" fill="none" stroke="#ADADAD" stroke-width="1.25"/>
+  <polyline points="365,290 395,250 425,290" fill="none" stroke="#ADADAD" stroke-width="1.25"/>
+
+  <!-- Interaction energy V_12 label -->
+  <text x="350" y="310" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#C8102E">V&#x2081;&#x2082; &#x226b; &#x0127;&#x03a9; — blockade</text>
+  <text x="350" y="325" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">double excitation off resonance</text>
+  <text x="350" y="345" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">|rg&#x27E9; state — second atom blocked</text>
+
+  <!-- Transition arrow to step 3 -->
+  <line x1="448" y1="205" x2="473" y2="205" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow-08-06)"/>
+
+  <!-- ===== STEP 3 ===== -->
+  <!-- Return pulse — both atoms in entangled state -->
+  <!-- Atom 1: (528, 200), Atom 2: (618, 200) -->
+
+  <!-- Return laser pulse on atom 1 -->
+  <line x1="528" y1="80" x2="528" y2="155" stroke="#787878" stroke-width="1.5" marker-end="url(#arrow-green-06)"/>
+  <text x="528" y="76" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#787878">return &#x03c0;</text>
+
+  <!-- Atom 1: back to ground state -->
+  <circle cx="528" cy="200" r="10" fill="#2a1a0e"/>
+  <text x="528" y="185" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">|g&#x27E9;</text>
+
+  <!-- Atom 2: ground state -->
+  <circle cx="618" cy="200" r="10" fill="#2a1a0e"/>
+  <text x="618" y="185" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">|g&#x27E9;</text>
+
+  <!-- Entanglement arc between atoms -->
+  <path d="M 528,190 C 545,155 600,155 618,190" fill="none" stroke="#ADADAD" stroke-width="1.5" stroke-dasharray="4 2"/>
+  <text x="573" y="148" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#ADADAD">entangled</text>
+
+  <!-- Tweezer wells -->
+  <polyline points="498,290 528,250 558,290" fill="none" stroke="#ADADAD" stroke-width="1.25"/>
+  <polyline points="588,290 618,250 648,290" fill="none" stroke="#ADADAD" stroke-width="1.25"/>
+
+  <!-- Result -->
+  <text x="573" y="320" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">(|gg&#x27E9; + e&#x2071;&#x1d78;|ee&#x27E9;)/&#x221a;2</text>
+  <text x="573" y="340" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">Bell state — entanglement via</text>
+  <text x="573" y="354" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">conditional phase gate</text>
+  <text x="573" y="372" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">~10 µs gate time — fidelity ~0.995</text>
+
+</svg>

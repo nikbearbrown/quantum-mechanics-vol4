@@ -1,0 +1,182 @@
+<!--
+  CAJAL SVG Figure
+  Book: Quantum Mechanics — Information, Measurement, and Open Systems
+  Book-slug: quantum-mechanics-vol4
+  Chapter: 06-open-systems-and-lindblad
+  Figure: 04
+  Title: Density Matrix Element Decay — Off-Diagonal vs Diagonal Timescales
+  Type: quantitative-chart (PQ)
+  Priority: Critical
+  Author: Humanitarians AI Incorporated
+  Date: 2026-06-06
+  Source: pantry/06-open-systems-and-lindblad-cajal.md
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-04">
+  <title id="fig-title-04">Density Matrix Element Decay — Off-Diagonal vs Diagonal Timescales</title>
+  <desc>Two line charts sharing a time axis. Left: off-diagonal coherence |rho_01| decays faster (T2) than the T1/2 reference. Right: diagonal populations rho_11 decays and rho_00 rises at rate T1. Both governed by T2 at most 2T1.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics — Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="06-open-systems-and-lindblad"
+      figure-number="04"
+      figure-title="Density Matrix Element Decay — Off-Diagonal vs Diagonal Timescales"
+      figure-slug="density-matrix-decay-timescales"
+      figure-type="quantitative-chart"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/06-open-systems-and-lindblad-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow-04" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="24" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e">Density Matrix Element Decay — Off-Diagonal vs Diagonal Timescales</text>
+
+  <!-- ============ LEFT PANEL: |rho_01(t)| ============ -->
+  <!-- Chart area: x: 52 to 310, y: 45 to 300 (255 wide, 255 tall) -->
+  <!-- x-axis: t from 0 to 4*T1=4.0, T2=0.6, T1=1.0 -->
+  <!-- y-axis: 0 to 0.5 -->
+
+  <rect x="52" y="45" width="258" height="255" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Chart title -->
+  <text x="181" y="40" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Off-diagonal coherence</text>
+
+  <!-- Y-axis ticks and labels: 0, 0.1, 0.2, 0.3, 0.4, 0.5 -->
+  <!-- y_svg = 300 - (val/0.5)*255 -->
+  <!-- y at 0.0 = 300, y at 0.5 = 45 -->
+  <line x1="48" y1="300" x2="52" y2="300" stroke="#545454" stroke-width="0.75"/>
+  <text x="44" y="303" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">0</text>
+  <line x1="48" y1="249" x2="52" y2="249" stroke="#545454" stroke-width="0.75"/>
+  <text x="44" y="252" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">0.1</text>
+  <line x1="48" y1="198" x2="52" y2="198" stroke="#545454" stroke-width="0.75"/>
+  <text x="44" y="201" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">0.2</text>
+  <line x1="48" y1="147" x2="52" y2="147" stroke="#545454" stroke-width="0.75"/>
+  <text x="44" y="150" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">0.3</text>
+  <line x1="48" y1="96" x2="52" y2="96" stroke="#545454" stroke-width="0.75"/>
+  <text x="44" y="99" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">0.4</text>
+  <line x1="48" y1="45" x2="52" y2="45" stroke="#545454" stroke-width="0.75"/>
+  <text x="44" y="48" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">0.5</text>
+
+  <!-- Y axis label -->
+  <text x="16" y="175" text-anchor="middle" transform="rotate(-90,16,175)" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">|&#x03C1;&#x2080;&#x2081;(t)|</text>
+
+  <!-- Gridlines: y=0.25 and y=0.1 -->
+  <line x1="52" y1="172" x2="310" y2="172" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="3 3"/>
+  <line x1="52" y1="249" x2="310" y2="249" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="3 3"/>
+
+  <!-- X-axis ticks: t=0,1,2,3,4 -->
+  <!-- x_svg = 52 + (t/4)*258 -->
+  <line x1="52" y1="300" x2="52" y2="304" stroke="#545454" stroke-width="0.75"/>
+  <text x="52" y="313" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">0</text>
+  <line x1="116.5" y1="300" x2="116.5" y2="304" stroke="#545454" stroke-width="0.75"/>
+  <text x="116.5" y="313" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">T&#x2081;</text>
+  <line x1="181" y1="300" x2="181" y2="304" stroke="#545454" stroke-width="0.75"/>
+  <text x="181" y="313" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">2T&#x2081;</text>
+  <line x1="245.5" y1="300" x2="245.5" y2="304" stroke="#545454" stroke-width="0.75"/>
+  <text x="245.5" y="313" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">3T&#x2081;</text>
+  <line x1="310" y1="300" x2="310" y2="304" stroke="#545454" stroke-width="0.75"/>
+  <text x="310" y="313" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">4T&#x2081;</text>
+
+  <!-- X-axis label -->
+  <text x="181" y="328" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">time t</text>
+
+  <!-- T2 vertical reference line: t=T2=0.6, x_svg = 52 + (0.6/4)*258 = 52+38.7 = 90.7 -->
+  <line x1="90.7" y1="45" x2="90.7" y2="300" stroke="#C8860E" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <text x="93" y="60" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8860E">T&#x2082;</text>
+
+  <!-- Curve 1: |rho_01(t)| = 0.5*e^{-t/T2}, T2=0.6
+       x_svg = 52 + (t/4)*258
+       y_svg = 300 - (val/0.5)*255
+       = 300 - val*510
+       Points sampled: -->
+  <polyline fill="none" stroke="#C8860E" stroke-width="2"
+    points="52,45 67,72 82,97 97,119 113,138 128,155 143,169 158,181 174,192 189,201 204,208 219,215 235,220 250,225 265,229 280,232 296,235 310,238"/>
+
+  <!-- Curve 2: 0.5*e^{-t/(2T1)} = 0.5*e^{-t/2}, T1=1
+       This is slower decay (reference envelope) -->
+  <polyline fill="none" stroke="#ADADAD" stroke-width="1.5" stroke-dasharray="6 3"
+    points="52,45 67,56 82,68 97,79 113,89 128,99 143,108 158,117 174,125 189,133 204,141 219,148 235,155 250,162 265,168 280,174 296,180 310,185"/>
+
+  <!-- Left panel legend -->
+  <line x1="60" y1="340" x2="85" y2="340" stroke="#C8860E" stroke-width="2"/>
+  <text x="90" y="344" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">|&#x03C1;&#x2080;&#x2081;(t)| — T&#x2082; decay</text>
+  <line x1="60" y1="355" x2="85" y2="355" stroke="#ADADAD" stroke-width="1.5" stroke-dasharray="6 3"/>
+  <text x="90" y="359" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">&#xbd;e&#x207B;t/2T&#x2081; — T&#x2081;/2 reference</text>
+
+  <!-- ============ RIGHT PANEL: populations ============ -->
+  <!-- Chart area: x: 390 to 660, y: 45 to 300 -->
+  <rect x="390" y="45" width="258" height="255" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <text x="519" y="40" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Diagonal populations</text>
+
+  <!-- Y-axis: 0 to 1.0 -->
+  <line x1="386" y1="300" x2="390" y2="300" stroke="#545454" stroke-width="0.75"/>
+  <text x="382" y="303" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">0</text>
+  <line x1="386" y1="172.5" x2="390" y2="172.5" stroke="#545454" stroke-width="0.75"/>
+  <text x="382" y="175" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">0.5</text>
+  <line x1="386" y1="45" x2="390" y2="45" stroke="#545454" stroke-width="0.75"/>
+  <text x="382" y="48" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">1.0</text>
+
+  <!-- Y axis label -->
+  <text x="362" y="175" text-anchor="middle" transform="rotate(-90,362,175)" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">population</text>
+
+  <!-- Gridlines -->
+  <line x1="390" y1="172.5" x2="648" y2="172.5" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="3 3"/>
+
+  <!-- X-axis ticks for right panel -->
+  <line x1="390" y1="300" x2="390" y2="304" stroke="#545454" stroke-width="0.75"/>
+  <text x="390" y="313" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">0</text>
+  <line x1="454.5" y1="300" x2="454.5" y2="304" stroke="#545454" stroke-width="0.75"/>
+  <text x="454.5" y="313" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">T&#x2081;</text>
+  <line x1="519" y1="300" x2="519" y2="304" stroke="#545454" stroke-width="0.75"/>
+  <text x="519" y="313" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">2T&#x2081;</text>
+  <line x1="583.5" y1="300" x2="583.5" y2="304" stroke="#545454" stroke-width="0.75"/>
+  <text x="583.5" y="313" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">3T&#x2081;</text>
+  <line x1="648" y1="300" x2="648" y2="304" stroke="#545454" stroke-width="0.75"/>
+  <text x="648" y="313" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">4T&#x2081;</text>
+
+  <text x="519" y="328" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">time t</text>
+
+  <!-- T1 vertical reference line: t=T1=1.0, x_svg = 390 + (1/4)*258 = 390+64.5 = 454.5 -->
+  <line x1="454.5" y1="45" x2="454.5" y2="300" stroke="#2a1a0e" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <text x="457" y="60" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#2a1a0e">T&#x2081;</text>
+
+  <!-- rho_11(t) = e^{-t/T1}: starts at 1, decays
+       y_svg = 300 - (val/1)*255 = 300 - val*255 -->
+  <polyline fill="none" stroke="#2a1a0e" stroke-width="2"
+    points="390,45 405,67 421,88 436,107 451,125 467,141 482,155 497,168 512,180 528,191 543,200 558,209 574,217 589,224 604,231 619,237 635,242 648,247"/>
+
+  <!-- rho_00(t) = 1 - e^{-t/T1}: starts at 0, rises -->
+  <polyline fill="none" stroke="#C8102E" stroke-width="2"
+    points="390,300 405,278 421,257 436,238 451,220 467,204 482,190 497,177 512,165 528,154 543,145 558,136 574,128 589,121 604,114 619,108 635,103 648,98"/>
+
+  <!-- Right panel legend -->
+  <line x1="398" y1="340" x2="423" y2="340" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="428" y="344" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">&#x03C1;&#x2081;&#x2081;(t) — excited population decays</text>
+  <line x1="398" y1="355" x2="423" y2="355" stroke="#C8102E" stroke-width="2"/>
+  <text x="428" y="359" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">&#x03C1;&#x2080;&#x2080;(t) — ground population rises</text>
+
+  <!-- Connector bracket below both x-axes showing T2 < T1 -->
+  <line x1="90.7" y1="370" x2="90.7" y2="378" stroke="#545454" stroke-width="1"/>
+  <line x1="90.7" y1="375" x2="454.5" y2="375" stroke="#545454" stroke-width="0.75" stroke-dasharray="3 2"/>
+  <line x1="454.5" y1="370" x2="454.5" y2="378" stroke="#545454" stroke-width="1"/>
+  <text x="272" y="388" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">T&#x2082; &#x2264; 2T&#x2081; constraint</text>
+
+  <!-- Axes -->
+  <line x1="52" y1="300" x2="310" y2="300" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="52" y1="45" x2="52" y2="300" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="390" y1="300" x2="648" y2="300" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="390" y1="45" x2="390" y2="300" stroke="#2a1a0e" stroke-width="1"/>
+
+</svg>

@@ -1,0 +1,128 @@
+<!--
+  CAJAL SVG Figure
+  Book: Quantum Mechanics — Information, Measurement, and Open Systems
+  Book-slug: quantum-mechanics-vol4
+  Chapter: 07-measurement-and-interpretations
+  Figure: 01
+  Title: Von Neumann Measurement Chain — Four Entanglement Stages
+  Type: mechanism-chart (MC)
+  Priority: Critical
+  Author: Humanitarians AI Incorporated
+  Date: 2026-06-06
+  Source: pantry/07-measurement-and-interpretations-cajal.md
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-07-01">
+  <title id="fig-title-07-01">Von Neumann Measurement Chain — Four Entanglement Stages</title>
+  <desc>Four-node horizontal chain showing S, A, E, O linked by arrows. A 2x2 density matrix inset below the A-to-E arrow shows diagonal elements filled (surviving coherence) and off-diagonal elements struck through (decoherence). A dashed feedback arc from E back to A indicates environment-induced suppression.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics — Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="07-measurement-and-interpretations"
+      figure-number="01"
+      figure-title="Von Neumann Measurement Chain — Four Entanglement Stages"
+      figure-slug="von-neumann-chain"
+      figure-type="mechanism-chart"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/07-measurement-and-interpretations-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow-07-01" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arrow-red-07-01" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#C8102E"/>
+    </marker>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="26" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e">Von Neumann Measurement Chain</text>
+
+  <!-- Background region -->
+  <rect x="32" y="45" width="636" height="220" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Step labels above nodes -->
+  <text x="107" y="62" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">Step 0</text>
+  <text x="267" y="62" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">Step 1</text>
+  <text x="433" y="62" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">Step 2</text>
+  <text x="593" y="62" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">Step 3</text>
+
+  <!-- Node S -->
+  <rect x="60" y="100" width="94" height="56" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="107" y="126" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="20" font-weight="400" fill="#2a1a0e">S</text>
+  <text x="107" y="144" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">system</text>
+
+  <!-- Arrow S → A -->
+  <line x1="154" y1="128" x2="213" y2="128" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-07-01)"/>
+
+  <!-- Node A -->
+  <rect x="220" y="100" width="94" height="56" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="267" y="126" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="20" font-weight="400" fill="#2a1a0e">A</text>
+  <text x="267" y="144" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">apparatus</text>
+
+  <!-- Arrow A → E -->
+  <line x1="314" y1="128" x2="377" y2="128" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-07-01)"/>
+
+  <!-- Node E -->
+  <rect x="384" y="100" width="94" height="56" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="431" y="126" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="20" font-weight="400" fill="#2a1a0e">E</text>
+  <text x="431" y="144" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">environment</text>
+
+  <!-- Arrow E → O -->
+  <line x1="478" y1="128" x2="541" y2="128" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arrow-07-01)"/>
+
+  <!-- Node O -->
+  <rect x="548" y="100" width="94" height="56" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="595" y="126" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="20" font-weight="400" fill="#2a1a0e">O</text>
+  <text x="595" y="144" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">observer</text>
+
+  <!-- Decoherence feedback arc below nodes A–E: dashed red arc -->
+  <path d="M 314,186 C 314,210 380,220 431,220 C 478,220 540,210 540,186"
+        fill="none" stroke="#C8102E" stroke-width="1.25" stroke-dasharray="5 3"/>
+  <!-- Arc label -->
+  <text x="428" y="235" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#C8102E">decoherence: off-diagonals suppressed</text>
+
+  <!-- Density matrix inset: 2x2 grid below A→E arrow -->
+  <!-- Position: centered below the A→E arrow at x~345, y~260 -->
+  <!-- 2x2 grid: each cell 32x28 -->
+  <text x="345" y="258" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">&#x03C1;&#x209b;&#x1d2c;:</text>
+  <!-- Grid outline -->
+  <rect x="266" y="265" width="64" height="56" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- Cell borders -->
+  <line x1="298" y1="265" x2="298" y2="321" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="266" y1="293" x2="330" y2="293" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- Diagonal cells (survive): filled #2a1a0e -->
+  <rect x="266" y="265" width="32" height="28" fill="#2a1a0e"/>
+  <rect x="298" y="293" width="32" height="28" fill="#2a1a0e"/>
+  <!-- Off-diagonal cells: light gray with red strikethrough -->
+  <rect x="298" y="265" width="32" height="28" fill="#F5F5F5"/>
+  <line x1="300" y1="267" x2="328" y2="291" stroke="#C8102E" stroke-width="1.5"/>
+  <rect x="266" y="293" width="32" height="28" fill="#F5F5F5"/>
+  <line x1="268" y1="295" x2="296" y2="319" stroke="#C8102E" stroke-width="1.5"/>
+
+  <!-- Diagonal cell labels -->
+  <text x="282" y="283" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#FFFFFF">|&#x3b1;|&#xb2;</text>
+  <text x="314" y="311" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#FFFFFF">|&#x3b2;|&#xb2;</text>
+
+  <!-- Annotation: partial trace -->
+  <text x="345" y="340" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">&#x03C1;&#x209b;&#x1d2c; = Tr&#x1d49;(|&#x3a8;&#x27E9;&#x27E8;&#x3a8;|) — both diagonal terms persist</text>
+  <text x="345" y="355" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">no single outcome selected at any step</text>
+
+  <!-- Chain stage annotations -->
+  <text x="107" y="175" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">&#x3b1;|&#x2191;&#x27E9; + &#x3b2;|&#x2193;&#x27E9;</text>
+  <text x="267" y="175" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">S+A entangled</text>
+  <text x="431" y="175" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">S+A+E entangled</text>
+  <text x="595" y="175" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">S+A+E+O entangled</text>
+
+  <!-- Cut location question mark -->
+  <text x="350" y="385" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="13" fill="#545454">Where does the cut fall? — the interpretive question</text>
+  <text x="350" y="400" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">Decoherence removes off-diagonal elements — it does not select one outcome</text>
+
+</svg>

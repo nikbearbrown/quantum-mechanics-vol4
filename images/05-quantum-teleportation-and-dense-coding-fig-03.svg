@@ -1,0 +1,111 @@
+<!--
+  CAJAL SVG Generator — quantum-mechanics-vol4
+  Chapter: 05-quantum-teleportation-and-dense-coding
+  Figure: 03
+  Title: Dense coding: Alice's Pauli encoding map — hub and spoke
+  Source: pantry/05-quantum-teleportation-and-dense-coding-cajal.md
+  Generated: 2026-06-06
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-qtp03">
+  <title id="fig-title-qtp03">Dense coding encoding map: four Pauli gates on |Φ⁺⟩ produce four orthogonal Bell states</title>
+  <desc>Hub-and-spoke diagram: center hub is shared Bell pair |Φ⁺⟩; four spokes show Alice applying I, X, Z, iY (XZ) respectively, each producing a distinct Bell state — |Φ⁺⟩, |Ψ⁺⟩, |Φ⁻⟩, |Ψ⁻⟩ — with bar charts showing nonzero amplitudes per Bell state.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="05-quantum-teleportation-and-dense-coding"
+      figure-number="03"
+      figure-title="Dense coding encoding map: Pauli gates on shared |Φ⁺⟩"
+      figure-slug="dense-coding-encoding-map"
+      figure-type="hub-spoke-diagram"
+      priority="CRITICAL"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/05-quantum-teleportation-and-dense-coding-cajal.md"/>
+  </metadata>
+
+  <!-- Background -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+  <rect x="32" y="32" width="636" height="356" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Figure title -->
+  <text x="350" y="24" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Dense coding — Alice's Pauli encoding map on |Φ⁺⟩</text>
+
+  <!-- HUB: |Φ⁺⟩ center at (350, 210) -->
+  <!-- Two interlocked circles representing the shared Bell pair -->
+  <circle cx="338" cy="210" r="20" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <circle cx="362" cy="210" r="20" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <!-- Double arc between them -->
+  <path d="M 338 195 Q 350 185 362 195" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <path d="M 338 225 Q 350 235 362 225" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <!-- Hub label -->
+  <text x="350" y="214" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#2a1a0e" text-anchor="middle">|Φ⁺⟩</text>
+
+  <!-- ===== SPOKE 1: Message 00, Gate I, → |Φ⁺⟩ (North at 350,80) ===== -->
+  <!-- Spoke line from hub top to node -->
+  <line x1="350" y1="189" x2="350" y2="118" stroke="#545454" stroke-width="1.5"/>
+  <!-- Gate label on spoke -->
+  <text x="360" y="155" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#545454" font-weight="700">I</text>
+  <!-- Node box -->
+  <rect x="295" y="55" width="110" height="62" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1"/>
+  <!-- Mini bar chart: |Φ⁺⟩ = bars at |00⟩ and |11⟩, equal height -->
+  <!-- Bars within node: x positions for |00⟩,|01⟩,|10⟩,|11⟩ -->
+  <rect x="305" y="78" width="14" height="28" fill="#2a1a0e" opacity="0.7"/>
+  <rect x="322" y="106" width="14" height="0" fill="#545454" opacity="0.3"/>
+  <rect x="339" y="106" width="14" height="0" fill="#545454" opacity="0.3"/>
+  <rect x="356" y="78" width="14" height="28" fill="#2a1a0e" opacity="0.7"/>
+  <!-- Base line -->
+  <line x1="302" y1="106" x2="373" y2="106" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="350" y="66" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#2a1a0e" text-anchor="middle">00 → |Φ⁺⟩</text>
+  <!-- Bar labels -->
+  <text x="312" y="116" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="8" fill="#545454" text-anchor="middle">00</text>
+  <text x="363" y="116" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="8" fill="#545454" text-anchor="middle">11</text>
+
+  <!-- ===== SPOKE 2: Message 01, Gate X, → |Ψ⁺⟩ (East at 530,210) ===== -->
+  <line x1="372" y1="210" x2="452" y2="210" stroke="#C8102E" stroke-width="1.5"/>
+  <text x="410" y="203" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#C8102E" font-weight="700">X</text>
+  <rect x="455" y="175" width="110" height="62" fill="#FFFFFF" stroke="#C8102E" stroke-width="1"/>
+  <!-- |Ψ⁺⟩ bars at |01⟩ and |10⟩ -->
+  <rect x="465" y="208" width="14" height="0" fill="#545454" opacity="0.3"/>
+  <rect x="482" y="180" width="14" height="28" fill="#C8102E" opacity="0.8"/>
+  <rect x="499" y="180" width="14" height="28" fill="#C8102E" opacity="0.8"/>
+  <rect x="516" y="208" width="14" height="0" fill="#545454" opacity="0.3"/>
+  <line x1="462" y1="208" x2="533" y2="208" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="510" y="185" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#C8102E" text-anchor="middle">01 → |Ψ⁺⟩</text>
+  <text x="489" y="218" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="8" fill="#545454" text-anchor="middle">01</text>
+  <text x="506" y="218" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="8" fill="#545454" text-anchor="middle">10</text>
+
+  <!-- ===== SPOKE 3: Message 10, Gate Z, → |Φ⁻⟩ (South at 350,300) ===== -->
+  <line x1="350" y1="231" x2="350" y2="290" stroke="#787878" stroke-width="1.5"/>
+  <text x="360" y="265" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#787878" font-weight="700">Z</text>
+  <rect x="295" y="292" width="110" height="62" fill="#FFFFFF" stroke="#787878" stroke-width="1"/>
+  <!-- |Φ⁻⟩ bars at |00⟩ and |11⟩ — phase inverted (use open bar for |11⟩) -->
+  <rect x="305" y="315" width="14" height="28" fill="#787878" opacity="0.7"/>
+  <rect x="322" y="343" width="14" height="0" fill="#545454" opacity="0.3"/>
+  <rect x="339" y="343" width="14" height="0" fill="#545454" opacity="0.3"/>
+  <rect x="356" y="315" width="14" height="28" fill="#FFFFFF" stroke="#787878" stroke-width="1"/>
+  <line x1="302" y1="343" x2="373" y2="343" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="350" y="303" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#787878" text-anchor="middle">10 → |Φ⁻⟩</text>
+  <text x="312" y="353" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="8" fill="#545454" text-anchor="middle">00</text>
+  <text x="363" y="353" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="8" fill="#787878" text-anchor="middle">11−</text>
+
+  <!-- ===== SPOKE 4: Message 11, Gate iY, → |Ψ⁻⟩ (West at 170,210) ===== -->
+  <line x1="328" y1="210" x2="248" y2="210" stroke="#ADADAD" stroke-width="1.5"/>
+  <text x="284" y="203" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#ADADAD" font-weight="700">iY</text>
+  <rect x="135" y="175" width="110" height="62" fill="#FFFFFF" stroke="#ADADAD" stroke-width="1"/>
+  <!-- |Ψ⁻⟩ bars at |01⟩− and |10⟩+ (phase contrast) -->
+  <rect x="145" y="208" width="14" height="0" fill="#545454" opacity="0.3"/>
+  <rect x="162" y="180" width="14" height="28" fill="#ADADAD" opacity="0.8"/>
+  <rect x="179" y="180" width="14" height="28" fill="#FFFFFF" stroke="#ADADAD" stroke-width="1"/>
+  <rect x="196" y="208" width="14" height="0" fill="#545454" opacity="0.3"/>
+  <line x1="142" y1="208" x2="213" y2="208" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="190" y="185" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#ADADAD" text-anchor="middle">11 → |Ψ⁻⟩</text>
+  <text x="169" y="218" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="8" fill="#545454" text-anchor="middle">01</text>
+  <text x="186" y="218" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="8" fill="#ADADAD" text-anchor="middle">10−</text>
+
+  <!-- Caption -->
+  <text x="350" y="398" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">Alice applies one Pauli to her qubit A of the shared |Φ⁺⟩; Bob measures the resulting Bell state to read 2 classical bits</text>
+  <!-- Open bar legend note -->
+  <text x="350" y="385" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#787878" text-anchor="middle">Open bar = negative amplitude (same magnitude, opposite sign)</text>
+</svg>

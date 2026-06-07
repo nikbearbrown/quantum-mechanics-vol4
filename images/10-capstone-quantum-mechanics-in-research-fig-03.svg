@@ -1,0 +1,163 @@
+<!--
+  CAJAL SVG Figure
+  Book: Quantum Mechanics — Information, Measurement, and Open Systems
+  Book-slug: quantum-mechanics-vol4
+  Chapter: 10-capstone-quantum-mechanics-in-research
+  Figure: 03
+  Title: CHSH Geometry — Measurement Angles and Bell-State Correlations
+  Type: quantitative-chart (PQ)
+  Priority: Critical
+  Author: Humanitarians AI Incorporated
+  Date: 2026-06-06
+  Source: pantry/10-capstone-quantum-mechanics-in-research-cajal.md
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-10-03">
+  <title id="fig-title-10-03">CHSH Geometry — Optimal Measurement Angles and Four Correlators</title>
+  <desc>Upper sub-panel shows a unit circle with four measurement axis arrows: Alice solid and dashed at 0 and 90 degrees, Bob solid and dashed at 45 and minus 45 degrees. Lower sub-panel shows four bars representing the CHSH correlators E(A1B1), E(A1B2), E(A2B1), E(A2B2) with values plus and minus 1 over root 2. A secondary scale marker shows S total equals 2 root 2 exceeding the classical bound of 2.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics — Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="10-capstone-quantum-mechanics-in-research"
+      figure-number="03"
+      figure-title="CHSH Geometry — Measurement Angles and Bell-State Correlations"
+      figure-slug="chsh-geometry-correlators"
+      figure-type="quantitative-chart"
+      priority="Critical"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/10-capstone-quantum-mechanics-in-research-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow-10-03" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arrow-alice-03" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <marker id="arrow-bob-03" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#C8860E"/>
+    </marker>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="350" y="22" text-anchor="middle" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="14" font-weight="400" fill="#2a1a0e">CHSH Geometry — Optimal Measurement Angles</text>
+
+  <!-- ===== UPPER PANEL: Unit circle with measurement axes ===== -->
+  <rect x="32" y="38" width="340" height="380" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="202" y="56" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Measurement axes (unit circle)</text>
+
+  <!-- Unit circle: center (202, 195), radius 110 -->
+  <circle cx="202" cy="195" r="110" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="1"/>
+  <!-- Axes lines -->
+  <line x1="92" y1="195" x2="312" y2="195" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="202" y1="85" x2="202" y2="305" stroke="#D4D4D4" stroke-width="0.5"/>
+
+  <!-- Alice axis 1: 0° → horizontal right, solid -->
+  <line x1="202" y1="195" x2="310" y2="195" stroke="#2a1a0e" stroke-width="2" marker-end="url(#arrow-alice-03)"/>
+  <text x="320" y="199" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#2a1a0e">a&#x2081; (0&#xb0;)</text>
+
+  <!-- Alice axis 2: 90° → vertical up, dashed -->
+  <line x1="202" y1="195" x2="202" y2="88" stroke="#2a1a0e" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arrow-alice-03)"/>
+  <text x="210" y="82" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#2a1a0e">a&#x2082; (90&#xb0;)</text>
+
+  <!-- Bob axis 1: 45° → diagonal upper-right, solid -->
+  <line x1="202" y1="195" x2="280" y2="117" stroke="#C8860E" stroke-width="2" marker-end="url(#arrow-bob-03)"/>
+  <text x="286" y="110" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8860E">b&#x2081; (45&#xb0;)</text>
+
+  <!-- Bob axis 2: -45° → diagonal lower-right, dashed -->
+  <line x1="202" y1="195" x2="280" y2="273" stroke="#C8860E" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arrow-bob-03)"/>
+  <text x="286" y="286" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8860E">b&#x2082; (&#x2212;45&#xb0;)</text>
+
+  <!-- Angle arcs: 45° between adjacent pairs -->
+  <!-- Arc between a1 and b1 (0° to 45°) -->
+  <path d="M 250,195 A 48,48 0 0 0 233,161" fill="none" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="255" y="183" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">45&#xb0;</text>
+  <!-- Arc between b1 and a2 (45° to 90°) -->
+  <path d="M 233,161 A 48,48 0 0 0 202,147" fill="none" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="213" y="152" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">45&#xb0;</text>
+  <!-- Arc between a1 and b2 (0° to -45°) -->
+  <path d="M 250,195 A 48,48 0 0 1 233,229" fill="none" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="255" y="222" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#545454">45&#xb0;</text>
+
+  <!-- Legend for axes -->
+  <line x1="60" y1="335" x2="90" y2="335" stroke="#2a1a0e" stroke-width="2"/>
+  <text x="96" y="339" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">Alice: a&#x2081; (solid), a&#x2082; (dashed)</text>
+  <line x1="60" y1="355" x2="90" y2="355" stroke="#C8860E" stroke-width="2"/>
+  <text x="96" y="359" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#C8860E">Bob: b&#x2081; (solid), b&#x2082; (dashed)</text>
+  <text x="202" y="385" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">Optimal CHSH angles: all 45&#xb0; separated</text>
+  <text x="202" y="400" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#2a1a0e">S&#x1d34;&#x1d39; = 2&#x221a;2 &#x2248; 2.828 (QM maximum)</text>
+  <text x="202" y="414" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">classical bound: |S| &#x2264; 2 (CHSH inequality)</text>
+
+  <!-- ===== RIGHT PANEL: Correlator bar chart ===== -->
+  <rect x="384" y="38" width="284" height="380" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="526" y="56" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Correlators E(a,b)</text>
+
+  <!-- Bar chart: 4 bars for E values -->
+  <!-- y-axis: -1 to +1, chart area y: 70 to 270 (200 px for range 2.0) -->
+  <!-- y_svg = 170 - val*100 (center at y=170 for val=0) -->
+  <!-- x positions: bars at x=410,445,480,515, width=22 -->
+
+  <!-- Y-axis line -->
+  <line x1="398" y1="70" x2="398" y2="270" stroke="#2a1a0e" stroke-width="1"/>
+  <!-- Y ticks -->
+  <line x1="394" y1="70" x2="398" y2="70" stroke="#545454" stroke-width="0.75"/>
+  <text x="390" y="73" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">+1</text>
+  <line x1="394" y1="170" x2="398" y2="170" stroke="#545454" stroke-width="0.75"/>
+  <text x="390" y="173" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">0</text>
+  <line x1="394" y1="270" x2="398" y2="270" stroke="#545454" stroke-width="0.75"/>
+  <text x="390" y="273" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="9" fill="#545454">&#x2212;1</text>
+
+  <!-- Reference lines -->
+  <line x1="398" y1="170" x2="568" y2="170" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- ±1/√2 reference lines: 1/√2 ≈ 0.707, y = 170 - 0.707*100 = 99.3 and 170+70.7=240.7 -->
+  <line x1="398" y1="99" x2="568" y2="99" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="3 2"/>
+  <text x="572" y="102" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="8" fill="#545454">+1/&#x221a;2</text>
+  <line x1="398" y1="241" x2="568" y2="241" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="3 2"/>
+  <text x="572" y="244" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="8" fill="#545454">&#x2212;1/&#x221a;2</text>
+
+  <!-- E(a1,b1) = +1/√2 ≈ +0.707: bar from 0 to +0.707, y from 170 to 99 -->
+  <rect x="410" y="99" width="22" height="71" fill="#787878"/>
+  <text x="421" y="93" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="8" fill="#787878">+0.71</text>
+  <text x="421" y="280" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="8" fill="#545454">a&#x2081;b&#x2081;</text>
+
+  <!-- E(a1,b2) = +1/√2: same as above -->
+  <rect x="445" y="99" width="22" height="71" fill="#787878"/>
+  <text x="456" y="93" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="8" fill="#787878">+0.71</text>
+  <text x="456" y="280" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="8" fill="#545454">a&#x2081;b&#x2082;</text>
+
+  <!-- E(a2,b1) = +1/√2 -->
+  <rect x="480" y="99" width="22" height="71" fill="#787878"/>
+  <text x="491" y="93" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="8" fill="#787878">+0.71</text>
+  <text x="491" y="280" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="8" fill="#545454">a&#x2082;b&#x2081;</text>
+
+  <!-- E(a2,b2) = -1/√2: bar from 0 to -0.707, y from 170 to 241 -->
+  <rect x="515" y="170" width="22" height="71" fill="#C8102E"/>
+  <text x="526" y="252" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="8" fill="#C8102E">&#x2212;0.71</text>
+  <text x="526" y="280" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="8" fill="#545454">a&#x2082;b&#x2082;</text>
+
+  <!-- S = E11+E12+E21-E22 = 0.707+0.707+0.707+0.707 = 2√2 -->
+  <!-- Secondary scale showing S total -->
+  <line x1="398" y1="295" x2="568" y2="295" stroke="#2a1a0e" stroke-width="1"/>
+  <!-- S marker at 2√2/4 = 0.707 of full scale, representing the total sum -->
+  <rect x="398" y="300" width="220" height="20" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.5"/>
+  <!-- Classical bound S=2 indicator -->
+  <line x1="540" y1="296" x2="540" y2="320" stroke="#C8860E" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <text x="542" y="312" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="8" fill="#C8860E">S=2</text>
+  <!-- QM value S=2√2 ≈ 2.828 indicator -->
+  <circle cx="558" cy="308" r="4" fill="#2a1a0e"/>
+  <text x="562" y="325" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="8" fill="#2a1a0e">S=2&#x221a;2</text>
+
+  <text x="526" y="340" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">S = |E&#x2081;&#x2081;+E&#x2081;&#x2082;+E&#x2082;&#x2081;&#x2212;E&#x2082;&#x2082;|</text>
+  <text x="526" y="354" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">S = 2&#x221a;2 &#x2248; 2.828</text>
+  <text x="526" y="370" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">classical max: |S| &#x2264; 2</text>
+  <text x="526" y="384" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#2a1a0e">violation: S &#x2212; 2 = 2(&#x221a;2&#x2212;1) &#x2248; 0.83</text>
+  <text x="526" y="400" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">QM: nonlocal correlations confirmed</text>
+  <text x="526" y="414" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="9" fill="#C8102E">rules out local hidden variables</text>
+
+</svg>

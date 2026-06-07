@@ -1,0 +1,105 @@
+<!--
+  CAJAL SVG Generator — quantum-mechanics-vol4
+  Chapter: 01-mixed-states-and-the-density-matrix
+  Figure: 03
+  Title: Decomposition non-uniqueness: two preparation procedures for the same density matrix
+  Source: pantry/01-mixed-states-and-the-density-matrix-cajal.md
+  Generated: 2026-06-06
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-03">
+  <title id="fig-title-03">Decomposition non-uniqueness: two preparation procedures for the same density matrix</title>
+  <desc>Two equal-width Bloch ball cross-sections separated by an equality sign: left panel shows |0⟩ and |1⟩ on the z-axis mixing to the center; right panel shows |+⟩ and |−⟩ on the x-axis mixing to the same center — both preparations yield ρ=I/2.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="01-mixed-states-and-the-density-matrix"
+      figure-number="03"
+      figure-title="Decomposition non-uniqueness: two preparations map to the same density matrix"
+      figure-slug="decomposition-non-uniqueness"
+      figure-type="diagram"
+      priority="IMPORTANT"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/01-mixed-states-and-the-density-matrix-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow-03" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+  <rect x="32" y="32" width="636" height="356" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Figure title -->
+  <text x="350" y="24" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Decomposition non-uniqueness — two preparations, one density matrix</text>
+
+  <!-- Center vertical divider -->
+  <line x1="350" y1="40" x2="350" y2="380" stroke="#D4D4D4" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <!-- Equality sign at center -->
+  <text x="350" y="218" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="24" fill="#2a1a0e" text-anchor="middle" font-weight="400">=</text>
+
+  <!-- ====== LEFT PANEL: |0⟩ and |1⟩ mixture ====== -->
+  <!-- Bloch circle (cross-section) -->
+  <circle cx="175" cy="205" r="120" fill="none" stroke="#2a1a0e" stroke-width="1"/>
+  <!-- Dashed vertical z-axis -->
+  <line x1="175" y1="78" x2="175" y2="332" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <!-- Dashed horizontal x-axis -->
+  <line x1="52" y1="205" x2="298" y2="205" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <!-- |0⟩ north pole (z-axis, top) -->
+  <circle cx="175" cy="85" r="6" fill="#2a1a0e"/>
+  <text x="185" y="89" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#2a1a0e">|0⟩</text>
+  <!-- |1⟩ south pole (z-axis, bottom) -->
+  <circle cx="175" cy="325" r="6" fill="#2a1a0e"/>
+  <text x="185" y="329" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#2a1a0e">|1⟩</text>
+  <!-- Midpoint connector dashed line -->
+  <line x1="175" y1="85" x2="175" y2="325" stroke="#ADADAD" stroke-width="1" stroke-dasharray="5 3"/>
+  <!-- Center point — maximally mixed result of this mixture -->
+  <circle cx="175" cy="205" r="7" fill="#C8102E"/>
+  <!-- Panel label -->
+  <text x="175" y="375" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454" text-anchor="middle">½|0⟩⟨0| + ½|1⟩⟨1|</text>
+  <!-- z-axis label -->
+  <text x="164" y="64" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#545454">ẑ</text>
+
+  <!-- ====== RIGHT PANEL: |+⟩ and |−⟩ mixture ====== -->
+  <!-- Bloch circle (cross-section) -->
+  <circle cx="525" cy="205" r="120" fill="none" stroke="#2a1a0e" stroke-width="1"/>
+  <!-- Dashed horizontal x-axis -->
+  <line x1="402" y1="205" x2="648" y2="205" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <!-- Dashed vertical z-axis -->
+  <line x1="525" y1="78" x2="525" y2="332" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <!-- |+⟩ right (+x) -->
+  <circle cx="645" cy="205" r="6" fill="#787878"/>
+  <text x="648" y="198" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#787878">|+⟩</text>
+  <!-- |−⟩ left (−x) -->
+  <circle cx="405" cy="205" r="6" fill="#787878"/>
+  <text x="380" y="198" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#787878">|−⟩</text>
+  <!-- Midpoint connector dashed line -->
+  <line x1="405" y1="205" x2="645" y2="205" stroke="#ADADAD" stroke-width="1" stroke-dasharray="5 3"/>
+  <!-- Center point — same maximally mixed result -->
+  <circle cx="525" cy="205" r="7" fill="#C8102E"/>
+  <!-- Panel label -->
+  <text x="525" y="375" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454" text-anchor="middle">½|+⟩⟨+| + ½|−⟩⟨−|</text>
+  <!-- x-axis label -->
+  <text x="651" y="200" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#545454"/>
+
+  <!-- Both centers label -->
+  <text x="175" y="220" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#C8102E" text-anchor="middle">I/2</text>
+  <text x="525" y="220" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#C8102E" text-anchor="middle">I/2</text>
+
+  <!-- Bottom caption -->
+  <text x="350" y="400" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454" text-anchor="middle">Both mixtures converge to the same point — convexity of density operators</text>
+
+  <!-- Legend -->
+  <circle cx="52" cy="50" r="5" fill="#2a1a0e"/>
+  <text x="62" y="54" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Pure state (z-basis)</text>
+  <circle cx="200" cy="50" r="5" fill="#787878"/>
+  <text x="210" y="54" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Pure state (x-basis)</text>
+  <circle cx="380" cy="50" r="6" fill="#C8102E"/>
+  <text x="390" y="54" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Maximally mixed ρ=I/2</text>
+</svg>

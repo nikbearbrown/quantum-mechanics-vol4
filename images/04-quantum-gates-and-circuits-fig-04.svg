@@ -1,0 +1,113 @@
+<!--
+  CAJAL SVG Generator — quantum-mechanics-vol4
+  Chapter: 04-quantum-gates-and-circuits
+  Figure: 04
+  Title: Quantum speedup comparison: Grover O(√N) vs classical O(N), Shor polynomial vs sub-exponential
+  Source: pantry/04-quantum-gates-and-circuits-cajal.md
+  Generated: 2026-06-06
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-g04">
+  <title id="fig-title-g04">Quantum algorithm speedup comparison: Grover and Shor vs classical</title>
+  <desc>Grouped vertical bar chart comparing classical versus quantum query complexity for two problems: search (classical O(N) vs Grover O(√N), quadratic speedup) and factoring (classical sub-exponential vs Shor polynomial, exponential speedup). Classical factoring bar clipped with break mark. Y-axis starts at zero.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="04-quantum-gates-and-circuits"
+      figure-number="04"
+      figure-title="Quantum algorithm speedup: Grover and Shor vs classical"
+      figure-slug="quantum-speedup-comparison"
+      figure-type="bar-chart"
+      priority="SUPPLEMENTARY"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/04-quantum-gates-and-circuits-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arr-g04" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <!-- Break mark zigzag pattern -->
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+
+  <!-- Figure title -->
+  <text x="350" y="24" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Query complexity comparison — classical vs. quantum algorithms</text>
+
+  <!-- Chart area -->
+  <rect x="80" y="40" width="540" height="290" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Axes -->
+  <!-- y-axis at x=80, from y=330 to y=40 -->
+  <line x1="80" y1="330" x2="80" y2="32" stroke="#2a1a0e" stroke-width="1" marker-end="url(#arr-g04)"/>
+  <!-- x-axis at y=330, from x=80 to x=640 -->
+  <line x1="80" y1="330" x2="630" y2="330" stroke="#2a1a0e" stroke-width="1"/>
+
+  <!-- Grid lines -->
+  <!-- At y=195 (midpoint of chart height) -->
+  <line x1="80" y1="195" x2="620" y2="195" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+  <!-- At y=40 -->
+  <line x1="80" y1="40" x2="620" y2="40" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="4 3"/>
+
+  <!-- Y-axis label -->
+  <text x="24" y="185" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454" text-anchor="middle" transform="rotate(-90, 24, 185)">Query complexity (relative scale)</text>
+
+  <!-- Y-axis tick at 0 -->
+  <line x1="75" y1="330" x2="80" y2="330" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="70" y="334" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#545454" text-anchor="end">0</text>
+
+  <!-- ===== GROUP 1: Search problem ===== -->
+  <!-- Group label -->
+  <text x="195" y="354" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle" font-weight="700">Search</text>
+  <text x="195" y="368" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454" text-anchor="middle">N items</text>
+
+  <!-- Classical bar: height=180 (O(N) — taller) x=140..175 y=330-180=150 -->
+  <rect x="140" y="150" width="50" height="180" fill="#787878" stroke="#545454" stroke-width="1"/>
+  <text x="165" y="143" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454" text-anchor="middle">O(N)</text>
+
+  <!-- Quantum (Grover) bar: height=90 (O(√N) ≈ half) x=200..235 y=330-90=240 -->
+  <rect x="200" y="240" width="50" height="90" fill="#C8102E" stroke="#C8102E" stroke-width="1"/>
+  <text x="225" y="233" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#C8102E" text-anchor="middle">O(√N)</text>
+
+  <!-- ===== GROUP 2: Factoring problem ===== -->
+  <!-- Group label -->
+  <text x="460" y="354" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle" font-weight="700">Factoring</text>
+  <text x="460" y="368" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454" text-anchor="middle">n-bit number</text>
+
+  <!-- Classical bar: height=280 (sub-exponential — much taller, clipped) x=400..435 -->
+  <!-- Clip at y=60, show break mark at top, bar from y=330 down to y=60, height=270 -->
+  <rect x="400" y="60" width="50" height="270" fill="#787878" stroke="#545454" stroke-width="1"/>
+  <!-- Break mark zigzag at top of bar (y=60) -->
+  <polyline points="400,60 408,52 416,60 424,52 432,60 440,52 450,60" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+  <polyline points="400,60 408,52 416,60 424,52 432,60 440,52 450,60" fill="none" stroke="#545454" stroke-width="1.5"/>
+  <text x="425" y="46" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="9" fill="#545454" text-anchor="middle">sub-exp.</text>
+
+  <!-- Quantum (Shor) bar: height=72 (O(n² log n) — much smaller) x=465..500 y=330-72=258 -->
+  <rect x="465" y="258" width="50" height="72" fill="#C8102E" stroke="#C8102E" stroke-width="1"/>
+  <text x="490" y="251" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#C8102E" text-anchor="middle">O(n²logn)</text>
+
+  <!-- Double-headed speedup arrows for each group -->
+  <!-- Grover speedup arrow between classical bar top and quantum bar top -->
+  <line x1="172" y1="240" x2="197" y2="240" stroke="#545454" stroke-width="0.75" stroke-dasharray="3 2"/>
+  <line x1="172" y1="150" x2="172" y2="240" stroke="#545454" stroke-width="0.75" stroke-dasharray="3 2"/>
+  <text x="172" y="198" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="9" fill="#545454" text-anchor="end">2×</text>
+
+  <!-- Shor speedup indicator (much bigger ratio) -->
+  <line x1="427" y1="258" x2="462" y2="258" stroke="#545454" stroke-width="0.75" stroke-dasharray="3 2"/>
+  <text x="444" y="253" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="9" fill="#545454" text-anchor="middle">exp. gap</text>
+
+  <!-- LEGEND -->
+  <rect x="88" y="388" width="16" height="12" fill="#787878" stroke="#545454" stroke-width="1"/>
+  <text x="108" y="399" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Classical algorithm</text>
+  <rect x="248" y="388" width="16" height="12" fill="#C8102E" stroke="#C8102E" stroke-width="1"/>
+  <text x="268" y="399" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Quantum algorithm</text>
+  <text x="440" y="399" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#ADADAD">Classical factoring bar clipped — extends far beyond chart</text>
+
+  <!-- Speedup annotations at base -->
+  <text x="195" y="382" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">Quadratic speedup</text>
+  <text x="460" y="382" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#C8102E" text-anchor="middle" font-weight="700">Exponential speedup</text>
+</svg>

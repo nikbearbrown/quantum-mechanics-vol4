@@ -1,0 +1,129 @@
+<!--
+  CAJAL SVG Generator — quantum-mechanics-vol4
+  Chapter: 04-quantum-gates-and-circuits
+  Figure: 02
+  Title: Bell-state preparation circuit: |00⟩ → |Φ⁺⟩ via H-CNOT
+  Source: pantry/04-quantum-gates-and-circuits-cajal.md
+  Generated: 2026-06-06
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-g02">
+  <title id="fig-title-g02">Bell-state preparation circuit: |00⟩ to |Φ⁺⟩ via H then CNOT</title>
+  <desc>Two-wire quantum circuit diagram with Bloch sphere icons at three time steps: Step 0 both qubits at north pole; Step 1 qubit-0 moves to +x equator after H, qubit-1 unchanged; Step 2 both Bloch vectors collapse to center after CNOT, producing |Φ⁺⟩.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="04-quantum-gates-and-circuits"
+      figure-number="02"
+      figure-title="Bell-state preparation circuit: |00⟩ to |Φ⁺⟩ via H-CNOT"
+      figure-slug="bell-state-prep-circuit"
+      figure-type="circuit-diagram"
+      priority="CRITICAL"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/04-quantum-gates-and-circuits-cajal.md"/>
+  </metadata>
+
+  <!-- Background -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+  <rect x="32" y="32" width="636" height="356" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Figure title -->
+  <text x="350" y="24" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Bell-state preparation — |00⟩ → H⊗I → CNOT → |Φ⁺⟩</text>
+
+  <!-- Stage separators (dashed vertical) -->
+  <!-- Stages: Stage 0 around x=100-180, Stage 1 around x=260-360, Stage 2 around x=440-560 -->
+  <line x1="220" y1="40" x2="220" y2="380" stroke="#D4D4D4" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="400" y1="40" x2="400" y2="380" stroke="#D4D4D4" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <!-- Qubit wires: qubit 0 at y=170, qubit 1 at y=270 -->
+  <!-- Wire 0 (upper): x=60..640 -->
+  <line x1="60" y1="170" x2="640" y2="170" stroke="#2a1a0e" stroke-width="1.5"/>
+  <!-- Wire 1 (lower): x=60..640 -->
+  <line x1="60" y1="270" x2="640" y2="270" stroke="#2a1a0e" stroke-width="1.5"/>
+
+  <!-- Wire labels -->
+  <text x="48" y="174" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#2a1a0e" text-anchor="end">q₀</text>
+  <text x="48" y="274" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#2a1a0e" text-anchor="end">q₁</text>
+
+  <!-- Stage labels -->
+  <text x="130" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454" text-anchor="middle" font-weight="700">Step 0</text>
+  <text x="130" y="68" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454" text-anchor="middle">|00⟩ initial</text>
+  <text x="310" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454" text-anchor="middle" font-weight="700">Step 1</text>
+  <text x="310" y="68" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454" text-anchor="middle">After H⊗I</text>
+  <text x="520" y="56" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454" text-anchor="middle" font-weight="700">Step 2</text>
+  <text x="520" y="68" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454" text-anchor="middle">After CNOT → |Φ⁺⟩</text>
+
+  <!-- ===== STAGE 0: Bloch icons, both at north pole ===== -->
+  <!-- q0 Bloch icon at x=130, y=170 — circle radius 25 -->
+  <circle cx="130" cy="130" r="25" fill="none" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="130" y1="105" x2="130" y2="155" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="3 2"/>
+  <circle cx="130" cy="105" r="5" fill="#2a1a0e"/>  <!-- north pole = |0⟩ -->
+  <line x1="130" y1="155" x2="130" y2="170" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="2 2"/>
+  <!-- q1 Bloch icon -->
+  <circle cx="130" cy="310" r="25" fill="none" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="130" y1="285" x2="130" y2="335" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="3 2"/>
+  <circle cx="130" cy="285" r="5" fill="#2a1a0e"/>
+  <line x1="130" y1="270" x2="130" y2="285" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="2 2"/>
+  <!-- State labels -->
+  <text x="130" y="168" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454" text-anchor="middle">|0⟩</text>
+  <text x="130" y="362" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454" text-anchor="middle">|0⟩</text>
+
+  <!-- ===== H GATE on wire 0, at x=255 ===== -->
+  <rect x="235" y="154" width="38" height="32" fill="#FFFFFF" stroke="#545454" stroke-width="1.5"/>
+  <text x="254" y="175" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="14" fill="#545454" text-anchor="middle" font-weight="700">H</text>
+
+  <!-- ===== STAGE 1: q0 at +x equator, q1 unchanged ===== -->
+  <!-- q0 Bloch icon at x=310, y=170 — north pole moved to +x -->
+  <circle cx="310" cy="130" r="25" fill="none" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="285" y1="130" x2="335" y2="130" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="3 2"/>
+  <line x1="310" y1="105" x2="310" y2="155" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="3 2"/>
+  <circle cx="335" cy="130" r="5" fill="#C8102E"/>  <!-- +x equator = |+⟩ -->
+  <line x1="310" y1="155" x2="310" y2="170" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="2 2"/>
+  <!-- q1 unchanged -->
+  <circle cx="310" cy="310" r="25" fill="none" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="310" y1="285" x2="310" y2="335" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="3 2"/>
+  <circle cx="310" cy="285" r="5" fill="#2a1a0e"/>
+  <line x1="310" y1="270" x2="310" y2="285" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="2 2"/>
+  <!-- State labels -->
+  <text x="310" y="168" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#C8102E" text-anchor="middle">|+⟩</text>
+  <text x="310" y="362" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454" text-anchor="middle">|0⟩</text>
+  <!-- Separable label -->
+  <text x="310" y="388" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">Product state</text>
+
+  <!-- ===== CNOT GATE between wires at x=430 ===== -->
+  <!-- Control dot on wire 0 -->
+  <circle cx="430" cy="170" r="6" fill="#2a1a0e"/>
+  <!-- Vertical connecting line -->
+  <line x1="430" y1="170" x2="430" y2="264" stroke="#2a1a0e" stroke-width="1.5"/>
+  <!-- Target ⊕ on wire 1 -->
+  <circle cx="430" cy="270" r="12" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <line x1="418" y1="270" x2="442" y2="270" stroke="#2a1a0e" stroke-width="1.5"/>
+  <line x1="430" y1="258" x2="430" y2="282" stroke="#2a1a0e" stroke-width="1.5"/>
+
+  <!-- ===== STAGE 2: both at center (maximally mixed) ===== -->
+  <!-- q0 Bloch icon -->
+  <circle cx="530" cy="130" r="25" fill="none" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="505" y1="130" x2="555" y2="130" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="3 2"/>
+  <line x1="530" y1="105" x2="530" y2="155" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="3 2"/>
+  <circle cx="530" cy="130" r="6" fill="#C8102E"/>  <!-- center = maximally mixed -->
+  <line x1="530" y1="155" x2="530" y2="170" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="2 2"/>
+  <!-- q1 Bloch icon -->
+  <circle cx="530" cy="310" r="25" fill="none" stroke="#D4D4D4" stroke-width="0.75"/>
+  <line x1="505" y1="310" x2="555" y2="310" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="3 2"/>
+  <line x1="530" y1="285" x2="530" y2="335" stroke="#D4D4D4" stroke-width="0.5" stroke-dasharray="3 2"/>
+  <circle cx="530" cy="310" r="6" fill="#C8102E"/>
+  <line x1="530" y1="270" x2="530" y2="285" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="2 2"/>
+  <!-- State labels -->
+  <text x="530" y="168" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#C8102E" text-anchor="middle">ρ=I/2</text>
+  <text x="530" y="362" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#C8102E" text-anchor="middle">ρ=I/2</text>
+  <!-- Entangled label -->
+  <text x="530" y="388" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#C8102E" text-anchor="middle" font-weight="700">Entangled |Φ⁺⟩</text>
+
+  <!-- LEGEND -->
+  <circle cx="52" cy="390" r="5" fill="#2a1a0e"/>
+  <text x="62" y="394" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Pure state |r|=1</text>
+  <circle cx="175" cy="390" r="5" fill="#C8102E"/>
+  <text x="185" y="394" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Mixed / entangled sub-state |r|=0</text>
+</svg>

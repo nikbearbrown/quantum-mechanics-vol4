@@ -1,0 +1,160 @@
+<!--
+  CAJAL SVG Generator — quantum-mechanics-vol4
+  Chapter: 03-bells-theorem-and-chsh
+  Figure: 04
+  Title: Bell experiment timeline 1964–2022 with loophole closure status
+  Source: pantry/03-bells-theorem-and-chsh-cajal.md
+  Generated: 2026-06-06
+-->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fig-title-chsh-04">
+  <title id="fig-title-chsh-04">Bell experiment timeline 1964–2022 with loophole closure status</title>
+  <desc>Horizontal timeline from 1964 to 2022 showing key Bell test experiments with two loophole-status bands above: detection loophole (closed 2015) and locality loophole (closed 1982). Nobel Prize 2022 marked with star.</desc>
+  <metadata>
+    <cajal:figure xmlns:cajal="https://bearbrown.ai/cajal/1.0"
+      book="Quantum Mechanics: Information, Measurement, and Open Systems"
+      book-slug="quantum-mechanics-vol4"
+      chapter="03-bells-theorem-and-chsh"
+      figure-number="04"
+      figure-title="Bell experiment timeline 1964–2022 with loophole closure status"
+      figure-slug="bell-experiment-timeline"
+      figure-type="timeline"
+      priority="IMPORTANT"
+      author="Humanitarians AI Incorporated"
+      date-generated="2026-06-06"
+      source-file="pantry/03-bells-theorem-and-chsh-cajal.md"/>
+  </metadata>
+
+  <defs>
+    <marker id="arrow-t04" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2a1a0e"/>
+    </marker>
+    <!-- Hatching for open loopholes -->
+    <pattern id="hatch-open" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#ADADAD" stroke-width="1.5"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="420" fill="#FFFFFF"/>
+  <rect x="32" y="32" width="636" height="356" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Figure title -->
+  <text x="350" y="24" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Bell experiment timeline — loophole closure 1964–2022</text>
+
+  <!-- Timeline coordinate system:
+       x: 1964 → 2025, axis from x=60 to x=660 (span 600px)
+       y axis (main timeline): y=290
+       scale: (year-1964)/(2025-1964) * 600 + 60
+  -->
+
+  <!-- Helper: year to x = (year-1964)/61 * 600 + 60 -->
+  <!-- 1964: x=60, 1972: x=138.7, 1982: x=257.5, 2000: x=434.4, 2015: x=581.8, 2022: x=650.8, 2025: x=660 -->
+
+  <!-- LOOPHOLE STATUS BANDS (y=160 to 190 = band 1 locality, y=200 to 230 = band 2 detection) -->
+
+  <!-- === LOCALITY LOOPHOLE BAND === y=155..185 -->
+  <!-- Open 1964–1982: hatched -->
+  <!-- 1964→1982: x=60..257.5 -->
+  <rect x="60" y="155" width="197.5" height="25" fill="url(#hatch-open)" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- Closed 1982–2025: solid green -->
+  <rect x="257.5" y="155" width="402.5" height="25" fill="#2a1a0e" fill-opacity="0.15" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- Closed marker line -->
+  <rect x="257.5" y="155" width="402.5" height="25" fill="none" stroke="#787878" stroke-width="0.75"/>
+  <!-- Closed fill for locality -->
+  <rect x="257.5" y="155" width="402.5" height="25" fill="#545454" fill-opacity="0.18"/>
+
+  <!-- Band label -->
+  <text x="55" y="172" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="end">Locality</text>
+
+  <!-- === DETECTION LOOPHOLE BAND === y=190..220 -->
+  <!-- Open 1964–2015: hatched -->
+  <rect x="60" y="192" width="521.8" height="25" fill="url(#hatch-open)" stroke="#D4D4D4" stroke-width="0.75"/>
+  <!-- Closed 2015–2025: solid -->
+  <rect x="581.8" y="192" width="78.2" height="25" fill="#C8102E" fill-opacity="0.20" stroke="#D4D4D4" stroke-width="0.75"/>
+
+  <!-- Band label -->
+  <text x="55" y="209" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="end">Detection</text>
+
+  <!-- MAIN TIMELINE AXIS at y=290 -->
+  <line x1="60" y1="290" x2="668" y2="290" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow-t04)"/>
+
+  <!-- Year scale ticks and labels -->
+  <!-- 1964 -->
+  <line x1="60" y1="285" x2="60" y2="298" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="60" y="312" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454" text-anchor="middle">1964</text>
+  <!-- 1972 -->
+  <line x1="138.7" y1="285" x2="138.7" y2="298" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="138.7" y="312" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454" text-anchor="middle">1972</text>
+  <!-- 1982 -->
+  <line x1="257.5" y1="280" x2="257.5" y2="298" stroke="#545454" stroke-width="1.5"/>
+  <text x="257.5" y="312" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454" text-anchor="middle">1982</text>
+  <!-- 2000 -->
+  <line x1="434.4" y1="285" x2="434.4" y2="298" stroke="#2a1a0e" stroke-width="0.75"/>
+  <text x="434.4" y="312" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454" text-anchor="middle">2000</text>
+  <!-- 2015 -->
+  <line x1="581.8" y1="280" x2="581.8" y2="298" stroke="#C8102E" stroke-width="1.5"/>
+  <text x="581.8" y="312" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454" text-anchor="middle">2015</text>
+  <!-- 2022 -->
+  <line x1="650.8" y1="280" x2="650.8" y2="298" stroke="#C8102E" stroke-width="1.5"/>
+  <text x="650.8" y="312" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454" text-anchor="middle">2022</text>
+
+  <!-- EVENT MARKERS -->
+  <!-- Bell 1964 — gray circle -->
+  <circle cx="60" cy="290" r="5" fill="#ADADAD" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="60" y1="285" x2="60" y2="250" stroke="#ADADAD" stroke-width="0.75"/>
+  <text x="60" y="245" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">Bell's</text>
+  <text x="60" y="234" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">theorem</text>
+
+  <!-- Freedman &#38; Clauser 1972 — gray circle -->
+  <circle cx="138.7" cy="290" r="5" fill="#ADADAD" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="138.7" y1="285" x2="138.7" y2="335" stroke="#ADADAD" stroke-width="0.75"/>
+  <text x="138.7" y="348" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">Freedman</text>
+  <text x="138.7" y="359" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">&#38; Clauser</text>
+
+  <!-- Aspect 1982 — locality closed marker -->
+  <circle cx="257.5" cy="290" r="6" fill="#545454" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="257.5" y1="284" x2="257.5" y2="250" stroke="#545454" stroke-width="0.75"/>
+  <text x="257.5" y="245" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">Aspect</text>
+  <text x="257.5" y="234" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">locality ✓</text>
+
+  <!-- 2015 three experiments — spaced at 576, 582, 588 -->
+  <!-- Hensen (Delft) — circle -->
+  <circle cx="573" cy="290" r="5" fill="#2a1a0e" stroke="#FFFFFF" stroke-width="1"/>
+  <!-- Giustina (Vienna) — square -->
+  <rect x="577" y="285" width="10" height="10" fill="#787878" stroke="#FFFFFF" stroke-width="1"/>
+  <!-- Shalm (NIST) — triangle -->
+  <polygon points="590,285 595,295 585,295" fill="#ADADAD" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="582" y1="285" x2="582" y2="250" stroke="#C8102E" stroke-width="0.75"/>
+  <text x="582" y="245" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#C8102E" text-anchor="middle">2015 loophole-</text>
+  <text x="582" y="234" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#C8102E" text-anchor="middle">free triple</text>
+
+  <!-- Nobel 2022 — star shape -->
+  <!-- Star at x=650.8, y=290 -->
+  <polygon points="650.8,274 652.9,280.5 659.8,280.5 654.2,284.6 656.3,291.1 650.8,287 645.3,291.1 647.4,284.6 641.8,280.5 648.7,280.5" fill="#C8860E" stroke="#2a1a0e" stroke-width="0.75"/>
+  <line x1="650.8" y1="295" x2="650.8" y2="335" stroke="#C8860E" stroke-width="0.75"/>
+  <text x="650.8" y="348" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#C8860E" text-anchor="middle">Nobel</text>
+  <text x="650.8" y="359" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#C8860E" text-anchor="middle">Prize</text>
+
+  <!-- LEGEND -->
+  <rect x="42" y="370" width="12" height="10" fill="url(#hatch-open)" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="58" y="380" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454">Loophole open</text>
+  <rect x="145" y="370" width="12" height="10" fill="#545454" fill-opacity="0.25" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="161" y="380" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454">Locality closed</text>
+  <rect x="258" y="370" width="12" height="10" fill="#C8102E" fill-opacity="0.25" stroke="#D4D4D4" stroke-width="0.75"/>
+  <text x="274" y="380" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454">Detection closed</text>
+  <circle cx="388" cy="375" r="4" fill="#2a1a0e"/>
+  <text x="396" y="380" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454">Hensen</text>
+  <rect x="428" y="371" width="8" height="8" fill="#787878"/>
+  <text x="440" y="380" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454">Giustina</text>
+  <polygon points="479,371 483,379 475,379" fill="#ADADAD"/>
+  <text x="487" y="380" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454">Shalm</text>
+  <polygon points="526,370 527.7,375.5 533.4,375.5 528.8,378.6 530.5,384.1 526,381 521.5,384.1 523.2,378.6 518.6,375.5 524.3,375.5" fill="#C8860E" stroke="#2a1a0e" stroke-width="0.5"/>
+  <text x="538" y="380" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#C8860E">Nobel 2022</text>
+
+  <!-- Open/closed legend text for bands -->
+  <text x="130" y="172" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">open</text>
+  <text x="450" y="172" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">closed (1982)</text>
+  <text x="300" y="209" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">open</text>
+  <text x="620" y="209" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#C8102E" text-anchor="middle">closed</text>
+</svg>
