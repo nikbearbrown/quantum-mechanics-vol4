@@ -1,105 +1,136 @@
-# CAJAL Figure Report — Chapter 1 — Mixed States and the Density Matrix
+# CAJAL Figure Intelligence — 01-mixed-states-and-the-density-matrix
 
-Recommended: 4 figures, Mixed density.
-
----
-
-## Figure 1 — Bloch Ball: Pure Surface, Mixed Interior, Maximally Mixed Center
-
-**Heuristic:** VG — Rank: Critical
-
-**BLOCK 1 — ILLUSTRAE PASTE BLOCK**
-
-Draw a transparent sphere of unit radius in three-dimensional perspective, viewed from a vantage point above and to the right so that the x, y, and z axes are all visible. The sphere surface represents all pure single-qubit states; mark three canonical pure-state points on the surface with filled circles: one at the north pole (top of z-axis), one at the positive x-axis intersection, and one at the positive y-axis intersection. Draw a single point at the exact geometric center of the sphere representing the maximally mixed state. Draw a short radial arrow from the center to an interior point (not on the surface, roughly halfway between center and surface), representing a generic mixed state. Draw three coordinate axes extending slightly beyond the sphere surface. The exterior labels will be added in post-production; leave all annotation positions blank. Use flat vector rendering on a white background with no gradient fills. No text baked into the image.
-
-**BLOCK 2 — FULL SCOPE**
-
-- `[S — SPECIFICATION]` Single-column 89 mm width, 300 DPI, vector SVG/EPS, white background. Slight three-quarter perspective so all three axes are distinguishable.
-- `[C — CONTENT]` Unit sphere (Bloch ball boundary); three labeled pure-state anchor points: $|0\rangle$ at north pole (0,0,1), $|{+}\rangle$ at (1,0,0), $|{i}\rangle$ or $|{+y}\rangle$ at (0,1,0); single interior point indicating a generic mixed state with a radial Bloch vector arrow from origin; filled circle at origin indicating $\tfrac{1}{2}\hat I$ (maximally mixed); three Cartesian axes $r_x$, $r_y$, $r_z$. The Bloch vector length $|\vec r|$ is the purity measure — inferred relationship, labeled.
-- `[O — ORGANIZATION]` Three-quarter-view sphere, z-axis vertical. Pure-state markers on surface as filled circles (Sky Blue). Mixed-state interior point as filled circle (Orange). Origin center-point as filled circle (neutral gray). Bloch vector arrow from origin to interior point (Blue). Axis lines as thin gray rules extending through the sphere, terminating just outside.
-- `[P — PRESENTATION]` Flat vector, Okabe-Ito palette. Surface points: Sky Blue `#56B4E9`. Interior mixed-state point and Bloch vector: Blue `#0072B2`. Origin/maximally mixed: light gray. Sphere wireframe outline: light gray thin stroke (0.5 pt). Axes: neutral gray 1 pt. All strokes uniform 1 pt except sphere outline at 0.5 pt. White background. No baked text.
-- `[E — EXCLUSIONS]` Omit: latitude/longitude grid lines on sphere surface; decoherence trajectory arrows; multiple Bloch vectors; quantum gate rotation arcs; eigenvalue annotations; any density matrix matrix-element display; Wigner function or Q-function representations.
-
-**BLOCK 3 — NEGATIVE PROMPT**
-
-latitude grid lines on sphere, multiple bloch vectors, gate rotation arcs, decoherence spirals, eigenvalue annotations, matrix element grids, text labels, words, gibberish letters, titles, captions, decorative borders, realistic textures, drop shadows, gradient backgrounds, photographic elements, dual-headed arrows, hand-drawn styles, human figures, visual clutter, watermarks, red-green color combinations, rainbow color scales, 3D perspective distortion
+**Source:** books/quantum-mechanics-vol4/chapters/01-mixed-states-and-the-density-matrix.md
+**Scan mode:** /scan silent
+**Date:** 2026-06-06
 
 ---
 
-## Figure 2 — Purity Spectrum: Pure State to Maximally Mixed
+## Zones Detected
 
-**Heuristic:** PQ — Rank: Critical
+**MC — Mechanism/Process (3+ interdependent steps)**
 
-**BLOCK 1 — ILLUSTRAE PASTE BLOCK**
+- Partial trace procedure (Worked Example): expand joint Bell-state outer product → apply basis projectors for qubit B → sum terms to collect only A-operators → obtain maximally mixed reduced density matrix. Four algebraically coupled steps; each depends on the output of the previous.
+- Decoherence as Bloch vector shrinkage (Interpretation section): pure state on Bloch surface → qubit entangles with environment → partial trace over environment → Bloch vector contracts inward to mixed interior. Three causal stages in direct sequence.
 
-Draw a horizontal bar chart with a single horizontal axis running from 0 to 1, representing purity $\text{Tr}(\hat\rho^2)$. Place three horizontal bars stacked vertically. The top bar extends from 0 to 1.0, representing a pure state. The middle bar extends from 0 to 0.75, representing the lab-scenario mixed state from the chapter's opening example. The bottom bar extends from 0 to 0.5, representing the maximally mixed state. All bars have the same height. Mark vertical reference lines at $x = 0.5$ (minimum purity for a qubit) and $x = 1.0$ (pure state boundary). The y-axis tick positions are where category labels will be placed in post-production. No text in the image. White background, flat vector, no gradients.
+**VG — Verification Gap (structural/spatial claims not visually grounded)**
 
-**BLOCK 2 — FULL SCOPE**
+- Bloch ball interior for mixed states: the chapter asserts "pure states sit on the surface… intermediate mixed states fill the interior… maximally mixed state is the center" and gives purity = ½(1 + |r|²), directly tying scalar purity to Bloch vector length. No figure grounds this three-region spatial claim.
+- Decomposition non-uniqueness: the chapter states the set of density operators is convex and that mixtures of density operators are density operators, implying multiple distinct ensembles can share one density matrix. This structural claim — that two physically different preparation procedures map to the same point in the Bloch ball — is asserted in prose but never shown geometrically.
 
-- `[S — SPECIFICATION]` Single-column 89 mm width, 300 DPI, vector SVG/EPS, white background. Landscape orientation, horizontal bars.
-- `[C — CONTENT]` Three bars: (1) $\text{Tr}(\hat\rho^2) = 1$ for a pure state; (2) $\text{Tr}(\hat\rho^2) = 11/16 \approx 0.688$ for the chapter's lab-scenario mixed state ($\frac{1}{2}|0\rangle\langle 0| + \frac{1}{2}|{+}\rangle\langle{+}|$); (3) $\text{Tr}(\hat\rho^2) = 0.5$ for $\tfrac{1}{2}\hat I$. Vertical reference lines at 0.5 and 1.0. Axis from 0 to 1. Y-axis zero-anchored from 0.
-- `[O — ORGANIZATION]` Standard horizontal bar chart. Bars ordered top-to-bottom: pure → mixed lab scenario → maximally mixed. Shared x-axis at bottom, y-axis on left (no tick labels — post-production). Reference lines as thin dashed verticals at 0.5 and 1.0.
-- `[P — PRESENTATION]` Flat vector, Okabe-Ito. Pure state bar: Bluish Green `#009E73`. Lab-scenario mixed bar: Orange `#E69F00`. Maximally mixed bar: light gray. Reference line at 1.0: Bluish Green `#009E73` thin dashed. Reference line at 0.5: light gray thin dashed. Bar outlines: 1 pt dark gray stroke. White background. No baked text.
-- `[E — EXCLUSIONS]` Omit: error bars; Bloch ball geometry; von Neumann entropy; any second purity metric; qubit dimension label; $1/d$ formula annotation; off-diagonal matrix element display.
+**PQ — Proportional/Quantitative Data**
 
-**BLOCK 3 — NEGATIVE PROMPT**
-
-error bars, Bloch sphere, von Neumann entropy scale, second axes, color gradients in bars, 3D bar relief, text labels, words, gibberish letters, titles, captions, decorative borders, realistic textures, drop shadows, gradient backgrounds, photographic elements, dual-headed arrows, hand-drawn styles, human figures, visual clutter, watermarks, red-green color combinations, rainbow color scales, 3D perspective distortion
+- Purity range: 1 (pure, surface) to 1/2 (maximally mixed, center) for a qubit. Specific numerical values tied to a geometric scale. Chartable, but most naturally rendered as a radial annotation on the Bloch ball figure rather than a standalone chart.
+- Lab scenario purity: Tr(ρ²) = 3/4, explicitly computed. Locates a specific interior point; handled within the Bloch ball figure.
 
 ---
 
-## Figure 3 — Partial Trace Mechanism: Joint Pure State → Mixed Subsystem
-
-**Heuristic:** MC — Rank: Critical
-
-**BLOCK 1 — ILLUSTRAE PASTE BLOCK**
-
-Draw a three-panel horizontal process diagram. Panel 1 shows two overlapping or connected circles labeled A and B within a bounding rectangle, representing the joint pure state of a two-qubit system; indicate the joint state is pure with a surface-point marker (filled circle on a small Bloch sphere icon for the composite). Panel 2 shows a downward-pointing funnel or averaging symbol applied to the B circle only, with a faint cross or hash fill over the B region to indicate it is being summed over (traced out); an arrow labeled with the partial trace operation symbol points from Panel 1 to Panel 2. Panel 3 shows only the A circle remaining, now with an interior point (not on surface) on a small Bloch sphere icon, indicating the reduced state $\hat\rho_A$ is mixed. Connect the three panels with right-pointing arrows. No text in the image. White background, flat vector.
-
-**BLOCK 2 — FULL SCOPE**
-
-- `[S — SPECIFICATION]` Single-column 89 mm width, 300 DPI, vector SVG/EPS, white background. Three-panel horizontal layout with connecting arrows.
-- `[C — CONTENT]` Step 1: joint two-qubit system $AB$ as pure state $|\Phi^+\rangle\langle\Phi^+|$ — represented as a bounding box containing two connected subsystem circles A and B, with a surface point on a miniature Bloch sphere indicating purity. Step 2: partial trace operation $\text{Tr}_B(\cdot)$ — shown as a summation-over-B motif (faint hash or sweep over B circle), with a process arrow. Step 3: reduced state $\hat\rho_A = \tfrac{1}{2}\hat I$ — only circle A remains, miniature Bloch sphere shows interior center point (maximally mixed). Transition arrows between steps labeled with operation symbol only (no text baked in — symbol placeholder acceptable as a geometric shape, e.g., summation arch).
-- `[O — ORGANIZATION]` Left-to-right: [Joint AB box] → [Partial trace arrow + B erased] → [Reduced A box]. Three equal-width panels. Small Bloch sphere icon in corner of each state box. B-system erasure shown by fading or hash fill in middle panel.
-- `[P — PRESENTATION]` Flat vector, Okabe-Ito. Subsystem A circles: Sky Blue `#56B4E9`. Subsystem B circles: Orange `#E69F00`. B-erasure hashing: light gray. Pure-state surface points on mini Bloch spheres: Bluish Green `#009E73`. Mixed-state center point: Blue `#0072B2`. Process arrows: Blue `#0072B2` 1.5 pt. Bounding boxes: neutral gray 1 pt. White background. No baked text.
-- `[E — EXCLUSIONS]` Omit: matrix element entries; coefficient algebra; decoherence processes (separate concept); measurement collapse arrows; three or more subsystems; Schmidt decomposition notation; Wigner function.
-
-**BLOCK 3 — NEGATIVE PROMPT**
-
-matrix coefficient tables, decoherence trajectories, measurement collapse, Schmidt notation, three-body diagrams, Wigner function, text labels, words, gibberish letters, titles, captions, decorative borders, realistic textures, drop shadows, gradient backgrounds, photographic elements, dual-headed arrows, hand-drawn styles, human figures, visual clutter, watermarks, red-green color combinations, rainbow color scales, 3D perspective distortion
+**Density recommendation: 3 figures, Mixed density.**
 
 ---
 
-## Figure 4 — Decomposition Non-Uniqueness: Two Equal Density Matrices from Different Mixtures
+## Figure 1 — CRITICAL
 
-**Heuristic:** VG — Rank: Important
+**Concept:** The Bloch ball encodes pure states on its surface at |r| = 1, all mixed states in its interior, and the maximally mixed state at its center at |r| = 0; purity equals ½(1 + |r|²), so the Bloch vector length directly measures how mixed a state is.
 
-**BLOCK 1 — ILLUSTRAE PASTE BLOCK**
+---
 
-Draw two side-by-side Bloch ball cross-sections (equatorial x-z plane slices of the Bloch ball, shown as unit circles). In the left panel, mark two antipodal points on the z-axis: one at the north pole and one at the south pole, connected by a midpoint dashed line, with the midpoint at the origin highlighted. In the right panel, mark two antipodal points on the x-axis: one at positive x and one at negative x, connected by a midpoint dashed line, with the midpoint at the origin highlighted. The origin point in both panels is the same filled gray circle. Draw a double-headed equality sign or equivalence arrow between the two panels. Both panels share the same unit circle boundary. No text. White background, flat vector.
+**Block 1 — Illustrae Paste Block**
 
-**BLOCK 2 — FULL SCOPE**
+Draw a single-column 89 mm vector canvas, white background. Render a circle (the equatorial cross-section of the Bloch ball) with a 1 pt #000000 outline, no fill. Draw a thin dashed 1 pt #000000 vertical line from the bottom of the circle to the top as the quantization axis. Place a 5 pt filled circle at the top of the vertical axis in #0072B2, a 5 pt filled circle at the bottom in #0072B2, and a 5 pt filled circle at the center of the circle in #D55E00. Place a 5 pt filled circle at approximately 55% of the radius toward the upper-right quadrant in #009E73. Draw a solid 1 pt #009E73 arrow from the center to this upper-right marker as the Bloch vector r. Draw a thin 1 pt #000000 bracket spanning from the center to the circle boundary along the radial direction of the Bloch vector, indicating the scale |r| runs from 0 to 1. Add no other shapes. No text; unannotated.
 
-- `[S — SPECIFICATION]` Single-column 89 mm width, 300 DPI, vector SVG/EPS, white background. Two equal-width panels side by side with an equality/equivalence symbol between them.
-- `[C — CONTENT]` Left panel: z-axis pure states $|0\rangle$ (north pole) and $|1\rangle$ (south pole), each as surface points, dashed midpoint line to origin representing the mixture $\tfrac{1}{2}|0\rangle\langle 0| + \tfrac{1}{2}|1\rangle\langle 1|$. Right panel: x-axis pure states $|{+}\rangle$ and $|{-}\rangle$ as surface points, dashed midpoint line to origin representing the mixture $\tfrac{1}{2}|{+}\rangle\langle{+}| + \tfrac{1}{2}|{-}\rangle\langle{-}|$. Origin in both panels: $\hat\rho = \tfrac{1}{2}\hat I$. Equivalence marker between panels (inferred relationship: the two mixtures produce the identical density matrix). Shared unit circle boundary in both panels.
-- `[O — ORGANIZATION]` Left panel: vertical dashed midpoint segment, two surface markers on z-axis. Right panel: horizontal dashed midpoint segment, two surface markers on x-axis. Equality mark (≡ or ↔) between panels. Both panels same size with unit circle boundary drawn.
-- `[P — PRESENTATION]` Flat vector, Okabe-Ito. Surface pure-state points (left panel, z-axis): Sky Blue `#56B4E9`. Surface pure-state points (right panel, x-axis): Orange `#E69F00`. Origin/maximally mixed point: neutral gray, slightly larger filled circle. Dashed midpoint lines: light gray 1 pt dashed. Unit circle boundary: neutral gray 1 pt. White background. No baked text.
-- `[E — EXCLUSIONS]` Omit: y-axis or three-dimensional ball; other mixtures or decompositions beyond these two; purity calculation annotations; eigenvalue display; any third panel or additional comparison case.
+---
 
-**BLOCK 3 — NEGATIVE PROMPT**
+**Block 2 — Full SCOPE Prompt**
 
-three-dimensional sphere, y-axis, third decomposition panel, purity bars, eigenvalue annotations, additional mixture states, text labels, words, gibberish letters, titles, captions, decorative borders, realistic textures, drop shadows, gradient backgrounds, photographic elements, dual-headed arrows, hand-drawn styles, human figures, visual clutter, watermarks, red-green color combinations, rainbow color scales, 3D perspective distortion
+[S] Single-column 89 mm vector, white background, flat 2D equatorial cross-section of the Bloch ball represented as a unit circle.
+
+[C] Content confirmed in chapter: pure states at surface |r| = 1 (e.g., |0⟩ at north pole, |1⟩ at south pole); maximally mixed state ρ = I/2 at center |r| = 0; generic mixed states fill the interior; Bloch vector r drawn from center to state; purity = ½(1 + |r|²) equals 1 on surface and 1/2 at center; decoherence moves state inward. Three distinct markers: two pure-state points on vertical axis (#0072B2), one maximally mixed center point (#D55E00), one interior mixed-state point with Bloch vector (#009E73).
+
+[O] Single circle. Vertical dashed axis. Three marker types at their correct geometric positions. One radial Bloch vector arrow from center to interior mixed-state point. One bracket showing the |r| = 0 to |r| = 1 scale on the radial line. No other geometry.
+
+[P] Flat vector, Okabe-Ito hexes only: circle boundary and axis #000000, pure-state markers #0072B2, maximally mixed center #D55E00, generic mixed-state marker and Bloch vector #009E73. All strokes 1 pt. No fills other than solid point markers. White background. Unannotated.
+
+[E] Explicit exclusions: 3D sphere rendering or any three-quarter perspective; latitude/longitude grid lines on sphere surface; additional labeled equatorial poles (|+⟩, |−⟩, |+y⟩); density matrix numerical entries anywhere in image; eigenvalue arrows; decoherence trajectory arrows or spiral paths; Wigner function; phase space representation; quantum circuit symbols; legend box; purity bar chart; y-axis of any kind; axes labeled Rx Ry Rz.
+
+---
+
+**Block 3 — Negative Prompt**
+
+3D sphere, globe, three-quarter perspective, latitude/longitude grid, equatorial poles labeled |+⟩ |−⟩, density matrix entries shown as text, eigenvalue arrows, decoherence spiral trajectories, Wigner function, phase space, circuit gate symbols, legend box, purity bar chart, axes labeled Rx Ry Rz; text labels, words, gibberish letters, titles, captions, decorative borders, realistic textures, drop shadows, gradient backgrounds, photographic elements, non-standard arrows, dual-headed arrows, hand-drawn styles, visual clutter, watermarks, red-green color combinations, 3D perspective distortion.
+
+---
+
+## Figure 2 — CRITICAL
+
+**Concept:** The partial trace procedure discards one subsystem of a pure entangled two-qubit joint state through a three-step sequence — expand, project, sum — yielding a maximally mixed reduced density matrix for the remaining subsystem, with the Bloch vector collapsing to the center.
+
+---
+
+**Block 1 — Illustrae Paste Block**
+
+Draw a full-width 120 mm vector canvas, white background, divided into three equal vertical panels separated by thin 0.5 pt #000000 dashed rules. Panel 1 (left): draw two small horizontal ovals side by side, the left oval outlined in #0072B2 (qubit A) and the right oval outlined in #E69F00 (qubit B), connected by a thin 1 pt #000000 line; above them draw a small 5 pt filled #0072B2 circle on the circumference of a thin-stroke 1 pt #000000 unit circle, representing a pure state on the Bloch surface. Panel 2 (center): draw the same two ovals now linked by a curved double-arc connector in #56B4E9 indicating entanglement between A and B; overlay a diagonal cross-hatch pattern in light gray over the #E69F00 B oval, indicating B is being traced out. Panel 3 (right): draw only the #0072B2 A oval; below it draw a small 1 pt #000000 unit circle with a 5 pt filled #D55E00 circle at its center, representing the maximally mixed reduced state. Draw a right-pointing 1 pt #000000 arrow between panels 1 and 2, and another between panels 2 and 3. No text; unannotated.
+
+---
+
+**Block 2 — Full SCOPE Prompt**
+
+[S] Full-width 120 mm vector, white background, three-panel horizontal layout showing the partial trace sequence from left to right.
+
+[C] Content confirmed in chapter: two qubits A and B begin in the Bell state |Φ+⟩ = (|00⟩ + |11⟩)/√2, a pure joint state with surface Bloch vectors; partial trace Tr_B(ρ_AB) sums over basis states {|0⟩_B, |1⟩_B}; off-diagonal terms vanish because ⟨0|1⟩ = 0; result is ρ_A = I/2, maximally mixed, with Bloch vector at center; purity drops from 1 to 1/2.
+
+[O] Panel 1: joint system A+B as two connected ovals, Bloch-surface point indicating pure joint state. Panel 2: entanglement arc connecting A and B, crosshatch over B indicating trace-out operation in progress. Panel 3: only A oval remains, Bloch-center point indicating maximally mixed result. Directional arrows between panels. Left-to-right process flow only.
+
+[P] Flat vector, Okabe-Ito hexes only: qubit A oval #0072B2, qubit B oval #E69F00, entanglement arc #56B4E9, B crosshatch light gray, process arrows #000000, Bloch surface point #0072B2, Bloch center point #D55E00. All strokes 1 pt. White background. Unannotated.
+
+[E] Explicit exclusions: density matrix numerical entries or matrix grids; Dirac bra-ket text notation; 3D Bloch sphere rendering; environment E system as a third subsystem; decoherence bath elements; measurement apparatus or detector symbols; circuit gate boxes (H, CNOT); Schmidt decomposition arrows; entanglement entropy value annotations; teleportation protocol elements; more than two subsystems; all four Bell states (only |Φ+⟩ is the chapter example).
+
+---
+
+**Block 3 — Negative Prompt**
+
+Density matrix numerical entries, matrix grid, Dirac notation text, 3D Bloch sphere, environment bath, third subsystem, detector apparatus, circuit gate boxes, Schmidt decomposition, entanglement entropy labels, teleportation elements, all four Bell states shown simultaneously; text labels, words, gibberish letters, titles, captions, decorative borders, realistic textures, drop shadows, gradient backgrounds, photographic elements, non-standard arrows, dual-headed arrows, hand-drawn styles, visual clutter, watermarks, red-green color combinations, 3D perspective distortion.
+
+---
+
+## Figure 3 — IMPORTANT
+
+**Concept:** Two geometrically distinct preparation procedures — equal mixture of |0⟩ and |1⟩ versus equal mixture of |+⟩ and |−⟩ — map to the same point at the Bloch ball center, demonstrating that the density matrix representation is not unique to a single physical preparation.
+
+---
+
+**Block 1 — Illustrae Paste Block**
+
+Draw a single-column 89 mm vector canvas, white background, two equal-width panels side by side separated by a thin 0.5 pt #000000 dashed vertical line, with a horizontal 1 pt #000000 double-ended equality marker centered between the panels and spanning the divider. Left panel: a unit circle outline in 1 pt #000000, a thin dashed 1 pt #000000 vertical axis, two 5 pt filled #0072B2 circles at the north pole and south pole of the vertical axis (representing |0⟩ and |1⟩), a thin 1 pt #000000 dashed line connecting them through the origin, and a 5 pt filled #D55E00 circle at the origin (their midpoint). Right panel: a unit circle outline in 1 pt #000000, a thin dashed 1 pt #000000 horizontal axis, two 5 pt filled #009E73 circles at the left and right intersections of the horizontal axis with the circle boundary (representing |+⟩ and |−⟩), a thin 1 pt #000000 dashed line connecting them through the origin, and a 5 pt filled #D55E00 circle at the origin (their midpoint, the same point as the left panel). No text; unannotated.
+
+---
+
+**Block 2 — Full SCOPE Prompt**
+
+[S] Single-column 89 mm vector, white background, two equal-width panels side by side with equality marker between them.
+
+[C] Content confirmed in chapter: pure states |0⟩ (north pole, r = (0,0,1)) and |1⟩ (south pole, r = (0,0,−1)) mix equally to give ρ = I/2 at center; pure states |+⟩ (r = (1,0,0)) and |−⟩ (r = (−1,0,0)) mix equally to give ρ = I/2 at center; both mixtures produce the same density operator; the set of density operators is convex.
+
+[O] Left panel: vertical-axis pair of surface points with dashed midpoint line to shared center. Right panel: horizontal-axis pair of surface points with dashed midpoint line to same shared center. Center equality marker between panels. Both panels share identical unit circle boundary and identical center point color (#D55E00). No other geometry.
+
+[P] Flat vector, Okabe-Ito hexes only: circle boundaries and axes #000000, left-panel z-axis pure states #0072B2, right-panel x-axis pure states #009E73, both center maximally mixed points #D55E00. All strokes 1 pt. White background. Unannotated.
+
+[E] Explicit exclusions: y-axis or any three-dimensional ball rendering; more than two preparation procedures or panels; purity calculation values or bars; eigenvalue display; additional intermediate mixture states beyond the two endpoints per panel; Bloch vector arrow (the dashed line is a midpoint connector, not a vector); third or fourth decomposition comparison; quantum circuit elements; density matrix numerical entries.
+
+---
+
+**Block 3 — Negative Prompt**
+
+3D sphere, y-axis, third decomposition panel, purity bars, eigenvalue annotations, Bloch vector arrow, additional mixture states, circuit elements, density matrix number entries; text labels, words, gibberish letters, titles, captions, decorative borders, realistic textures, drop shadows, gradient backgrounds, photographic elements, non-standard arrows, dual-headed arrows, hand-drawn styles, visual clutter, watermarks, red-green color combinations, 3D perspective distortion.
 
 ---
 
 ## Video Candidate Pass
 
-**Figure 1 — Bloch Ball geometry:** STATIC SUFFICIENT. The geometry is three-dimensional but static — no process unfolds over time. The learning target is spatial reading of purity from Bloch vector length, which a well-drawn static figure conveys fully.
+**Figure 1 (Bloch ball cross-section):** Not a video candidate. The learning target is spatial reading of purity from Bloch vector length — a static geometric relationship that a still figure communicates fully.
 
-**Figure 2 — Purity Spectrum bar chart:** STATIC SUFFICIENT. Three fixed values on a single axis. No sequential mechanism; comparison-panel format is the natural choice and requires no animation.
+**Figure 2 (Partial trace sequence):** Not a video candidate. Three panels communicate the causal steps without temporal animation adding interpretive value; the transformation is algebraic, not kinematic.
 
-**Figure 3 — Partial Trace Mechanism:** VIDEO CANDIDATE. Criterion: transition mechanism is the learning target. The partial trace operation — systematically summing over basis states of B to annihilate the B subsystem — is a multi-step mathematical process (write joint state → expand in B basis → sum B projections → collect A operators) whose causal logic is substantially clearer when the steps unfold in sequence than when collapsed into three static panels. The disappearance of the B subsystem and the emergence of mixed character in A is the chapter's central surprise, and sequential animation directly embodies that surprise.
+**Decoherence as Bloch vector contraction (discussed in Interpretation section, not a standalone figure above):** VIDEO CANDIDATE. The learning target is the contraction mechanism itself — a continuous, directional process below direct observation in which a pure-state surface point spirals or drifts inward toward the maximally mixed center as environmental coupling grows. Time-axis motion here is the concept, not a convenience. A 4-second loop: #0072B2 point starts on circle surface, traces a smooth inward path to the #D55E00 center, pauses one second, resets. Flat 2D projection, Okabe-Ito colors.
 
-**CHAPTER VIDEO RECOMMENDATION: Figure 3 — Partial Trace Mechanism.**
-
-**Figure 4 — Decomposition Non-Uniqueness:** STATIC SUFFICIENT. The equivalence is a structural claim (two geometrically distinct paths reach the same point), well-served by side-by-side static panels sharing a common origin marker. No causal sequence is involved.
+**Video candidate count: 1 (decoherence Bloch vector contraction). Recommendation: 4-second loop on the Bloch ball cross-section — surface point (#0072B2) contracts to center (#D55E00) under simulated decoherence, with trajectory trace in #E69F00. Looping. No text.**
