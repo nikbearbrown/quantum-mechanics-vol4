@@ -1,0 +1,52 @@
+<svg role="img" aria-labelledby="t-dc d-dc" viewBox="0 0 560 400" xmlns="http://www.w3.org/2000/svg">
+  <title id="t-dc">Superdense coding</title>
+  <desc id="d-dc">Sharing a Bell pair, Alice encodes two classical bits into her single qubit by applying one of I, X, Z, or ZX, sends it to Bob, who performs a Bell measurement to recover both bits.</desc>
+  <metadata><provenance>CANDIDATE &amp;#183; CAJAL PALETTE &amp;#183; QM VOL 4</provenance></metadata>
+  <defs>
+    <marker id="ar-dc" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="400" fill="#FFFFFF"/>
+  <text x="28" y="34" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Superdense Coding</text>
+
+  <rect x="28" y="56" width="504" height="226" fill="#F5F5F5" stroke="#D4D4D4"/>
+
+  <!-- wires -->
+  <line x1="150" y1="120" x2="470" y2="120" stroke="#2a1a0e" stroke-width="1.5"/>
+  <line x1="150" y1="200" x2="470" y2="200" stroke="#2a1a0e" stroke-width="1.5"/>
+
+  <text x="120" y="110" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">Alice qubit</text>
+  <text x="120" y="210" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">Bob qubit</text>
+  <text x="138" y="166" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">&#934;&#8314;</text>
+  <path d="M146 122 q-8 38 0 76" fill="none" stroke="#787878" stroke-width="1"/>
+
+  <!-- Alice encode box (red must-look) -->
+  <rect x="200" y="100" width="60" height="40" fill="#FFFFFF" stroke="#C8102E" stroke-width="2"/>
+  <text x="230" y="125" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#C8102E">U(ab)</text>
+  <text x="230" y="92" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E">encode 2 bits</text>
+
+  <!-- send qubit arrow -->
+  <line x1="260" y1="120" x2="340" y2="120" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar-dc)"/>
+  <text x="300" y="112" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">send 1 qubit</text>
+
+  <!-- Bob Bell measurement: CNOT + H + meters -->
+  <line x1="370" y1="120" x2="370" y2="200" stroke="#2a1a0e" stroke-width="1.5"/>
+  <circle cx="370" cy="120" r="5" fill="#2a1a0e"/>
+  <circle cx="370" cy="200" r="11" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <line x1="370" y1="189" x2="370" y2="211" stroke="#2a1a0e" stroke-width="1.5"/>
+  <line x1="359" y1="200" x2="381" y2="200" stroke="#2a1a0e" stroke-width="1.5"/>
+  <rect x="396" y="103" width="32" height="34" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="412" y="126" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="13" fill="#2a1a0e">H</text>
+  <rect x="438" y="103" width="30" height="34" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <path d="M443 131 a8 8 0 0 1 16 0" fill="none" stroke="#2a1a0e" stroke-width="1.2"/>
+  <line x1="451" y1="131" x2="460" y2="117" stroke="#2a1a0e" stroke-width="1.2"/>
+  <rect x="438" y="183" width="30" height="34" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <path d="M443 211 a8 8 0 0 1 16 0" fill="none" stroke="#2a1a0e" stroke-width="1.2"/>
+  <line x1="451" y1="211" x2="460" y2="197" stroke="#2a1a0e" stroke-width="1.2"/>
+  <text x="485" y="200" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">ab</text>
+
+  <!-- encoding table -->
+  <text x="40" y="258" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">bits 00&#8594;I  01&#8594;X  10&#8594;Z  11&#8594;ZX   maps &#934;&#8314; to the 4 orthogonal Bell states</text>
+
+  <text x="40" y="312" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">Two classical bits transmitted by sending one qubit &#8212; the dual of teleportation.</text>
+  
+</svg>

@@ -1,0 +1,77 @@
+{
+  "book": "quantum-mechanics-vol4",
+  "book_title": "Quantum Mechanics — Information, Measurement, and Open Systems",
+  "chapter_count": 10,
+  "chapters": [
+    {
+      "file": "chapters/01-mixed-states-and-the-density-matrix.md",
+      "path": "/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/chapters/01-mixed-states-and-the-density-matrix.md",
+      "title": "Chapter 1 — Mixed States and the Density Matrix",
+      "words": 1760,
+      "images": 3
+    },
+    {
+      "file": "chapters/02-composite-systems-and-entanglement.md",
+      "path": "/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/chapters/02-composite-systems-and-entanglement.md",
+      "title": "Chapter 2 — Composite Systems and Entanglement",
+      "words": 3003,
+      "images": 4
+    },
+    {
+      "file": "chapters/03-bells-theorem-and-chsh.md",
+      "path": "/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/chapters/03-bells-theorem-and-chsh.md",
+      "title": "Chapter 3 — Bell's Theorem and the CHSH Inequality",
+      "words": 3345,
+      "images": 5
+    },
+    {
+      "file": "chapters/04-quantum-gates-and-circuits.md",
+      "path": "/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/chapters/04-quantum-gates-and-circuits.md",
+      "title": "Chapter 4 — Quantum Gates and Circuits",
+      "words": 2239,
+      "images": 4
+    },
+    {
+      "file": "chapters/05-quantum-teleportation-and-dense-coding.md",
+      "path": "/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/chapters/05-quantum-teleportation-and-dense-coding.md",
+      "title": "Chapter 5 — Quantum Teleportation and Dense Coding",
+      "words": 3212,
+      "images": 5
+    },
+    {
+      "file": "chapters/06-open-systems-and-lindblad.md",
+      "path": "/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/chapters/06-open-systems-and-lindblad.md",
+      "title": "Chapter 6 — Open Systems: Decoherence and the Lindblad Equation",
+      "words": 3766,
+      "images": 6
+    },
+    {
+      "file": "chapters/07-measurement-and-interpretations.md",
+      "path": "/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/chapters/07-measurement-and-interpretations.md",
+      "title": "Chapter 7 — Measurement, Interpretations, and the Quantum–Classical Boundary",
+      "words": 2965,
+      "images": 4
+    },
+    {
+      "file": "chapters/08-quantum-hardware.md",
+      "path": "/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/chapters/08-quantum-hardware.md",
+      "title": "Chapter 8 — Quantum Hardware: From Formalism to Physical Qubits",
+      "words": 4203,
+      "images": 7
+    },
+    {
+      "file": "chapters/09-error-and-the-threshold-theorem.md",
+      "path": "/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/chapters/09-error-and-the-threshold-theorem.md",
+      "title": "Chapter 9 — Error and the Threshold Theorem",
+      "words": 4039,
+      "images": 14
+    },
+    {
+      "file": "chapters/10-capstone-quantum-mechanics-in-research.md",
+      "path": "/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/chapters/10-capstone-quantum-mechanics-in-research.md",
+      "title": "Chapter 10 — Capstone: Quantum Mechanics in Research",
+      "words": 3339,
+      "images": 6
+    }
+  ]
+}

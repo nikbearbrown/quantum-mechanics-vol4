@@ -1,0 +1,52 @@
+<svg role="img" aria-labelledby="t-cnot d-cnot" viewBox="0 0 560 400" xmlns="http://www.w3.org/2000/svg">
+  <title id="t-cnot">The CNOT gate: circuit symbol and truth table</title>
+  <desc id="d-cnot">The controlled-NOT gate flips the target qubit if and only if the control qubit is |1>. Shown as control dot and XOR target on two wires, with the full computational-basis truth table.</desc>
+  <metadata><provenance>CANDIDATE &amp;#183; CAJAL PALETTE &amp;#183; QM VOL 4</provenance></metadata>
+  <defs>
+    <marker id="ar-cn" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="400" fill="#FFFFFF"/>
+  <text x="28" y="34" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">The CNOT Gate: Circuit Symbol and Truth Table</text>
+
+  <!-- circuit panel -->
+  <rect x="28" y="52" width="270" height="200" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="163" y="76" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">Circuit symbol</text>
+  <!-- control wire -->
+  <line x1="56" y1="120" x2="272" y2="120" stroke="#2a1a0e" stroke-width="1.5"/>
+  <!-- target wire -->
+  <line x1="56" y1="180" x2="272" y2="180" stroke="#2a1a0e" stroke-width="1.5"/>
+  <!-- vertical link -->
+  <line x1="164" y1="120" x2="164" y2="180" stroke="#C8102E" stroke-width="2"/>
+  <!-- control dot (red must-look) -->
+  <circle cx="164" cy="120" r="6" fill="#C8102E"/>
+  <!-- target XOR -->
+  <circle cx="164" cy="180" r="13" fill="#FFFFFF" stroke="#C8102E" stroke-width="2"/>
+  <line x1="164" y1="167" x2="164" y2="193" stroke="#C8102E" stroke-width="2"/>
+  <line x1="151" y1="180" x2="177" y2="180" stroke="#C8102E" stroke-width="2"/>
+  <!-- wire labels -->
+  <text x="40" y="116" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">c</text>
+  <text x="40" y="184" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">t</text>
+  <text x="163" y="226" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">control &#8226;  /  target &#8853;</text>
+
+  <!-- truth table panel -->
+  <rect x="318" y="52" width="214" height="200" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="425" y="76" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">Truth table</text>
+  <text x="346" y="102" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">in</text>
+  <text x="448" y="102" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">out</text>
+  <line x1="338" y1="110" x2="512" y2="110" stroke="#D4D4D4"/>
+  <text x="346" y="130" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">|00&#10217;</text>
+  <text x="448" y="130" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">|00&#10217;</text>
+  <text x="346" y="156" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">|01&#10217;</text>
+  <text x="448" y="156" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">|01&#10217;</text>
+  <text x="346" y="182" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">|10&#10217;</text>
+  <text x="448" y="182" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#C8102E">|11&#10217;</text>
+  <text x="346" y="208" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">|11&#10217;</text>
+  <text x="448" y="208" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#C8102E">|10&#10217;</text>
+  <text x="425" y="234" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">|c,t&#10217; &#8594; |c, t&#8853;c&#10217;</text>
+
+  <!-- bottom note -->
+  <text x="40" y="296" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e">CNOT = [[1,0,0,0],[0,1,0,0],[0,0,0,1],[0,0,1,0]]</text>
+  <text x="40" y="320" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">Target flips iff control = |1&#10217;. The entangling two-qubit primitive.</text>
+
+  
+</svg>

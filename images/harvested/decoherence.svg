@@ -1,0 +1,44 @@
+<svg role="img" aria-labelledby="t-dec d-dec" viewBox="0 0 560 400" xmlns="http://www.w3.org/2000/svg">
+  <title id="t-dec">Decoherence in an open quantum system (Lindblad)</title>
+  <desc id="d-dec">A qubit coupled to an environment loses its off-diagonal coherences over time. The Lindblad master equation governs the non-unitary evolution; off-diagonal density-matrix elements decay exponentially.</desc>
+  <metadata><provenance>CANDIDATE &amp;#183; CAJAL PALETTE &amp;#183; QM VOL 4</provenance></metadata>
+  <defs>
+    <marker id="ar-de" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="400" fill="#FFFFFF"/>
+  <text x="28" y="34" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Decoherence: Open System &amp; the Lindblad Equation</text>
+
+  <!-- schematic panel: system + environment -->
+  <rect x="28" y="56" width="234" height="170" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <circle cx="100" cy="140" r="30" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="100" y="144" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">qubit</text>
+  <text x="100" y="86" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">system S</text>
+  <!-- environment cluster -->
+  <circle cx="200" cy="100" r="7" fill="none" stroke="#787878" stroke-width="1"/>
+  <circle cx="222" cy="130" r="7" fill="none" stroke="#787878" stroke-width="1"/>
+  <circle cx="205" cy="170" r="7" fill="none" stroke="#787878" stroke-width="1"/>
+  <circle cx="232" cy="180" r="7" fill="none" stroke="#787878" stroke-width="1"/>
+  <text x="214" y="208" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">environment E</text>
+  <!-- coupling -->
+  <line x1="130" y1="135" x2="194" y2="105" stroke="#787878" stroke-width="1"/>
+  <line x1="130" y1="145" x2="216" y2="128" stroke="#787878" stroke-width="1"/>
+  <line x1="128" y1="155" x2="198" y2="168" stroke="#787878" stroke-width="1"/>
+
+  <!-- plot: coherence decay -->
+  <rect x="282" y="56" width="250" height="170" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <line x1="312" y1="200" x2="510" y2="200" stroke="#545454" stroke-width="1" marker-end="url(#ar-de)"/>
+  <line x1="312" y1="200" x2="312" y2="72" stroke="#545454" stroke-width="1" marker-end="url(#ar-de)"/>
+  <text x="512" y="216" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">t</text>
+  <text x="298" y="80" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">&#961;&#8320;&#8321;</text>
+  <!-- decay curve (red must-look) -->
+  <path d="M312 86 C 360 96, 400 150, 440 178 S 500 196, 510 198" fill="none" stroke="#C8102E" stroke-width="2"/>
+  <text x="430" y="120" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E">e&#8722;t/T&#8322;</text>
+  <text x="396" y="218" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">off-diagonal coherence &#8594; 0</text>
+
+  <!-- Lindblad equation -->
+  <text x="40" y="262" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e">d&#961;/dt = &#8722;(i/&#8463;)[H,&#961;] + &#931;&#8342; ( L&#8342;&#961;L&#8342;&#8224; &#8722; &#189;{L&#8342;&#8224;L&#8342;, &#961;} )</text>
+  <text x="40" y="288" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">Unitary term + dissipative jump operators L&#8342;. Trace-preserving, completely positive.</text>
+  <text x="40" y="318" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">&#961;: [[a,b],[b*,1&#8722;a]] &#8594; [[a,0],[0,1&#8722;a]]   (pure &#8594; mixed)</text>
+
+  
+</svg>

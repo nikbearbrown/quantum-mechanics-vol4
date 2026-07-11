@@ -1,0 +1,53 @@
+<svg role="img" aria-labelledby="t-blochball d-blochball" viewBox="0 0 560 400" xmlns="http://www.w3.org/2000/svg">
+  <title id="t-blochball">The Bloch ball: pure states on the surface, mixed states inside</title>
+  <desc id="d-blochball">A sphere of radius one represents qubit states. Pure states lie on the surface; mixed states lie strictly inside; the maximally mixed state sits at the center.</desc>
+  <metadata><provenance>CANDIDATE &amp;#183; CAJAL PALETTE &amp;#183; QM VOL 4</provenance></metadata>
+  <defs>
+    <marker id="ar-bb" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2a1a0e"/></marker>
+    <marker id="arR-bb" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#C8102E"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="400" fill="#FFFFFF"/>
+  <text x="28" y="34" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">The Bloch Ball: Pure on the Surface, Mixed Inside</text>
+
+  <rect x="28" y="52" width="504" height="288" fill="#F5F5F5" stroke="#D4D4D4"/>
+
+  <!-- sphere -->
+  <circle cx="220" cy="196" r="120" fill="#FFFFFF" stroke="#787878" stroke-width="1.5"/>
+  <!-- equator ellipse -->
+  <ellipse cx="220" cy="196" rx="120" ry="38" fill="none" stroke="#ADADAD" stroke-width="1" stroke-dasharray="3 3"/>
+  <!-- vertical axis -->
+  <line x1="220" y1="316" x2="220" y2="64" stroke="#545454" stroke-width="1" marker-end="url(#ar-bb)"/>
+  <!-- x axis (into page-ish) -->
+  <line x1="220" y1="196" x2="316" y2="226" stroke="#545454" stroke-width="1" marker-end="url(#ar-bb)"/>
+  <!-- y axis -->
+  <line x1="220" y1="196" x2="92" y2="196" stroke="#545454" stroke-width="1" marker-end="url(#ar-bb)"/>
+
+  <!-- pure state vector on surface -->
+  <line x1="220" y1="196" x2="296" y2="124" stroke="#2a1a0e" stroke-width="2" marker-end="url(#ar-bb)"/>
+  <circle cx="296" cy="124" r="4" fill="#2a1a0e"/>
+
+  <!-- mixed state vector inside (red must-look) -->
+  <line x1="220" y1="196" x2="172" y2="158" stroke="#C8102E" stroke-width="2" marker-end="url(#arR-bb)"/>
+  <circle cx="172" cy="158" r="4" fill="#C8102E"/>
+
+  <!-- center: maximally mixed -->
+  <circle cx="220" cy="196" r="3.5" fill="#2a1a0e"/>
+
+  <!-- labels -->
+  <text x="226" y="74" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">|0&#10217;  (z)</text>
+  <text x="186" y="332" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">|1&#10217;</text>
+  <text x="70" y="190" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">y</text>
+  <text x="320" y="232" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">x</text>
+  <text x="292" y="108" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">pure |&#968;&#10217;, r=1</text>
+  <text x="120" y="148" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#C8102E">mixed, r&lt;1</text>
+  <text x="228" y="214" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">center: I/2</text>
+
+  <!-- side legend -->
+  <text x="372" y="96" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">&#961; = &#189;(I + r&#8901;&#963;)</text>
+  <text x="372" y="124" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">|r| = 1  &#8594; pure</text>
+  <text x="372" y="146" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">|r| &lt; 1  &#8594; mixed</text>
+  <text x="372" y="168" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">|r| = 0  &#8594; I/2</text>
+  <text x="372" y="206" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">Tr(&#961;&#178;) = &#189;(1+|r|&#178;)</text>
+
+  
+</svg>

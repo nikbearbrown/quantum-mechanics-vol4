@@ -30,15 +30,15 @@
   <rect x="32" y="32" width="636" height="356" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
 
   <!-- Figure title -->
-  <text x="350" y="24" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Gate set nesting — Clifford group ⊂ {H,T,CNOT} ⊂ SU(2ⁿ)</text>
+  <text x="350" y="24" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Gate set nesting — Clifford group ⊂ {H,T,CNOT} ⊂ SU(2<tspan dy="-0.5em" font-size="0.75em">n</tspan><tspan dy="0.5em"></tspan>)</text>
 
   <!-- Outer region: all unitaries SU(2^n) -->
   <rect x="60" y="55" width="580" height="310" fill="#F5F5F5" stroke="#ADADAD" stroke-width="1.5" stroke-dasharray="6 3"/>
-  <text x="350" y="76" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#ADADAD" text-anchor="middle">All unitaries SU(2ⁿ)</text>
+  <text x="350" y="76" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#ADADAD" text-anchor="middle">All unitaries SU(2<tspan dy="-0.5em" font-size="0.75em">n</tspan><tspan dy="0.5em"></tspan>)</text>
 
   <!-- Middle region: universal set {H, T, CNOT} -->
   <rect x="110" y="90" width="480" height="240" fill="#FFFFFF" stroke="#545454" stroke-width="1.5"/>
-  <text x="350" y="108" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454" text-anchor="middle">Universal set — {H, T, CNOT} — generates dense subgroup of SU(2ⁿ)</text>
+  <text x="350" y="108" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454" text-anchor="middle">Universal set — {H, T, CNOT} — generates dense subgroup of SU(2<tspan dy="-0.5em" font-size="0.75em">n</tspan><tspan dy="0.5em"></tspan>)</text>
 
   <!-- Inner region: Clifford group {H, S, CNOT} with very light fill -->
   <rect x="165" y="125" width="370" height="175" fill="#2a1a0e" fill-opacity="0.04" stroke="#2a1a0e" stroke-width="1.5"/>
@@ -84,7 +84,7 @@
   <text x="585" y="215" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#C8860E" text-anchor="middle">Non-Clifford</text>
   <text x="585" y="228" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#C8860E" text-anchor="middle">resource</text>
   <!-- T = π/4 label -->
-  <text x="585" y="243" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#C8860E" text-anchor="middle">T² = S</text>
+  <text x="585" y="243" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#C8860E" text-anchor="middle">T<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan> = S</text>
 
   <!-- Arrow from T gate pointing to inner boundary — T extends Clifford to universal -->
   <line x1="557" y1="181" x2="537" y2="181" stroke="#C8860E" stroke-width="1" stroke-dasharray="4 2"/>

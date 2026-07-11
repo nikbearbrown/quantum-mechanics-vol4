@@ -1,0 +1,44 @@
+<svg role="img" aria-labelledby="t-qc d-qc" viewBox="0 0 560 400" xmlns="http://www.w3.org/2000/svg">
+  <title id="t-qc">Bell-state preparation circuit</title>
+  <desc id="d-qc">Starting from |00>, a Hadamard on the top qubit followed by a CNOT (top control, bottom target) produces the Bell state (|00>+|11>)/sqrt(2).</desc>
+  <metadata><provenance>CANDIDATE &amp;#183; CAJAL PALETTE &amp;#183; QM VOL 4</provenance></metadata>
+  <defs>
+    <marker id="ar-qc" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="400" fill="#FFFFFF"/>
+  <text x="28" y="34" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Bell-State Preparation Circuit</text>
+
+  <rect x="28" y="56" width="504" height="220" fill="#F5F5F5" stroke="#D4D4D4"/>
+
+  <!-- wires -->
+  <line x1="120" y1="130" x2="500" y2="130" stroke="#2a1a0e" stroke-width="1.5"/>
+  <line x1="120" y1="210" x2="500" y2="210" stroke="#2a1a0e" stroke-width="1.5"/>
+
+  <!-- input labels -->
+  <text x="84" y="134" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e">|0&#10217;</text>
+  <text x="84" y="214" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e">|0&#10217;</text>
+
+  <!-- H gate -->
+  <rect x="170" y="110" width="40" height="40" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="190" y="136" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="14" fill="#2a1a0e">H</text>
+
+  <!-- CNOT (red must-look entangler) -->
+  <line x1="320" y1="130" x2="320" y2="210" stroke="#C8102E" stroke-width="2"/>
+  <circle cx="320" cy="130" r="6" fill="#C8102E"/>
+  <circle cx="320" cy="210" r="13" fill="#FFFFFF" stroke="#C8102E" stroke-width="2"/>
+  <line x1="320" y1="197" x2="320" y2="223" stroke="#C8102E" stroke-width="2"/>
+  <line x1="307" y1="210" x2="333" y2="210" stroke="#C8102E" stroke-width="2"/>
+
+  <!-- stage dividers + state annotations -->
+  <line x1="250" y1="86" x2="250" y2="252" stroke="#ADADAD" stroke-width="0.75" stroke-dasharray="2 3"/>
+  <text x="250" y="84" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">after H</text>
+  <text x="250" y="270" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">(|0&#10217;+|1&#10217;)|0&#10217;/&#8730;2</text>
+
+  <text x="500" y="84" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">output</text>
+  <text x="500" y="270" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">(|00&#10217;+|11&#10217;)/&#8730;2 = |&#934;&#8314;&#10217;</text>
+
+  <text x="40" y="312" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">Two gates, two qubits: H creates superposition, CNOT entangles it.</text>
+  <text x="40" y="334" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">|00&#10217; &#8212;H&#8321;&#8594; (|0&#10217;+|1&#10217;)|0&#10217;/&#8730;2 &#8212;CNOT&#8594; (|00&#10217;+|11&#10217;)/&#8730;2</text>
+
+  
+</svg>

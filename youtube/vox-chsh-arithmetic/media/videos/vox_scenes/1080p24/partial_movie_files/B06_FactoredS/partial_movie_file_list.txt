@@ -1,0 +1,8 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-chsh-arithmetic/media/videos/vox_scenes/1080p24/partial_movie_files/B06_FactoredS/648461735_3597613882_223132457.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-chsh-arithmetic/media/videos/vox_scenes/1080p24/partial_movie_files/B06_FactoredS/3493624639_2410135803_3165849148.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-chsh-arithmetic/media/videos/vox_scenes/1080p24/partial_movie_files/B06_FactoredS/3493624639_841964549_158011696.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-chsh-arithmetic/media/videos/vox_scenes/1080p24/partial_movie_files/B06_FactoredS/3493624639_3386308420_1052017589.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-chsh-arithmetic/media/videos/vox_scenes/1080p24/partial_movie_files/B06_FactoredS/3493624639_2073285455_1945092561.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-chsh-arithmetic/media/videos/vox_scenes/1080p24/partial_movie_files/B06_FactoredS/3493624639_3552603729_642511582.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-chsh-arithmetic/media/videos/vox_scenes/1080p24/partial_movie_files/B06_FactoredS/3493624639_1704486863_4843411.mp4'

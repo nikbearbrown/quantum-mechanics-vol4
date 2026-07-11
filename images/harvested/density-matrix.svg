@@ -1,0 +1,47 @@
+<svg role="img" aria-labelledby="t-densitymatrix d-densitymatrix" viewBox="0 0 560 400" xmlns="http://www.w3.org/2000/svg">
+  <title id="t-densitymatrix">Pure vs mixed states and the density matrix</title>
+  <desc id="d-densitymatrix">A pure state has density matrix rho equal to a rank-one projector with purity Tr(rho squared) = 1; a mixed state is a probabilistic mixture with off-diagonal coherences suppressed and purity less than 1.</desc>
+  <metadata><provenance>CANDIDATE &amp;#183; CAJAL PALETTE &amp;#183; QM VOL 4</provenance></metadata>
+  <defs>
+    <marker id="ar-dm" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="400" fill="#FFFFFF"/>
+  <text x="28" y="34" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Pure vs Mixed States: the Density Matrix &#961;</text>
+
+  <rect x="28" y="56" width="240" height="270" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="148" y="80" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">Pure state  |+&#10217;</text>
+  <text x="148" y="106" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">&#961; = |+&#10217;&#10216;+|</text>
+  <text x="60" y="150" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="13" fill="#2a1a0e">&#961; =</text>
+  <line x1="98" y1="128" x2="98" y2="186" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="98" y1="128" x2="104" y2="128" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="98" y1="186" x2="104" y2="186" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="118" y="150" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="13" fill="#2a1a0e">1/2   1/2</text>
+  <text x="118" y="174" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="13" fill="#2a1a0e">1/2   1/2</text>
+  <line x1="226" y1="128" x2="226" y2="186" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="220" y1="128" x2="226" y2="128" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="220" y1="186" x2="226" y2="186" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="148" y="222" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">off-diagonals present</text>
+  <text x="148" y="240" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">(coherence)</text>
+  <text x="148" y="278" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="13" fill="#C8102E">Tr(&#961;&#178;) = 1</text>
+  <text x="148" y="304" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">&#961;&#178; = &#961;  (rank 1)</text>
+
+  <rect x="292" y="56" width="240" height="270" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="412" y="80" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">Mixed: &#189;|0&#10217;&#10216;0| + &#189;|1&#10217;&#10216;1|</text>
+  <text x="412" y="106" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">maximally mixed qubit</text>
+  <text x="326" y="150" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="13" fill="#2a1a0e">&#961; =</text>
+  <line x1="364" y1="128" x2="364" y2="186" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="364" y1="128" x2="370" y2="128" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="364" y1="186" x2="370" y2="186" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="386" y="150" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="13" fill="#2a1a0e">1/2    0</text>
+  <text x="386" y="174" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="13" fill="#2a1a0e"> 0    1/2</text>
+  <line x1="492" y1="128" x2="492" y2="186" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="486" y1="128" x2="492" y2="128" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="486" y1="186" x2="492" y2="186" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="412" y="222" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">off-diagonals = 0</text>
+  <text x="412" y="240" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">(no coherence)</text>
+  <text x="412" y="278" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="13" fill="#2a1a0e">Tr(&#961;&#178;) = 1/2</text>
+  <text x="412" y="304" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">1/d &#8804; Tr(&#961;&#178;) &lt; 1</text>
+
+  <text x="280" y="352" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">Purity Tr(&#961;&#178;) distinguishes pure (=1) from mixed (&lt;1); both satisfy &#961;=&#961;&#8224;, Tr&#961;=1, &#961;&#8805;0.</text>
+  
+</svg>

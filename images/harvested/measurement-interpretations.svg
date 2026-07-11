@@ -1,0 +1,41 @@
+<svg role="img" aria-labelledby="t-meas d-meas" viewBox="0 0 560 400" xmlns="http://www.w3.org/2000/svg">
+  <title id="t-meas">Measurement and interpretations: the branching question</title>
+  <desc id="d-meas">A superposition meets a measurement. The Copenhagen view collapses it to a single random outcome; the many-worlds view keeps unitary evolution and branches into all outcomes. Born-rule probabilities are identical.</desc>
+  <metadata><provenance>CANDIDATE &amp;#183; CAJAL PALETTE &amp;#183; QM VOL 4</provenance></metadata>
+  <defs>
+    <marker id="ar-me" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2a1a0e"/></marker>
+    <marker id="arR-me" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#C8102E"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="400" fill="#FFFFFF"/>
+  <text x="28" y="34" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Measurement &amp; Interpretations: One Equation, Two Stories</text>
+
+  <rect x="28" y="56" width="504" height="262" fill="#F5F5F5" stroke="#D4D4D4"/>
+
+  <!-- pre-measurement state -->
+  <text x="120" y="190" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e">&#945;|0&#10217;+&#946;|1&#10217;</text>
+  <text x="120" y="210" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">superposition</text>
+  <!-- measurement node -->
+  <line x1="178" y1="186" x2="232" y2="186" stroke="#545454" stroke-width="1" marker-end="url(#ar-me)"/>
+  <circle cx="258" cy="186" r="22" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <path d="M246 196 a12 12 0 0 1 24 0" fill="none" stroke="#2a1a0e" stroke-width="1.2"/>
+  <line x1="258" y1="196" x2="270" y2="174" stroke="#2a1a0e" stroke-width="1.2"/>
+  <text x="258" y="226" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">measure</text>
+
+  <!-- Copenhagen branch (red must-look: single collapse) -->
+  <line x1="282" y1="174" x2="360" y2="120" stroke="#C8102E" stroke-width="2" marker-end="url(#arR-me)"/>
+  <rect x="366" y="100" width="150" height="44" fill="#FFFFFF" stroke="#C8102E" stroke-width="2"/>
+  <text x="441" y="120" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#C8102E">Copenhagen</text>
+  <text x="441" y="136" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E">collapse &#8594; one outcome</text>
+
+  <!-- Many-worlds branch (grey: both) -->
+  <line x1="282" y1="198" x2="360" y2="244" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar-me)"/>
+  <rect x="366" y="222" width="150" height="64" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="441" y="242" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">Many-worlds</text>
+  <text x="441" y="258" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">|0&#10217;|meas&#8320;&#10217; + |1&#10217;|meas&#8321;&#10217;</text>
+  <text x="441" y="274" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">both branches persist</text>
+
+  <text x="40" y="300" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">Identical predictions: P(0)=|&#945;|&#178;, P(1)=|&#946;|&#178; (Born rule).</text>
+  <text x="40" y="314" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">The dispute is metaphysical, not empirical.</text>
+
+  
+</svg>

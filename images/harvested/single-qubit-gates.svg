@@ -1,0 +1,48 @@
+<svg role="img" aria-labelledby="t-sqg d-sqg" viewBox="0 0 560 400" xmlns="http://www.w3.org/2000/svg">
+  <title id="t-sqg">Single-qubit gates X and H on the Bloch sphere</title>
+  <desc id="d-sqg">The Pauli X gate rotates the state by pi about the x-axis, swapping the poles. The Hadamard gate maps |0> to |+>, a rotation that sends the north pole onto the equator.</desc>
+  <metadata><provenance>CANDIDATE &amp;#183; CAJAL PALETTE &amp;#183; QM VOL 4</provenance></metadata>
+  <defs>
+    <marker id="ar-sq" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2a1a0e"/></marker>
+    <marker id="arR-sq" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#C8102E"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="400" fill="#FFFFFF"/>
+  <text x="28" y="34" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Single-Qubit Gates X and H on the Bloch Sphere</text>
+
+  <!-- X panel -->
+  <rect x="28" y="52" width="240" height="288" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="148" y="76" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">X gate: &#960; rotation about x</text>
+  <circle cx="148" cy="180" r="80" fill="#FFFFFF" stroke="#787878" stroke-width="1.5"/>
+  <ellipse cx="148" cy="180" rx="80" ry="26" fill="none" stroke="#ADADAD" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="148" y1="260" x2="148" y2="100" stroke="#545454" stroke-width="1" marker-end="url(#ar-sq)"/>
+  <!-- |0> in -->
+  <line x1="148" y1="180" x2="148" y2="106" stroke="#2a1a0e" stroke-width="2"/>
+  <circle cx="148" cy="106" r="4" fill="#2a1a0e"/>
+  <text x="156" y="100" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">|0&#10217;</text>
+  <!-- |1> out -->
+  <line x1="148" y1="180" x2="148" y2="254" stroke="#2a1a0e" stroke-width="2"/>
+  <circle cx="148" cy="254" r="4" fill="#2a1a0e"/>
+  <text x="156" y="270" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">|1&#10217;</text>
+  <text x="148" y="304" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">X = [[0,1],[1,0]]</text>
+  <text x="148" y="324" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">X|0&#10217;=|1&#10217;, X|1&#10217;=|0&#10217;</text>
+
+  <!-- H panel -->
+  <rect x="292" y="52" width="240" height="288" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="412" y="76" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">H gate: |0&#10217; &#8594; |+&#10217;</text>
+  <circle cx="412" cy="180" r="80" fill="#FFFFFF" stroke="#787878" stroke-width="1.5"/>
+  <ellipse cx="412" cy="180" rx="80" ry="26" fill="none" stroke="#ADADAD" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="412" y1="260" x2="412" y2="100" stroke="#545454" stroke-width="1" marker-end="url(#ar-sq)"/>
+  <line x1="492" y1="180" x2="332" y2="180" stroke="#545454" stroke-width="1" marker-end="url(#ar-sq)"/>
+  <!-- |0> in (grey) -->
+  <line x1="412" y1="180" x2="412" y2="106" stroke="#2a1a0e" stroke-width="2"/>
+  <circle cx="412" cy="106" r="4" fill="#2a1a0e"/>
+  <text x="420" y="100" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">|0&#10217;</text>
+  <!-- |+> out (red must-look) -->
+  <line x1="412" y1="180" x2="490" y2="180" stroke="#C8102E" stroke-width="2"/>
+  <circle cx="490" cy="180" r="4" fill="#C8102E"/>
+  <text x="464" y="170" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#C8102E">|+&#10217;</text>
+  <text x="412" y="304" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">H = (1/&#8730;2)[[1,1],[1,&#8722;1]]</text>
+  <text x="412" y="324" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">|+&#10217;=(|0&#10217;+|1&#10217;)/&#8730;2</text>
+
+  
+</svg>

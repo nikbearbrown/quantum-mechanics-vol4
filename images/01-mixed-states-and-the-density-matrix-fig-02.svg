@@ -40,7 +40,7 @@
   <rect x="32" y="32" width="636" height="356" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
 
   <!-- Figure title -->
-  <text x="350" y="24" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Partial trace — Bell state |Φ⁺⟩ to maximally mixed ρ_A</text>
+  <text x="350" y="24" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Partial trace — Bell state |Φ<tspan dy="-0.5em" font-size="0.75em">+</tspan><tspan dy="0.5em"></tspan>⟩ to maximally mixed ρ_A</text>
 
   <!-- Panel dividers -->
   <line x1="266" y1="40" x2="266" y2="380" stroke="#D4D4D4" stroke-width="1" stroke-dasharray="4 3"/>
@@ -63,8 +63,8 @@
   <!-- Labels -->
   <text x="130" y="204" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#2a1a0e" text-anchor="middle">A</text>
   <text x="220" y="204" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="12" fill="#787878" text-anchor="middle">B</text>
-  <text x="175" y="265" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454" text-anchor="middle">|Φ⁺⟩ — pure joint state</text>
-  <text x="175" y="283" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#545454" text-anchor="middle">Tr(ρ²_AB) = 1</text>
+  <text x="175" y="265" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454" text-anchor="middle">|Φ<tspan dy="-0.5em" font-size="0.75em">+</tspan><tspan dy="0.5em"></tspan>⟩ — pure joint state</text>
+  <text x="175" y="283" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#545454" text-anchor="middle">Tr(ρ<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan>_AB) = 1</text>
 
   <!-- Arrow Panel 1 → Panel 2 -->
   <line x1="256" y1="200" x2="278" y2="200" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#arrow-02)"/>
@@ -102,7 +102,7 @@
   <line x1="545" y1="211" x2="545" y2="268" stroke="#D4D4D4" stroke-width="0.75" stroke-dasharray="3 2"/>
   <!-- Labels -->
   <text x="545" y="352" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454" text-anchor="middle">ρ_A = I/2 — maximally mixed</text>
-  <text x="545" y="370" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#545454" text-anchor="middle">Tr(ρ²_A) = ½</text>
+  <text x="545" y="370" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#545454" text-anchor="middle">Tr(ρ<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan>_A) = ½</text>
 
   <!-- Panel labels -->
   <text x="175" y="58" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454" text-anchor="middle" font-weight="700">Step 1: Joint pure state</text>

@@ -1,0 +1,37 @@
+<svg role="img" aria-labelledby="t-entangle d-entangle" viewBox="0 0 560 400" xmlns="http://www.w3.org/2000/svg">
+  <title id="t-entangle">Bipartite entanglement: the Bell state</title>
+  <desc id="d-entangle">Two qubits in the Bell state (|00>+|11>)/sqrt(2) cannot be written as a product of individual qubit states; each subsystem alone is maximally mixed, yet measurement outcomes are perfectly correlated.</desc>
+  <metadata><provenance>CANDIDATE &amp;#183; CAJAL PALETTE &amp;#183; QM VOL 4</provenance></metadata>
+  <defs>
+    <marker id="ar-en" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="400" fill="#FFFFFF"/>
+  <text x="28" y="34" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Bipartite Entanglement: the Bell State &#934;&#8314;</text>
+
+  <rect x="28" y="52" width="504" height="234" fill="#F5F5F5" stroke="#D4D4D4"/>
+
+  <!-- Alice node -->
+  <circle cx="150" cy="150" r="40" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="150" y="146" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">Alice</text>
+  <text x="150" y="164" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">qubit A</text>
+  <!-- Bob node -->
+  <circle cx="410" cy="150" r="40" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="410" y="146" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">Bob</text>
+  <text x="410" y="164" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">qubit B</text>
+
+  <!-- entangling link (red must-look) -->
+  <line x1="192" y1="150" x2="368" y2="150" stroke="#C8102E" stroke-width="2"/>
+  <circle cx="192" cy="150" r="4" fill="#C8102E"/>
+  <circle cx="368" cy="150" r="4" fill="#C8102E"/>
+  <text x="280" y="138" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#C8102E">entangled</text>
+
+  <!-- shared state -->
+  <text x="280" y="232" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="13" fill="#2a1a0e">|&#934;&#8314;&#10217; = (|00&#10217; + |11&#10217;) / &#8730;2</text>
+  <text x="280" y="258" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">not separable:  |&#934;&#8314;&#10217; &#8800; |&#968;&#10217;&#8320; &#8855; |&#966;&#10217;&#8333;</text>
+
+  <!-- properties row -->
+  <text x="40" y="312" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">&#961;&#8320; = Tr&#8333;|&#934;&#8314;&#10217;&#10216;&#934;&#8314;| = I/2  (subsystem maximally mixed)</text>
+  <text x="40" y="334" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#545454">measure A=0 &#8658; B=0;  A=1 &#8658; B=1  (perfect correlation, any basis)</text>
+
+  
+</svg>

@@ -1,0 +1,8 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-fault-tolerance/media/videos/vox_scenes/1080p24/partial_movie_files/B06_ErrorPropagation/648461735_2117018682_3073316571.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-fault-tolerance/media/videos/vox_scenes/1080p24/partial_movie_files/B06_ErrorPropagation/3493624639_995051044_1411529181.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-fault-tolerance/media/videos/vox_scenes/1080p24/partial_movie_files/B06_ErrorPropagation/3493624639_889219265_138668790.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-fault-tolerance/media/videos/vox_scenes/1080p24/partial_movie_files/B06_ErrorPropagation/3493624639_826108263_3166477247.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-fault-tolerance/media/videos/vox_scenes/1080p24/partial_movie_files/B06_ErrorPropagation/3493624639_766661784_1272099846.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-fault-tolerance/media/videos/vox_scenes/1080p24/partial_movie_files/B06_ErrorPropagation/3493624639_3322585194_2837192895.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-fault-tolerance/media/videos/vox_scenes/1080p24/partial_movie_files/B06_ErrorPropagation/3493624639_3921259501_3137495133.mp4'

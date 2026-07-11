@@ -94,14 +94,14 @@
   <circle cx="453" cy="104" r="6" fill="#787878" stroke="#FFFFFF" stroke-width="1.5"/>
   <!-- Annotation line -->
   <line x1="453" y1="104" x2="490" y2="80" stroke="#545454" stroke-width="0.75"/>
-  <text x="493" y="78" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">λ₁=¾, λ₂=¼</text>
+  <text x="493" y="78" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">λ<tspan dy="0.3em" font-size="0.75em">1</tspan><tspan dy="-0.3em"></tspan>=¾, λ<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan>=¼</text>
   <text x="493" y="90" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454">S_E≈0.811</text>
 
   <!-- Key point: Bell state (θ=π/4, S_E=1) -->
   <circle cx="640" cy="40" r="6" fill="#C8102E" stroke="#FFFFFF" stroke-width="1.5"/>
   <!-- Bell state label -->
   <line x1="640" y1="40" x2="606" y2="62" stroke="#545454" stroke-width="0.75"/>
-  <text x="520" y="72" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Bell state |Φ⁺⟩</text>
+  <text x="520" y="72" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Bell state |Φ<tspan dy="-0.5em" font-size="0.75em">+</tspan><tspan dy="0.5em"></tspan>⟩</text>
 
   <!-- Product state label -->
   <line x1="80" y1="380" x2="120" y2="358" stroke="#545454" stroke-width="0.75"/>
@@ -112,7 +112,7 @@
 
   <!-- Legend -->
   <circle cx="90" cy="58" r="5" fill="#C8102E"/>
-  <text x="100" y="62" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">S_E(θ) = −cos²θ log₂cos²θ − sin²θ log₂sin²θ</text>
+  <text x="100" y="62" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">S_E(θ) = −cos<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan>θ log<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan>cos<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan>θ − sin<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan>θ log<tspan dy="0.3em" font-size="0.75em">2</tspan><tspan dy="-0.3em"></tspan>sin<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan>θ</text>
   <circle cx="90" cy="76" r="5" fill="#2a1a0e" stroke="#FFFFFF" stroke-width="1"/>
   <text x="100" y="80" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">Product state</text>
   <circle cx="200" cy="76" r="5" fill="#787878" stroke="#FFFFFF" stroke-width="1"/>

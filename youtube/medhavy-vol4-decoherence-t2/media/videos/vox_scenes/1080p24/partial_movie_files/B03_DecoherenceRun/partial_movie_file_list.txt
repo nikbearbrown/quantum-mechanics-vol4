@@ -1,0 +1,12 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/medhavy-vol4-decoherence-t2/media/videos/vox_scenes/1080p24/partial_movie_files/B03_DecoherenceRun/2183452429_23203076_223132457.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/medhavy-vol4-decoherence-t2/media/videos/vox_scenes/1080p24/partial_movie_files/B03_DecoherenceRun/2352976354_4001125425_3778471207.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/medhavy-vol4-decoherence-t2/media/videos/vox_scenes/1080p24/partial_movie_files/B03_DecoherenceRun/2352976354_1615166666_3949334267.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/medhavy-vol4-decoherence-t2/media/videos/vox_scenes/1080p24/partial_movie_files/B03_DecoherenceRun/2352976354_1825546413_1045595787.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/medhavy-vol4-decoherence-t2/media/videos/vox_scenes/1080p24/partial_movie_files/B03_DecoherenceRun/2352976354_685772523_3864867858.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/medhavy-vol4-decoherence-t2/media/videos/vox_scenes/1080p24/partial_movie_files/B03_DecoherenceRun/2352976354_2063422063_1496132784.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/medhavy-vol4-decoherence-t2/media/videos/vox_scenes/1080p24/partial_movie_files/B03_DecoherenceRun/2352976354_2972464317_947233814.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/medhavy-vol4-decoherence-t2/media/videos/vox_scenes/1080p24/partial_movie_files/B03_DecoherenceRun/2352976354_2314082589_1708891126.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/medhavy-vol4-decoherence-t2/media/videos/vox_scenes/1080p24/partial_movie_files/B03_DecoherenceRun/2352976354_3221682484_2143794394.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/medhavy-vol4-decoherence-t2/media/videos/vox_scenes/1080p24/partial_movie_files/B03_DecoherenceRun/2352976354_4235074379_4268824769.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/medhavy-vol4-decoherence-t2/media/videos/vox_scenes/1080p24/partial_movie_files/B03_DecoherenceRun/2352976354_258494893_1631003841.mp4'

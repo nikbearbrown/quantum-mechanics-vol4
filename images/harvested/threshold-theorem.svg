@@ -1,0 +1,53 @@
+<svg role="img" aria-labelledby="t-thr d-thr" viewBox="0 0 560 400" xmlns="http://www.w3.org/2000/svg">
+  <title id="t-thr">The threshold theorem</title>
+  <desc id="d-thr">Logical error rate versus physical error rate on a log scale. Below the threshold, increasing code distance drives the logical error rate down; above it, error correction makes things worse. The curves cross at the threshold p_th.</desc>
+  <metadata><provenance>CANDIDATE &amp;#183; CAJAL PALETTE &amp;#183; QM VOL 4</provenance></metadata>
+  <defs>
+    <marker id="ar-th" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="400" fill="#FFFFFF"/>
+  <text x="28" y="34" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">The Threshold Theorem</text>
+
+  <!-- plot region -->
+  <rect x="80" y="56" width="420" height="252" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <!-- axes -->
+  <line x1="80" y1="308" x2="500" y2="308" stroke="#545454" stroke-width="1" marker-end="url(#ar-th)"/>
+  <line x1="80" y1="308" x2="80" y2="56" stroke="#545454" stroke-width="1" marker-end="url(#ar-th)"/>
+  <text x="290" y="338" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">physical error rate  p</text>
+  <text x="34" y="182" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e" transform="rotate(-90 34 182)">logical error rate  p_L (log)</text>
+
+  <!-- log gridlines y -->
+  <line x1="80" y1="120" x2="500" y2="120" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="80" y1="184" x2="500" y2="184" stroke="#D4D4D4" stroke-width="0.5"/>
+  <line x1="80" y1="248" x2="500" y2="248" stroke="#D4D4D4" stroke-width="0.5"/>
+  <text x="74" y="124" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">10&#8315;&#178;</text>
+  <text x="74" y="188" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">10&#8315;&#8308;</text>
+  <text x="74" y="252" text-anchor="end" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">10&#8315;&#8310;</text>
+
+  <!-- break-even diagonal p_L = p -->
+  <line x1="80" y1="290" x2="420" y2="92" stroke="#787878" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="92" y="262" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#787878">p_L = p</text>
+
+  <!-- threshold vertical -->
+  <line x1="290" y1="56" x2="290" y2="308" stroke="#ADADAD" stroke-width="1" stroke-dasharray="2 3"/>
+  <text x="290" y="70" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">p_th</text>
+
+  <!-- distance curves: below threshold they dive, above they rise -->
+  <!-- d=3 -->
+  <path d="M120 252 C 200 232, 260 215, 290 205 C 330 192, 380 150, 440 96" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="446" y="100" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#2a1a0e">d=3</text>
+  <!-- d=5 -->
+  <path d="M120 288 C 210 250, 265 218, 290 205 C 330 185, 380 130, 448 70" fill="none" stroke="#545454" stroke-width="1.5"/>
+  <text x="452" y="72" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">d=5</text>
+
+  <!-- crossing point (red must-look) -->
+  <circle cx="290" cy="205" r="5" fill="#C8102E"/>
+  <text x="298" y="200" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E">threshold crossing</text>
+
+  <!-- regions -->
+  <text x="180" y="296" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">p &lt; p_th: bigger code helps</text>
+  <text x="400" y="296" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">p &gt; p_th: it hurts</text>
+
+  <text x="80" y="362" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">Below p_th (&#8776;1% for surface codes), adding distance drives p_L arbitrarily low.</text>
+  
+</svg>

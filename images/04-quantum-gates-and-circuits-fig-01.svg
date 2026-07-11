@@ -134,5 +134,5 @@
   <text x="555" y="184" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454">T — π/4 about ẑ</text>
 
   <!-- Relation note -->
-  <text x="520" y="210" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454">T² = S, S² = Z</text>
+  <text x="520" y="210" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#545454">T<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan> = S, S<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan> = Z</text>
 </svg>

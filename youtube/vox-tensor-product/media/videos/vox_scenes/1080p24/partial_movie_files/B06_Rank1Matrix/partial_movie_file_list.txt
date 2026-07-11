@@ -1,0 +1,9 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-tensor-product/media/videos/vox_scenes/1080p24/partial_movie_files/B06_Rank1Matrix/648461735_781731243_223132457.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-tensor-product/media/videos/vox_scenes/1080p24/partial_movie_files/B06_Rank1Matrix/3493624639_4219967790_3384775345.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-tensor-product/media/videos/vox_scenes/1080p24/partial_movie_files/B06_Rank1Matrix/3493624639_2179091289_3397014283.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-tensor-product/media/videos/vox_scenes/1080p24/partial_movie_files/B06_Rank1Matrix/3493624639_3299001820_4010844784.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-tensor-product/media/videos/vox_scenes/1080p24/partial_movie_files/B06_Rank1Matrix/3493624639_309308944_715808120.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-tensor-product/media/videos/vox_scenes/1080p24/partial_movie_files/B06_Rank1Matrix/3493624639_905530734_4018722405.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-tensor-product/media/videos/vox_scenes/1080p24/partial_movie_files/B06_Rank1Matrix/3493624639_1983119147_3349635236.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-tensor-product/media/videos/vox_scenes/1080p24/partial_movie_files/B06_Rank1Matrix/3493624639_1248924443_2045107719.mp4'

@@ -88,7 +88,7 @@
 
   <!-- Quantum (Shor) bar: height=72 (O(n² log n) — much smaller) x=465..500 y=330-72=258 -->
   <rect x="465" y="258" width="50" height="72" fill="#C8102E" stroke="#C8102E" stroke-width="1"/>
-  <text x="490" y="251" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#C8102E" text-anchor="middle">O(n²logn)</text>
+  <text x="490" y="251" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#C8102E" text-anchor="middle">O(n<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan>logn)</text>
 
   <!-- Double-headed speedup arrows for each group -->
   <!-- Grover speedup arrow between classical bar top and quantum bar top -->

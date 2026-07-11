@@ -1,0 +1,7 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-tensor-product/media/videos/vox_scenes/1080p24/partial_movie_files/B02_DirectSum/648461735_4065678393_223132457.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-tensor-product/media/videos/vox_scenes/1080p24/partial_movie_files/B02_DirectSum/3493624639_1818150944_3035452145.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-tensor-product/media/videos/vox_scenes/1080p24/partial_movie_files/B02_DirectSum/3493624639_1591979999_1755712923.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-tensor-product/media/videos/vox_scenes/1080p24/partial_movie_files/B02_DirectSum/3493624639_1471442758_3015840828.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-tensor-product/media/videos/vox_scenes/1080p24/partial_movie_files/B02_DirectSum/3493624639_3233616819_2578016886.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-tensor-product/media/videos/vox_scenes/1080p24/partial_movie_files/B02_DirectSum/3493624639_781522812_715210345.mp4'

@@ -151,7 +151,7 @@
   <line x1="185" y1="340" x2="660" y2="340" stroke="#2a1a0e" stroke-width="1"/>
 
   <!-- Legend -->
-  <rect x="220" y="385" width="300" height="28" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
+  <rect x="220" y="385" width="300" height="39.98000000000002" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="0.75"/>
   <rect x="232" y="393" width="28" height="12" fill="#2a1a0e"/>
   <text x="266" y="403" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#2a1a0e">T&#x2081; (energy relaxation)</text>
   <rect x="380" y="393" width="28" height="12" fill="#C8102E"/>

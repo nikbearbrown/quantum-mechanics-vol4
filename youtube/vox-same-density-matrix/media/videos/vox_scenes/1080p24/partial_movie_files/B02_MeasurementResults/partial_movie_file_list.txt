@@ -1,0 +1,7 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-same-density-matrix/media/videos/vox_scenes/1080p24/partial_movie_files/B02_MeasurementResults/648461735_751520329_223132457.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-same-density-matrix/media/videos/vox_scenes/1080p24/partial_movie_files/B02_MeasurementResults/3493624639_575313963_2985158811.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-same-density-matrix/media/videos/vox_scenes/1080p24/partial_movie_files/B02_MeasurementResults/3493624639_2515996385_357088453.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-same-density-matrix/media/videos/vox_scenes/1080p24/partial_movie_files/B02_MeasurementResults/3493624639_2356597375_4265345391.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-same-density-matrix/media/videos/vox_scenes/1080p24/partial_movie_files/B02_MeasurementResults/3493624639_1253333754_2121016471.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/quantum-mechanics-vol4/youtube/vox-same-density-matrix/media/videos/vox_scenes/1080p24/partial_movie_files/B02_MeasurementResults/3493624639_2968842955_2267920662.mp4'

@@ -4,7 +4,9 @@
   "type": "module",
   "description": "Quantum Mechanics",
   "scripts": {
-    "svg-to-png": "node SCRIPTS/svg-to-png.mjs"
+    "svg-to-png": "node SCRIPTS/svg-to-png.mjs",
+    "audit:format": "node SCRIPTS/svg-format-audit.mjs images",
+    "postsvg-to-png": "node SCRIPTS/svg-format-audit.mjs images"
   },
   "dependencies": {
     "sharp": "^0.33.0",

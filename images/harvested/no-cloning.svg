@@ -1,0 +1,40 @@
+<svg role="img" aria-labelledby="t-nc d-nc" viewBox="0 0 560 400" xmlns="http://www.w3.org/2000/svg">
+  <title id="t-nc">The no-cloning theorem</title>
+  <desc id="d-nc">No unitary can copy an unknown quantum state. A hypothetical cloner mapping |psi>|0> to |psi>|psi> contradicts linearity: applied to a superposition it produces a term that cannot equal the true product, since fidelity cannot be perfect for all inputs.</desc>
+  <metadata><provenance>CANDIDATE &amp;#183; CAJAL PALETTE &amp;#183; QM VOL 4</provenance></metadata>
+  <defs>
+    <marker id="ar-nc" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2a1a0e"/></marker>
+    <marker id="arR-nc" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#C8102E"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="400" fill="#FFFFFF"/>
+  <text x="28" y="34" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">No-Cloning: You Cannot Copy an Unknown Qubit</text>
+
+  <rect x="28" y="56" width="504" height="180" fill="#F5F5F5" stroke="#D4D4D4"/>
+
+  <!-- hypothetical cloner box -->
+  <text x="120" y="120" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e">|&#968;&#10217;</text>
+  <text x="120" y="160" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e">|0&#10217;</text>
+  <line x1="138" y1="116" x2="210" y2="116" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar-nc)"/>
+  <line x1="138" y1="156" x2="210" y2="156" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar-nc)"/>
+  <rect x="216" y="98" width="80" height="76" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="256" y="142" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="13" fill="#2a1a0e">U</text>
+  <text x="256" y="90" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="10" fill="#545454">cloner?</text>
+  <line x1="296" y1="116" x2="368" y2="116" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar-nc)"/>
+  <line x1="296" y1="156" x2="368" y2="156" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar-nc)"/>
+  <text x="402" y="120" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e">|&#968;&#10217;</text>
+  <text x="402" y="160" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="12" fill="#2a1a0e">|&#968;&#10217;</text>
+  <!-- forbidden mark (red must-look) -->
+  <circle cx="450" cy="138" r="20" fill="none" stroke="#C8102E" stroke-width="2.5"/>
+  <line x1="436" y1="124" x2="464" y2="152" stroke="#C8102E" stroke-width="2.5"/>
+  <text x="450" y="180" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#C8102E">impossible</text>
+
+  <text x="280" y="220" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">A unitary U with U|&#968;&#10217;|0&#10217;=|&#968;&#10217;|&#968;&#10217; for every |&#968;&#10217; cannot exist.</text>
+
+  <!-- proof by linearity -->
+  <text x="40" y="262" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">U|0&#10217;|0&#10217;=|00&#10217;,  U|1&#10217;|0&#10217;=|11&#10217;   (assume cloning works on basis)</text>
+  <text x="40" y="284" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#2a1a0e">but U(&#945;|0&#10217;+&#946;|1&#10217;)|0&#10217; = &#945;|00&#10217;+&#946;|11&#10217;  (linearity)</text>
+  <text x="40" y="306" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="11" fill="#C8102E">&#8800; (&#945;|0&#10217;+&#946;|1&#10217;)&#8855;(&#945;|0&#10217;+&#946;|1&#10217;) = &#945;&#178;|00&#10217;+&#945;&#946;|01&#10217;+&#945;&#946;|10&#10217;+&#946;&#178;|11&#10217;</text>
+  <text x="40" y="334" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">Optimal universal cloner caps fidelity at 5/6 &#8776; 0.83. Underlies QKD security &amp; teleportation.</text>
+
+  
+</svg>

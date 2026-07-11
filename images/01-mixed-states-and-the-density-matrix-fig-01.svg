@@ -91,7 +91,7 @@
   <text x="330" y="230" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="11" fill="#545454">|r|=0</text>
 
   <!-- Purity annotation -->
-  <text x="350" y="400" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454" text-anchor="middle">Purity Tr(ρ²) = ½(1 + |r|²) — surface: 1, center: ½</text>
+  <text x="350" y="400" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#545454" text-anchor="middle">Purity Tr(ρ<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan>) = ½(1 + |r|<tspan dy="-0.5em" font-size="0.75em">2</tspan><tspan dy="0.5em"></tspan>) — surface: 1, center: ½</text>
 
   <!-- Pure state marker labels (x-axis intersections) -->
   <text x="174" y="214" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="11" fill="#2a1a0e" text-anchor="middle">|−⟩</text>

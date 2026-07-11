@@ -1,0 +1,55 @@
+<svg role="img" aria-labelledby="t-hw d-hw" viewBox="0 0 560 400" xmlns="http://www.w3.org/2000/svg">
+  <title id="t-hw">Qubit hardware modalities</title>
+  <desc id="d-hw">Four leading physical qubit platforms shown schematically: superconducting transmons, trapped ions, neutral atoms in optical tweezers, and photonic qubits, each encoding |0> and |1> in a distinct degree of freedom.</desc>
+  <metadata><provenance>CANDIDATE &amp;#183; CAJAL PALETTE &amp;#183; QM VOL 4</provenance></metadata>
+  <defs>
+    <marker id="ar-hw" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2a1a0e"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="400" fill="#FFFFFF"/>
+  <text x="28" y="34" font-family="'EB Garamond','Garamond',Georgia,serif" font-size="16" fill="#2a1a0e">Qubit Hardware Modalities</text>
+
+  <!-- superconducting -->
+  <rect x="28" y="56" width="240" height="130" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="148" y="78" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">Superconducting (transmon)</text>
+  <!-- LC loop + JJ -->
+  <rect x="90" y="100" width="100" height="50" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <rect x="128" y="94" width="24" height="12" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <line x1="134" y1="94" x2="146" y2="106" stroke="#2a1a0e" stroke-width="1"/>
+  <line x1="146" y1="94" x2="134" y2="106" stroke="#2a1a0e" stroke-width="1"/>
+  <text x="148" y="172" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">anharmonic LC, ~10 mK</text>
+
+  <!-- trapped ions -->
+  <rect x="292" y="56" width="240" height="130" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="412" y="78" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">Trapped ions</text>
+  <line x1="332" y1="125" x2="492" y2="125" stroke="#787878" stroke-width="1"/>
+  <line x1="332" y1="148" x2="492" y2="148" stroke="#787878" stroke-width="1"/>
+  <circle cx="362" cy="137" r="7" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <circle cx="392" cy="137" r="7" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <circle cx="422" cy="137" r="7" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <circle cx="452" cy="137" r="7" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="412" y="172" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">internal levels, Paul trap</text>
+
+  <!-- neutral atoms -->
+  <rect x="28" y="198" width="240" height="120" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="148" y="220" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">Neutral atoms (tweezers)</text>
+  <circle cx="84" cy="262" r="6" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <circle cx="124" cy="262" r="6" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <circle cx="164" cy="262" r="6" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <circle cx="204" cy="262" r="6" fill="#FFFFFF" stroke="#2a1a0e" stroke-width="1.5"/>
+  <path d="M78 248 q6 -10 12 0" fill="none" stroke="#C8860E" stroke-width="1"/>
+  <path d="M118 248 q6 -10 12 0" fill="none" stroke="#C8860E" stroke-width="1"/>
+  <path d="M158 248 q6 -10 12 0" fill="none" stroke="#C8860E" stroke-width="1"/>
+  <path d="M198 248 q6 -10 12 0" fill="none" stroke="#C8860E" stroke-width="1"/>
+  <text x="148" y="300" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">Rydberg, optical lattice</text>
+
+  <!-- photonic -->
+  <rect x="292" y="198" width="240" height="120" fill="#F5F5F5" stroke="#D4D4D4"/>
+  <text x="412" y="220" text-anchor="middle" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="12" fill="#2a1a0e">Photonic</text>
+  <line x1="332" y1="262" x2="492" y2="262" stroke="#2a1a0e" stroke-width="1.5" marker-end="url(#ar-hw)"/>
+  <path d="M340 262 q10 -10 20 0 q10 10 20 0 q10 -10 20 0" fill="none" stroke="#545454" stroke-width="1"/>
+  <rect x="430" y="250" width="16" height="24" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
+  <text x="412" y="300" text-anchor="middle" font-family="'JetBrains Mono','Fira Code','Courier New',monospace" font-size="10" fill="#545454">polarization / path</text>
+
+  <text x="40" y="338" font-family="'Inter',-apple-system,'Helvetica Neue',sans-serif" font-size="11" fill="#545454">Same abstract qubit; different physics for |0&#10217;, |1&#10217;, gates, coherence times, and connectivity.</text>
+  
+</svg>

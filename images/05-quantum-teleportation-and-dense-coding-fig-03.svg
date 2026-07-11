@@ -30,7 +30,7 @@
   <rect x="32" y="32" width="636" height="356" fill="#F5F5F5" stroke="#D4D4D4" stroke-width="0.75"/>
 
   <!-- Figure title -->
-  <text x="350" y="24" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Dense coding — Alice's Pauli encoding map on |Φ⁺⟩</text>
+  <text x="350" y="24" font-family="'EB Garamond', 'Garamond', Georgia, serif" font-size="14" font-weight="400" fill="#2a1a0e" text-anchor="middle">Dense coding — Alice's Pauli encoding map on |Φ<tspan dy="-0.5em" font-size="0.75em">+</tspan><tspan dy="0.5em"></tspan>⟩</text>
 
   <!-- HUB: |Φ⁺⟩ center at (350, 210) -->
   <!-- Two interlocked circles representing the shared Bell pair -->
@@ -40,7 +40,7 @@
   <path d="M 338 195 Q 350 185 362 195" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
   <path d="M 338 225 Q 350 235 362 225" fill="none" stroke="#2a1a0e" stroke-width="1.5"/>
   <!-- Hub label -->
-  <text x="350" y="214" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#2a1a0e" text-anchor="middle">|Φ⁺⟩</text>
+  <text x="350" y="214" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#2a1a0e" text-anchor="middle">|Φ<tspan dy="-0.5em" font-size="0.75em">+</tspan><tspan dy="0.5em"></tspan>⟩</text>
 
   <!-- ===== SPOKE 1: Message 00, Gate I, → |Φ⁺⟩ (North at 350,80) ===== -->
   <!-- Spoke line from hub top to node -->
@@ -57,7 +57,7 @@
   <rect x="356" y="78" width="14" height="28" fill="#2a1a0e" opacity="0.7"/>
   <!-- Base line -->
   <line x1="302" y1="106" x2="373" y2="106" stroke="#D4D4D4" stroke-width="0.75"/>
-  <text x="350" y="66" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#2a1a0e" text-anchor="middle">00 → |Φ⁺⟩</text>
+  <text x="350" y="66" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#2a1a0e" text-anchor="middle">00 → |Φ<tspan dy="-0.5em" font-size="0.75em">+</tspan><tspan dy="0.5em"></tspan>⟩</text>
   <!-- Bar labels -->
   <text x="312" y="116" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="8" fill="#545454" text-anchor="middle">00</text>
   <text x="363" y="116" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="8" fill="#545454" text-anchor="middle">11</text>
@@ -72,7 +72,7 @@
   <rect x="499" y="180" width="14" height="28" fill="#C8102E" opacity="0.8"/>
   <rect x="516" y="208" width="14" height="0" fill="#545454" opacity="0.3"/>
   <line x1="462" y1="208" x2="533" y2="208" stroke="#D4D4D4" stroke-width="0.75"/>
-  <text x="510" y="185" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#C8102E" text-anchor="middle">01 → |Ψ⁺⟩</text>
+  <text x="510" y="185" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#C8102E" text-anchor="middle">01 → |Ψ<tspan dy="-0.5em" font-size="0.75em">+</tspan><tspan dy="0.5em"></tspan>⟩</text>
   <text x="489" y="218" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="8" fill="#545454" text-anchor="middle">01</text>
   <text x="506" y="218" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="8" fill="#545454" text-anchor="middle">10</text>
 
@@ -86,7 +86,7 @@
   <rect x="339" y="343" width="14" height="0" fill="#545454" opacity="0.3"/>
   <rect x="356" y="315" width="14" height="28" fill="#FFFFFF" stroke="#787878" stroke-width="1"/>
   <line x1="302" y1="343" x2="373" y2="343" stroke="#D4D4D4" stroke-width="0.75"/>
-  <text x="350" y="303" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#787878" text-anchor="middle">10 → |Φ⁻⟩</text>
+  <text x="350" y="303" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#787878" text-anchor="middle">10 → |Φ<tspan dy="-0.5em" font-size="0.75em">-</tspan><tspan dy="0.5em"></tspan>⟩</text>
   <text x="312" y="353" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="8" fill="#545454" text-anchor="middle">00</text>
   <text x="363" y="353" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="8" fill="#787878" text-anchor="middle">11−</text>
 
@@ -100,12 +100,12 @@
   <rect x="179" y="180" width="14" height="28" fill="#FFFFFF" stroke="#ADADAD" stroke-width="1"/>
   <rect x="196" y="208" width="14" height="0" fill="#545454" opacity="0.3"/>
   <line x1="142" y1="208" x2="213" y2="208" stroke="#D4D4D4" stroke-width="0.75"/>
-  <text x="190" y="185" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#ADADAD" text-anchor="middle">11 → |Ψ⁻⟩</text>
+  <text x="190" y="185" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="10" fill="#ADADAD" text-anchor="middle">11 → |Ψ<tspan dy="-0.5em" font-size="0.75em">-</tspan><tspan dy="0.5em"></tspan>⟩</text>
   <text x="169" y="218" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="8" fill="#545454" text-anchor="middle">01</text>
   <text x="186" y="218" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="8" fill="#ADADAD" text-anchor="middle">10−</text>
 
   <!-- Caption -->
-  <text x="350" y="398" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">Alice applies one Pauli to her qubit A of the shared |Φ⁺⟩; Bob measures the resulting Bell state to read 2 classical bits</text>
+  <text x="350" y="398" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#545454" text-anchor="middle">Alice applies one Pauli to her qubit A of the shared |Φ<tspan dy="-0.5em" font-size="0.75em">+</tspan><tspan dy="0.5em"></tspan>⟩; Bob measures the resulting Bell state to read 2 classical bits</text>
   <!-- Open bar legend note -->
   <text x="350" y="385" font-family="'Inter', -apple-system, 'Helvetica Neue', sans-serif" font-size="10" fill="#787878" text-anchor="middle">Open bar = negative amplitude (same magnitude, opposite sign)</text>
 </svg>
