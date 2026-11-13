@@ -129,13 +129,14 @@
         "source": "ai",
         "motion": "hold",
         "remotion": {
-          "pattern": "SlateCard",
-          "provenance": "proven-core/SlateCard",
+          "pattern": "FormACard",
+          "provenance": "proven-core/FormACard",
           "version": "1",
           "props": {
-            "headline": "Here's what Alice and Bob did: at some earlier time, they…",
-            "eyebrow": "",
-            "topic": ""
+            "lines": [
+              "Here's what Alice and Bob did: at some earlier time, they…"
+            ],
+            "dark": false
           },
           "rendered": {
             "out": "media/B05.mp4",
@@ -339,13 +340,14 @@
         "source": "ai",
         "motion": "hold",
         "remotion": {
-          "pattern": "SlateCard",
-          "provenance": "proven-core/SlateCard",
+          "pattern": "FormACard",
+          "provenance": "proven-core/FormACard",
           "version": "1",
           "props": {
-            "headline": "Before Alice's call, Bob's qubit is completely random — the same…",
-            "eyebrow": "",
-            "topic": ""
+            "lines": [
+              "Before Alice's call, Bob's qubit is completely random — the same…"
+            ],
+            "dark": false
           },
           "rendered": {
             "out": "media/B13.mp4",
