@@ -36,3 +36,5 @@ __pycache__/
 *.pem
 client_secret*.json
 *token*.json
+# Reference pantries are local-only; never publish them.
+**/[Pp][Aa][Nn][Tt][Rr][Yy]/
